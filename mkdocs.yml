@@ -15,7 +15,9 @@ theme:
     text: Rosario   # Probably pick a better font.
     code: Fira Mono
   favicon: img/favicon.ico
-plugins: []
+plugins:
+  - git-authors
+  - git-revision-date-localized
 nav:
   - index.md
 markdown_extensions:

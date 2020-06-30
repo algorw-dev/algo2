@@ -20,3 +20,12 @@
             crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
   {% endif %}
 {% endblock %}
+
+{% block disqus %}
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: {{ git_page_authors }}
+    </small>
+  </div>
+{% endblock %}
