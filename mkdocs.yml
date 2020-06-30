@@ -6,6 +6,7 @@ site_description: >
   (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
 theme:
   name: material
+  custom_dir: docs/_custom
   language: es
   palette:
     primary: blue
@@ -23,5 +24,25 @@ markdown_extensions:
   - attr_list
   - codehilite:
       guess_lang: false
+  - footnotes
+  - meta
   - toc:
       permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  - smarty
+  - pymdownx.arithmatex:
+      preview: false
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+  - pymdownx.mark
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tilde
