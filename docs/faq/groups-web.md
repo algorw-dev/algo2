@@ -1,7 +1,3 @@
----
-title: FAQ - Groups desde la interfaz web
----
-
 # Acceso al grupo de Google desde la interfaz web
 
 El grupo de Google es nuestro medio de comunicación principal. La mayor parte

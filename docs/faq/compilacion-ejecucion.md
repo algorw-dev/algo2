@@ -1,8 +1,4 @@
-# FAQ - Lenguaje C Compilación y Ejecución
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Lenguaje C: compilación y ejecución
 
 ## ¿Qué signfica que un lenguaje sea, como C, compilado?
 

@@ -1,8 +1,4 @@
-# FAQ - Entorno de Desarollo
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Entorno de desarollo
 
 ## ¿Cómo hago para instalar el entorno de desarrollo en mi PC?
 

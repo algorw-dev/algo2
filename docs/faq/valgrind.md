@@ -1,8 +1,4 @@
-# FAQ - Errores de Valgrind
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Errores de Valgrind
 
 ## ¿Cómo hago para que Valgrind me indique la línea en la que hay un error?
 

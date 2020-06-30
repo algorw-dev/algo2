@@ -1,8 +1,4 @@
-# FAQ - Lista Enlazada
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Lista enlazada
 
 ## ¿Cuándo se define que el iterador externo está al final?
 

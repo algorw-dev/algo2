@@ -1,8 +1,4 @@
-# FAQ - Primeros Pasos con Linux y C
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Primeros pasos con Linux y C
 
 ### Escribir un hello world en C
 

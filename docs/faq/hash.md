@@ -1,8 +1,4 @@
-# FAQ - Hash
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Hash
 
 ## ¿Qué son las claves y los datos dentro del hash?
 

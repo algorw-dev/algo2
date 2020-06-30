@@ -2,11 +2,7 @@
 math: true
 ---
 
-# FAQ - Tipos de Datos Abstractos
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Tipos de datos abstractos
 
 ## Abstracción
 

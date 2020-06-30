@@ -34,6 +34,19 @@ nav:
       - apuntes/kml.md
     # TODO:
     # - Otros apuntes: material/apuntes.md
+  - Preguntas frecuentes:
+      - faq/general.md
+      - faq/entorno.md
+      - faq/primeros-pasos.md
+      - faq/compilacion-ejecucion.md
+      - faq/lenguaje-c.md
+      - faq/valgrind.md
+      - faq/tda.md
+      - faq/cola.md
+      - faq/lista-enlazada.md
+      - faq/hash.md
+      - faq/heap.md
+      - faq/abb.md
 markdown_extensions:
   - abbr
   - admonition

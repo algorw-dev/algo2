@@ -1,8 +1,4 @@
-# FAQ - Lenguaje C
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Lenguaje C
 
 ## ¿Para qué se usa el tipo size_t?
 

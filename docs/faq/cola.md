@@ -1,8 +1,4 @@
-# FAQ - Cola
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Cola
 
 ## ¿Cómo debo probar mi programa / librería de funciones / TDA?
 

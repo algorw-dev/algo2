@@ -1,8 +1,4 @@
-# FAQ - Preguntas Generales
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Preguntas generales
 
 ## ¿Cómo funciona una lista de correos?
 

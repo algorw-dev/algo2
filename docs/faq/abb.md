@@ -1,8 +1,4 @@
-# FAQ - Árbol Binario de Búsqueda
-{:.no_toc}
-
-* Contenido
-{:toc}
+# Árbol binario de búsqueda
 
 ## ¿Cómo se destruye un dato en un ABB?
 
