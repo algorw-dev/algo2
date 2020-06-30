@@ -1,0 +1,20 @@
+site_name: Algoritmos y Programación II
+site_dir: _site
+site_url: "https://algoritmos-rw.github.io/algo2"
+site_description: >
+  Página de la materia Algoritmos y Programación II, curso Buchwald
+  (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+theme:
+  name: material
+  language: es
+plugins: []
+nav:
+  - index.md
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true

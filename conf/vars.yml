@@ -1,0 +1,8 @@
+# Este archivo se incluye desde mkdocs.yml. Las variables en el
+# namespace "extra" son directamente accesibles desde Markdown.
+extra:
+  site:
+    algo1: "https://algoritmos1rw.ddns.net/"
+    skel: "https://algoritmos-rw.github.io/algo2_skel/"
+    notas: "https://algoritmos-rw.turing.pink/notas/"
+    entregas: "https://algoritmos-rw.turing.pink/entregas/"

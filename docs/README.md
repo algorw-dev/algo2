@@ -1,35 +1,33 @@
-# Algo2
-
 Este es el repositorio del sitio web de Algoritmos y Programación II, publicado en:
 
-<https://algoritmos-rw.github.io/algo2/>
+<https://algoritmos-rw.github.io/algo2>
+
 
 ## Instrucciones para actualizar la página web
 
-Cualquier commit en el directorio raíz se auto-publica en la página al hacer push a la rama _master_. GitHub se encarga de ese proceso.
+Cualquier commit en el directorio `docs` se auto-publica en la página al hacer push a la rama _master_. El proceso se realiza de manera automática mediante el workflow definido en [gh-pages.yml](.github/workflows/gh-pages.yml).
 
-Para visualizar los cambios de manera local, se debe instalar [Jekyll](https://jekyllrb.com/docs/installation/#ubuntu). El archivo [Gemfile](Gemfile) lo hace bastante fácil:
+Para visualizar los cambios de manera local, se debe instalar [MkDocs], y el tema [Material for MkDocs][mkdocs-mat]. El archivo [Makefile](Makefile) lo hace bastante fácil:
 
 ```
 # Setup inicial
-
-$ apt-get install ruby ruby-dev bundler
-$ gem install jekyll bundler
+$ sudo apt install python3-virtualenv
 $ git clone git@github.com:algoritmos-rw/algo2
 $ cd algo2
-$ bundle install --path=../gems
-$ // de tener problemas con nokogiri: apt-get install libxml2-dev
+$ make sync
 
 # Para visualizar al editar
 
 $ cd algo2
-$ bundle exec jekyll serve --livereload
-$ // de tener problemas con javascript runtime: apt-get install nodejs
-
+$ . venv/bin/activate
+$ mkdocs serve  --livereload
 ```
 
 (La opción `--livereload` es opcional, pero fuerza al navegador a mostrar
 el nuevo contenido tras escribir un archivo.)
+
+[MkDocs]: https://www.mkdocs.org
+[mkdocs-mat]: https://squidfunk.github.io/mkdocs-material
 
 ## Cómo realizar la publicación de un TP
 
