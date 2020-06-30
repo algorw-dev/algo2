@@ -7,6 +7,13 @@ site_description: >
 theme:
   name: material
   language: es
+  palette:
+    primary: blue
+    accent: blue
+  font:
+    text: Rosario   # Probably pick a better font.
+    code: Fira Mono
+  favicon: img/favicon.ico
 plugins: []
 nav:
   - index.md
