@@ -20,6 +20,8 @@ plugins:
   - git-revision-date-localized
 nav:
   - index.md
+  - bibliografia.md
+  - regimen.md
 markdown_extensions:
   - abbr
   - admonition

@@ -1,16 +1,17 @@
-Régimen de cursada
-==================
+# Régimen de cursada
 
-### Aprobación
+## Aprobación
 
 * Para aprobar la **materia** es necesario aprobar la **cursada** y el **final** obligatorio; o bien cumplir las condiciones de **promoción**.
 * Para aprobar la **cursada** es necesario aprobar los **tres parcialitos**, y los **tres trabajos prácticos**.
 * Para aprobar cada **trabajo práctico** es necesario aprobar cada una de las **entregas parciales** anteriores al mismo.
 * Para rendir el **final** es necesario tener la **cursada** aprobada.
-* **2020 1C**:Debido a la situación actual del dictado de clases, y la necesidad del cambio en la modalidad de las evaluaciones (además de la reglamentación de la UBA al respecto), el régimen de promoción queda suspendido para este cuatrimestre.
+
+    !!! attention "Cuatrimestre 2020/1"
+         Debido a la situación actual del dictado de clases, y la necesidad del cambio en la modalidad de las evaluaciones (además de la reglamentación de la UBA al respecto), el régimen de promoción queda suspendido para este cuatrimestre.
 
 
-### Trabajos Prácticos
+## Trabajos prácticos
 
 * Hay **tres trabajos prácticos** que se complementan con un total de **ocho entregas parciales**.
   Para el primer TP las entregas parciales son 5: TP0, vector dinámico, pila, cola y lista. Para el segundo TP son 3: hash, arbol binario y heap. El tercer TP no tiene entregas parciales.
@@ -23,7 +24,7 @@ Régimen de cursada
 * Cada alumno/grupo tiene asignado un ayudante para la corrección y evaluación de los trabajos prácticos.
 
 
-### Parcialitos
+## Parcialitos
 
 * Hay **tres parcialitos** con **dos recuperatorios** cada uno.
 * Los parcialitos se aprueban con nota 4 o superior, y constan de 3 ejercicios (se requiere 2 ejercicios bien para aprobar).
@@ -31,14 +32,14 @@ Régimen de cursada
 * Se puede recuperar parcialitos para levantar la nota sin riesgo de empeorarla (se considera la nota mayor de las obtenidas).
 * Copiarse en un parcialito implica desaprobar la cursada y por lo tanto la materia.
 
-### Final
+## Final
+
 * Una vez aprobada la cursada, es necesario rendir un final escrito, en el cuál entran todos los temas vistos en la materia. Tanto en las clases teóricas como en las clases prácticas.
 * Los finales se aprueban con nota 4 o superior, y constan de 5 ejercicios (se requieren 3 ejercicios bien para aprobar).
-* ~Aquellos alumnos que hayan cumplido con los requisitos del régimen de promoción, no deben rendir el examen final.~
+* ~~Aquellos alumnos que hayan cumplido con los requisitos del régimen de promoción, no deben rendir el examen final.~~
 
-### Calificación
+## Calificación
 
 * La nota de la materia es un promedio de la nota del final y la nota de la cursada, ponderando esta última.
 * La nota de la cursada surge del promedio entre: el promedio de la nota de los parcialitos y el promedio de la nota de los trabajos prácticos (con redondeo conceptual por parte del ayudante asignado).
-* ~En caso de promocionar la materia, la nota de la materia será igual a la nota de la cursada.~
-
+* ~~En caso de promocionar la materia, la nota de la materia será igual a la nota de la cursada.~~
