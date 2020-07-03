@@ -1,13 +1,4 @@
 _site
-Gemfile.lock
-.sass-cache
-.jekyll-metadata
-
 .DS_Store
 .idea
-
-.Gemfile.lock.swp
-.bundle/config
-
 .ipynb_checkpoints
-
