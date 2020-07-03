@@ -3,13 +3,6 @@ math: true
 ---
 
 # Colas de Prioridad y Heaps
-{:.no_toc}
-
-## Contenidos
-{:.no_toc}
-
-1. TOC
-{:toc}
 
 ## Ejercicio resuelto
 

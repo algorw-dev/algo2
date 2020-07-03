@@ -9,23 +9,21 @@ La mayoría de los ejercicios de entre 2 y 4 estrellas han sido sacado de parcia
 
 Los ejercicios de 5 estrellas sólo serían tomados en exámenes finales.
 
-  * [Conceptos de TDAs, y TDAs Básicos (Pila, Cola y Lista)](guias/tdas_conceptos.md)
-  * [División y Conquista](guias/dyc.md)
-  * [Ordenamientos comparativos y no comparativos](guias/ordenamientos.md)
-  * [Diccionarios, Hashing y Hashes](guias/hash.md)
-  * [Árboles Binarios, ABB, AVL, Árbol B](guias/arboles.md)
-  * [Colas de Prioridad y heaps](guias/heap.md)
-  * [Grafos, primera parte: Usos, implementaciones y recorridos](guias/grafos.md)
-  * [Grafos, segunda parte: Algoritmos sobre grafos](guias/grafos_2.md)
+  * [Conceptos de TDAs, y TDAs Básicos (Pila, Cola y Lista)](tdas_conceptos.md)
+  * [División y Conquista](dyc.md)
+  * [Ordenamientos comparativos y no comparativos](ordenamientos.md)
+  * [Diccionarios, Hashing y Hashes](hash.md)
+  * [Árboles Binarios, ABB, AVL, Árbol B](arboles.md)
+  * [Colas de Prioridad y heaps](heap.md)
+  * [Grafos, primera parte: Usos, implementaciones y recorridos](grafos.md)
+  * [Grafos, segunda parte: Algoritmos sobre grafos](grafos_2.md)
 
 También, pueden descargarse la <i class="fa fa-file-pdf"/> versión en PDF de la guía del [<i class="fab fa-google-drive"/> Drive de la materia]({{site.data.sitios.drive}}).
 
 Guías de temas anteriores:
 
-  * [Programación greedy](guias/greedy.md)
-  * [Backtracking](guias/backtracking.md)[^1]
-  * [Programación dinámica](guias/pd.md)
+  * [Programación greedy](greedy.md)
+  * [Backtracking](backtracking.md)[^1]
+  * [Programación dinámica](pd.md)
 
 [^1]: Este tema se continúa dando, pero de forma específica para grafos. Se pueden encontrar ejercicios en _Grafos, segunda parte_.
-
-{% include footnotes.html %}

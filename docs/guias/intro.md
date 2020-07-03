@@ -20,6 +20,8 @@ Los ejercicios de 5 estrellas sólo serían tomados en exámenes finales.
 
 Se recomienda utilizar la versión web de esta guía, puesto que el formato está pensado para verse mejor allí.
 
+<!-- TODO: fix links y hacer merge con index.md -->
+
 Resumen de temas vistos en la materia:
 
   * [\textcolor{blue}{Conceptos de TDAs, y TDAs Básicos (Pila, Cola y Lista)}](https://algoritmos-rw.github.io/algo2/material/guias/tdas_conceptos)

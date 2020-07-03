@@ -3,13 +3,6 @@ math: true
 ---
 
 # Backtracking
-{:.no_toc}
-
-## Contenidos
-{:.no_toc}
-
-1. TOC
-{:toc}
 
 ## Ejercicio resuelto
 

@@ -3,15 +3,6 @@ math: true
 ---
 
 # Conceptos de TDAs, Pilas, Colas y Listas
-{:.no_toc}
-
-
-## Contenidos
-{:.no_toc}
-
-1. TOC
-{:toc}
-
 
 ## Ejercicio resuelto
 
@@ -20,7 +11,6 @@ Implementar la _primitiva_ de la pila `void** pila_multitop(const pila_t* pila, 
 Indicar el orden de complejidad de la primitiva.
 
 ### Solución
-{:.no_toc}
 
 Algo que está implícito en el ejercicio es que se asume que la implementación del TDA Pila es sobre un arreglo dinámico, tal
 cual fue visto en clase. Siempre es válido asumir que la implementación es la misma a la que debieron implementar, salvo que

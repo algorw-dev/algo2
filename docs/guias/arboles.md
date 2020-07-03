@@ -2,14 +2,7 @@
 math: true
 ---
 
-# Árboles Binarios, ABB, AVL, Árbol B
-{:.no_toc}
-
-## Contenidos
-{:.no_toc}
-
-1. TOC
-{:toc}
+# Árboles (AB/ABB/AVL/Árbol B)
 
 ## Ejercicio resuelto
 

@@ -1,16 +1,8 @@
 ---
-permalink: 'material/guias/grafos_1/'
 math: true
 ---
 
-# Grafos: Usos, implementaciones, recorridos
-{:.no_toc}
-
-## Contenidos
-{:.no_toc}
-
-1. TOC
-{:toc}
+# Grafos: Usos, implementaciones y recorridos
 
 ## Ejercicio resuelto
 

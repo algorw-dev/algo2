@@ -34,6 +34,22 @@ nav:
       - apuntes/kml.md
     # TODO:
     # - Otros apuntes: material/apuntes.md
+  - Guía de ejercicios:
+    # TODO: hacer merge de index.md y intro.md
+    - Introducción: guias/index.md
+    - guias/dyc.md
+    - Ordenamientos: guias/ordenamientos.md
+    - Pila, cola, lista: guias/tdas_conceptos.md
+    - Tablas hash: guias/hash.md
+    - Árboles: guias/arboles.md
+    - Colas de prioridad y heaps: guias/heap.md
+    - Grafos:
+      - Implementaciones y recorridos: guias/grafos.md
+      - Aplicaciones y algoritmos: guias/grafos_2.md
+    - Temas avanzados:
+      - guias/greedy.md
+      - guias/backtracking.md
+      - guias/pd.md
   - Preguntas frecuentes:
       - faq/general.md
       - faq/entorno.md
@@ -57,6 +73,7 @@ markdown_extensions:
   - meta
   - toc:
       permalink: true
+      toc_depth: 3
       slugify: !!python/name:pymdownx.slugs.uslugify
   - smarty
   - pymdownx.arithmatex:

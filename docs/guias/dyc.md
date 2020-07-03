@@ -2,16 +2,7 @@
 math: true
 ---
 
-# División y Conquista
-{:.no_toc}
-
-
-## Contenidos
-{:.no_toc}
-
-1. TOC
-{:toc}
-
+# División y conquista
 
 ## Ejercicio resuelto
 

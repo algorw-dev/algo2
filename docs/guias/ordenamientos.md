@@ -3,12 +3,6 @@ math: true
 ---
 
 # Ordenamientos comparativos y no comparativos
-{:.no_toc}
-
-## Contenidos
-
-1. TOC
-{:toc}
 
 ## Ejercicio resuelto
 

@@ -2,14 +2,7 @@
 math: true
 ---
 
-# Grafos: Aplicaciones y Algoritmos
-{:.no_toc}
-
-## Contenidos
-{:.no_toc}
-
-1. TOC
-{:toc}
+# Grafos: Aplicaciones y algoritmos
 
 ## Ejercicio resuelto
 
