@@ -1,10 +1,3 @@
----
-title: Pila
-permalink: /tps/pila/
-trabajo: Pila
----
-{% assign TP = site.data.trabajos[page.trabajo] %}
-
 Pila
 ====
 

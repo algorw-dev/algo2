@@ -1,5 +1,4 @@
-TPs
-===
+# Trabajos prácticos
 
 A continuación encontrarán las entregas que iremos planteando a lo largo de la
 materia.

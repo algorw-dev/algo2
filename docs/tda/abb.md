@@ -1,11 +1,4 @@
----
-title: Árbol Binario de Búsqueda
-permalink: /tps/abb/
-trabajo: ABB
----
-{% assign TP = site.data.trabajos[page.trabajo] %}
-
-Árbol Binario de Búsqueda
+Árbol binario de búsqueda
 =========================
 
 El trabajo que deben entregar de **forma grupal** es el tipo de dato abstracto Árbol Binario de Búsqueda (ABB). Se incluye en [el sitio de descargas]({{site.skel}}) el archivo de main correspondiente al ejercicio. Se debe implementar:

@@ -1,10 +1,3 @@
----
-title: Heap
-permalink: /tps/heap/
-trabajo: Heap
----
-{% assign TP = site.data.trabajos[page.trabajo] %}
-
 Heap
 ====
 

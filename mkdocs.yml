@@ -8,6 +8,8 @@ theme:
   name: material
   custom_dir: docs/_custom
   language: es
+  features:
+    - tabs
   palette:
     primary: blue
     accent: blue
@@ -19,9 +21,19 @@ plugins:
   - git-authors
   - git-revision-date-localized
 nav:
-  - index.md
+  - Inicio: index.md
   - bibliografia.md
   - regimen.md
+  - TPs:
+      - Cronograma: tps.md
+      - TP0: tps/tp0.md
+      - Vector: tda/vector.md
+      - Pila: tda/pila.md
+      - Cola: tda/cola.md
+      - Lista: tda/lista.md
+      - Hash: tda/hash.md
+      - ABB: tda/abb.md
+      - Heap: tda/heap.md
   - Apuntes:
       - Ordenamientos externos: apuntes/external-sorts.md
     # Eventualmente, se podría hacer introducir una subsección "Grafos" aquí.
@@ -34,7 +46,7 @@ nav:
       - apuntes/kml.md
     # TODO:
     # - Otros apuntes: material/apuntes.md
-  - Guía de ejercicios:
+  - Ejercicios:
     # TODO: hacer merge de index.md y intro.md
     - Introducción: guias/index.md
     - guias/dyc.md
@@ -50,7 +62,7 @@ nav:
       - guias/greedy.md
       - guias/backtracking.md
       - guias/pd.md
-  - Preguntas frecuentes:
+  - FAQ:
       - faq/general.md
       - faq/entorno.md
       - faq/primeros-pasos.md

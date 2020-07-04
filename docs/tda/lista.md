@@ -1,10 +1,3 @@
----
-title: Lista
-permalink: /tps/lista/
-trabajo: Lista
----
-{% assign TP = site.data.trabajos[page.trabajo] %}
-
 Lista enlazada
 ==============
 

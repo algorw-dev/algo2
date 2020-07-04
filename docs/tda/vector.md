@@ -1,10 +1,3 @@
----
-title: Vector dinámico
-permalink: /tps/vector/
-trabajo: Vector
----
-{% assign TP = site.data.trabajos[page.trabajo] %}
-
 Vector dinámico
 ===============
 

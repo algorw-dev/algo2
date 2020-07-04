@@ -1,12 +1,5 @@
----
-title: Hash
-permalink: /tps/hash/
-trabajo: Hash
----
-{% assign TP = site.data.trabajos[page.trabajo] %}
-
-Tabla de Hash
-=============
+Tabla hash
+==========
 
 El trabajo que deben entregar de **forma grupal** es el tipo abstracto de datos Tabla de Hash, que se puede implementar mediante un hash abierto o cerrado, a elección.
 
