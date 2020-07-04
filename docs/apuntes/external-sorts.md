@@ -1,9 +1,8 @@
 ---
-permalink: /material/apuntes/ordenamientos_externos/
 math: true
 ---
 
-# Algoritmos de Ordenamientos Externos
+# Algoritmos de ordenamientos externos
 
 Llamamos ordenamiento externo cuando debemos ordenar archivos que son (mucho) más grandes de lo que nuestra memoria puede llegar a abarcar. Esto es así porque, en caso contrario, podríamos simplemente cargar el archivo en memoria y ordenarlo usando cualquier algoritmo de ordenamiento convencional.
 

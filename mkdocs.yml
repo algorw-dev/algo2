@@ -22,6 +22,18 @@ nav:
   - index.md
   - bibliografia.md
   - regimen.md
+  - Apuntes:
+      - Ordenamientos externos: apuntes/external-sorts.md
+    # Eventualmente, se podría hacer introducir una subsección "Grafos" aquí.
+    # - Grafos:
+      - Random walks: apuntes/random_walks.md
+      - Centralidad: apuntes/centralidad.md
+      - PageRank: apuntes/pagerank.md
+      - Label propagation: apuntes/label_propagation.md
+      - Componentes fuertemente conexas: apuntes/cfc.md
+      - apuntes/kml.md
+    # TODO:
+    # - Otros apuntes: material/apuntes.md
 markdown_extensions:
   - abbr
   - admonition

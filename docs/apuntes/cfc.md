@@ -2,7 +2,7 @@
 math: true
 ---
 
-# Componentes Fuertemente Conexas (CFC)
+# Componentes fuertemente conexas (CFC)
 
 Una [componente fuertemente conexa](https://en.wikipedia.org/wiki/Strongly_connected_component)
 de un **grafo dirigido** es un conjunto de vértices dentro del grafo donde todos esos vértices se conectan todos

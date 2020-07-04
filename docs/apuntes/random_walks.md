@@ -2,7 +2,7 @@
 math: true
 ---
 
-# Random Walks
+# Random walks
 
 Un [Random Walk](https://en.wikipedia.org/wiki/Random_walk) es, como su nombre indica, un camino aleatorio
 sobre un grafo. Comienza desde un vértice (que puede ser uno específico o uno aleatorio) y se mueve

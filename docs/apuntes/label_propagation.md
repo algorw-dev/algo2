@@ -1,9 +1,8 @@
 ---
-title: Comunidades y Label Propagation
 math: true
 ---
 
-# Comunidades en un grafo
+# Comunidades y label propagation
 
 Un problema común dentro de grafos que representan redes sociales es querer obtener las comunidades que
 la conforman. Una comunidad dentro de una red social es un conjunto de vértices que se encuentran altamente

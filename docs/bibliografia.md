@@ -10,3 +10,9 @@
 * Sedgewick, Robert: _Algorithms in C++_, Addison-Wesley, 1992.
 * Tenenbaum, Aaron M.;  Langsam, Yedidyah;  Augenstein, Moshe J.: _Estructuras de datos en C_, Prentice-Hall Hispanoamericana, 1993.
 * Kernighan, Brian W.;  Ritchie, Dennis M.: _El lenguaje de programación C_, Prentice-Hall Hispanoamericana, 1991.
+
+
+## Otra bibliografía
+
+  * Wachenchauzer et al.: [Apunte de Algoritmos y Programación I](https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view).
+  * Curia, M.; Manterola, M.: [Introducción al lenguaje C](https://drive.google.com/open?id=17gyhdJwEcxxLVrD_X0AlPnZzQajXOFE5).

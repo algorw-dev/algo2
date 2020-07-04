@@ -1,9 +1,8 @@
 ---
-title: Centralidad en un Grafo
 math: true
 ---
 
-# Centrality
+# Centralidad en un grafo
 
 [Centrality](https://en.wikipedia.org/wiki/Betweenness_centrality) (o Centralidad, en español),
 es una medida dentro te Teoría de Grafos que determina cuán importante es un vértice dentro de una red
