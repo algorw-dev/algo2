@@ -1,0 +1,1356 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/faq/lenguaje-c/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Lenguaje C - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lenguaje-c" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lenguaje C
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../general/" class="md-tabs__link md-tabs__link--active">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lenguaje C
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Lenguaje C" class="md-nav__link md-nav__link--active">
+      Lenguaje C
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#para-qué-se-usa-el-tipo-size_t" class="md-nav__link">
+    ¿Para qué se usa el tipo size_t?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cadenas" class="md-nav__link">
+    Cadenas
+  </a>
+  
+    <nav class="md-nav" aria-label="Cadenas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cómo-comparo-si-dos-cadenas-son-iguales" class="md-nav__link">
+    ¿Cómo comparo si dos cadenas son iguales?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cómo-copio-dos-cadenas" class="md-nav__link">
+    ¿Cómo copio dos cadenas?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qué-es-getline-cómo-uso-getline" class="md-nav__link">
+    ¿Qué es getline? ¿Cómo uso getline?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-un-puntero-a-función" class="md-nav__link">
+    ¿Qué es un puntero a función?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-un-wrapper" class="md-nav__link">
+    ¿Qué es un wrapper?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-typedef" class="md-nav__link">
+    ¿Qué es typedef?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#para-qué-se-usa-el-tipo-size_t" class="md-nav__link">
+    ¿Para qué se usa el tipo size_t?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cadenas" class="md-nav__link">
+    Cadenas
+  </a>
+  
+    <nav class="md-nav" aria-label="Cadenas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cómo-comparo-si-dos-cadenas-son-iguales" class="md-nav__link">
+    ¿Cómo comparo si dos cadenas son iguales?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cómo-copio-dos-cadenas" class="md-nav__link">
+    ¿Cómo copio dos cadenas?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qué-es-getline-cómo-uso-getline" class="md-nav__link">
+    ¿Qué es getline? ¿Cómo uso getline?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-un-puntero-a-función" class="md-nav__link">
+    ¿Qué es un puntero a función?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-un-wrapper" class="md-nav__link">
+    ¿Qué es un wrapper?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-typedef" class="md-nav__link">
+    ¿Qué es typedef?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="lenguaje-c">Lenguaje C<a class="headerlink" href="#lenguaje-c" title="Permanent link">&para;</a></h1>
+<h2 id="para-qué-se-usa-el-tipo-size_t">¿Para qué se usa el tipo size_t?<a class="headerlink" href="#para-qué-se-usa-el-tipo-size_t" title="Permanent link">&para;</a></h2>
+<p><code>size_t</code> es un tipo entero sin signo devuelto por el operador <code>sizeof</code> y es usado para representar el tamaño de construcciones en bytes. Este tipo está definido de manera tal de garantizar que siempre va a poder almacenar el tamaño del tipo más grande posible, por lo que también garantiza que va a poder almacenar cualquier índice de cualquier arreglo.</p>
+<p>Estas características lo convierten en el tipo adecuado para manejar tamaños e índices.</p>
+<h2 id="cadenas">Cadenas<a class="headerlink" href="#cadenas" title="Permanent link">&para;</a></h2>
+<h3 id="cómo-comparo-si-dos-cadenas-son-iguales">¿Cómo comparo si dos cadenas son iguales?<a class="headerlink" href="#cómo-comparo-si-dos-cadenas-son-iguales" title="Permanent link">&para;</a></h3>
+<p>En C las cadenas de caracteres son vectores que tienen caracteres como elementos.  C no sabe comparar vectores, de ningún tipo.  Al hacer una comparación del tipo: <code>cadena1 == cadena2</code>, lo que se compara es que las direcciones de memoria de ambas variables sean iguales, es decir que sólo van a ser iguales cuando realmente sean el mismo puntero.</p>
+<p>Para poder comparar el contenido de dos cadenas, es necesario usar la función <code>strcmp(cadena1, cadena2)</code>, que devuelve 0 si son iguales, menor que 0 si la primera es menor y mayor que 0 si la primera es mayor.  En este caso no importa que las cadenas ocupen o no la misma porción de memoria.</p>
+<h3 id="cómo-copio-dos-cadenas">¿Cómo copio dos cadenas?<a class="headerlink" href="#cómo-copio-dos-cadenas" title="Permanent link">&para;</a></h3>
+<p>La sentencia:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="o">*</span> <span class="n">cad_1</span> <span class="o">=</span> <span class="n">cad_2</span><span class="p">;</span>
+</code></pre></div>
+
+<p>No crea una copia de una cadena, sino una copia de la referencia a la cadena. Para hacer una copia de una cadena es necesario hacer:</p>
+<div class="highlight"><pre><span></span><code><span class="n">strcpy</span><span class="p">(</span><span class="n">buf_destino</span><span class="p">,</span> <span class="n">cad_origen</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Siendo <code>buf_destino</code> una posición de memoria tal que pueda albergar la cadena a copiar, típicamente reservada con <code>malloc</code> y <code>strlen</code> (teniendo en cuenta el espacio necesario para alojar el fin de cadena).</p>
+<p>Desde el curso se recomienda la creación de una función auxiliar <code>strdup</code> que encapsule esta lógica.</p>
+<p>Pueden leer más sobre sobre cadenas en el <a href="https://drive.google.com/open?id=1J3uJd0SLZ1DHvPTf7H4ZaKPTwi2mRC0X">apunte del curso</a>.</p>
+<h3 id="qué-es-getline-cómo-uso-getline">¿Qué es getline? ¿Cómo uso getline?<a class="headerlink" href="#qué-es-getline-cómo-uso-getline" title="Permanent link">&para;</a></h3>
+<p><a href="http://man7.org/linux/man-pages/man3/getline.3.html"><code>getline()</code></a> es una función que lee una linea de un archivo.</p>
+<p><code>ssize_t getline(char** buffer, size_t* capacidad, FILE* archivo);</code></p>
+<p>La principal ventaja de esta función es que automáticamente reserva la memoria dinámica necesaria para almacenar la línea. No se necesita invocar manualmente malloc() a mano, ni preocuparse por los tamaños de los buffers.</p>
+<p>Sí se necesita, no obstante, liberar memoria al terminar: getline() llama a malloc() pero transfiere la responsabilidad de la memoria al usuario.</p>
+<p>La reserva de memoria dinámica se consigue cuando el puntero buffer apunta a NULL, y el puntero capacidad apunta a 0:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="o">*</span> <span class="n">buffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="kt">size_t</span> <span class="n">capacidad</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">ssize_t</span> <span class="n">leidos</span> <span class="o">=</span> <span class="n">getline</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">capacidad</span><span class="p">,</span> <span class="n">archivo</span><span class="p">);</span>
+<span class="c1">// Hago uso de la linea</span>
+<span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+</code></pre></div>
+
+<p>La función getline() se encuentra definida en la cabecera stdio.h. Como es una función de POSIX.1-2008, hay que declarar un identificador para indicar que la queremos usar:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define _POSIX_C_SOURCE 200809L</span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+</code></pre></div>
+
+<p>Para más información y especificaciones de la función, se puede invocar al comando <code>man</code> en la terminal, para ver el manual de esta. <code>man getline</code>.</p>
+<h4>¿Qué es POSIX?</h4>
+<p>Portable Operating System Interface (POSIX) es una familia de estándares especificados por el Instituto de Ingeniería Eléctrica y Electrónica (IEEE), una asociación sin fines de lucro dedicada a estandarización, para mantener la compatibilidad entre distintos sistemas operativos.</p>
+<p>Al hacer <code>#include &lt;stdio.h&gt;</code> lo que le decimos al pre-procesador es que en mi programa yo quiero poder utilizar lo definido por C en esa cabecera de la biblioteca estándar.</p>
+<p>Por fuera de la existencia del estándar de C que define y especifica las funciones que utilizamos en la biblioteca estándar (<code>stdio.h</code>, <code>stdlib.h</code>, etc.), el estándar POSIX lo extiende con funciones y comportamientos nuevos.</p>
+<p>Por otro lado, al hacer <code>#define _POSIX_C_SOURCE 200809L</code> y luego <code>#include &lt;stdio.h&gt;</code> (respetar el orden), lo que le decimos al pre-procesador es que en mi programa yo quiero poder utilizar la especificación de POSIX de 2008 de la biblioteca estándar (de C). Entre otras cosas, esta especificación incluye <code>getline()</code> y <code>getdelim()</code>.</p>
+<h2 id="qué-es-un-puntero-a-función">¿Qué es un puntero a función?<a class="headerlink" href="#qué-es-un-puntero-a-función" title="Permanent link">&para;</a></h2>
+<p>{:#funptr}</p>
+<p>Los punteros a función son variables que apuntan a funciones para que puedan ser invocadas sin conocer su nombre. En C, la sintaxis para declararlas es diferente al resto de los tipos. Por ejemplo, dada la siguiente función, que recibe dos cadenas y devuelve un entero:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">mi_funcion</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Es posible declarar una variable cuyo tipo sea &ldquo;puntero a función que recibe dos cadenas y devuelve un entero&rdquo;, y asignar a esa variable la dirección de la función:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">mi_puntero</span><span class="p">)(</span><span class="kt">char</span><span class="o">*</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>  <span class="c1">// Declara la variable (puntero).</span>
+<span class="n">mi_puntero</span> <span class="o">=</span> <span class="n">mi_funcion</span><span class="p">;</span>          <span class="c1">// Asigna un valor al puntero.</span>
+</code></pre></div>
+
+<p>Una vez se ha inicializado la variable correctamente, se puede invocar como si el puntero mismo fuera una función:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">mi_puntero</span><span class="p">(</span><span class="s">&quot;hola&quot;</span><span class="p">,</span> <span class="s">&quot;adios&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Estas funciones se usan típicamente para delegar la ejecución de un fragmento de código a otra función. Por ejemplo, para aplicarle una operación a todos los elementos de un arreglo de enteros podríamos tener la función:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* Aplica la operación pasada por parámetro a todos los elementos del arreglo. */</span>
+<span class="kt">void</span> <span class="nf">aplicar</span><span class="p">(</span><span class="kt">int</span> <span class="n">arreglo</span><span class="p">[],</span> <span class="kt">size_t</span> <span class="n">cant</span><span class="p">,</span> <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">operacion</span><span class="p">)(</span><span class="kt">int</span><span class="p">));</span>
+</code></pre></div>
+
+<p>Entonces si tuviéramos una función para multiplicar por dos:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">multiplicar_por_dos</span><span class="p">(</span><span class="kt">int</span> <span class="n">numero</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">numero</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Podríamos multiplicar por dos todos los elementos del arreglo usando un puntero a la función:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">arreglo</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span> <span class="p">};</span>
+<span class="n">aplicar</span><span class="p">(</span><span class="n">arreglo</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">multiplicar_por_dos</span><span class="p">);</span>
+</code></pre></div>
+
+<h2 id="qué-es-un-wrapper">¿Qué es un wrapper?<a class="headerlink" href="#qué-es-un-wrapper" title="Permanent link">&para;</a></h2>
+<p>En la materia usamos los punteros a función para garantizar un comportamiento que no dependa del tipo de datos que se maneje. Por ejemplo, si quisiéramos destruir todos los elementos de una estructura podríamos crear una funcion:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">estructura_destruir</span><span class="p">(</span><span class="n">estructura_t</span><span class="o">*</span> <span class="n">estructura</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">f_dest</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span><span class="p">));</span>
+</code></pre></div>
+
+<p>que le aplique la función de destrucción a todos los elementos que están almacenados en ella. Si estos elementos también son genéricos y tienen su propia función de destrucción:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">elemento_destruir</span><span class="p">(</span><span class="n">elemento_t</span><span class="o">*</span> <span class="n">elem</span><span class="p">);</span>
+</code></pre></div>
+
+<p>No se puede invocar directamente a la primitiva <code>estructura_destruir</code> con <code>elemento_destruir</code>, porque sus firmas son diferentes. Lo que se suele hacer es crear una función wrapper que enmascare el comportamiento:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">elemento_destruir_wrapper</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">elem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">elemento_destruir</span><span class="p">(</span><span class="n">elem</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>De esta manera, la función <code>elemento_destruir_wrapper</code> es genérica y puede ser usada con la función <code>estructura_destruir</code>.</p>
+<h2 id="qué-es-typedef">¿Qué es typedef?<a class="headerlink" href="#qué-es-typedef" title="Permanent link">&para;</a></h2>
+<p>Typedef es una característica de C que nos permite darle un alias a cualquier tipo de C. Por ejemplo, si quisiéramos representar la edad de una persona podríamos querer abstraernos de si representamos esa edad como un entero, un entero sin signo, un entero corto (<code>short</code>), etc. y además tener consistencia en todo nuestro código de usar siempre el mismo tipo para todas las variables que representen una edad. Para esto podemos &lsquo;crear&rsquo; un tipo nuevo en C que se refiera a la edad de las personas, supongamos que como base quisiéramos hacer uso del tipo <code>unsigned int</code> para crear nuestro tipo <code>edad</code>, pero a su vez queremos dejarle explícito al lector que éste es un tipo definido por el programador, por lo que por convención le agregamos el sufijo <code>_t</code> (que se lee como &ldquo;tipo&rdquo;) siendo nuestro nuevo tipo <code>edad_t</code>.</p>
+<p>Para esto la sintaxis correspondiente es:</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">edad_t</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Siempre la sintaxis para definir un nuevo tipo en C <em>es como</em> si se tratara de declarar una variable con determinado nombre, pero anteponiendo la palabra reservada <code>typedef</code>. Entonces, en vez de declarar una nueva variable lo que se &ldquo;declara&rdquo; es un nuevo tipo, es decir: <code>typedef tipo_existente mi_nuevo_tipo;</code>.</p>
+<p>Y luego podemos, como si fuese cualquier otro tipo de datos de C, declarar variables, hacer uso de ellas y demás como:</p>
+<div class="highlight"><pre><span></span><code><span class="n">edad_t</span> <span class="n">luis</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+<span class="c1">// Equivale a unsigned int luis = 14</span>
+</code></pre></div>
+
+<p>La <strong>ventaja</strong> de utilizar <code>typedef</code> es que se agrega una capa de abstracción sobre el tipo: en vez de preguntarme qué representa determinada variable de tipo <code>unsigned int</code>, el mismo tipo <code>edad_t</code> me aclara exactamente para qué sirve ese tipo. <em>Sintácticamente</em> escribir <code>unsigned int</code> y <code>edad_t</code> en mi código van a ser exactamente lo mismo, pero <em>semánticamente</em> son dos tipos totalmente diferentes y no son intercambiables. Además de la abstracción simplifica la mantenibilidad del código, por ejemplo, si el día de mañana hiciera la asunción de que la edad de las cosas no puede superar los 255 años, tranquilamente podría reemplazar la definición del <code>typedef</code> por un <code>unsigned char</code> y toda mi implementación se actualizaría consistentemente a esa nueva representación apenas modificando una línea en mi código.</p>
+<p>Por otro lado la <strong>desventaja</strong> de utilizar <code>typedef</code> es que se enmascaran los tipos básicos. Entonces cuando vemos una variable de tipo <code>edad_t</code> tal vez en vez de abstraernos tenemos que ir a buscar su definición para saber si es un tipo entero, una estructura, etc. y cómo definirla o utilizarla. A veces <em>menos es más</em>.</p>
+<p><code>typedef</code> puede servirnos para otras cosas, como para omitir la palabra <code>struct</code> cada vez que hacemos una estructura en C, dándole ahora a nuestras estructuras el rango de tipo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">persona</span> <span class="p">{</span>
+    <span class="n">edad_t</span> <span class="n">edad</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">nombre</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">persona</span> <span class="n">persona_t</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Cuando se utilizan estructuras para encapsular tipos abstractos de datos suele mantenerse de forma privada la definición de la estructura. En estos casos la definición de la estructura queda en el archivo <em>.c</em> mientras que la definición del tipo se publica en una cabecera <em>.h</em>, permitiendo que la interfaz pública del dato use el nombre del tipo.</p>
+<p>Si se trata de un <code>struct</code> que no se expone públicamente (por ejemplo, por estar limitado a un único <em>.c</em> y declararse ahí), se puede combinar declaración y <code>typedef</code> en una sola instrucción:</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">edad_t</span> <span class="n">edad</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">nombre</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">persona_t</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Como ejemplo también podemos hacer uso de <code>typedef</code> para simplificar la declaración de punteros a función:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// recibe_puntero_a_funcion es una funcion que recibe un puntero</span>
+<span class="c1">// funcion_recibida es un puntero a funcion que recibe void* y devuelve bool</span>
+
+<span class="c1">// Versión A, sin typedef.</span>
+<span class="kt">int</span> <span class="nf">recibe_puntero_a_funcion</span><span class="p">(</span><span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">funcion_recibida</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span><span class="p">));</span>
+
+<span class="c1">// Version B, con typedef</span>
+<span class="c1">// Hago un tipo de funciones, funcionvoidp_t que se refiere a las funciones que</span>
+<span class="c1">// reciben void* y devuelven bool</span>
+
+<span class="k">typedef</span> <span class="nf">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">funcionvoidp_t</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">recibe_puntero_a_funcion</span><span class="p">(</span><span class="n">funcionvoidp_t</span> <span class="n">funcion_recibida</span><span class="p">);</span>
+</code></pre></div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 30 de junio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fdelmazo@fi.uba.ar'>Federico del Mazo</a>, <a href='mailto:s@ntisi.com.ar'>santisis</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Lenguaje C: compilación y ejecución
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../valgrind/" title="Errores de Valgrind" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Errores de Valgrind
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

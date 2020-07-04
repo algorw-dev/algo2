@@ -1,0 +1,104 @@
+profesor:
+
+- nombre: Martín Buchwald
+  foto: /assets/img/docentes/martinb.jpg
+  mail: mbuchwald@fi.uba.ar
+  github: mbuchwald
+
+ayudantes:
+
+- nombre: Adeodato Simó
+  foto: /assets/img/docentes/dato.jpg
+  mail: dato@fi.uba.ar
+  github: dato
+
+- nombre: Agustín López Núñez
+  foto: /assets/img/docentes/agusln.jpg
+  mail: lopezn.agustin@gmail.com
+  github: 
+
+- nombre: Camila Dvorkin
+  foto: /assets/img/docentes/camid.png
+  mail: camidvorkin@gmail.com
+  github: camidvorkin 
+
+- nombre: Daniela Genaro
+  foto: /assets/img/docentes/danig.jpg
+  mail: genarodaniela98@gmail.com 
+  github: 
+
+- nombre: Diego Balestieri
+  foto: /assets/img/docentes/diegob.jpg
+  mail: jbalestieri@fi.uba.ar
+  github: diegobalestieri
+
+- nombre: Ezequiel Genender
+  foto: /assets/img/docentes/ezeg.jpg
+  mail: egenender@gmail.com
+  github: egenender 
+
+- nombre: Fiona González Lisella
+  foto: /assets/img/docentes/fionag.jpg
+  mail: fgonzalezlisella@gmail.com
+  github: Fgl
+
+- nombre: Federico Brasburg
+  foto: /assets/img/docentes/fedebra.png
+  mail: federico.brasburg@gmail.com
+  github: fedebrasburg
+
+- nombre: Federico del Mazo
+  foto: /assets/img/docentes/fededm.jpg
+  mail: delMazoFederico@gmail.com
+  github: FdelMazo
+
+- nombre: Franco Di María
+  foto: /assets/img/docentes/francodm.png
+  mail: franki.dimaria@gmail.com
+  github: dima1997
+
+- nombre: Ignacio Raik
+  foto: /assets/img/docentes/nachor.png
+  mail: ignacioraiksg@gmail.com
+  github: NachoRaik
+
+- nombre: Jasmina Sella Faena
+  foto: /assets/img/docentes/jasminasf.jpg
+  mail: jasminasf@gmail.com
+  github: jas-chu
+
+- nombre: Jorge Collinet
+  foto: /assets/img/docentes/jorgec.jpg
+  mail: collinetjorge@gmail.com
+  github: jorgeCollinet
+
+- nombre: Lautaro Manzano
+  foto: /assets/img/docentes/lautarom.jpg
+  mail: manzano.lautaro@gmail.com
+  github: ManzanoLautaro
+
+- nombre: Matías Cano
+  foto: /assets/img/docentes/matic.png
+  mail: tutecano1995@gmail.com
+  github: tutecano1995 
+
+- nombre: Milena Marchese
+  foto: /assets/img/docentes/milem.jpg
+  mail: mile.marchese@gmail.com
+  github: milenamarchese
+
+- nombre: Rodrigo Souto
+  foto: /assets/img/docentes/rodris.jpg
+  mail: rnsoutob@gmail.com
+  github: rodrisouto
+
+- nombre: Sofía Morseletto
+  foto: /assets/img/docentes/sofim.png
+  mail: sofimorseletto@gmail.com
+  github: 
+
+- nombre: Tomás Accini
+  foto: /assets/img/docentes/tomasa.jpg
+  mail: tomasaccini@gmail.com
+  github: tomasaccini
+

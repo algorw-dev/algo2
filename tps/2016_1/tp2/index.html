@@ -1,0 +1,1240 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2016_1/tp2/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP 2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contenido" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP 2
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uniq" class="md-nav__link">
+    uniq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abb_iter_crear_desde" class="md-nav__link">
+    abb_iter_crear_desde
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abb_rebalanceado" class="md-nav__link">
+    abb_rebalanceado
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-merge" class="md-nav__link">
+    multi-merge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tda-mediana" class="md-nav__link">
+    TDA mediana
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condiciones-de-entrega" class="md-nav__link">
+    Condiciones de entrega
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aprobación" class="md-nav__link">
+    Criterios de aprobación
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>TP 2</h1>
+                
+                <p class="no_toc">========================================</p>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ol>
+<li toc="toc">TOC</li>
+</ol>
+<h2 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h2>
+<h3 id="uniq">uniq<a class="headerlink" href="#uniq" title="Permanent link">&para;</a></h3>
+<p>Se pide programar una utilidad similar al programa <a href="http://ss64.com/bash/uniq.html">uniq</a>, que dada una entrada de texto la imprime ignorando las líneas repetidas.</p>
+<p>En la versión original, uniq sólo filtra las líneas repetidas que son consecutivas. Nuestra versión no debe tener esta restricción. Debe imprimir las líneas en orden de acuerdo a la primera aparición y debe funcionar en O(n) siendo n el número de líneas del archivo a filtrar.</p>
+<p>Entonces, ante la siguiente entrada:</p>
+<div class="codehilite"><pre><span></span><code>$ cat nombres.txt
+Carolina
+Daniel
+Bruno
+Daniel
+Alicia
+Carolina
+</code></pre></div>
+
+
+<p>La salida deberá ser la siguiente:</p>
+<div class="codehilite"><pre><span></span><code>$ ./uniq nombres.txt
+Carolina
+Daniel
+Bruno
+Alicia
+</code></pre></div>
+
+
+<p>El programa podrá almacenar todo el contenido del archivo en memoria.</p>
+<h3 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
+<p>Se pide implementar un programa similar a <a href="http://ss64.com/bash/join.html">join</a>, que dados dos archivos de registros imprime una junta interna entre los dos.</p>
+<p>Por simplicidad consideraremos que los registros en los archivos están separados por saltos de líneas, y los campos en los registros están separados por espacios.</p>
+<p>De esta manera ante los siguientes archivos:</p>
+<div class="codehilite"><pre><span></span><code>$ cat fechas.txt
+Nombre Dia Mes Año
+Carolina 2 12 2007
+Bruno 4 12 1996
+Alicia 11 12 2013
+
+$ cat ciudades.txt
+Nombre Ciudad
+Bruno Rosario
+Daniel Córdoba
+Carolina Lanús
+</code></pre></div>
+
+
+<p>La salida deberá ser:</p>
+<div class="codehilite"><pre><span></span><code>$ ./join fechas.txt ciudades.txt
+Nombre Dia Mes Año Ciudad
+Carolina 2 12 2007 Lanús
+Bruno 4 12 1996 Rosario
+</code></pre></div>
+
+
+<p>Tener en cuenta las siguientes consideraciones:
+- El campo por el que se hace la junta es el primero de cada archivo.
+- Se imprimen las columnas de los dos archivos.
+- Los registros que forman parte del resultado son los que aparecen en los dos archivos.
+- El orden de los registros de salida es aquél del primer archivo de entrada.</p>
+<p>El programa debe funcionar en orden O(n + m), siendo n y m la longitud de cada archivo.</p>
+<h3 id="abb_iter_crear_desde">abb_iter_crear_desde<a class="headerlink" href="#abb_iter_crear_desde" title="Permanent link">&para;</a></h3>
+<p>Se pide programar una nueva primitiva para el árbol binario de búsqueda con la siguiente firma:</p>
+<div class="codehilite"><pre><span></span><code>abb_iter_t* abb_iter_crear_desde(abb_t* arbol, const char* clave_desde, const char* clave_hasta);
+</code></pre></div>
+
+
+<p>La función debe crear un iterador in order que al crearse estará posicionado en el nodo con <code>clave_desde</code> (o en caso de que el árbol no tenga esa clave, en la primera superior a esa), y debe iterar hasta encontrar la <code>clave_hasta</code> (o en caso de no existir, a la última menor a esa), inclusive. Una vez superado ese valor el iterador estará siempre al final.</p>
+<p>El parámetro <code>clave_hasta</code> puede ser <code>NULL</code>. En ese caso el iterador iterará hasta el último nodo inorder.</p>
+<p>Para implementar esta primitiva será necesario modificar la estructura interna del iterador del árbol.</p>
+<p>Por ejemplo, dado el siguiente árbol:</p>
+<p><img alt="ABB ejemplo" src="http://cramster-image.s3.amazonaws.com/definitions/computerscience-5-img-1.png" /></p>
+<p>Los valores de la iteración en cada una de las siguientes invocaciones deberán ser:</p>
+<ul>
+<li><code>abb_iter_crear_desde(4, 9)</code>: 4, 5, 6, 7, 9</li>
+<li><code>abb_iter_crear_desde(7, NULL)</code>: 7, 9, 17, 20, 22</li>
+<li><code>abb_iter_crear_desde(4, 8)</code>: 4, 5, 6, 7</li>
+<li><code>abb_iter_crear_desde(13, 22)</code>: 17, 22</li>
+<li><code>abb_iter_crear_desde(9, 4)</code>: -</li>
+</ul>
+<h3 id="abb_rebalanceado">abb_rebalanceado<a class="headerlink" href="#abb_rebalanceado" title="Permanent link">&para;</a></h3>
+<p>Se pide programar una función externa (no primitiva) con la siguiente firma:</p>
+<div class="codehilite"><pre><span></span><code>void abb_rebalanceado(abb_t* orig, abb_t* dest);
+</code></pre></div>
+
+
+<p>que dado un árbol binario de búsqueda añada a otro árbol inicialmente vacío todos sus elementos en un orden de inserción tal, que el árbol destino quede balanceado.</p>
+<p>En un árbol balanceado se cumple <em>para todos los nodos</em> (no solo la raíz) que la diferencia de altura entre su subárbol izquierdo y su subárbol derecho es 0 o 1.</p>
+<p>La función debe ser O(n log n), siendo n la cantidad de nodos del árbol.</p>
+<h3 id="multi-merge">multi-merge<a class="headerlink" href="#multi-merge" title="Permanent link">&para;</a></h3>
+<p>Se tienen k archivos cuyas líneas aparecen en orden. Se desea unirlos por salida estándar de manera que la secuencia siga ordenada (parecido a como hace merge-sort).</p>
+<p>Los archivos pueden ser arbitrariamente grandes (no entran en memoria), y k puede también serlo. Si en total hay n líneas, se pide implementar un algoritmo que permita realizar la unión en O(n log k) tiempo, sin mantener en memoria más de k líneas.</p>
+<p>Además: el número de alloc/realloc debe ser proporcional a k, no a n. Si, por ejemplo, se usa la función getline(), los buffers deben ser reusados cuando corresponda.</p>
+<p>Uso:</p>
+<div class="codehilite"><pre><span></span><code>./multi-merge arch1 arch2 arch3 ... archN
+</code></pre></div>
+
+
+<h3 id="tda-mediana">TDA mediana<a class="headerlink" href="#tda-mediana" title="Permanent link">&para;</a></h3>
+<p>Implementar un TDA que permita calcular la mediana para una secuencia de números diferentes que se le ingresarán. El TDA debe contar con las siguientes primitivas:</p>
+<ul>
+<li>
+<p><code>mediana_t* calculador_mediana_crear();</code>, que deberá inicializar el TDA en O(1).</p>
+</li>
+<li>
+<p><code>bool calculador_mediana_agregar_valor(mediana_t* mediana, double valor);</code>, que agregará un valor a la estructura en O(log n). Esta primitiva devolverá <code>true</code> cuando se agrega el valor exitosamente y <code>false</code> en caso contrario.</p>
+</li>
+<li>
+<p><code>double calculador_mediana_obtener_mediana(mediana_t* mediana);</code>, que devolverá la mediana de acuerdo a los elementos que le fueron ingresados en O(1).</p>
+</li>
+<li>
+<p><code>void calculador_mediana_destruir(mediana_t* mediana);</code>, que destruirá la estructura en O(n).</p>
+</li>
+</ul>
+<h2 id="condiciones-de-entrega">Condiciones de entrega<a class="headerlink" href="#condiciones-de-entrega" title="Permanent link">&para;</a></h2>
+<p>Este trabajo práctico consiste de seis ejercicios con fecha de entrega <strong>3 de junio de 2016</strong>.
+La entrega incluye, obligatoriamente, un informe en formato PDF y los siguientes archivos de código:</p>
+<ul>
+<li><code>uniq.c</code></li>
+<li><code>join.c</code></li>
+<li><code>abb.c</code> y <code>abb.h</code> con el nuevo iterador implementado.</li>
+<li><code>abb_utils.c</code> con la función <code>abb_rebalancear</code>.</li>
+<li><code>multi-merge.c</code></li>
+<li><code>mediana.c</code> y <code>mediana.h</code></li>
+<li><code>deps.mk</code>, el archivo de dependencias con las mismas consideraciones que se tuvieron en el <a href="https://algoritmos-rw.github.io/prog2/tp1/#deps.mk">TP1</a>.</li>
+</ul>
+<p>La entrega se realiza:</p>
+<ol>
+<li>
+<p>por mail a la casilla de TPs: todos los archivos mencionados en un único archivo ZIP, más el informe como un adjunto PDF sin comprimir. El asunto debe incluir el padrón del alumno (sin punto decimal) y nombre del TP (TP1 en este caso).</p>
+</li>
+<li>
+<p>en papel durante la clase, tanto el informe como el código. El código se debe imprimir en fuente <code>monoespacio</code>; no se debe imprimir el código de los TDA.</p>
+</li>
+</ol>
+<p>Se puede incluir otros archivos fuente con funciones comunes, siempre que el orden de dependencias quede especificado en <code>deps.mk</code>.</p>
+<h2 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h2>
+<p>El código entregado debe ser claro y legible y ajustarse a las especificaciones de la consigna. Debe compilar sin advertencias y correr sin errores de memoria (ver el uso de Valgrind a continuación).</p>
+<p>El informe deberá consistir de las siguientes partes:</p>
+<ul>
+<li>carátula con los datos personales del alumno y el ayudante asignado.</li>
+<li>análisis y diseño de la solución, en particular: algoritmos y estructuras de datos utilizados; orden de ejecución de cada programa o función.</li>
+</ul>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fbarrios@fi.uba.ar'>Federico Barrios</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

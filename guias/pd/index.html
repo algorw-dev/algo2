@@ -1,0 +1,1337 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/guias/pd/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Programación dinámica - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programación-dinámica" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Programación dinámica
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9" checked>
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Programación dinámica
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Programación dinámica" class="md-nav__link md-nav__link--active">
+      Programación dinámica
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografía-y-referencias" class="md-nav__link">
+    Bibliografía y referencias
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografía-y-referencias" class="md-nav__link">
+    Bibliografía y referencias
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="programación-dinámica">Programación dinámica<a class="headerlink" href="#programación-dinámica" title="Permanent link">&para;</a></h1>
+<h2 id="ejercicio-resuelto">Ejercicio resuelto<a class="headerlink" href="#ejercicio-resuelto" title="Permanent link">&para;</a></h2>
+<p>Dado un número <em>n</em>, mostrar la cantidad más económica (con menos términos) de escribirlo como una suma de cuadrados. Indicar el orden del algoritmo implementado.
+Nota: siempre es posible escribir a n como suma de <em>n</em> términos de la forma <script type="math/tex">
+<script type="math/tex">1^2</script>
+</script>, por lo que siempre existe solución. Sin embargo, la expresión <script type="math/tex">
+<script type="math/tex">10 = 3^2 + 1^2</script>
+</script> es una manera más económica de escribirlo para <code>n = 10</code>, pues sólo tiene dos términos.</p>
+<p>Además, tener en cuenta que no se piden los términos, sino la cantidad mínima de términos cuadráticos necesaria.</p>
+<p>Posible ayuda: considerar que para formar el número 0 necesitamos 0 términos; y que <script type="math/tex">
+<script type="math/tex">10 = 9 + 1^2</script>
+</script>, también <script type="math/tex">
+<script type="math/tex">10 = 6 + 2^2</script>
+</script>, y también <script type="math/tex">
+<script type="math/tex">10 = 1 + 3^2</script>
+</script> ¡Si tan solo supiéramos la cantidad de términos para formar 9, 6 y 1. . . !</p>
+<h3 id="solución">Solución<a class="headerlink" href="#solución" title="Permanent link">&para;</a></h3>
+<p>Primero entendamos el problema: se nos pide escribir un número como una suma de cuadrados perfectos. Ante eso, sabemos que por ejemplo a 74 lo podemos escribir como 74 términos de <script type="math/tex">
+<script type="math/tex">1^2</script>
+</script>, aunque claramente esa no va a ser la solución óptima.
+Por fuerza bruta, deberíamos probar cada una de las combinaciones, y simplemente quedarnos con la mejor.</p>
+<p>Ahora bien, hay dos formas de resolver este problema.</p>
+<h4>Opción 1</h4>
+<p>A 74 lo podemos escribir como 73 + 1, también como 72 + 2, también como 71 + 3, etc&hellip; Entonces simplemente tenemos que verificar cuántos términos son necesarios para escribir cada número de la pareja (cuidando los cuadrados perfectos). Entonces, la ecuación de recurrencia nos quedaría:</p>
+<ul>
+<li><em>opt(n) = 0</em> si <em>n == 0</em>;</li>
+<li>1 si <em>n</em> cuadrado perfecto;</li>
+<li><em>min(opt(n-i) + opt(i))</em>, para <em>i</em> en <em>[1; n-1]</em> en otro caso</li>
+</ul>
+<p>El código de la resolución recursiva sería:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">minimos_terminos</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">es_cuadrado_perfecto</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="c1">#opcion con todos 1s</span>
+    <span class="n">mejor</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">mejor</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">mejor</span><span class="p">,</span> <span class="n">minimos_terminos</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">minimos_terminos</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">mejor</span>
+</code></pre></div>
+
+<p>Como vemos, se hacen muchísimos llamados resursivos (para 74 se hacen para 1 y 73, 2 y 72, etc.. y dentro de estos también se hacen muchos). Si ya tuviéramos calculados los términos para todos los valores anteriores, esto podría evitarse. Entonces, simplemente hacemos:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">minimos_terminos</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1">#arreglo en el que guardaremos los resultados</span>
+    <span class="nb">int</span> <span class="n">v</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span> <span class="n">n</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">es_cuadrado_perfecto</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="c1">#inicialmente ponemos la solución que seguro existe</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="c1">#Podria iterarse solo hasta la mitad, porque vamos a repetir combinaciones:</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">v</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Claramente esta solución es mucho mejor que la anterior. En espacio es muy fácil de ver que es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script>, dado el arreglo auxiliar que estamos utilizando, mientras que en tiempo podríamos decir que es:
+<script type="math/tex">
+<script type="math/tex">\mathcal{O}(n * (n + \mathcal{O}(es\_cuadrado\_perfecto)))</script>
+</script>. La función <code>es_cuadrado_perfecto</code> se puede implementar trivialmente con un orden <script type="math/tex">
+<script type="math/tex">\mathcal{O}(\sqrt{n})</script>
+</script>, aunque también se podría hacer en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(\log n)</script>
+</script>. En cualquier caso, es claramente despreciable al lado del <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script> de la segunda iteración, por lo que el algoritmo será finalmente <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n^2)</script>
+</script>.</p>
+<h4>Opción 2</h4>
+<p>Una mejora importante es simplemente restar los cuadrados perfectos. Si yo sé que <script type="math/tex">
+<script type="math/tex">10 = 9 + 1^2 = 6 + 2^2 = 1 + 3^2</script>
+</script>, sabemos que el segundo término de cada igualdad es ya de por sí un término cuadrático (por ende, se escribe con un solo término). Si supiéramos la cantidad óptima para 9, para la primera opción solo tendríamos que decir <code>opt1(10) = opt(9) + 1</code>. Para la segunda opción, si tuviéramos el óptimo para 6, el óptimo para esa opción sería la cantidad óptima para 6, más 1 por el <script type="math/tex">
+<script type="math/tex">2^2</script>
+</script> (se escribe en un solo término, esa es la gracia). Entonces, la ecuación de recurrencia nos quedaría:
+<code>opt(n) = 0 si n == 0; min(opt(n-i^2) + 1), para i tal que i^2 &lt;= n, en otro caso</code></p>
+<p>(Notar que los cuadrados perfectos van a ser tenidos en cuenta ya que al hacer, por ejemplo, <script type="math/tex">
+<script type="math/tex">9 = 0 + 3^2</script>
+</script>, el 0 no agrega término).</p>
+<p>Obviando la implementación recursiva (la dejamos de tarea, pero será muy parecida a la anterior), la solución optimizada será:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">terminos</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">int</span> <span class="n">v</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span> <span class="n">n</span><span class="p">]:</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="c1">#veo todos los cuadrados perfectos menores o iguales a i:</span>
+        <span class="k">while</span> <span class="n">j</span><span class="o">*</span><span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span><span class="o">*</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">v</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Sobre el orden, es fácil primero pensar que es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n^2)</script>
+</script>. A los fines de un parcialito, si alguien escribiera esto para dicha solución, sería visto como correcto.</p>
+<p>Ahora bien, en realidad si bien el primer for se itera <em>n</em> veces, el while no itera <em>n</em> veces, sino que itera por los cuadrados perfectos anteriores. La variable <em>j</em> a lo sumo va a valer la raíz cuadrada de <em>i</em>. Eso implica que ese for se itera <script type="math/tex">
+<script type="math/tex">\sqrt{i}</script>
+</script> veces, por lo tanto el orden va a ser <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n * \sqrt{n}) = \mathcal{O}(n^{1.5})</script>
+</script>.</p>
+<p>Otra forma de verlo, es que este ejercicio es <em>muy similar</em> al problema del cambio. Supongamos que nuestras monedas fueran los infinitos cuadrados perfectos (o con considerar hasta el próximo al <em>N</em> que nos interese, sería suficiente). Antes tratábamos de formar el cambio con las monedas que teníamos, ahora tratamos de formar un número con los cuadrados perfectos. Se puede ver que hay una equivalencia directa, teniendo de monedas el 1, 4, 9, 16, 25, &hellip;
+A su vez, también se puede ver que la solución greedy para el problema del cambio no aplicaría para este problema (al menos de forma óptima), puesto que no se cumple la propiedad de tener que una moneda sea al menos del doble de valor que su anterior.</p>
+<h2 id="ejercicios-propuestos">Ejercicios propuestos<a class="headerlink" href="#ejercicios-propuestos" title="Permanent link">&para;</a></h2>
+<ol>
+<li>La cantidad de posibles colocaciones de paréntesis para n operadores binarios está dada por la fórmula:</li>
+</ol>
+<p>$$
+   v[n] = \sum_{j=0}^{n-1} v[j] * v[(n-1)-j]$$, con <script type="math/tex">
+<script type="math/tex">v[0] = 1</script>
+</script> y $$v[1] = 1
+   $$</p>
+<p>Escribir una función que obtenga la cantidad de agrupaciones para un valor N de operadores de forma eficiente.</p>
+<ol>
+<li>Dado el binomio <script type="math/tex">
+<script type="math/tex">(a + b)^n</script>
+</script> (donde <em>n</em> es nuestra variable), queremos conocer todos los coeficientes resultantes de desarrollar el mismo.</li>
+</ol>
+<p>Tener en cuenta que: <script type="math/tex">
+<script type="math/tex">(a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n} \times b^{n-k}</script>
+</script>
+</p>
+<p>Por lo tanto, lo que nos interesa conocer son los valores de todos esos combinatorios. Sabiendo que:
+   - <script type="math/tex">
+<script type="math/tex">\binom{n}{0} = 1</script>
+</script>.
+   - <script type="math/tex">
+<script type="math/tex">\binom{n}{n} = 1</script>
+</script>.
+   - <script type="math/tex">
+<script type="math/tex">\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}</script>
+</script> (en otro caso).</p>
+<p>Implementar un algoritmo que por programación dinámica nos permita obtener todos los coeficientes de un binomio de grado <em>n</em>.</p>
+<ol>
+<li>Juan es ambicioso pero también algo vago. Dispone de varias ofertas de trabajo diarias, pero no quiere trabajar dos días seguidos. Dado un arreglo con el monto esperado a ganar cada día, determinar por programación dinámica el máximo monto a ganar, sabiendo que no aceptará trabajar dos días seguidos.</li>
+</ol>
+<p>Por ejemplo, si el arreglo es <code>[100, 20, 30, 70, 50]</code> el monto máximo que podrá ganar serán $180 (trabajar el primer, tercer y quinto día). En cambio, si el arreglo fuera <code>[100, 20, 30, 70, 20]</code>, el monto máximo a ganar serían $170 (resultado de trabajar el primer y cuarto día).</p>
+<p><em>Aclaración</em>: estos fueron tan solo ejemplos, no quiere decir que el arreglo vaya a tener tan solo 5 elementos.</p>
+<ol>
+<li>
+<p>Se tiene una grilla de <code>MxN</code> casilleros. Si solo se puede comer hacia abajo y hacia la derecha:</p>
+</li>
+<li>
+<p>Determinar la cantidad de caminos posibles que hay para llegar desde el casillero <code>(0, 0)</code> hasta el casillero <code>(M-1, N-1)</code>.</p>
+</li>
+<li>Idem anterior, pero teniendo en cuenta que hay casilleros (conocidos) sobre los que no se puede pisar (hay obstáculos).</li>
+<li>Si en cada casillero hubiera una cantidad de dinero (que pudiera ser 0) que se puede recoger, determinar la máxima cantidad de dinero que se puede obtener partiendo desde el casillero <code>(0, 0)</code> hasta el <code>(M-1, N-1)</code>.</li>
+<li>
+<p>Idem anterior, pero sabiendo que además hay obstáculos en algunos casilleros (símil al inciso b).</p>
+</li>
+<li>
+<p>Dado un conjunto de números positivos <em>L</em> y un número <em>n</em>, determinar si existe un subconjunto de <em>L</em> que sume exactamente <em>n</em>.</p>
+</li>
+<li>
+<p>¡Ejercicio difícil! En este barrio todos viven alrededor de la plaza y los vecinos contiguos se odian entre sí. Hay <em>n</em> vecinos y el primer vecino es contiguo con el último. Cuando le preguntan a cada uno cuánto es lo máximo que va a donar para arreglar la plaza la respuesta se registra en el array <code>donar = [d0, d1, ..., d(n-1)]</code>, pero la condición es: solo donaré si no dona ninguno de mis vecinos contiguos.</p>
+</li>
+</ol>
+<p>Usando programación dinámica resolver cuánto es lo máximo que se puede recolectar por donaciones.</p>
+<h2 id="bibliografía-y-referencias">Bibliografía y referencias<a class="headerlink" href="#bibliografía-y-referencias" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Weiss, Mark Allen: &ldquo;Data Structures and Algorithms&rdquo; (tercera edición), Pearson, 1999. Cap. 10.3: <em>Dynamic programming</em>.</li>
+<li>Guerequeta, Rosa; Vallecillo, Antonio: &ldquo;Técnicas de Diseño de Algoritmos&rdquo; (segunda edición), Servicio de Publicaciones de la Universidad de Málaga, 1998. Cap 5: <em>Programación dinámica</em>.</li>
+<li>Cormen, Thomas; Leiserson, Charles; Rivest, Ronald; Stein, Clifford: &ldquo;Introduction to Algorithms&rdquo; (tercera edición), MIT Press, 2009. Cap. 15: <em>Dynamic programming</em>.</li>
+</ul>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fbarrios@fi.uba.ar'>Federico Barrios</a>, <a href='mailto:fdelmazo@fi.uba.ar'>Federico del Mazo</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../backtracking/" title="Backtracking" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Backtracking
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../faq/general/" title="Preguntas generales" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Preguntas generales
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

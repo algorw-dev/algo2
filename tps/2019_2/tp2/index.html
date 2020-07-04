@@ -1,0 +1,1477 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2019_2/tp2/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP2 – Algueiza</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trabajo-práctico-2" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP2 – Algueiza
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducción" class="md-nav__link">
+    Introducción
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos" class="md-nav__link">
+    Archivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablero-de-despegues" class="md-nav__link">
+    Tablero de despegues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacion-de-un-vuelo" class="md-nav__link">
+    Informacion de un vuelo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioridad-de-los-vuelos" class="md-nav__link">
+    Prioridad de los vuelos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar-datos-de-vuelos" class="md-nav__link">
+    Borrar datos de vuelos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaz" class="md-nav__link">
+    Interfaz
+  </a>
+  
+    <nav class="md-nav" aria-label="Interfaz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agregar_archivo" class="md-nav__link">
+    Agregar_archivo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver_tablero" class="md-nav__link">
+    Ver_tablero
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info_vuelo" class="md-nav__link">
+    Info_vuelo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioridad_vuelos" class="md-nav__link">
+    Prioridad_vuelos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar" class="md-nav__link">
+    Borrar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-adicionales" class="md-nav__link">
+    Consideraciones adicionales
+  </a>
+  
+    <nav class="md-nav" aria-label="Consideraciones adicionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos-entrantes" class="md-nav__link">
+    Archivos entrantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tiempos-de-ejecución" class="md-nav__link">
+    Tiempos de ejecución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agregar_archivo_1" class="md-nav__link">
+    Agregar_archivo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver_tablero_1" class="md-nav__link">
+    Ver_tablero
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info_vuelo_1" class="md-nav__link">
+    Info_vuelo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioridad_vuelos_1" class="md-nav__link">
+    Prioridad_vuelos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar_1" class="md-nav__link">
+    Borrar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aprobación" class="md-nav__link">
+    Criterios de aprobación
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="trabajo-práctico-2">Trabajo Práctico 2<a class="headerlink" href="#trabajo-práctico-2" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<p>El Trabajo Práctico número 2 es de elaboración grupal, y tiene fecha de entrega
+para el <strong>viernes 22 de noviembre</strong>.</p>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ul>
+<li toc="toc">Contenido</li>
+</ul>
+<h2 id="introducción">Introducción<a class="headerlink" href="#introducción" title="Permanent link">&para;</a></h2>
+<!--p style="text-align: center;">
+    <img src="{{ 'assets/tps/2018_1/tp2/uma2.png' | relative_url }}" width="200">
+</p-->
+
+<p>El aeropuerto de Algueiza opera la entrada y salida de aviones; los operarios
+de dicho aeropuerto nos han pedido que implementemos un sistema de consulta
+de vuelos que les permita: ordenar, filtrar, analizar y obtener información de
+los distintos vuelos.</p>
+<h3 id="archivos">Archivos<a class="headerlink" href="#archivos" title="Permanent link">&para;</a></h3>
+<p>El sistema que actualmente tiene Algueiza genera continuamente archivos en formato <code>.csv</code>
+que contienen la información de cada vuelo. Nuestro sistema deberá procesar estos archivos
+y responder a las consultas que los operarios necesiten realizar.
+El sistema tiene que ser capaz de recibir en cualquier momento un nuevo archivo
+conteniendo el detalle de vuelos (nuevos o viejos) y actualizar sus datos.</p>
+<h3 id="tablero-de-despegues">Tablero de despegues<a class="headerlink" href="#tablero-de-despegues" title="Permanent link">&para;</a></h3>
+<p>El primer requerimiento que mencionaron los operarios fue que nuestro sistema permita
+ordenar los registros de despegues por fecha. Esto debe realizarse de forma ascendente o
+descendente según el criterio del usuario. Adicionalmente nos mencionaron que no están
+interesados en visualizar todo el listado, por lo que también es necesario que puedan ingresar un
+intervalo de fechas de despegue (min / max) y una cantidad de vuelos a listar.</p>
+<h3 id="informacion-de-un-vuelo">Informacion de un vuelo<a class="headerlink" href="#informacion-de-un-vuelo" title="Permanent link">&para;</a></h3>
+<p>Existen ocasiones en las cuales un operario necesita ver información detallada de un vuelo.
+Por este motivo es necesario que, ingresando un código de vuelo, el sistema devuelva toda la
+información posible asociada al mismo.</p>
+<h3 id="prioridad-de-los-vuelos">Prioridad de los vuelos<a class="headerlink" href="#prioridad-de-los-vuelos" title="Permanent link">&para;</a></h3>
+<p>Algueiza tiene un sistema de prioridades sobre los vuelos que necesitan atención especial,
+y los operarios necesitan saber cuales son esos vuelos.
+Nuestro sistema deberá ser capaz de devolver los <em>K</em> vuelos de mayor prioridad.</p>
+<h3 id="borrar-datos-de-vuelos">Borrar datos de vuelos<a class="headerlink" href="#borrar-datos-de-vuelos" title="Permanent link">&para;</a></h3>
+<p>Finalmente los operarios nos mencionaron que la información que maneja el sistema pierde
+validez con el paso del tiempo. Ciertas entradas pierden importancia y deben ser eliminadas
+periódicamente del sistema.</p>
+<p>Con este fin se debe incorporar la posibilidad de eliminar información de vuelos que estén en un
+rango de fechas de despegue (min / max).</p>
+<h2 id="interfaz">Interfaz<a class="headerlink" href="#interfaz" title="Permanent link">&para;</a></h2>
+<p>Es necesario implementar una interfaz del programa, que leerá por entrada
+estándar los siguientes comandos:</p>
+<ul>
+<li>
+<p><code>agregar_archivo &lt;nombre_archivo&gt;</code>: procesa de forma completa un archivo de
+<code>.csv</code> que contiene datos de vuelos.</p>
+</li>
+<li>
+<p><code>ver_tablero &lt;K cantidad vuelos&gt; &lt;modo: asc/desc&gt; &lt;desde&gt; &lt;hasta&gt;</code>: muestra los <em>K</em>
+vuelos ordenados por fecha de forma ascendente (asc) o descendente (desc), cuya
+fecha de despegue esté dentro de el intervalo <code>&lt;desde&gt;</code> <code>&lt;hasta&gt;</code> (inclusive).</p>
+</li>
+<li>
+<p><code>info_vuelo &lt;código vuelo&gt;</code>: muestra toda la información posible en sobre el vuelo que
+tiene el código pasado por parámetro.</p>
+</li>
+<li>
+<p><code>prioridad_vuelos &lt;K cantidad vuelos&gt;</code>: muestra los códigos de los <em>K</em> vuelos que tienen
+mayor prioridad.</p>
+</li>
+<li>
+<p><code>borrar &lt;desde&gt; &lt;hasta&gt;</code>: borra todos los vuelos cuya fecha de despegue
+estén dentro del intervalo <code>&lt;desde&gt;</code> <code>&lt;hasta&gt;</code> (inclusive).</p>
+</li>
+</ul>
+<p>Si un comando es válido deberá imprimir <code>OK</code> por salida estándar después de ser
+ejecutado.
+Si un comando no pertenece a los listados previamente o tiene un error, se
+imprime <code>Error en comando &lt;comando&gt;</code> por <code>stderr</code> y continua la ejecución.</p>
+<p>El programa no tendrá un comando para terminar. Este finaliza cuando no quedan
+más líneas para procesar por entrada estándar. Al finalizar, es importante que
+se libere toda la memoria dinámica utilizada, y se cierren correctamente todos
+los archivos procesados.</p>
+<h3 id="agregar_archivo">Agregar_archivo<a class="headerlink" href="#agregar_archivo" title="Permanent link">&para;</a></h3>
+<p>El comando se acompaña del nombre de un archivo <code>csv</code>, accesible desde el mismo
+directorio donde se ejecuta el programa.</p>
+<p><em>Ejemplo:</em> <code>agregar_archivo vuelos-algueiza-parte-01.csv</code></p>
+<p>Al ejecutarse, el programa deberá leer el archivo, parsear cada línea sabiendo que tiene el formato
+<a href="https://es.wikipedia.org/wiki/Valores_separados_por_comas">CSV</a>, y guardar cada línea en las
+estructuras auxiliares correspondientes para ser capaz de ejecutar los otros comandos. En caso de
+que dos líneas en el archivo tengan el mismo código de vuelo, el sistema se deberá quedar solamente con la información de la última aparición.</p>
+<p>Este comando se puede ejecutar más de una vez durante el ciclo de uso de nuestro programa, y por lo
+tanto puede recibir nuevos archivos. Si un nuevo archivo procesado contiene un código de vuelo que
+ya se encuentra en nuestro sistema, nuestro programa deberá quedarse solamente con la información
+de la última aparición.</p>
+<h3 id="ver_tablero">Ver_tablero<a class="headerlink" href="#ver_tablero" title="Permanent link">&para;</a></h3>
+<p>El comando recibe varios parámetros:
+- <em>K</em>, cantidad de vuelos: número entero mayor a 0, que indica la cantidad de vuelos a mostrar
+- modo, <code>asc</code> o <code>desc</code>: cadena con &ldquo;asc&rdquo; o &ldquo;desc&rdquo; como únicos posibles valores, indican el ordenamiento a elegir utilizando el campo <em>fecha de despegue</em>.
+- desde: cadena en formato <code>YYYY-MM-DDTHH:MM:SS</code> que indica el tiempo desde que se tienen que mostrar
+  los vuelos, los vuelos con una fecha de despegue anteriores al tiempo ingresado no se tienen que mostrar.
+- hasta: cadena en formato <code>YYYY-MM-DDTHH:MM:SS</code> que indica el tiempo hasta que se tienen que mostrar
+  los vuelos, los vuelos con una fecha de despegue posteriores al tiempo ingresado no se tienen que mostrar.</p>
+<p><em>Ejemplo:</em> <code>ver_tablero 5 asc 2018-10-10T00:01:00 2018-10-19T00:12:00</code></p>
+<p>Al ejecutarse deberán imprimir por salida estandar las fechas de despegue y los códigos de los vuelos que cumplan
+con la lógica anteriomente mencionada, cada vuelo se imprime en una nueva línea. El formato de cada línea tiene
+que ser <code>YYYY-MM-DDTHH:MM:SS - &lt;código de vuelo&gt;</code>.
+En el caso que dos vuelos tengan la misma fecha de despegue, se deberá mostrar los vuelos comparando por número de vuelo (tomado como cadena).</p>
+<p><em>Ejemplo de salida:</em></p>
+<div class="highlight"><pre><span></span><code>2018-10-10T08:51:32 - 1234
+2018-10-11T10:20:12 - 11123
+2018-10-11T10:20:22 - 9113
+2018-10-12T17:20:12 - 991223
+2018-10-18T21:32:59 - 98123
+OK
+</code></pre></div>
+
+<p>Casos en los que el sistema tiene que devolver error (con el formato anteriormente mencionado):
+- recibir un K igual o menor a 0
+- recibir un modo que no sea asc o desc
+- recibir una fecha <code>hasta</code> que sea anterior a la fecha <code>desde</code></p>
+<h3 id="info_vuelo">Info_vuelo<a class="headerlink" href="#info_vuelo" title="Permanent link">&para;</a></h3>
+<p>Este comando debe mostrar toda la informacion del vuelo cuyo código de vuelo coincida con el que fue pasado por
+parámetro, el formato que tiene que mostrar de la información es exactamente igual a la línea leída del archivo
+original, salvo que en vez de comas se tienen espacios.</p>
+<p><em>Ejemplo:</em> <code>info_vuelo 4608</code></p>
+<p><em>Ejemplo de salida:</em></p>
+<div class="highlight"><pre><span></span><code>4608 OO PDX SEA N812SK 08 2018-04-10T23:22:55 05 43 0
+OK
+</code></pre></div>
+
+<p>En caso de ingresar un código de vuelo que no exista dentro de los códigos procesados, se deberá devolver un mensaje de
+error con el formato anteriormente mencionado.</p>
+<h3 id="prioridad_vuelos">Prioridad_vuelos<a class="headerlink" href="#prioridad_vuelos" title="Permanent link">&para;</a></h3>
+<p>Este comando deberá mostrar de mayor a menor, los <em>K</em> vuelos con mayor prioridad que hayan sido cargados en el sistema, de
+la forma <code>&lt;prioridad&gt; - &lt;código de vuelo&gt;</code>. Si dos vuelos tienen la misma prioridad, se desempatará por el código de
+vuelo mostrándolos de menor a mayor (tomado como cadena).</p>
+<p><em>Ejemplo:</em> <code>prioridad_vuelos 3</code></p>
+<p><em>Ejemplo de salida:</em></p>
+<div class="highlight"><pre><span></span><code>10 - 1234
+3 - 1624
+3 - 325
+OK
+</code></pre></div>
+
+<h3 id="borrar">Borrar<a class="headerlink" href="#borrar" title="Permanent link">&para;</a></h3>
+<p>El comando recibe dos argumentos:
+- desde: cadena en formato YYYY-MM-DDTHH:MM:SS
+- hasta: cadena en formato YYYY-MM-DDTHH:MM:SS</p>
+<p>Al ejecutarse, todos los vuelos cuya fecha de despegue sea igual o mayor
+a <em>desde</em> e igual o menor a <em>hasta</em> tienen que
+ser borrados del sistema y mostrados por salida estándar.
+En caso de que se reciba una fecha <em>hasta</em> que sea menor a <em>desde</em>, se deberá devolver un mensaje de
+error con el formato anteriormente mencionado.</p>
+<h2 id="consideraciones-adicionales">Consideraciones adicionales<a class="headerlink" href="#consideraciones-adicionales" title="Permanent link">&para;</a></h2>
+<h3 id="archivos-entrantes">Archivos entrantes<a class="headerlink" href="#archivos-entrantes" title="Permanent link">&para;</a></h3>
+<p>Cada línea de los archivos entrantes <code>.csv</code> tienen la siguiente estructura:</p>
+<ul>
+<li>FLIGHT_NUMBER: 4608</li>
+<li>AIRLINE: OO</li>
+<li>ORIGIN_AIRPORT: PDX</li>
+<li>DESTINATION_AIRPORT: SEA</li>
+<li>TAIL_NUMBER: N812SK</li>
+<li>PRIORITY: 08</li>
+<li>DATE: 2018-04-10T23:22:55</li>
+<li>DEPARTURE_DELAY: 05</li>
+<li>AIR_TIME: 43</li>
+<li>CANCELLED: 0</li>
+</ul>
+<p>Cada dato de una línea de log está separado por una coma.</p>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code>4608,OO,PDX,SEA,N812SK,08,2018-04-10T23:22:55,05,43,0
+</code></pre></div>
+
+<p>Se provee una <a href="../../../assets/tps/2018_2/tp2/vuelos-algueiza.zip">colección de archivos de ejemplo</a>.</p>
+<h3 id="tiempos-de-ejecución">Tiempos de ejecución<a class="headerlink" href="#tiempos-de-ejecución" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Agregar_archivo:
+  El mantenimiento para actualizar los vuelos debe ser  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V \log{n})</script>
+</script> siendo <script type="math/tex">
+<script type="math/tex">V</script>
+</script> la cantidad de vuelos
+  en el nuevo archivo y n la cantidad total de vuelos en el sistema.</li>
+<li>Ver_tablero: debe ser  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(v)</script>
+</script> en el peor caso (en el que se tenga
+  que mostrar todos los vuelos del sistema),
+  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(\log{v})</script>
+</script> en un caso promedio (en el caso en el que no se pidan mostrar demasiados visitantes).
+  <script type="math/tex">
+<script type="math/tex">v</script>
+</script> es la cantidad de vuelos.</li>
+<li>Info_vuelo: debe ser  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(1)</script>
+</script>.</li>
+<li>Prioridad_vuelos:  debe ser  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n \log{K})</script>
+</script>. Siendo K la cantidad de vuelos a mostrar y n la cantidad de
+  vuelos en el sistema.</li>
+<li>Borrar: debe ser  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(K \log{n})</script>
+</script> . Siendo K la cantidad de vuelos que hay en el rango de fechas ingresado
+  y n la cantidad de vuelos en todo el sistema.</li>
+</ul>
+<h2 id="ejemplos">Ejemplos<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h2>
+<p>Se proveen ejemplos completos para mostrar la salida esperada en cada instrucción.</p>
+<h3 id="agregar_archivo_1">Agregar_archivo<a class="headerlink" href="#agregar_archivo_1" title="Permanent link">&para;</a></h3>
+<p><em>Ejemplo:</em> <code>agregar_archivo vuelos-algueiza-parte-01.csv</code></p>
+<p><em>Salida esperada:</em></p>
+<p>Si el comando se ejecuta correctamente deberá imprimir <code>OK</code> por salida estándar después de ser ejecutado.
+Si se produce un error al procesar el archivo se imprime <code>Error en comando &lt;comando&gt;</code> por <code>stderr</code> y se continua la ejecución.</p>
+<h3 id="ver_tablero_1">Ver_tablero<a class="headerlink" href="#ver_tablero_1" title="Permanent link">&para;</a></h3>
+<p><em>Ejemplo:</em> <code>ver_tablero 3 asc 2018-04-08T10:00:00 2018-04-21T00:12:00</code></p>
+<p><em>Salida esperada:</em></p>
+<div class="highlight"><pre><span></span><code>2018-04-08T11:15:29 - 6391
+2018-04-10T23:22:55 - 4608
+2018-04-21T07:41:48 - 5460
+OK
+</code></pre></div>
+
+<h3 id="info_vuelo_1">Info_vuelo<a class="headerlink" href="#info_vuelo_1" title="Permanent link">&para;</a></h3>
+<p><em>Ejemplo:</em> <code>info_vuelo 4608</code></p>
+<p><em>Salida esperada:</em></p>
+<div class="highlight"><pre><span></span><code>4608 OO PDX SEA N812SK 08 2018-04-10T23:22:55 05 43 0
+OK
+</code></pre></div>
+
+<h3 id="prioridad_vuelos_1">Prioridad_vuelos<a class="headerlink" href="#prioridad_vuelos_1" title="Permanent link">&para;</a></h3>
+<p><em>Ejemplo:</em> <code>prioridad_vuelos 4</code></p>
+<p><em>Ejemplo de salida:</em></p>
+<div class="highlight"><pre><span></span><code>26 - 6391
+15 - 1086
+12 - 4701
+OK
+</code></pre></div>
+
+<h3 id="borrar_1">Borrar<a class="headerlink" href="#borrar_1" title="Permanent link">&para;</a></h3>
+<p><em>Ejemplo:</em> <code>borrar 2018-10-04T02:01:01 2018-11-01T03:00:00</code></p>
+<p><em>Ejemplo de salida:</em></p>
+<div class="highlight"><pre><span></span><code>4701 EV EWR CMH N11150 12 2018-10-04T04:19:24 -10 55 0
+2807 MQ SGF DFW N604MQ 00 2018-10-05T13:57:14 00 107 0
+OK
+</code></pre></div>
+
+<h2 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h2>
+<p>El código entregado debe ser claro y legible y ajustarse a las especificaciones de la consigna. Debe compilar sin
+advertencias y correr sin errores de memoria.</p>
+<p>La entrega incluye, obligatoriamente, los siguientes archivos de código:</p>
+<ul>
+<li>el código de la solución del TP.</li>
+<li>el código de los TDAs programados en la cursada que se requieran, con las modificaciones que sean necesarias.</li>
+<li>un archivo <code>deps.mk</code> con las dependencias del proyecto en formato make. Este deberá contener sólamente una
+línea que indique qué <em>objetos</em> necesita para compilar el ejecutable <code>algueiza</code>, por ejemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nf">algueiza</span><span class="o">:</span> <span class="n">tp</span>2.<span class="n">o</span> <span class="n">hash</span>.<span class="n">o</span> <span class="n">abb</span>.<span class="n">o</span> <span class="n">heap</span>.<span class="n">o</span> <span class="n">strutil</span>.<span class="n">o</span>
+</code></pre></div>
+
+<p>El corrector automático va a interpretar ese archivo de dependencias y va a compilar todos los <code>.o</code> especificados a
+partir de los <code>.h</code> y <code>.c</code> que deberán enviar, con los siguientes flags de GCC:</p>
+<div class="highlight"><pre><span></span><code>-g -std=c99 -Wall -Wtype-limits -pedantic -Wconversion -Wno-sign-conversion
+</code></pre></div>
+
+<p>La entrega se realiza:</p>
+<ol>
+<li>en forma digital a través del <a href="{{site.entregas}}">sistema de entregas</a>, con todos los archivos mencionados en un
+único archivo ZIP.</li>
+<li>en papel durante la clase (si su ayudante lo requiere) el código del Trabajo en hoja A4 <strong>abrochadas, sin folio,
+informe ni carátula</strong>. No es necesario reimprimir el código de los TDA.</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:jorgecollinet@hotmail.com'>JorgeCollinet</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

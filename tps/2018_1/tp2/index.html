@@ -1,0 +1,1517 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2018_1/tp2/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP2 – analog: análisis de logs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trabajo-práctico-2" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP2 – analog: análisis de logs
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducción" class="md-nav__link">
+    Introducción
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servidores-y-archivos-de-log" class="md-nav__link">
+    Servidores y archivos de log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#denegación-de-servicios" class="md-nav__link">
+    Denegación de servicios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direcciones-ip" class="md-nav__link">
+    Direcciones IP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaz" class="md-nav__link">
+    Interfaz
+  </a>
+  
+    <nav class="md-nav" aria-label="Interfaz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordenar-archivo" class="md-nav__link">
+    Ordenar Archivo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agregar-archivo" class="md-nav__link">
+    Agregar archivo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-visitantes" class="md-nav__link">
+    Ver visitantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-adicionales" class="md-nav__link">
+    Consideraciones adicionales
+  </a>
+  
+    <nav class="md-nav" aria-label="Consideraciones adicionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos-de-log" class="md-nav__link">
+    Archivos de log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fecha-y-hora" class="md-nav__link">
+    Fecha y hora
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tiempos-de-ejecución" class="md-nav__link">
+    Tiempos de ejecución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ordenar-archivo_1" class="md-nav__link">
+    Ordenar archivo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporte-de-dos" class="md-nav__link">
+    Reporte de DoS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-vistantes" class="md-nav__link">
+    Ver vistantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aprobación" class="md-nav__link">
+    Criterios de aprobación
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="trabajo-práctico-2">Trabajo Práctico 2<a class="headerlink" href="#trabajo-práctico-2" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<p>El Trabajo Práctico número 2 es de elaboración grupal, y tiene fecha de entrega
+para el <strong>viernes 15 de junio</strong>.</p>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ul>
+<li toc="toc">Contenido</li>
+</ul>
+<h2 id="introducción">Introducción<a class="headerlink" href="#introducción" title="Permanent link">&para;</a></h2>
+<!--p style="text-align: center;">
+    Anita me dijo que el martes después de rendir agrega una imagen
+    <img src="{{ 'assets/tps/2018_1/tp2/uma2.png' | relative_url }}" width="200">
+</p-->
+
+<p>Una cierta materia de una prestigiosa Universidad de Danza clásica ha puesto a
+disposición un corrector automático de coreografías. Puesto que los docentes a
+cargo del curso no tienen demasiada experiencia en programación de sistemas web,
+la decenas de visitas diarias al sitio han hecho que los servidores se caigan.</p>
+<p>Se les suma el problema de que, como los servidores estaban muy mal configurados,
+las entradas en dichos archivos están completamente desordenados.</p>
+<p>Como cada acceso al sistema queda registrado, los bailarines han buscado ayuda a
+estudiantes de Algoritmos y Programación II con mucha experiencia en manejo de
+archivos, ordenamientos y entrada estándar en C.</p>
+<h3 id="servidores-y-archivos-de-log">Servidores y archivos de log<a class="headerlink" href="#servidores-y-archivos-de-log" title="Permanent link">&para;</a></h3>
+<p>En algunas situaciones es preferible que una página web no esté habilitada en un
+solo servidor web, sino en varios, y si es posible en lugares físicos del
+planeta alejados entre sí.</p>
+<p>Esto se hace para evitar que un problema regional afecte la disponibilidad de la
+página web a nivel global. También sirve para optimizar el tráfico, conectando
+un usuario directamente con el servidor más cercano a su ubicación.
+Como cada servidor corre de manera independiente, también tendrá su archivo de
+log independiente.</p>
+<p>Para este trabajo, dispondremos de archivos de log de <a href="https://httpd.apache.org">Apache</a>.
+Cada archivo de log representa la historia de solicitudes (<em>requests</em>) de un
+usuario hacia los recursos (<em>resources</em>) que provee un servidor en particular.
+Estos pueden ser cualquier tipo de archivos, desde páginas web (<code>.html</code>) hasta
+videos (<code>.avi</code>, <code>.mov</code>).</p>
+<h3 id="denegación-de-servicios">Denegación de servicios<a class="headerlink" href="#denegación-de-servicios" title="Permanent link">&para;</a></h3>
+<p>Nuestro interés es detectar situaciones de sobrecarga de solicitudes de un mismo
+cliente en un tiempo breve sobre un mismo servidor.
+A este tipo de comportamientos se los llama <a href="https://es.wikipedia.org/wiki/Ataque_de_denegación_de_servicio">ataque de denegación de servicio</a>
+(DoS) cuando se realizan de forma malintencionada, con el objetivo de
+incrementar el tráfico hasta saturarlo haciendo imposible que otros usuarios
+legítimos puedan acceder a los servicios brindados por ese servidor.</p>
+<h3 id="direcciones-ip">Direcciones IP<a class="headerlink" href="#direcciones-ip" title="Permanent link">&para;</a></h3>
+<p>Podemos diferenciar de forma unívoca a un cliente que accede a un recurso a
+través de un identificador llamado <em>dirección IP</em>, o simplemente IP. Estos
+quedan registrados en los archivos de logs, y constan de cuatro bloques
+numéricos de un byte (es decir, desde 0 a 255). Las direcciones IP usualmente
+se escriben separadas por puntos: 192.168.1.1 y 63.255.0.12 son IPs válidas.</p>
+<p>Notar que, alfabéticamente, el texto <code>190.0.0.0</code> es anterior a <code>62.0.0.0</code>, por
+ejemplo, aunque la numeración no sigue el mismo orden.
+Por lo tanto, en este trabajo, la forma en que se comparen debe tener en cuenta
+que se están comparando cuatro grupos de números, y que los números se comparan
+por valor.</p>
+<h2 id="interfaz">Interfaz<a class="headerlink" href="#interfaz" title="Permanent link">&para;</a></h2>
+<p>Es necesario implementar una interfaz del programa, que leerá por entrada
+estándar los siguientes comandos:</p>
+<ul>
+<li><code>ordenar_archivo &lt;nombre_archivo&gt; &lt;nombre_salida&gt;</code>: como utilidad, permite ordenar un archivo
+de log.</li>
+<li><code>agregar_archivo &lt;nombre_archivo&gt;</code>: procesa de forma completa un archivo de
+log.</li>
+<li><code>ver_visitantes &lt;desde&gt; &lt;hasta&gt;</code>: muestra todas las IPs que solicitaron algún
+recurso en el servidor, dentro del rango de IPs determinado.</li>
+</ul>
+<p>Si un comando es válido deberá imprimir <code>OK</code> por salida estándar después de ser
+ejecutado.
+Si un comando no pertenece a los listados previamente o tiene un error, se
+imprime <code>Error en comando &lt;comando&gt;</code> por <code>stderr</code> y se finaliza la ejecución.</p>
+<p>El programa no tendrá un comando para terminar. Este finaliza cuando no quedan
+más líneas para procesar por entrada estándar. Al finalizar, es importante que
+libere toda la memoria dinámica utilizada, y cierre correctamente todos los
+archivos procesados.</p>
+<p>Adicionalmente, el programa deberá recibir por parámetro un número entero <code>M</code> que indique
+la cantidad de memoria (en kilobytes) disponible para realizar el ordenamiento.</p>
+<h3 id="ordenar-archivo">Ordenar Archivo<a class="headerlink" href="#ordenar-archivo" title="Permanent link">&para;</a></h3>
+<p>El comando se acompaña del nombre de un archivo de log, accesible desde el mismo
+directorio donde se ejecuta el programa, y otro como salida del comando.</p>
+<p><em>Ejemplo:</em> <code>ordenar_archivo 20171025.log 20171025-ordenado.log</code></p>
+<p>Al ejecutarse, se deberá ordenar el archivo por el campo de tiempo, y dejar el resultado ordenado
+en la ruta especificada como destino (segundo parámetro). En caso de dos líneas que tengan el mismo
+timestamp, se debe comparar por IP (de la misma forma que en <code>ver_visitantes</code>), y en caso de una
+igualdad en este último, por recurso (comparación entre strings). Esto último se pide exclusivamente
+para poder realizar comparaciones de forma sencilla en las pruebas automáticas.</p>
+<p>El archivo puede no caber en memoria, por lo que deberán utilizar
+algún <a href="/algo2/material/apuntes/ordenamientos_externos">algoritmo de ordenamiento externo</a>.
+Por simplicidad, el programa recibirá por parámetro la cantidad de memoria que puede utilizarse
+para esta tarea. Recordar que es importante eliminar los archivos temporales. En caso de no hacerlo <strong>no
+se aprobará la entrega</strong>.</p>
+<p>Una forma de probar que el programa efectivamente cumple con la restricción, es usando el comando <code>ulimit</code>.
+Recomendamos usarlo creando un script (e.g. <code>limite_memoria.sh</code>) con el contenido:</p>
+<div class="codehilite"><pre><span></span><code>    ulimit -v 1000
+    ./analog 200
+</code></pre></div>
+
+
+<p>Dado que ese límite es para todo el programa en su totalidad, no solamente lo que pidamos para hacer el ordenamiento,
+poner un valor más alto que el pasado por parámetro. Por ejemplo, si piensan trabajar con 100 KB, poner como límite al
+menos 400 KB (la unidad del parámetro que recibe ulimit es en KB).</p>
+<h3 id="agregar-archivo">Agregar archivo<a class="headerlink" href="#agregar-archivo" title="Permanent link">&para;</a></h3>
+<p>El comando se acompaña del nombre de un archivo de log <strong>ordenado por tiempo</strong>, accesible desde el mismo
+directorio donde se ejecuta el programa. Para este comando no es necesario tener en cuenta el parámetro
+de memoria pasado al programa, dado que la mayoría de los campos del archivo (especialmente los de mayor longitud)
+serán descartados.</p>
+<p><em>Ejemplo:</em> <code>agregar_archivo 20171025.log</code></p>
+<p>Al ejecutarse deberán procesar el archivo, y detectar posibles casos de ataques
+de denegación de servicio. Si se detecta que una dirección IP realizó cinco o más
+peticiones en menos de dos segundos, el comando debe alertarlo por salida
+estándar como sospechosa de intento de DoS.</p>
+<p>A la hora de detectar denegaciones de servicio, varios archivos se consideran
+independientes entre sí, por lo que no se deberán memorizar entradas entre dos
+ejecuciones diferentes de <code>agregar_archivo</code>.</p>
+<p>Para alertar una IP, basta con mostrar por salida estándar <code>DoS: &lt;IP&gt;</code>.
+Una misma dirección no deberá ser reportada más de una vez.
+Si varias direcciones son sospechosas, estas deberán ser mostradas en orden
+creciente.</p>
+<p><em>Ejemplo de salida:</em></p>
+<div class="highlight"><pre><span></span><code>DoS: 192.168.1.4
+DoS: 200.10.4.2
+OK
+</code></pre></div>
+
+<h3 id="ver-visitantes">Ver visitantes<a class="headerlink" href="#ver-visitantes" title="Permanent link">&para;</a></h3>
+<p>Este comando debe listar en orden a todas las IPs que realizaron alguna
+petición. Sólo se mostrarán las IPs que se encuentren dentro de un rango de IPs
+dado, con los límites inclusive. Como las direcciones son repartidas entre
+regiones, esto puede ser útil para saber desde dónde se accede al sitio.<sup><a href="https://xkcd.com/195/">1</a></sup></p>
+<p><em>Ejemplo:</em> <code>ver_visitantes 62.0.0.0 62.255.255.255</code> mostrará todas las IPs que
+empiezan con 62.</p>
+<p><em>Ejemplo de salida:</em></p>
+<div class="highlight"><pre><span></span><code>Visitantes:
+    62.0.0.0
+    62.9.128.3
+    62.10.128.3
+    62.10.129.3
+    62.10.129.4
+    62.62.62.62
+    62.255.255.255
+OK
+</code></pre></div>
+
+<p>Notar que la salida <em>contiene</em> el texto &ldquo;<code>Visitantes:</code>&rdquo; (con salto de línea luego del caracter <code>:</code>) y luego lista las IPs,
+en orden, precedidas por un caracter de tabulación (<code>\t</code>), una por línea.</p>
+<h2 id="consideraciones-adicionales">Consideraciones adicionales<a class="headerlink" href="#consideraciones-adicionales" title="Permanent link">&para;</a></h2>
+<h3 id="archivos-de-log">Archivos de log<a class="headerlink" href="#archivos-de-log" title="Permanent link">&para;</a></h3>
+<p>Cada línea del archivo tiene la siguiente estructura:</p>
+<ul>
+<li>IP del cliente: es la IP del cliente que quiere acceder a un recurso (como el
+archivo de la página principal, o un archivo, por ejemplo).</li>
+<li>Fecha y hora: la fecha y hora en la que se efectuó el pedido.</li>
+<li>El método HTTP usado: puede ser GET, POST, PUT, etc.</li>
+<li>La URL del recurso: es la ruta para ubicar un archivo, relativo a la raíz del
+servidor.</li>
+</ul>
+<p>Cada dato de una línea de log está separado por una tabulación.</p>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code>208.115.111.72  2015-05-17T11:05:15+00:00   GET /corrector.html
+</code></pre></div>
+
+<p>Además, todas las entradas en un archivo de log están registradas en orden cronológico.</p>
+<p>Se provee una <a href="https://drive.google.com/drive/folders/1CHCUvxaCiuMasKMsg7BfRkOyjzVECkLb">colección de logs de ejemplo</a>.</p>
+<h3 id="fecha-y-hora">Fecha y hora<a class="headerlink" href="#fecha-y-hora" title="Permanent link">&para;</a></h3>
+<p>La fecha y hora estarán brindadas en formato
+<a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO-8601</a>,<sup><a href="https://xkcd.com/1179/">2</a></sup>
+que consiste de año, mes, día, T mayúscula como separador, hora, minutos,
+segundos y zona horaria:</p>
+<ul>
+<li>año = 4 dígitos</li>
+<li>mes = 3 letras</li>
+<li>día = 2 dígitos</li>
+<li>hora = 2 dígitos</li>
+<li>minutos = 2 dígitos</li>
+<li>segundos = 2 dígitos</li>
+<li>zona = +/- 4 dígitos.</li>
+</ul>
+<p>Los archivos de log provistos están dados en la zona horaria UTC, por lo que
+el valor del último segmento siempre será +00:00.</p>
+<p>Para interpretar la sección de la fecha en C pueden utilizar el siguiente
+fragmento de código, que devuelve un tipo <code>time_t</code> dado una cadena con el
+formato indicado:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define _XOPEN_SOURCE</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#define TIME_FORMAT &quot;%FT%T%z&quot;</span>
+
+<span class="cm">/*</span>
+<span class="cm">    Dada una cadena en formato ISO-8601 devuelve una variable de tipo time_t</span>
+<span class="cm">    que representa un instante en el tiempo.</span>
+<span class="cm">*/</span>
+<span class="kt">time_t</span> <span class="nf">iso8601_to_time</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">iso8601</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">struct</span> <span class="n">tm</span> <span class="n">bktime</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+    <span class="n">strptime</span><span class="p">(</span><span class="n">iso8601</span><span class="p">,</span> <span class="n">TIME_FORMAT</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bktime</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">mktime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bktime</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Esta variable de tipo <code>time_t</code> puede ser usada junto con la función <code>timediff</code>
+(<a href="http://man7.org/linux/man-pages/man3/difftime.3.html">info</a>)
+para calcular la diferencia en segundos entre dos fechas.</p>
+<h3 id="tiempos-de-ejecución">Tiempos de ejecución<a class="headerlink" href="#tiempos-de-ejecución" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Agregar archivo:<ul>
+<li>La búsqueda de DoS debe ser en  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script> siendo <script type="math/tex">
+<script type="math/tex">n</script>
+</script> la cantidad de líneas del
+  log.</li>
+<li>El mantenimiento para actualizar los visitantes debe ser  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n \log v)</script>
+</script>
+  siendo <script type="math/tex">
+<script type="math/tex">v</script>
+</script> la cantidad de visitantes en toda la historia del programa.</li>
+</ul>
+</li>
+<li>Ver visitantes: debe ser  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(v)</script>
+</script> en el peor caso (en el que se tenga que
+  mostrar todos los visitantes),  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(\log v)</script>
+</script> en un caso promedio (en el caso en
+  el que no se pidan mostrar demasiados visitantes). <script type="math/tex">
+<script type="math/tex">v</script>
+</script> nuevamente es la cantidad histórica de
+  visitantes.</li>
+<li>Ordenar archivo: debe ser  <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n \log n)</script>
+</script>, siendo <script type="math/tex">
+<script type="math/tex">n</script>
+</script> la cantidad de líneas del log.</li>
+</ul>
+<h2 id="ejemplos">Ejemplos<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h2>
+<p>Se proveen ejemplos completos para mostrar la salida esperada en cada
+instrucción.</p>
+<h3 id="ordenar-archivo_1">Ordenar archivo<a class="headerlink" href="#ordenar-archivo_1" title="Permanent link">&para;</a></h3>
+<p>Para la siguiente entrada:
+    ordenar_archivo access001.log access001-ordenado.log</p>
+<p>El programa, además de ordenar el archivo, debe imprimir por salida estándar <code>OK</code>:</p>
+<div class="codehilite"><pre><span></span><code>OK
+</code></pre></div>
+
+
+<p>Se espera que el archivo ordenado sea igual al original (que ya estaba ordenado):</p>
+<div class="codehilite"><pre><span></span><code>diff access001.log access001-ordenado.log | wc
+0
+</code></pre></div>
+
+
+<p>El archivo <code>access010.log</code> es el archivo <code>access001.log</code>, desordenado, así como <code>access011.log</code> es igual al archivo <code>access003.log</code>, pero desordenado:</p>
+<div class="codehilite"><pre><span></span><code>diff access001.log access010-ordenado.log | wc
+0
+diff access003.log access011-ordenado.log | wc
+0
+</code></pre></div>
+
+
+<p>Se recuerda que se pueden generar más ejemplos desordenados utilizando el comando:</p>
+<div class="codehilite"><pre><span></span><code>perl -MList::Util -e &#39;print List::Util::shuffle &lt;&gt;&#39; archivo_original &gt; archivo_desordenado
+</code></pre></div>
+
+
+<h3 id="reporte-de-dos">Reporte de DoS<a class="headerlink" href="#reporte-de-dos" title="Permanent link">&para;</a></h3>
+<p>Para la siguiente entrada:</p>
+<div class="codehilite"><pre><span></span><code>agregar_archivo access001.log
+agregar_archivo access002.log
+</code></pre></div>
+
+
+<p>Se espera una salida como la siguiente:</p>
+<div class="codehilite"><pre><span></span><code>OK
+DoS: 50.139.66.106
+DoS: 67.61.65.249
+OK
+</code></pre></div>
+
+
+<p>En esta se reportan dos posibles ataques de DoS en el segundo archivo agregado,
+<code>access002.log</code>, pero ninguno en el primero.</p>
+<p>Notar que:</p>
+<ul>
+<li>de haberse detectado posibles DoS, deberían haberse reportado antes de los
+<code>OK</code> de <code>agregar_archivo</code>.</li>
+</ul>
+<h3 id="ver-vistantes">Ver vistantes<a class="headerlink" href="#ver-vistantes" title="Permanent link">&para;</a></h3>
+<p>Para la siguiente entrada:</p>
+<div class="codehilite"><pre><span></span><code>ordenar_archivo access010.log access010-ordenado.log
+agregar_archivo access010-ordenado.log
+agregar_archivo access004.log
+ver_visitantes 200.49.0.0 201.30.0.0
+</code></pre></div>
+
+
+<p>Se espera una salida como la siguiente:</p>
+<div class="codehilite"><pre><span></span><code>OK
+OK
+OK
+Visitantes:
+    200.49.190.100
+    200.49.190.101
+    201.26.152.202
+OK
+</code></pre></div>
+
+
+<p>Notar que, igual que en el ejemplo anterior, los visitantes son reportados
+cuando aparecen en alguno de los archivos agregados hasta ese momento, en orden,
+según las direcciones IPs.</p>
+<h2 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h2>
+<p>El código entregado debe ser claro y legible y ajustarse a las especificaciones
+de la consigna. Debe compilar sin advertencias y correr sin errores de memoria.</p>
+<p>La entrega incluye, obligatoriamente, los siguientes archivos de código:</p>
+<ul>
+<li>el código de la solución del TP.</li>
+<li>el código de los TDAs programados en la cursada que se requieran, con las
+modificaciones que sean necesarias.</li>
+<li>un archivo <code>deps.mk</code> con las dependencias del proyecto en formato make. Este
+deberá contener sólamente una línea que indique qué <em>objetos</em> necesita para
+compilar el ejecutable <code>analog</code>, por ejemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nf">analog</span><span class="o">:</span> <span class="n">tp</span>2.<span class="n">c</span> <span class="n">hash</span>.<span class="n">o</span> <span class="n">abb</span>.<span class="n">o</span> <span class="n">heap</span>.<span class="n">o</span> <span class="n">strutil</span>.<span class="n">o</span> <span class="n">timeutils</span>.<span class="n">o</span>
+</code></pre></div>
+
+<p>El corrector automático va a interpretar ese archivo de dependencias y va a
+compilar todos los <code>.o</code> especificados a partir de los <code>.h</code> y <code>.c</code> que deberán
+enviar, con los siguientes flags de GCC:</p>
+<div class="highlight"><pre><span></span><code>-g -std=c99 -Wall -Wtype-limits -pedantic -Wconversion -Wno-sign-conversion
+</code></pre></div>
+
+<p>La entrega se realiza:</p>
+<ol>
+<li>en forma digital a través del <a href="{{site.entregas}}">sistema de entregas</a>,
+con todos los archivos mencionados en un único archivo ZIP.</li>
+<li>en papel durante la clase (si su ayudante lo requiere) el código del Trabajo
+en hoja A4 <strong>abrochadas, sin folio, informe ni carátula</strong>. No es necesario
+reimprimir el código de los TDA ni de <code>strutil</code>.</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:Jumast@users.noreply.github.com'>Jumast</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

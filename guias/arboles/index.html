@@ -1,0 +1,1361 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/guias/arboles/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Árboles - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#árboles-ababbavlárbol-b" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Árboles
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Árboles
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Árboles" class="md-nav__link md-nav__link--active">
+      Árboles
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="árboles-ababbavlárbol-b">Árboles (AB/ABB/AVL/Árbol B)<a class="headerlink" href="#árboles-ababbavlárbol-b" title="Permanent link">&para;</a></h1>
+<h2 id="ejercicio-resuelto">Ejercicio resuelto<a class="headerlink" href="#ejercicio-resuelto" title="Permanent link">&para;</a></h2>
+<p>Se tiene un árbol binario de búsqueda con cadenas como claves y
+función de comparación <code>strcmp</code>. Implementar una primitiva
+<code>lista_t* abb_mayores(const abb_t* abb, const char* cadena)</code>
+que, dados un ABB y una cadena, devuelva una
+lista ordenada con las claves del árbol estrictamente mayores a la
+cadena recibida por parámetro (que no necesariamente está en el árbol).</p>
+<p>Suponer que la estructura del TDA es:</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">abb</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">clave</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">abb</span><span class="o">*</span> <span class="n">izq</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">abb</span><span class="o">*</span> <span class="n">der</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">abb_t</span><span class="p">;</span>
+</code></pre></div>
+
+<p><em>Aclaración</em>: se debe realizar la menor cantidad posible de comparaciones.</p>
+<h3 id="solución">Solución<a class="headerlink" href="#solución" title="Permanent link">&para;</a></h3>
+<p>La aclaración hace mención a que utilicemos la propiedad de ABB: sabemos que los nodos
+a izquierda son menores al actual, y los que estén a derecha son mayores.
+En particular, si estamos en un nodo cuya clave es menor (o igual) a la buscada, entonces es innecesario
+revisar a izquierda: todos esos nodos también serán menores. Sí tendremos siempre que revisar a derecha,
+porque no es posible descartar. Esto es similar a una búsqueda por rango, solo que sin un límite superior.</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista_t</span><span class="o">*</span> <span class="nf">abb_mayores</span><span class="p">(</span><span class="k">const</span> <span class="n">abb_t</span><span class="o">*</span> <span class="n">abb</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">clave</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lista_t</span><span class="o">*</span> <span class="n">mayores</span> <span class="o">=</span> <span class="n">lista_crear</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">mayores</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">_abb_mayores</span><span class="p">(</span><span class="n">abb</span><span class="p">,</span> <span class="n">clave</span><span class="p">,</span> <span class="n">mayores</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">claves</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">_abb_mayores</span><span class="p">(</span><span class="k">const</span> <span class="n">abb_t</span><span class="o">*</span> <span class="n">abb</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">clave</span><span class="p">,</span> <span class="n">lista_t</span><span class="o">*</span> <span class="n">claves</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// caso base SIEMPRE</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">abb</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// si la actual es mayor, llamamos a la izquierda y guardamos la actual</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">abb</span><span class="o">-&gt;</span><span class="n">clave</span><span class="p">,</span> <span class="n">clave</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">_abb_mayores</span><span class="p">(</span><span class="n">abb</span><span class="o">-&gt;</span><span class="n">izq</span><span class="p">,</span> <span class="n">clave</span><span class="p">,</span> <span class="n">claves</span><span class="p">);</span>
+        <span class="n">lista_insertar_primero</span><span class="p">(</span><span class="n">claves</span><span class="p">,</span> <span class="n">abb</span><span class="o">-&gt;</span><span class="n">clave</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">_abb_mayores</span><span class="p">(</span><span class="n">abb</span><span class="o">-&gt;</span><span class="n">der</span><span class="p">,</span> <span class="n">clave</span><span class="p">,</span> <span class="n">claves</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Ya que estamos, vemos la complejidad: En el peor de los casos, se pasa una clave que es menor a la mínima, por lo que se
+ven todos los nodos, así que será <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script>. Por si nos interesara el mejor caso, esto sería con una clave mayor
+o igual a la máxima clave del árbol, por lo que recorreríamos la rama derecha, haciéndose en <script type="math/tex">
+<script type="math/tex">\Omega(\log n)</script>
+</script> (recordar, la notación <script type="math/tex">
+<script type="math/tex">\Omega</script>
+</script> es una cota inferior, a diferencia de <script type="math/tex">
+<script type="math/tex">\mathcal{O}</script>
+</script> que es una cota superior).</p>
+<h2 id="ejercicios-propuestos">Ejercicios propuestos<a class="headerlink" href="#ejercicios-propuestos" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>(★) Dado un árbol binario, escribir una primitiva recursiva que determine la altura del mismo. Indicar
+    y justificar el orden de la primitiva.</p>
+</li>
+<li>
+<p>(★) Implementar una primitiva que devuelva la suma de todos los datos (números) de un árbol binario.
+    Indicar y justificar el orden de la primitiva.</p>
+</li>
+<li>
+<p>(★) Se tiene un AB con números enteros como datos, y se quiere reemplazar cada dato por el resultado de multiplicarlo con los datos de los hijos.
+    Hacer un seguimiento de hacer dicho procesamiento con un preorder, inorder o postorder. A continuación se deja
+    la implementación mediante cada recorrido:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">multiplicar_con_hijos_pre</span><span class="p">(</span><span class="n">ab_t</span><span class="o">*</span> <span class="n">arbol</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">arbol</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">valor_izq</span> <span class="o">=</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">izq</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">?</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">izq</span><span class="o">-&gt;</span><span class="nl">dato</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">valor_der</span> <span class="o">=</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">der</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">?</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">der</span><span class="o">-&gt;</span><span class="nl">dato</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">dato</span> <span class="o">*=</span> <span class="n">valor_izq</span> <span class="o">*</span> <span class="n">valor_der</span><span class="p">;</span>
+    <span class="n">multiplicar_con_hijos_pre</span><span class="p">(</span><span class="n">arbol</span><span class="o">-&gt;</span><span class="n">izq</span><span class="p">);</span>
+    <span class="n">multiplicar_con_hijos_pre</span><span class="p">(</span><span class="n">arbol</span><span class="o">-&gt;</span><span class="n">der</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">multiplicar_con_hijos_in</span><span class="p">(</span><span class="n">ab_t</span><span class="o">*</span> <span class="n">arbol</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">arbol</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="n">multiplicar_con_hijos_in</span><span class="p">(</span><span class="n">arbol</span><span class="o">-&gt;</span><span class="n">izq</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">valor_izq</span> <span class="o">=</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">izq</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">?</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">izq</span><span class="o">-&gt;</span><span class="nl">dato</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">valor_der</span> <span class="o">=</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">der</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">?</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">der</span><span class="o">-&gt;</span><span class="nl">dato</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">dato</span> <span class="o">*=</span> <span class="n">valor_izq</span> <span class="o">*</span> <span class="n">valor_der</span><span class="p">;</span>
+    <span class="n">multiplicar_con_hijos_in</span><span class="p">(</span><span class="n">arbol</span><span class="o">-&gt;</span><span class="n">der</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">multiplicar_con_hijos_post</span><span class="p">(</span><span class="n">ab_t</span><span class="o">*</span> <span class="n">arbol</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">arbol</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="n">multiplicar_con_hijos_post</span><span class="p">(</span><span class="n">arbol</span><span class="o">-&gt;</span><span class="n">izq</span><span class="p">);</span>
+    <span class="n">multiplicar_con_hijos_post</span><span class="p">(</span><span class="n">arbol</span><span class="o">-&gt;</span><span class="n">der</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">valor_izq</span> <span class="o">=</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">izq</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">?</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">izq</span><span class="o">-&gt;</span><span class="nl">dato</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">valor_der</span> <span class="o">=</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">der</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">?</span> <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">der</span><span class="o">-&gt;</span><span class="nl">dato</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">arbol</span><span class="o">-&gt;</span><span class="n">dato</span> <span class="o">*=</span> <span class="n">valor_izq</span> <span class="o">*</span> <span class="n">valor_der</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>(★★) Dado un árbol binario, escriba una función recursiva que cuente la cantidad de nodos que
+    tienen exactamente dos hijos directos. ¿Qué orden de complejidad tiene la función implementada?</p>
+</li>
+<li>
+<p>(★★) Escribir una función recursiva con la firma <code>void arbol_invertir(arbol_t* arbol)</code>
+    que invierta el árbol binario pasado por parámetro, de manera tal que los hijos
+    izquierdos de cada nodo se conviertan en hijos derechos.</p>
+<p>La estructura <code>arbol_t</code> respeta la siguiente definición:</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">typedef</span> <span class="k">struct</span> <span class="n">arbol</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="n">arbol</span><span class="o">*</span> <span class="n">izq</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="n">arbol</span><span class="o">*</span> <span class="n">der</span><span class="p">;</span>
+    <span class="p">}</span> <span class="n">arbol_t</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Indicar el orden de complejidad de la función implementada.</p>
+</li>
+<li>
+<p>(★★) Suponer que se tiene un ABB <em>A</em> con una función de comparación <code>cmp1</code> con <script type="math/tex">
+<script type="math/tex">n</script>
+</script> claves. También, se
+    tiene otro ABB vacío <em>B</em> con función de comparación <code>cmp2</code> (con <code>cmp1</code> y <code>cmp2</code> diferentes).
+    ¿Es posible insertar en algún orden todas las claves de <em>A</em> en <em>B</em> de tal forma que ambos tengan
+    exactamente la misma estructura? Si es posible, describir un algoritmo que permita lograr esto; si no lo es, razonar por qué. (Considerar que la lógica a emplear debe funcionar para cualquier valor de <script type="math/tex">
+<script type="math/tex">n</script>
+</script> y cualquier estructura
+    que tenga el ABB <em>A</em>.)</p>
+</li>
+<li>
+<p>(★★★) Se tiene un AVL con números enteros como claves (su función de comparación simplemente compara
+    dichos valores de la forma tradicional). Su estado inicial puede reconstruirse a partir del
+    preorder: <code>15 - 6 - 4 - 7 - 50 - 23</code>. Hacer el seguimiento de las siguientes inserciones,
+    incluyendo rotaciones intermedias: <code>71 - 27 - 38 - 19 - 11 - 21 - 24 - 25</code>.</p>
+</li>
+<li>
+<p>(★★★) Mostrar cómo se modifica la estructura de un árbol B (incluyendo los pasos intermedios) con tamaño
+    para 3 claves por nodo que inicialmente se encuentra vacío, al aplicar las siguientes operaciones:
+    insertar 14, insertar 2, insertar 10, insertar 6, insertar 7, insertar 1, insertar 4, insertar 8,
+    insertar 11, insertar 19, insertar 9, insertar 5, insertar 15, insertar 3.</p>
+</li>
+<li>
+<p>(★★★) Definimos como <em>quiebre en un árbol binario</em> cuando ocurre que:</p>
+<ul>
+<li>un hijo derecho tiene un solo hijo, y es el izquierdo</li>
+<li>un hijo izquierdo tiene un solo hijo, y es el derecho</li>
+</ul>
+<p>Implementar una <em>primitiva</em> para el árbol binario <code>size_t ab_quiebres(const ab_t*)</code>
+que, dado un árbol binario, nos devuelva la cantidad de quiebres que
+tiene. La primitiva no debe modificar el árbol. La estructura del
+tipo <code>ab_t</code> es:</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">typedef</span> <span class="k">struct</span> <span class="n">arbol</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="n">arbol</span><span class="o">*</span> <span class="n">izq</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="n">arbol</span><span class="o">*</span> <span class="n">der</span><span class="p">;</span>
+    <span class="p">}</span> <span class="n">ab_t</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Indicar y justificar el orden de la primitiva, e indicar el tipo de
+recorrido implementado.</p>
+</li>
+<li>
+<p>(★★) Indicar si las siguientes afirmaciones son verdaderas o falsas. En caso de ser verdaderas,
+    justificar, en caso de ser falsas poner un contraejemplo:</p>
+<p>{:.lower_alpha}
+1. Si dos árboles binarios tienen el mismo recorrido inorder, entonces tienen la misma
+estructura.</p>
+<ol>
+<li>
+<p>Si dos árboles binarios tienen el mismo recorrido preorder, entonces tienen la misma
+estructura.</p>
+</li>
+<li>
+<p>Si dos árboles binarios de búsqueda (e idéntica función de comparación) tienen el mismo
+recorrido preorder, entonces tienen la misma estructura.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>(★★) Implementar una primitiva para el ABB, que reciba el ABB y devuelva una lista con las claves
+    del mismo, ordenadas tal que si insertáramos las claves en un ABB vacío (con la misma función
+    de comparación), dicho ABB tendría la misma estructura que el árbol original. ¿Qué tipo de
+    recorrido utilizaste? Indicar y justificar el orden de la primitiva.</p>
+</li>
+<li>
+<p>(★★★★) Implementar una primitiva para el AB que reciba dos arreglos (o listas) de cadenas. El primer arreglo
+    corresponde al preorder de un árbol binario. El segundo al inorder del mismo árbol (ambos arreglos
+    tienen los mismos elementos, sin repetidos). La función debe devolver un árbol binario que tenga dicho
+    preorder e inorder. Indicar y justificar el orden de la primitiva (tener cuidado con este punto).
+    Considerar que la estructura del árbol binario es:</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">typedef</span> <span class="k">struct</span> <span class="n">arbol</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="n">arbol</span><span class="o">*</span> <span class="n">izq</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="n">arbol</span><span class="o">*</span> <span class="n">der</span><span class="p">;</span>
+        <span class="kt">char</span><span class="o">*</span> <span class="n">dato</span><span class="p">;</span>
+    <span class="p">}</span> <span class="n">ab_t</span><span class="p">;</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>(★★★★) Implementar una función que reciba un arreglo ordenado y devuelva un arreglo o lista con
+    los elementos en orden para ser insertados en un ABB, de tal forma que al insertarlos en
+    dicho orden se asegure que el ABB quede balanceado. ¿Cómo cambiarías tu resolución si en
+    vez de querer guardarlos en un ABB se fueran a insertar en un AVL?</p>
+</li>
+<li>
+<p>(★★★) Determinar cómo es el Árbol cuyo pre order es EURMAONDVSZT, e in order es MRAUOZSVDNET, e 
+    indicar su recorrido post order.</p>
+</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../hash/" title="Tablas hash" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Tablas hash
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../heap/" title="Colas de prioridad y heaps" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Colas de prioridad y heaps
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

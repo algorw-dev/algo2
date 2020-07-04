@@ -1,0 +1,1473 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2020_1/tp1/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Tp1 - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp1-manejo-de-archivos-y-cadenas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Tp1
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-de-cadenas" class="md-nav__link">
+    Manejo de cadenas
+  </a>
+  
+    <nav class="md-nav" aria-label="Manejo de cadenas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#substr" class="md-nav__link">
+    substr()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    split()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    join()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free_strv" class="md-nav__link">
+    free_strv()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculadora-en-notación-posfija" class="md-nav__link">
+    Calculadora en notación posfija
+  </a>
+  
+    <nav class="md-nav" aria-label="Calculadora en notación posfija">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionamiento" class="md-nav__link">
+    Funcionamiento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-entrada" class="md-nav__link">
+    Formato de entrada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condiciones-de-error" class="md-nav__link">
+    Condiciones de error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conversor-desde-notación-infija" class="md-nav__link">
+    Conversor desde notación infija
+  </a>
+  
+    <nav class="md-nav" aria-label="Conversor desde notación infija">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-entrada_1" class="md-nav__link">
+    Formato de entrada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asociatividad-y-precedencia" class="md-nav__link">
+    Asociatividad y precedencia
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aprobación" class="md-nav__link">
+    Criterios de aprobación
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <p>{% assign tp = site.data.trabajos.TP1 %}
+{% capture fecha %}{{tp.entrega | date: &ldquo;%e/%m&rdquo;}}{% endcapture %}</p>
+<h1 id="tp1-manejo-de-archivos-y-cadenas">TP1: Manejo de archivos y cadenas<a class="headerlink" href="#tp1-manejo-de-archivos-y-cadenas" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<p>El trabajo práctico número 1 tiene fecha de entrega para el día <strong>{{fecha}}</strong>, y está divido en tres partes:</p>
+<ol>
+<li>una serie de funciones para manejo de cadenas <em>(strutil.c)</em></li>
+<li>una calculadora en notación posfija <em>(dc.c)</em></li>
+<li>un conversor de notación infija a notación posfija <em>(infix.c)</em></li>
+</ol>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ul>
+<li toc="toc">Contenido</li>
+</ul>
+<h2 id="manejo-de-cadenas">Manejo de cadenas<a class="headerlink" href="#manejo-de-cadenas" title="Permanent link">&para;</a></h2>
+<p>{: #strutil}</p>
+<p>Se pide implementar las funciones de manejo que cadenas que se describen a continuación. Adjunto en el <a href="{{site.skel}}">sitio de descargas</a> se puede encontrar un archivo <em>strutil.h</em> con todos sus prototipos.</p>
+<p>Para la implementación de estas funciones no se permite el usod uso de TDAs. Sí se permite, no obstante, el uso de las funciones de la biblioteca estándar de C <a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/string.h.html">string.h</a> (excepto <code>strtok</code>). Se recomiendan, en particular:</p>
+<ul>
+<li><code>strlen</code></li>
+<li><code>strcpy</code>/<code>strncpy</code></li>
+<li><code>strdup</code>/<code>strndup</code></li>
+<li><code>snprintf</code></li>
+</ul>
+<p>Se dsescriben a continuación las cuatro funciones a implementar.</p>
+<h3 id="substr">substr()<a class="headerlink" href="#substr" title="Permanent link">&para;</a></h3>
+<p>La función <code>substr()</code> permite obtener un prefijo de longitud <script type="math/tex">
+<script type="math/tex">k</script>
+</script> de una cadena dada.</p>
+<p>Por ejemplo, la llamada <code>substr("Hola mundo", 6)</code> devolvería la cadena <code>"Hola m"</code>. El resultado debe ser una nueva cadena de memoria dinámica con dichos caracteres (y, por supuesto, el carácter de fin de cadena).
+Ejemplos de uso:</p>
+<div class="highlight"><pre><span></span><code><span class="n">substr</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>         <span class="err">→</span> <span class="s">&quot;Hola m&quot;</span>
+<span class="n">substr</span><span class="p">(</span><span class="s">&quot;Algoritmos&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>        <span class="err">→</span> <span class="s">&quot;Algoritmos&quot;</span>
+<span class="n">substr</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>                   <span class="err">→</span> <span class="s">&quot;&quot;</span>
+
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">ejemplo</span> <span class="o">=</span> <span class="s">&quot;Ejemplo&quot;</span><span class="p">;</span>
+<span class="n">substr</span><span class="p">(</span><span class="n">ejemplo</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>              <span class="err">→</span> <span class="s">&quot;Ej&quot;</span>
+<span class="n">substr</span><span class="p">(</span><span class="n">ejemplo</span> <span class="o">+</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>          <span class="err">→</span> <span class="s">&quot;pl&quot;</span>
+</code></pre></div>
+
+<p>Complejidad algorítmica: se espera que la función tenga complejidad <script type="math/tex">
+<script type="math/tex">\mathcal{O}(k)</script>
+</script>.</p>
+<h3 id="split">split()<a class="headerlink" href="#split" title="Permanent link">&para;</a></h3>
+<p>La función <code>split()</code> divide una cadena en subcadenas, con una división por cada ocurrencia de un caracter de separación determinado. Por ejemplo, separando por comas:</p>
+<div class="highlight"><pre><span></span><code><span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,def,ghi&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">,</span> <span class="s">&quot;ghi&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>En C, devolveremos el resultado como un arreglo dinámico de cadenas dinámicas terminado en <code>NULL</code>. Esto es:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Ejemplo de arreglo dinámico de cadenas</span>
+<span class="kt">char</span> <span class="o">**</span><span class="n">strv</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">&quot;def&quot;</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">&quot;ghi&quot;</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Considerar los siguientes casos borde:</p>
+<div class="highlight"><pre><span></span><code><span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,,def&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,def,&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;,abc,def&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span>      <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span>
+
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span> <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Complejidad algorítmica: se espera que la función tenga complejidad <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script>, siendo <script type="math/tex">
+<script type="math/tex">n</script>
+</script> la longitud de la cadena inicial.</p>
+<h3 id="join">join()<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
+<p>La función <code>join()</code> es la inversa de <code>split()</code>. Concatena un arreglo de cadenas terminado en NULL mediante un caracter de separación:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Ejemplo de uso de join</span>
+<span class="kt">char</span> <span class="o">**</span><span class="n">strv</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,def,ghi&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">resultado</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">strv</span><span class="p">,</span> <span class="sc">&#39;;&#39;</span><span class="p">);</span>  <span class="c1">// &quot;abc;def;ghi&quot;</span>
+
+<span class="kt">char</span> <span class="o">**</span><span class="n">palabras</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">,</span> <span class="sc">&#39; &#39;</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">otro_resultado</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">palabras</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">);</span>  <span class="c1">// &quot;Hola,mundo&quot;</span>
+</code></pre></div>
+
+<p>Casos borde:
+<div class="highlight"><pre><span></span><code><span class="n">join</span><span class="p">([</span><span class="s">&quot;&quot;</span><span class="p">],</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>             <span class="err">→</span>  <span class="s">&quot;&quot;</span>
+<span class="n">join</span><span class="p">([</span><span class="s">&quot;abc&quot;</span><span class="p">],</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>          <span class="err">→</span>  <span class="s">&quot;abc&quot;</span>
+<span class="n">join</span><span class="p">([</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">],</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>         <span class="err">→</span>  <span class="s">&quot;,&quot;</span>
+<span class="n">join</span><span class="p">([],</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>               <span class="err">→</span>  <span class="s">&quot;&quot;</span> <span class="c1">// Join de arreglo vacío, {NULL} en C.</span>
+<span class="n">join</span><span class="p">([</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">],</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="s">&quot;abcdef&quot;</span>
+</code></pre></div></p>
+<p>Complejidad algorítmica: se espera que la función tenga complejidad <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script>, siendo <script type="math/tex">
+<script type="math/tex">n</script>
+</script> la longitud de la cadena resultante.</p>
+<p>Las pruebas del corrector automático proveen una indicación del comportamiento de <code>join()</code> (si bien <strong>todas las funciones deben correr en tiempo lineal</strong>, <code>join()</code> provee una dificultad de implementación mayor a <code>split()</code> o <code>substr()</code>).</p>
+<p>Este sería un test con comportamiento lineal:</p>
+<div class="codehilite"><pre><span></span><code>[ RUN      ] test_join.test_complejidad_10000
+[       OK ] test_join.test_complejidad_10000 (7 ms)
+[ RUN      ] test_join.test_complejidad_20000
+[       OK ] test_join.test_complejidad_20000 (14 ms)
+[ RUN      ] test_join.test_complejidad_30000
+[       OK ] test_join.test_complejidad_30000 (17 ms)
+[ RUN      ] test_join.test_complejidad_40000
+[       OK ] test_join.test_complejidad_40000 (27 ms)
+[ RUN      ] test_join.test_complejidad_50000
+[       OK ] test_join.test_complejidad_50000 (33 ms)
+[ RUN      ] test_join.test_complejidad_60000
+[       OK ] test_join.test_complejidad_60000 (40 ms)
+</code></pre></div>
+
+
+<p>Y este con comportamiento cuadrático:</p>
+<div class="codehilite"><pre><span></span><code>[ RUN      ] test_join.test_complejidad_10000
+[       OK ] test_join.test_complejidad_10000 (48 ms)
+[ RUN      ] test_join.test_complejidad_20000
+[       OK ] test_join.test_complejidad_20000 (618 ms)
+[ RUN      ] test_join.test_complejidad_30000
+[       OK ] test_join.test_complejidad_30000 (1354 ms)
+[ RUN      ] test_join.test_complejidad_40000
+[       OK ] test_join.test_complejidad_40000 (2425 ms)
+[ RUN      ] test_join.test_complejidad_50000
+[       OK ] test_join.test_complejidad_50000 (4019 ms)
+[ RUN      ] test_join.test_complejidad_60000
+[       OK ] test_join.test_complejidad_60000 (5722 ms)
+</code></pre></div>
+
+
+<h3 id="free_strv">free_strv()<a class="headerlink" href="#free_strv" title="Permanent link">&para;</a></h3>
+<p><code>free_strv()</code> libera la memoria asociada con un arreglo dinámico de cadenas dinámicas:</p>
+<p>Si bien no es obligatorio probar la biblioteca, es muy recomendable hacer pruebas unitarias para comprobar el correcto
+funcionamiento, en particular para los casos borde.</p>
+<h2 id="calculadora-en-notación-posfija">Calculadora en notación posfija<a class="headerlink" href="#calculadora-en-notación-posfija" title="Permanent link">&para;</a></h2>
+<p>{: #dc}</p>
+<p>Se pide implementar un programa <code>dc</code> que permita realizar operaciones matemáticas. La calculadora leerá exclusivamente de entrada estándar (no toma argumentos por línea de comantos), interpretando cada línea como una operación en <a href="https://es.wikipedia.org/wiki/Notaci%C3%B3n_polaca_inversa">notación polaca inversa</a> (también llamada <em>notación posfija</em>, en inglés <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation"><em>reverse Polish notation</em></a>); para cada línea, se imprimirá por salida estándar el resultado del cálculo.</p>
+<p>Ejemplo de varias operaciones, y su resultado:</p>
+<div class="highlight"><pre><span></span><code>$ cat oper.txt
+5 3 +
+5 3 -
+5 3 /
+3 5 8 + +
+3 5 8 + -
+3 5 - 8 +
+2 2 + +
+0 1 ?
+1 -1 0 ?
+5 sqrt
+
+$ ./dc &lt; oper.txt
+8
+2
+1
+16
+-10
+6
+ERROR
+ERROR
+-1
+2
+</code></pre></div>
+
+<h3 id="funcionamiento">Funcionamiento<a class="headerlink" href="#funcionamiento" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Todas las operaciones trabajarán con números enteros, y devolverán números enteros. Se recomienda usar el tipo de C <code>long</code> para permitir operaciones de más de 32 bits (p.ej. <script type="math/tex">
+<script type="math/tex">3^{3^3}</script>
+</script>).</p>
+</li>
+<li>
+<p>El conjunto de operadores posibles es: suma (<code>+</code>), resta (<code>-</code>), multiplicación (<code>*</code>), división entera (<code>/</code>), raíz cuadrada (<code>sqrt</code>), exponenciación (<code>^</code>), logaritmo (<code>log</code>) en base arbitraria, y operador ternario (<code>?</code>).</p>
+</li>
+<li>
+<!-- https://github.com/gettalong/kramdown/issues/486 -->
+
+<p>Todos los operadores funcionan con dos operandos, excepto <code>sqrt</code> (toma un solo argumento) y el operador ternario (toma tres).</p>
+</li>
+<li>
+<p>Tal y como se describe en la bibliografía enlazada, cualquier operación aritmética <em>a op b</em> se escribe en postfijo como <code class="nowrap">a b op</code> (por ejemplo, <script type="math/tex">
+<script type="math/tex">3 - 2</script>
+</script> se escribe en postfijo como <code class="nowrap">3 2 -</code>).</p>
+</li>
+</ul>
+<p>Es útil modelar la expresión como una pila cuyo tope es el extremo derecho de la misma (por ejemplo en <code>3 2 -</code>, el tope es <code>-</code>); entonces, se puede decir que lo primero que se desapila es el operador, y luego los operandos <strong>en orden inverso</strong>.</p>
+<ul>
+<li>
+<!-- gettalong/kramdown#486 -->
+
+<p>Para operaciones con un solo operando, el formato es obviamente <code class="nowrap">a op</code> (por ejemplo, <code class="nowrap">5 sqrt</code>). Por su parte, para el operador ternario, el ordenamiento de los argumentos seguiría el mismo principio, transformándose <code class="nowrap">a ? b : c</code> en <code class="nowrap">a b c ?</code>.</p>
+</li>
+<li>
+<p>Ejemplos (nótese que toda la aritmética es entera, y el resultado siempre se trunca):</p>
+</li>
+<li>
+<p><code>20 11 -</code> → <code>20-11 = 9</code></p>
+</li>
+<li><code>20 -3 /</code> → <code>20/-3 = -6</code></li>
+<li><code>20 10 ^</code> → <code>20^10 = 10240000000000</code></li>
+<li><code>60 sqrt</code> → <code>√60 = 7</code></li>
+<li><code>256 4 ^ 2 log</code> → <code>log₂(256⁴) = 32</code></li>
+<li><code>1 -1 0 ?</code> → <code>1 ? -1 : 0 = -1</code> (funciona <a href="https://syntaxdb.com/ref/c/ternary">como en C</a>)</li>
+</ul>
+<h3 id="formato-de-entrada">Formato de entrada<a class="headerlink" href="#formato-de-entrada" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Cada línea de la entrada estándar representa una operación en su totalidad (produce un único resultado); y cada una de estas operaciones operación es independiente de las demás.</p>
+</li>
+<li>
+<p>Los símbolos en la expresión pueden ser números, u operadores. Todos ellos estarán siempre separados por uno o más espacios; la presencia de múltiples espacios debe tenerse en cuenta a la hora de realizar la separación en tokens.</p>
+</li>
+<li>
+<p><!-- gettalong/kramdown#486 -->
+    Nota adicional: puede haber también múltiples espacios al comienzo de la línea, antes del primer token; por otra parte, no necesariamente habrá un espacio entre el último token y el caracter salto de línea que le sigue.</p>
+</li>
+<li>
+<p>El resultado final de cada operación debe imprimirse en una sola línea por salida estándar (<em>stdout</em>). En caso de error, debe imprimirse —para esa operación— la cadena <code>ERROR</code>, <em>también</em> por salida estándar, y sin ningún tipo de resultado parcial. Tras cualquier error en una operación, el programa continuará procesando el resto de líneas con normalidad.</p>
+</li>
+<li>
+<p>Está permitido, para el cálculo de potencias, raíces y logaritmos, el uso de las funciónes de la biblioteca estándar <code>&lt;math.h&gt;</code>.</p>
+</li>
+</ul>
+<h3 id="condiciones-de-error">Condiciones de error<a class="headerlink" href="#condiciones-de-error" title="Permanent link">&para;</a></h3>
+<p>El mensaje <code>ERROR</code> debe imprimirse como resultado en cualquiera de las siguientes situaciones:</p>
+<ol>
+<li>
+<p>cantidad de operandos insuficiente (<code>1 +</code>)</p>
+</li>
+<li>
+<p>al finalizar la evaluación, queda más de un valor en la pila (por ejemplo <code>1 2 3 +</code>, o <code>+ 2 3 -</code>)</p>
+</li>
+<li>
+<p><strong>errores propios de cada operación matemática</strong>, descritos a continuación:</p>
+<ul>
+<li>división por 0</li>
+<li>raíz de un número negativo</li>
+<li>base del logaritmo menor a 2</li>
+<li>potencia con exponente negativo</li>
+</ul>
+</li>
+</ol>
+<h2 id="conversor-desde-notación-infija">Conversor desde notación infija<a class="headerlink" href="#conversor-desde-notación-infija" title="Permanent link">&para;</a></h2>
+<p>{: #infix}</p>
+<p>Una vez implementada la calculadora en notación postfija, se desea agregarle soporte para operaciones expresadas en notación infija, es decir, notación aritmética común:</p>
+<ul>
+<li>
+<p>
+<script type="math/tex">
+<script type="math/tex">4 + 2 - 1</script>
+</script>.</p>
+</li>
+<li>
+<p>
+<script type="math/tex">
+<script type="math/tex">5 / 3</script>
+</script>.</p>
+</li>
+<li>
+<p>
+<script type="math/tex">
+<script type="math/tex">2 * (3 + 7)</script>
+</script>.</p>
+</li>
+</ul>
+<p>No obstante, en lugar de modificar el código de <code>dc</code>, se pide escribir un segundo programa, <code>infix</code>, que actúe como <em>filtro de conversión</em>, esto es: leerá de entrada estándar operaciones en notación infija (una por línea), e imprimirá por salida estándar la representación en postfijo de la misma operación. Ejemplo:</p>
+<div class="highlight"><pre><span></span><code>$ cat arith.txt
+3 + 5
+5 - 3
+8 / 2 + 1
+9 - 2 * 4
+(9-2) * 4
+5 + 4 ^ 3 ^ 2
+
+$ ./infix &lt; arith.txt
+3 5 +
+5 3 -
+8 2 / 1 +
+9 2 4 * -
+9 2 - 4 *
+5 4 3 2 ^ ^ +
+
+$ ./infix &lt; arith.txt | ./dc
+8
+2
+5
+1
+28
+262149
+</code></pre></div>
+
+<p>Como referencia bibliográfica, la conversión se puede realizar mediante el algoritmo <em>shunting yard</em> (ver página de Wikipedia <a href="https://es.wikipedia.org/wiki/Algoritmo_shunting_yard">en castellano</a> o <a href="https://en.wikipedia.org/wiki/Shunting-yard_algorithm">en inglés</a>).</p>
+<h3 id="formato-de-entrada_1">Formato de entrada<a class="headerlink" href="#formato-de-entrada_1" title="Permanent link">&para;</a></h3>
+<p>Cada línea de la entrada consistirá de una secuencia de <em>tokens</em>; cada uno de ellos podrá ser:</p>
+<ul>
+<li>uno de los cinco operadores aritméticos <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>^</code></li>
+<li>un paréntesis de apertura, <code>(</code>; o de cierre, <code>)</code></li>
+<li>un número entero, no negativo y en base decimal</li>
+</ul>
+<p>Se debe aceptar espacios en blanco en cualquier punto de la expresión, excepto entre los dígitos de un valor numérico.</p>
+<p><strong>Se garantiza, por último, que todas las expresiones de entrada estarán bien formadas:</strong> paréntesis balanceados, espaciado conforme a norma, etc.</p>
+<h3 id="asociatividad-y-precedencia">Asociatividad y precedencia<a class="headerlink" href="#asociatividad-y-precedencia" title="Permanent link">&para;</a></h3>
+<p>Todos los operadores asocian por la izquierda, excepto la exponenciación, <code>^</code>, que asocia por la derecha.</p>
+<p>Por otra parte, <code>^</code> es el operador de mayor precedencia, seguido de <code>*</code> y <code>/</code> (ambos al mismo nivel); <code>+</code> y <code>-</code> son, ambos, los operadores de menor precedencia.</p>
+<h2 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h2>
+<p>El código entregado debe ser claro y legible y ajustarse a las especificaciones
+de la consigna. Debe compilar sin advertencias y correr sin errores de memoria.</p>
+<p>La entrega incluye, obligatoriamente, los siguientes archivos de código:</p>
+<ul>
+<li>
+<p><em>strutil.c</em> con las implementaciones de las funciones <code>substr</code>, <code>split</code>,
+    <code>join</code> y <code>free_strv</code>.</p>
+</li>
+<li>
+<p>el código de <code>dc</code> en <em>dc.c</em> y el de <code>infix</code> en <em>infix.c</em></p>
+</li>
+<li>
+<p>el código de los TDAs auxiliares requeridos por los programas (incluyendo
+    <em>.c</em> y <em>.h</em>)</p>
+</li>
+<li>
+<p>un archivo <em>deps.mk</em> que exprese las dependencias del proyecto en formato
+    makefile. Este archivo deberá contener solamente dos líneas que indiquen,
+    para cada programa, de qué <em>objetos</em> depende su ejecutable; por ejemplo:</p>
+<div class="highlight"><pre><span></span><code># Ejemplo de archivo deps.mk para el TP1
+dc: dc.o pila.o
+infix: infix.o strutil.o
+</code></pre></div>
+
+</li>
+</ul>
+<p>La entrega se realiza únicamente en forma digital a través del <a href="{{site.entregas}}">sistema de
+entregas</a>, con todos los archivos mencionados en un único
+archivo ZIP.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:lucchesifd@gmail.com'>lucchesifd</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

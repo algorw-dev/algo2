@@ -1,0 +1,1368 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/guias/tdas_conceptos/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Pila, cola, lista - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#conceptos-de-tdas-pilas-colas-y-listas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Pila, cola, lista
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Pila, cola, lista
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Pila, cola, lista" class="md-nav__link md-nav__link--active">
+      Pila, cola, lista
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="conceptos-de-tdas-pilas-colas-y-listas">Conceptos de TDAs, Pilas, Colas y Listas<a class="headerlink" href="#conceptos-de-tdas-pilas-colas-y-listas" title="Permanent link">&para;</a></h1>
+<h2 id="ejercicio-resuelto">Ejercicio resuelto<a class="headerlink" href="#ejercicio-resuelto" title="Permanent link">&para;</a></h2>
+<p>Implementar la <em>primitiva</em> de la pila <code>void** pila_multitop(const pila_t* pila, size_t n)</code>, que devuelve un arreglo de tamaño <script type="math/tex">
+<script type="math/tex">n</script>
+</script> con los <script type="math/tex">
+<script type="math/tex">n</script>
+</script> topes de la pila (los primeros <script type="math/tex">
+<script type="math/tex">n</script>
+</script> elementos si estos fueran desapilados), sin utilizar estructuras auxiliares. Completar el arreglo a devolver con NULL cuando el <script type="math/tex">
+<script type="math/tex">n</script>
+</script> recibido por parámetro sea mayor a la cantidad de elementos de la pila.</p>
+<p>Indicar el orden de complejidad de la primitiva.</p>
+<h3 id="solución">Solución<a class="headerlink" href="#solución" title="Permanent link">&para;</a></h3>
+<p>Algo que está implícito en el ejercicio es que se asume que la implementación del TDA Pila es sobre un arreglo dinámico, tal
+cual fue visto en clase. Siempre es válido asumir que la implementación es la misma a la que debieron implementar, salvo que
+el enunciado especifique lo contrario.</p>
+<p>Dos cosas que es necesario entender desde el inicio del ejercicio:</p>
+<ol>
+<li>
+<p>En este ejercicio <em>no se puede</em> modificar la pila, pues el puntero recibido es de tipo <em>const</em>; ello quiere decir que la pila a la que apunta es de sólo lectura, y por tanto sería erróneo modificar cualquiera de sus campos. <em>Además, no se debe</em> modificarla pues, al ser una primitiva y tener acceso a los miembros internos de la estructura, no es necesario desapilar para acceder a los datos.</p>
+</li>
+<li>
+<p>Se pide devolver un arreglo, pero es muy importante entender que debe ser un arreglo dinámico (creado con <em>malloc</em>). Sería un error <strong>muy grave</strong> devolver un arreglo estático, pues al terminar la ejecución de la función, la memoria de ese arreglo pasaría a ser inválida. Un error de este tipo anula el ejercicio por completo.</p>
+</li>
+</ol>
+<p>Una vez esto quede claro, la solución es bastante directa: si queremos que los elementos sean aquellos que desapilaríamos, simplemente tendríamos que iterar el arreglo en ese orden. Dada la implementación de la pila, deberíamos
+hacerlo de atrás hacia delante. Si fuera una pila enlazada, simplemente sería iterar por los nodos.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">**</span> <span class="nf">pila_multitop</span><span class="p">(</span><span class="k">const</span> <span class="n">pila_t</span><span class="o">*</span> <span class="n">pila</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">void</span><span class="o">**</span> <span class="n">topes</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">topes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// Se podria hacer que i comience en k o pila-&gt;cantidad - 1, pero hay que</span>
+    <span class="c1">// tener cuidado con esto, y con la condicion de corte: un size_t nunca</span>
+    <span class="c1">// va a ser menor a 0</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">pila</span><span class="o">-&gt;</span><span class="n">cantidad</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">topes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">pila</span><span class="o">-&gt;</span><span class="n">datos</span><span class="p">[</span><span class="n">pila</span><span class="o">-&gt;</span><span class="n">cantidad</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">topes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">topes</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>También sería válido hacerlo en dos iteraciones: una para llenar con los topes, y otra para rellenar con <code>NULL</code>s el resto.
+Así como también lo sería iterar hasta el más pequeño entre <code>n</code> y <code>pila-&gt;cantidad</code>, habiendo inicializado antes el
+arreglo con <code>NULL</code>s (ya sea iterando, o usando <code>calloc</code>). Otras tantas variantes también serían aceptadas, no hay una única
+forma de resolver este ejercicio.</p>
+<p>Sobre la complejidad, sea cual sea el caso, vamos a estar llenando siempre el arreglo de <script type="math/tex">
+<script type="math/tex">n</script>
+</script> elementos con algo (datos de
+la pila, o <code>NULL</code>). Acceder a cada elemento de la pila, siendo que accedemos directamente, es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(1)</script>
+</script>, y nunca
+vamos a ver más elementos de la pila si son más de <script type="math/tex">
+<script type="math/tex">n</script>
+</script>, por ende la primitiva es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script>. Es importante denotar
+que <script type="math/tex">
+<script type="math/tex">n</script>
+</script> en este caso no es la cantidad de elementos de la pila, sino la cantidad de elementos pedidos. Si quisiéramos
+hacer más clara la distinción, podríamos haber llamado a dicho parámetro con otro nombre. Tener cuidado con esto, porque
+si el parámetro tuviera otro nombre no sería correcto decir que es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script>, salvo que se aclare qué signifique
+<script type="math/tex">
+<script type="math/tex">n</script>
+</script>.</p>
+<h2 id="ejercicios-propuestos">Ejercicios propuestos<a class="headerlink" href="#ejercicios-propuestos" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>(★) Implementar el TDA Fracción. Dicho TDA debe tener las siguientes primitivas, cuya documentación
+    puede encontrarse <a href="../extra/fraccion.h">aquí</a>:
+    <div class="highlight"><pre><span></span><code>fraccion_t* fraccion_crear(int numerador, int denominador);
+fraccion_t* fraccion_sumar(fraccion_t* f1, fraccion_t* f2);
+fraccion_t* fraccion_mul(fraccion_t* f1, fraccion_t* f2);
+char* fraccion_representacion(fraccion_t* fraccion);
+int fraccion_parte_entera(fraccion_t* fraccion);
+void fraccion_destruir(fraccion_t* fraccion);
+</code></pre></div></p>
+<p><em>Nota</em>: considerar que se puede utilizar la función <code>sprintf</code> para generar la representación de
+la fracción. Por ejemplo: <code>sprintf(buffer, "%d/%d", num1, num2)</code>.
+Puede encontrarse la resolución de este ejercicio <a href="../soluciones/fraccion.c">aquí</a>.</p>
+</li>
+<li>
+<p>(★) Implementar el TDA NumeroComplejo. Dicho TDA debe tener las siguientes primitivas, cuya documentación
+    puede encontrarse <a href="../extra/complejo.h">aquí</a>:
+    <div class="highlight"><pre><span></span><code>complejo_t* complejo_crear(double real, double img);
+void complejo_multuplicar(complejo_t* c1, complejo_t* c2);
+void complejo_sumar(complejo_t* c1, complejo_t* c2);
+double complejo_obtener_imaginaria(const complejo_t* complejo);
+double complejo_obtener_real(const complejo_t* complejo);
+double complejo_obtener_modulo(const complejo_t* complejo);
+double complejo_obtener_angulo(const complejo_t* complejo);
+void complejo_destruir(complejo_t* complejo);
+</code></pre></div></p>
+<p><em>Nota</em>: considerar que se puede utilizar la función <code>sprintf</code> para generar las representaciones.</p>
+</li>
+<li>
+<p>(★)  Implementar una función que reciba un arreglo de <code>void*</code> e invierta su orden, utilizando los TDAs vistos.
+    Indicar y justificar el orden de ejecución.</p>
+</li>
+<li>
+<p>(★)  Mismo a lo anterior, pero que el arreglo sea de <code>int</code> (no de <code>int*</code>), utilizando los TDAs tal cual se los
+    implementa en clase.</p>
+</li>
+<li>
+<p>(★★) Implementar en C el TDA <code>ComposiciónFunciones</code> que emula la composición de funciones (i.e. <code>f(g(h(x))</code>).
+    Se debe definir la estructura del TDA, y las siguientes primitivas:
+    <div class="highlight"><pre><span></span><code>composicion_t* composicion_crear();
+void composicion_destruir(composicion_t*);
+bool composicion_agregar_funcion(composicion_t*, double (*f)(double));
+double composicion_aplicar(composicion_t*, double);
+</code></pre></div>
+    Considerar que primero se irán agregando las funciones como se leen, pero tener en cuenta el correcto orden
+    de aplicación. Por ejemplo: para emular <code>f(g(x))</code>, se debe hacer:</p>
+<div class="codehilite"><pre><span></span><code>composicion_agregar_funcion(composicion, f);
+composicion_agregar_funcion(composicion, g);
+composicion_aplicar(composicion, x);
+</code></pre></div>
+
+
+<p>Indicar el orden de las primitivas.</p>
+</li>
+<li>
+<p>(★★★) Dada una lista enlazada implementada con las siguientes estructuras:</p>
+<div class="codehilite"><pre><span></span><code>typedef struct nodo_lista {
+    struct nodo_lista* prox;
+    void* dato;
+} nodo_lista_t;
+
+typedef struct lista {
+    nodo_lista_t* prim;
+} lista_t;
+</code></pre></div>
+
+
+<p>Escribir una primitiva que reciba una lista y devuelva el elemento que esté a <script type="math/tex">
+<script type="math/tex">k</script>
+</script> posiciones del final (el
+ante-k-último), recorriendo la lista una sola vez y sin usar estructuras auxiliares. Considerar que
+<script type="math/tex">
+<script type="math/tex">k</script>
+</script> es siempre menor al largo de la lista.
+Por ejemplo, si se recibe la lista <code>[ 1, 5, 10, 3, 6, 8 ]</code>, y <code>k = 4</code>, debe devolver 10.
+Indicar el orden de complejidad de la primitiva.</p>
+</li>
+<li>
+<p>(★★★) Dada una pila de enteros, escribir una función que determine si sus elementos están ordenados de manera ascendente. Una pila de enteros está ordenada de manera ascendente si, en el sentido que va desde el tope de la pila hacia el resto de elementos, cada elemento es menor al elemento que le sigue.
+    La pila debe quedar en el mismo estado que al invocarse la función.
+    Indicar y justificar el orden del algoritmo propuesto.</p>
+</li>
+<li>
+<p>(★★) Implementar la primitiva <code>void** cola_multiprimeros(const cola_t* cola, size_t k)</code> que dada una cola y un
+    número <script type="math/tex">
+<script type="math/tex">k</script>
+</script>, devuelva los primeros <script type="math/tex">
+<script type="math/tex">k</script>
+</script> elementos de la cola, en el mismo orden en el que habrían
+    salido de la cola. En caso que la cola tenga menos de <script type="math/tex">
+<script type="math/tex">k</script>
+</script> elementos, rellenar con NULL.
+    Indicar y justificar el orden de ejecución del algoritmo.</p>
+</li>
+<li>
+<p>(★★) Implementar la función <code>void** cola_multiprimeros(cola_t* cola, size_t k)</code> con el mismo comportamiento de la
+    primitiva anterior.</p>
+</li>
+<li>
+<p>(★★) Implementar en C una primitiva <code>void lista_invertir(lista_t* lista)</code> que invierta la lista recibida
+    por parámetro, sin utilizar estructuras auxiliares. Indicar y justificar el orden de la primitiva.</p>
+</li>
+<li>
+<p>(★★) Se quiere implementar un TDA ColaAcotada sobre un arreglo. Dicho TDA tiene un espacio para <script type="math/tex">
+<script type="math/tex">k</script>
+</script> elementos
+    (que se recibe por parámetro al crear la estructura). Explicar cómo deberían implementarse las primitivas
+    encolar y desencolar de tal manera que siempre sean operaciones de tiempo constante.</p>
+</li>
+<li>
+<p>(★★★★) Implementar una función que ordene de manera ascendente una pila de enteros sin conocer su estructura interna y
+    utilizando como estructura auxiliar sólo otra pila auxiliar.
+    Por ejemplo, la pila <code>[ 4, 1, 5, 2, 3 ]</code> debe quedar como <code>[ 1, 2, 3, 4, 5 ]</code> (siendo el último elemento el tope de la pila, en ambos casos). Indicar y justificar el orden de la función.</p>
+</li>
+<li>
+<p>(★★) Implementar una función <code>void cola_filtrar(cola_t* cola, bool (*filtro)(void*))</code>, que elimine los
+    elementos encolados para los cuales la función <em>filtro</em> devuelve <code>false</code>. Aquellos elementos que no son eliminados
+    deben permanecer en el mismo orden en el que estaban antes de invocar a la función. No es necesario destruir los
+    elementos que sí fueron eliminados. Se pueden utilizar las estructuras auxiliares que se consideren necesarias y
+    no está permitido acceder a la estructura interna de la cola (es una función). ¿Cuál es el orden del algoritmo
+    implementado?</p>
+</li>
+<li>
+<p>(★★★) Sabiendo que la firma del iterador interno de la lista enlazada es:</p>
+<div class="codehilite"><pre><span></span><code>void lista_iterar(lista_t* lista,
+                  bool (*visitar)(void* dato, void* extra),
+                  void* extra);
+</code></pre></div>
+
+
+<p>Se tiene una lista en donde todos los elementos son punteros a números enteros. Implementar la función <em>visitar</em> para que calcule la suma de todos los números pares. Mostrar, además, una invocación completa a <code>lista_iterar()</code> que haga uso del <em>visitar</em> implementado.</p>
+</li>
+<li>
+<p>(★★★★★) Diseñar un TDA <code>PilaConMáximo</code>, que tenga las mismas primitivas de la pila convencional
+    (en este caso, sólo para números), y además permita obtener el máximo de la pila. <strong>Todas</strong>
+    las primitivas deben funcionar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(1)</script>
+</script>. Explicar cómo implementarías el TDA para
+    que cumpla con todas las restricciones.</p>
+</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../ordenamientos/" title="Ordenamientos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Ordenamientos
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../hash/" title="Tablas hash" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Tablas hash
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

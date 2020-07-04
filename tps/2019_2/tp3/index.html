@@ -1,0 +1,1578 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2019_2/tp3/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP3 – Grafos y aeropuertos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trabajo-práctico-3" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP3 – Grafos y aeropuertos
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducción" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#análisis-de-la-situación" class="md-nav__link">
+    Análisis de la situación
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datos-disponibles" class="md-nav__link">
+    Datos disponibles
+  </a>
+  
+    <nav class="md-nav" aria-label="Datos disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aclaraciones" class="md-nav__link">
+    Aclaraciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementación" class="md-nav__link">
+    Implementación
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listar-operaciones-obligatorio-sin-puntos" class="md-nav__link">
+    Listar operaciones (obligatorio, sin puntos)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caminos-mínimos-obligatorio-implementar-al-menos-uno" class="md-nav__link">
+    Caminos mínimos (obligatorio implementar al menos uno)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aeropuertos-más-importantes-obligatorio-implementar-al-menos-uno" class="md-nav__link">
+    Aeropuertos más importantes (obligatorio implementar al menos uno)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimización-de-rutas-para-nueva-aerolínea-" class="md-nav__link">
+    Optimización de rutas para nueva aerolínea (★★)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorrer-el-mundo-de-forma-óptima-" class="md-nav__link">
+    Recorrer el mundo, de forma óptima (★★★)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorrer-el-mundo-de-forma-aproximada-" class="md-nav__link">
+    Recorrer el mundo, de forma aproximada (★)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viaje-de-n-lugares-" class="md-nav__link">
+    Viaje de N lugares (★★★)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#itinerario-cultural-" class="md-nav__link">
+    Itinerario cultural (★★)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exportar-a-archivo-kml-" class="md-nav__link">
+    Exportar a archivo KML (★)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrega" class="md-nav__link">
+    Entrega
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aprobación" class="md-nav__link">
+    Criterios de aprobación
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="trabajo-práctico-3">Trabajo Práctico 3<a class="headerlink" href="#trabajo-práctico-3" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<p>El Trabajo Práctico número 3 es de elaboración grupal, y tiene fecha de entrega
+para el <strong>viernes 6 de diciembre</strong>.</p>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ul>
+<li toc="toc">Contenido</li>
+</ul>
+<h2 id="introducción">Introducción<a class="headerlink" href="#introducción" title="Permanent link">&para;</a></h2>
+<p>Debido al éxito rotundo del nuevo software en el aeropuerto de Algueiza, las distintas
+aerolíneas del mundo (!) nos han pedido que desarollemos un programa que permita
+dar información sobre las conexiones entre los aeropuertos. Son tantos, pero tantos los
+pedidos que será necesario limitar la cantidad de <em>features</em> a implementar para poder
+llegar con la fecha de entrega. Eso sí, será necesario lograr que el programa tenga el
+suficiente valor para poder dejar a todos medianamente contentos.</p>
+<h2 id="análisis-de-la-situación">Análisis de la situación<a class="headerlink" href="#análisis-de-la-situación" title="Permanent link">&para;</a></h2>
+<p>Aerolíneas de distintas partes del mundo, requieren distintos tipos de funcionalidades:
+* Todas las aerolíneas quieren que los clientes puedan buscar el camino más rápido,
+el más barato, o el de menor cantidad de escalas, a gusto.
+* Para poder entender dónde conviene invertir en mayor infraestructura, se quiere obtener
+cuáles son los aeropuertos más importantes, teniendo en cuenta en cuáles es más frecuente
+terminar haciendo escalas para poder ir entre cualquier parte del mundo a otra.
+* Una nueva aerolínea (bAIRros Airlines, con sede principal en el aeropuerto de Lanús)
+quiere poder conectar absolutamente todo el mundo, pero quiere utilizar las rutas más baratas
+posibles para ello. Entre tantos datos que hay, no saben por dónde empezar!
+* Algunas aerolíneas querrían poder agregar (en sus sofisticados sistemas de recomendación) la
+posibilidad de ofrecer un viaje alrededor del mundo: poder visitar todo el mundo, con el menor
+costo o tiempo posible. Algunas aerolíneas quieren que sea la mejor solución posible, sin excepciones.
+Otras, entienden que la capacidad de cómputo de dicha solución puede llevar mucho tiempo para sus
+<em>no tan capaces</em> servidores (comparten capacidad junto con el sistema SIU Guaraní de la FIUBA).
+Por ello, aceptarían una <em>buena solución</em> que se calcule rápidamente.
+* Algunas aerolíneas querrían ofrecer un viaje que empiece desde la ciudad del cliente, y
+haga un viaje por alguna cantidad de ciudades del mundo y vuelva luego a la ciudad origen
+(así pueden ofrecer descuentos para tentar a los clientes).
+* Otras aerolíneas pidieron poder ofrecer un viaje cultural: que se pueda indicar qué ciudades se
+quieren conocer, y además si hay alguna ciudad que deba visitarse antes que otra (para poder
+disfrutar más del viaje).
+* Muchas de las aerolíneas quisieran poder exportar un mapa que nos permita visualizar las rutas de vuelo.</p>
+<h2 id="datos-disponibles">Datos disponibles<a class="headerlink" href="#datos-disponibles" title="Permanent link">&para;</a></h2>
+<p>Se cuenta con los datos de los <a href="https://www.kaggle.com/usdot/flight-delays/version/1#airports.csv">aeropuertos de Estados Unidos</a>, así como de más de medio millón de <a href="https://www.kaggle.com/usdot/flight-delays/version/1#flights.csv">vuelos</a> durante el año 2015.</p>
+<p>Una consultora uso un <a href="parser.py">innovador script</a> para parsear dichos datos en los siguientes archivos:
+* El archivo <a href="aeropuertos.csv">aeropuertos.csv</a> con el formato:
+    <div class="highlight"><pre><span></span><code>ciudad,codigo_aeropuerto,latitud,longitud
+</code></pre></div>
+* El archivo <a href="vuelos.csv">vuelos.csv</a> con el formato:
+    <div class="highlight"><pre><span></span><code>aeropuerto_i,aeropuerto_j,tiempo_promedio,precio,cant_vuelos_entre_aeropuertos
+</code></pre></div></p>
+<p>Adicionalmente, para poder realizar algunas pruebas rápidas (especialmente en los algoritmos que
+más tiempo puedan demorar) se crea este otro set con <a href="aeropuertos_inventados.csv">aeropuertos</a> y
+<a href="vuelos_inventados.csv">vuelos</a> inventados.</p>
+<h3 id="aclaraciones">Aclaraciones<a class="headerlink" href="#aclaraciones" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Una ciudad puede tener <strong>uno o más aeropuertos</strong> asociados.</li>
+<li>El tiempo promedio es el promedio (redondeado) de todos los tiempos de los vuelos entre ese par de
+ciudades.</li>
+<li>Los precios han sido inventados completamente (puede verse en el script generador) y no tienen
+ninguna relación con la realidad. El curso no se hace responsable por las recomendaciones que pueda
+hacer alguno de los programas implementados.</li>
+<li>Sería de mayor interés tener los datos disponibles de todo el mundo, o de diversos países. De todas
+formas, hay que considerar que se tratan de casi 6 millones de vuelos sólo considerando un país, en un
+año.</li>
+<li>Más allá de tener los datos de un país en especial, el programa debería funcionar para cualquier
+parte del mundo.</li>
+</ul>
+<h2 id="implementación">Implementación<a class="headerlink" href="#implementación" title="Permanent link">&para;</a></h2>
+<p>El trabajo puede realizarse en lenguaje a elección, siendo aceptados Python y C, y cualquier otro a ser discutido con el corrector asignado.</p>
+<p>El trabajo consiste de 3 partes:
+1. El TDA Grafo, con sus primitivas.
+1. Una biblioteca de funciones de grafos, que permitan hacer distintas operaciones sobre un grafo de aeropuertos del mundo, sin importar cuál sea el aeropuerto ni país al que pertence.
+1. El programa <code>FlyCombi</code> que utilice tanto el TDA como la biblioteca para poder implementar todo
+lo requerido.</p>
+<p>El programa debe recibir por parámetro y cargar en memoria el set de datos (<code>$ ./flycombi
+aeropuertos.csv vuelos.csv</code>) y luego solicitar el ingreso de comandos por entrada estándar,
+del estilo <code>&lt;comando&gt; 'parametro'</code>. Notar que esto permite tener un archivo de instrucciones a ser
+ejecutadas (i.e. <code>$ ./flycombi aeropuertos.csv vuelos.csv &lt; entrada.txt</code>).</p>
+<p>De todas las funcionalidades, algunas son obligatorias, y las que lo son tienen más de una opción
+para ser implementadas. Algunas consideraciones:
+1. Cada funcionalidad e implementación otorga distinta cantidad de puntos, basado en dificultad y
+el interés del curso en que implementen dicha funcionalidad o implementación
+particular de la misma. (Cada estrella ★ corresponde a un punto.)
+1. Se pueden implementar todas las implementaciones posibles de una misma funcionalidad. Se tomarán
+en cuenta los puntos de todas las partes implementadas.
+1. Se deben conseguir al menos 10 puntos para poder aprobar el TP.
+1. En caso de obtener menos de 12 puntos, la nota máxima será 9.
+1. En caso de obtener 16 puntos o más la nota máxima del trabajo práctico puede llegar a 11.
+1. El total de puntos entre todas las funcionalidades es 20.</p>
+<h3 id="listar-operaciones-obligatorio-sin-puntos">Listar operaciones (obligatorio, sin puntos)<a class="headerlink" href="#listar-operaciones-obligatorio-sin-puntos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Comando: <code>listar_operaciones</code>.</li>
+<li>Parámetros: ninguno.</li>
+<li>Utilidad: Dado que no todas las funcionalidades o implementaciones son obligatorias, debe
+existir un comando que nos permita saber cuáles son las funcionalidades disponibles. Debe
+imprimirse una línea por cada <strong>comando</strong> que esté implementado.</li>
+<li>Complejidad: Este comando debe ejecutar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(1)</script>
+</script>.</li>
+<li>Ejemplo:
+Entrada:
+    <div class="highlight"><pre><span></span><code>listar_operaciones
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>camino_mas
+camino_escalas
+centralidad
+nueva_aerolinea
+vacaciones
+</code></pre></div></li>
+</ul>
+<h3 id="caminos-mínimos-obligatorio-implementar-al-menos-uno">Caminos mínimos (obligatorio implementar al menos uno)<a class="headerlink" href="#caminos-mínimos-obligatorio-implementar-al-menos-uno" title="Permanent link">&para;</a></h3>
+<h4>Camino más barato y camino más rápido (★)</h4>
+<ul>
+<li>Comando: <code>camino_mas</code></li>
+<li>Parámetros: <code>barato</code> ó <code>rapido</code>, <code>origen</code> y <code>destino</code>. Origen y destino son <strong>ciudades</strong>.</li>
+<li>Utilidad: nos imprime una lista con los <strong>aeropuertos</strong> (código) con los cuales vamos de la
+<strong>ciudad</strong> <code>origen</code> a la <strong>ciudad</strong> <code>destino</code> de la forma más rápida o más barata, según corresponda.
+Tener en cuenta que tanto la ciudad <code>origen</code> como la <code>destino</code> pueden tener más de un aeropuerto, y
+nos interesa la mejor forma (rápida o barata) entre todas las combinaciones posibles.</li>
+<li>Complejidad: Este comando debe ejecutar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(F \log(A))</script>
+</script>, siendo <script type="math/tex">
+<script type="math/tex">A</script>
+</script> la cantidad
+de aeropuertos, y <script type="math/tex">
+<script type="math/tex">F</script>
+</script> la cantidad de vuelos entre aeropuertos (sin contar frecuencia).
+Podemos considerar que la cantidad de aeropuertos que tenga cada ciudad es despreciable.</li>
+<li>Ejemplo:
+Entrada:
+    <div class="highlight"><pre><span></span><code>camino_mas rapido,San Diego,New York
+camino_mas barato,San Diego,New York
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>SAN -&gt; JFK
+SAN -&gt; DEN -&gt; JFK
+</code></pre></div></li>
+</ul>
+<h4>Camino con menor cantidad de escalas (★)</h4>
+<ul>
+<li>Comando: <code>camino_escalas</code></li>
+<li>Parámetros: <code>origen</code> y <code>destino</code>.</li>
+<li>Utilidad: nos imprime una lista con los <strong>aeropuertos</strong> (código) con los cuales vamos de la
+<strong>ciudad</strong> <code>origen</code> a la <strong>ciudad</strong> <code>destino</code> con la menor cantidad de escalas. Tener en cuenta
+que tanto la ciudad <code>origen</code> como la <code>destino</code> pueden tener más de un aeropuerto, y
+nos interesa la mejor forma (en cantidad de escalas) entre todas las combinaciones posibles.</li>
+<li>Complejidad: Este comando debe ejecutar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(F + A)</script>
+</script>, siendo <script type="math/tex">
+<script type="math/tex">A</script>
+</script> la cantidad
+de aeropuertos, y <script type="math/tex">
+<script type="math/tex">F</script>
+</script> la cantidad de vuelos entre aeropuertos (sin contar frecuencia).
+Podemos considerar que la cantidad de aeropuertos que tenga cada ciudad es despreciable.</li>
+<li>Ejemplos:
+Entrada:
+    <div class="highlight"><pre><span></span><code>camino_escalas San Diego,New York
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>SAN -&gt; JFK
+</code></pre></div></li>
+</ul>
+<h3 id="aeropuertos-más-importantes-obligatorio-implementar-al-menos-uno">Aeropuertos más importantes (obligatorio implementar al menos uno)<a class="headerlink" href="#aeropuertos-más-importantes-obligatorio-implementar-al-menos-uno" title="Permanent link">&para;</a></h3>
+<p>Utlizaremos alguno (o algunos) de estos comandos para poder obtener cuáles son los aeropuertos
+más importantes. Esto lo podemos hacer obteniendo cuáles son los aeropuertos más centrales,
+o bien usando un algoritmo como el de PageRank. Es necesario tener en cuenta además la frecuencia
+de vuelos: no es lo mismo un aeropuerto que se conecte contra todos con un vuelo al año, que uno que
+se conecte al 80% con muchos vuelos al año. ¡Cuantos más vuelos, mejor!</p>
+<p>Dejamos un apunte para la explicación de qué es y cómo se calcula el
+<a href="/algo2/material/apuntes/centralidad">Betweeness Centrality</a> y otro sobre
+<a href="/algo2/material/apuntes/pagerank">PageRank</a>.</p>
+<p><em>Nota</em>: PageRank en realidad realiza una aproximación de otro tipo de centralidad (<em>Eigenvector Centrality</em>) que
+la que realmente buscamos en este ejercicio. De todas formas, la consideramos como una implementación válida para
+este punto.</p>
+<h4>Betweeness Centrality (★★★)</h4>
+<ul>
+<li>Comando: <code>centralidad</code></li>
+<li>Parámetros: <code>n</code>, la cantidad de aeropuertos más importantes a mostrar.</li>
+<li>Utilidad: nos muestra los <code>n</code> aeropuertos más centrales/importantes del mundo,
+de mayor importancia a menor importancia.</li>
+<li>Complejidad: Este comando debe ejecutar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(A \times F\log(A))</script>
+</script>.</li>
+<li>Ejemplo:
+Entrada:
+    <div class="highlight"><pre><span></span><code>centralidad 5
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>ATL, ORD, LAX, DFW, DEN
+</code></pre></div></li>
+</ul>
+<h4>Betweeness Centrality aproximada (★)</h4>
+<ul>
+<li>Comando: <code>centralidad_aprox</code></li>
+<li>Parámetros: <code>n</code>, la cantidad de aeropuertos más importantes a mostrar.</li>
+<li>Utilidad: nos muestra los <code>n</code> aeropuertos más centrales/importantes del mundo de forma aproximada,
+de mayor importancia a menor importancia.</li>
+<li>Complejidad: Este comando debe ejecutar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(A + F)</script>
+</script>.</li>
+<li>Ejemplo:
+Entrada:
+    <div class="highlight"><pre><span></span><code>centralidad_aprox 3
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>ATL, ORD, DFW
+</code></pre></div></li>
+</ul>
+<h4>Pagerank (★★)</h4>
+<ul>
+<li>Comando: <code>pagerank</code></li>
+<li>Parámetros: <code>n</code>, la cantidad de aeropuertos más importantes a mostrar.</li>
+<li>Utilidad: nos muestra los <code>n</code> aeropuertos más centrales/importantes del mundo según el algoritmo de
+pagerank, de mayor importancia a menor importancia.</li>
+<li>Complejidad: Este comando debe ejecutar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(K(A + F))</script>
+</script>, siendo <script type="math/tex">
+<script type="math/tex">K</script>
+</script> la cantidad de
+iteraciones a realizar para llegar a la convergencia (puede simplificarse a <script type="math/tex">
+<script type="math/tex">\mathcal{O}(A + F)</script>
+</script>).
+Entrada:
+    <div class="highlight"><pre><span></span><code>pagerank 5
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>ATL, DFW, ORD, DEN, MSP
+</code></pre></div></li>
+</ul>
+<h3 id="optimización-de-rutas-para-nueva-aerolínea-">Optimización de rutas para nueva aerolínea (★★)<a class="headerlink" href="#optimización-de-rutas-para-nueva-aerolínea-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Comando: <code>nueva_aerolinea</code>.</li>
+<li>Parámetros: <code>ruta</code>, ruta del archivo de salida.</li>
+<li>Utilidad: exportar un archivo con las rutas que permitan implementar una nueva aerolínea tal que se
+pueda comunicar a todos los aeropuertos (en esta primera iteración, sólo de Estados Unidos) con dicha
+aerolínea, pero que el costo total de la licitación de las rutas aéreas sea mínima. Se considera que
+el costo de las rutas es proporcional al costo de los pasajes, por lo que se puede trabajar
+directamente con dicho costo.
+Se busca que la nueva aerolínea pueda llegar a todos los <strong>aeropuertos</strong> de alguna forma.
+La salida de este comando debe ser un archivo con el mismo formato del archivo <code>vuelos.csv</code>, pero
+únicamente con las rutas de vuelo a utilizar por ésta aerolínea.</li>
+<li>Complejidad: Este comando debe ejecutar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(F\log(A))</script>
+</script>.</li>
+<li>Ejemplo:
+Entrada:
+    <div class="highlight"><pre><span></span><code>nueva_aerolinea bAIRos.csv
+</code></pre></div>
+Salida (aparte del archivo creado):
+    <div class="highlight"><pre><span></span><code>OK
+</code></pre></div></li>
+</ul>
+<h3 id="recorrer-el-mundo-de-forma-óptima-">Recorrer el mundo, de forma óptima (★★★)<a class="headerlink" href="#recorrer-el-mundo-de-forma-óptima-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Comando: <code>recorrer_mundo</code>.</li>
+<li>Parámetros: <code>origen</code>, ciudad desde la que se parte para comenzar el recorrido.</li>
+<li>Utilidad: nos devuelve una lista en orden de cómo debemos movernos por el mundo para visitar todas
+<strong>las ciudades</strong> del mundo, demorando lo menos posible. Podemos volver a usar un aeropuerto ya usado,
+u otro de alguna ciudad ya visitada, si eso mejora la duración de nuestro viaje.</li>
+<li>Complejidad: que demore lo que deba demorar para obtener el resultado óptimo. <em>Cuidado</em>: considerar optimizarlo, puesto que hay un límite de tiempo en el corrector automático.</li>
+<li>Ejemplo:
+Entrada:
+    <div class="highlight"><pre><span></span><code>recorrer_mundo San Diego
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>(Recorrido con el formato de caminos mínimos)
+Costo: costo del recorrido
+</code></pre></div>
+Debido a que este comando puede demorar mucho tiempo, se recomienda realizar pruebas con el set
+de aeropuertos y vuelos inventados antes de hacer la prueba sobre el set de datos real. Ejemplo:
+Entrada:
+    <div class="highlight"><pre><span></span><code>recorrer_mundo Gotica
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>BAT -&gt; LAN -&gt; ASH -&gt; BH6 -&gt; JFK -&gt; ATL -&gt; NAR -&gt; SHE -&gt; RIV -&gt; WAC
+Costo: 2580
+</code></pre></div>
+<em>Aclaración</em>: pueden ser otros los caminos, siempre y cuando sean válidos y se trate de un costo
+mínimo.</li>
+</ul>
+<h3 id="recorrer-el-mundo-de-forma-aproximada-">Recorrer el mundo, de forma aproximada (★)<a class="headerlink" href="#recorrer-el-mundo-de-forma-aproximada-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Comando: <code>recorrer_mundo_aprox</code></li>
+<li>Parámetros: <code>origen</code>, ciudad desde la que se parte para comenzar el recorrido.</li>
+<li>Utilidad: nos devuelve una lista en orden de cómo debemos movernos por el mundo para visitar todas
+<strong>las ciudades</strong> del mundo, demorando <strong>aproximadamente</strong> lo menos posible. Podemos volver a usar un
+aeropuerto ya usado, u otro de alguna ciudad ya visitada, si eso mejora la duración de nuestro viaje.</li>
+<li>Complejidad: idealmente, que sea un algoritmo cuanto mucho cuadrático.</li>
+<li>Ejemplo:
+Entrada:
+    <div class="highlight"><pre><span></span><code>recorrer_mundo_aprox Kansas City
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>MCI -&gt; DEN -&gt; MMH -&gt; SFO -&gt; SLC -&gt; DFW -&gt; GPT -&gt; DFW -&gt; OMA -&gt; MSP -&gt; HIB -&gt; MSP -&gt; PIT -&gt; ORD -&gt; SPI -&gt; DFW -&gt; GCK -&gt; DFW -&gt; OGG -&gt; KOA -&gt; OGG -&gt; ORD -&gt; AVP -&gt; EWR -&gt; PVD -&gt; DTW -&gt; SEA -&gt; SFO -&gt; SBP -&gt; PHX -&gt; ATL -&gt; MYR -&gt; PBG -&gt; MYR -&gt; DFW -&gt; GGG -&gt; DFW -&gt; DEN -&gt; MOT -&gt; MSP -&gt; BOS -&gt; ACK -&gt; BOS -&gt; SLC -&gt; BTM -&gt; SLC -&gt; MSO -&gt; SFO -&gt; CEC -&gt; SFO -&gt; FLL -&gt; STT -&gt; ORD -&gt; BIL -&gt; DEN -&gt; BNA -&gt; DCA -&gt; SYR -&gt; ORD -&gt; STC -&gt; ORD -&gt; DEN -&gt; CPR -&gt; DEN -&gt; RDU -&gt; DFW -&gt; ACT -&gt; DFW -&gt; DTW -&gt; BUF -&gt; BOS -&gt; ACY -&gt; DTW -&gt; SLC -&gt; PIH -&gt; SLC -&gt; ORD -&gt; FWA -&gt; ORD -&gt; PIA -&gt; DEN -&gt; EUG -&gt; SLC -&gt; HOU -&gt; CRP -&gt; HOU -&gt; JFK -&gt; DFW -&gt; BRO -&gt; IAH -&gt; IAD -&gt; UST -&gt; IAD -&gt; ORD -&gt; CWA -&gt; ORD -&gt; ATL -&gt; MLB -&gt; ATL -&gt; ORD -&gt; CMI -&gt; ORD -&gt; AZO -&gt; ORD -&gt; DEN -&gt; LAR -&gt; DEN -&gt; ICT -&gt; DEN -&gt; RNO -&gt; DEN -&gt; PUB -&gt; DEN -&gt; DTW -&gt; APN -&gt; DTW -&gt; CLT -&gt; ILM -&gt; ATL -&gt; ECP -&gt; ATL -&gt; MYR -&gt; LBE -&gt; ORD -&gt; LAN -&gt; ORD -&gt; OKC -&gt; SLC -&gt; PSC -&gt; DEN -&gt; SDF -&gt; DEN -&gt; JAC -&gt; ATL -&gt; GSP -&gt; MDW -&gt; SEA -&gt; SIT -&gt; SEA -&gt; DEN -&gt; FSD -&gt; DEN -&gt; BOI -&gt; PDX -&gt; ANC -&gt; OTZ -&gt; ANC -&gt; DEN -&gt; MAF -&gt; DEN -&gt; SLC -&gt; VEL -&gt; SLC -&gt; AUS -&gt; DTW -&gt; ELM -&gt; DTW -&gt; CID -&gt; DEN -&gt; LAX -&gt; SMX -&gt; LAX -&gt; HOU -&gt; JAX -&gt; DFW -&gt; LAW -&gt; DFW -&gt; ORD -&gt; TVC -&gt; ORD -&gt; EAU -&gt; ORD -&gt; DSM -&gt; ATL -&gt; TLH -&gt; ATL -&gt; GRR -&gt; ORD -&gt; LNK -&gt; DEN -&gt; RDM -&gt; SLC -&gt; ATL -&gt; SAV -&gt; ATL -&gt; ROA -&gt; ORD -&gt; ANC -&gt; SCC -&gt; ANC -&gt; SFO -&gt; ACV -&gt; SFO -&gt; DEN -&gt; BMI -&gt; DEN -&gt; BUR -&gt; DEN -&gt; DVL -&gt; DEN -&gt; ATL -&gt; DHN -&gt; ATL -&gt; LAS -&gt; SLC -&gt; CNY -&gt; SLC -&gt; DFW -&gt; JLN -&gt; DFW -&gt; CMH -&gt; MSP -&gt; ISN -&gt; MSP -&gt; FAI -&gt; BRW -&gt; ANC -&gt; OME -&gt; ANC -&gt; MSP -&gt; BWI -&gt; MCO -&gt; MSP -&gt; ABR -&gt; MSP -&gt; HNL -&gt; GUM -&gt; HNL -&gt; DFW -&gt; ROW -&gt; DFW -&gt; SLC -&gt; CDC -&gt; SLC -&gt; DEN -&gt; DAY -&gt; DTW -&gt; MQT -&gt; ORD -&gt; GRB -&gt; MSP -&gt; DEN -&gt; SAF -&gt; LAX -&gt; MRY -&gt; SFO -&gt; ORD -&gt; ALO -&gt; ORD -&gt; COS -&gt; ORD -&gt; DBQ -&gt; ORD -&gt; SUX -&gt; ORD -&gt; ANC -&gt; BET -&gt; ANC -&gt; DFW -&gt; FSM -&gt; DFW -&gt; ANC -&gt; CDV -&gt; ANC -&gt; SLC -&gt; RAP -&gt; SLC -&gt; LGB -&gt; OAK -&gt; IAH -&gt; LCH -&gt; IAH -&gt; SBN -&gt; DTW -&gt; MYR -&gt; IAG -&gt; MYR -&gt; ATL -&gt; SLC -&gt; LWS -&gt; SLC -&gt; HNL -&gt; PPG -&gt; HNL -&gt; DEN -&gt; MLI -&gt; ORD -&gt; BWI -&gt; ISP -&gt; BWI -&gt; MDW -&gt; TUS -&gt; DEN -&gt; ASE -&gt; DEN -&gt; PHL -&gt; BWI -&gt; MKE -&gt; ORD -&gt; MKG -&gt; ORD -&gt; LAX -&gt; CLD -&gt; LAX -&gt; DFW -&gt; SPS -&gt; DFW -&gt; ORD -&gt; ATW -&gt; ORD -&gt; CHO -&gt; ORD -&gt; SFO -&gt; RDD -&gt; SFO -&gt; SEA -&gt; JNU -&gt; GST -&gt; JNU -&gt; SEA -&gt; ATL -&gt; GTR -&gt; ATL -&gt; PHX -&gt; FLG -&gt; PHX -&gt; LAS -&gt; LBB -&gt; DAL -&gt; TUL -&gt; ATL -&gt; GSO -&gt; DTW -&gt; CAK -&gt; DTW -&gt; SEA -&gt; JNU -&gt; YAK -&gt; JNU -&gt; SEA -&gt; DFW -&gt; BPT -&gt; DFW -&gt; PHX -&gt; YUM -&gt; PHX -&gt; JFK -&gt; HYA -&gt; JFK -&gt; ORD -&gt; COU -&gt; DFW -&gt; SLC -&gt; SUN -&gt; SLC -&gt; ANC -&gt; ADQ -&gt; ANC -&gt; DFW -&gt; MFE -&gt; IAH -&gt; BZN -&gt; SEA -&gt; KTN -&gt; WRG -&gt; KTN -&gt; SEA -&gt; SLC -&gt; EKO -&gt; SLC -&gt; MSP -&gt; BRD -&gt; MSP -&gt; ORD -&gt; CMX -&gt; ORD -&gt; MSP -&gt; GEG -&gt; DEN -&gt; ATL -&gt; FAY -&gt; ATL -&gt; IAH -&gt; LRD -&gt; IAH -&gt; GRK -&gt; DFW -&gt; SHV -&gt; ATL -&gt; LGA -&gt; BGR -&gt; DTW -&gt; LEX -&gt; MSP -&gt; ANC -&gt; DLG -&gt; ANC -&gt; DFW -&gt; ABI -&gt; DFW -&gt; CLE -&gt; BDL -&gt; DCA -&gt; BTR -&gt; DFW -&gt; DEN -&gt; IDA -&gt; DEN -&gt; DFW -&gt; TXK -&gt; DFW -&gt; ANC -&gt; AKN -&gt; ANC -&gt; DFW -&gt; LFT -&gt; IAH -&gt; MEM -&gt; DEN -&gt; GCC -&gt; DEN -&gt; SBA -&gt; PHX -&gt; ATL -&gt; SRQ -&gt; ATL -&gt; HSV -&gt; ATL -&gt; MOB -&gt; ATL -&gt; VLD -&gt; ATL -&gt; MGM -&gt; ATL -&gt; EWN -&gt; ATL -&gt; MIA -&gt; DFW -&gt; SJT -&gt; DFW -&gt; OGG -&gt; LIH -&gt; DEN -&gt; PHF -&gt; DEN -&gt; MFR -&gt; SLC -&gt; HOU -&gt; PNS -&gt; ATL -&gt; AGS -&gt; ATL -&gt; XNA -&gt; ATL -&gt; CRW -&gt; ATL -&gt; TYS -&gt; DTW -&gt; BGM -&gt; DTW -&gt; MDT -&gt; ATL -&gt; MLU -&gt; ATL -&gt; VPS -&gt; DFW -&gt; DEN -&gt; COD -&gt; ORD -&gt; SCE -&gt; ATL -&gt; ABY -&gt; ATL -&gt; BHM -&gt; ATL -&gt; STL -&gt; MSP -&gt; RHI -&gt; MSP -&gt; BJI -&gt; MSP -&gt; HLN -&gt; DEN -&gt; DFW -&gt; GRI -&gt; DFW -&gt; MHK -&gt; ORD -&gt; CVG -&gt; DEN -&gt; DRO -&gt; DFW -&gt; PBI -&gt; MIA -&gt; MCO -&gt; PSE -&gt; MCO -&gt; ORD -&gt; TOL -&gt; ORD -&gt; EVV -&gt; DTW -&gt; CIU -&gt; DTW -&gt; ORD -&gt; LSE -&gt; ORD -&gt; AVL -&gt; ATL -&gt; RIC -&gt; MCO -&gt; ORH -&gt; MCO -&gt; LAS -&gt; SJC -&gt; MSP -&gt; MBS -&gt; ORD -&gt; DFW -&gt; PIB -&gt; DFW -&gt; TPA -&gt; DTW -&gt; ESC -&gt; DTW -&gt; DEN -&gt; RKS -&gt; DEN -&gt; MSP -&gt; RST -&gt; DTW -&gt; ABE -&gt; ATL -&gt; RSW -&gt; DEN -&gt; JMS -&gt; DEN -&gt; DTW -&gt; BTV -&gt; DTW -&gt; HPN -&gt; DTW -&gt; PLN -&gt; DTW -&gt; MSP -&gt; GFK -&gt; MSP -&gt; FAR -&gt; DFW -&gt; TYR -&gt; IAH -&gt; ATL -&gt; BQK -&gt; ATL -&gt; ABQ -&gt; ATL -&gt; GNV -&gt; ATL -&gt; SLC -&gt; TWF -&gt; SLC -&gt; DTW -&gt; SWF -&gt; DTW -&gt; ATL -&gt; TRI -&gt; ATL -&gt; PHX -&gt; BFL -&gt; IAH -&gt; AEX -&gt; DFW -&gt; DEN -&gt; SGU -&gt; SLC -&gt; SEA -&gt; KTN -&gt; WRG -&gt; PSG -&gt; JNU -&gt; ANC -&gt; OGG -&gt; ITO -&gt; LAX -&gt; IND -&gt; ORD -&gt; MSN -&gt; DEN -&gt; ONT -&gt; DEN -&gt; GUC -&gt; IAH -&gt; SJU -&gt; STX -&gt; ATL -&gt; DEN -&gt; HYS -&gt; DEN -&gt; ORD -&gt; PAH -&gt; ORD -&gt; CHA -&gt; ATL -&gt; SEA -&gt; BLI -&gt; SEA -&gt; DTW -&gt; ITH -&gt; DTW -&gt; ORD -&gt; FNT -&gt; MSP -&gt; GTF -&gt; DEN -&gt; ELP -&gt; SAT -&gt; DEN -&gt; BIS -&gt; MSP -&gt; ORF -&gt; MSP -&gt; ANC -&gt; ADK -&gt; ANC -&gt; ATL -&gt; DAB -&gt; ATL -&gt; DFW -&gt; MEI -&gt; DFW -&gt; SLC -&gt; WYS -&gt; SLC -&gt; SMF -&gt; MSP -&gt; DLH -&gt; MSP -&gt; BOS -&gt; MVY -&gt; BOS -&gt; MSP -&gt; DIK -&gt; MSP -&gt; IMT -&gt; MSP -&gt; DTW -&gt; ERI -&gt; DTW -&gt; DEN -&gt; GJT -&gt; DEN -&gt; MSP -&gt; INL -&gt; MSP -&gt; DEN -&gt; AMA -&gt; DEN -&gt; HDN -&gt; DEN -&gt; LIT -&gt; BWI -&gt; MHT -&gt; ATL -&gt; EYW -&gt; ATL -&gt; MTJ -&gt; ORD -&gt; TTN -&gt; ORD -&gt; EGE -&gt; IAH -&gt; HRL -&gt; IAH -&gt; HOB -&gt; IAH -&gt; FLL -&gt; BQN -&gt; FLL -&gt; MSY -&gt; SAN -&gt; FAT -&gt; SFO -&gt; OTH -&gt; SFO -&gt; SNA -&gt; SLC -&gt; FCA -&gt; SLC -&gt; PSP -&gt; DFW -&gt; CLL
+Costo: 80387
+</code></pre></div>
+Con el set de datos de pruebas:
+Entrada:
+    <div class="highlight"><pre><span></span><code>recorrer_mundo_aprox Gotica
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>BAT -&gt; LAN -&gt; JFK -&gt; ATL -&gt; WAC -&gt; NAR -&gt; ASH -&gt; WAC -&gt; RIV -&gt; SHE -&gt; ASH -&gt; BH6
+Costo: 3765
+</code></pre></div></li>
+</ul>
+<h3 id="viaje-de-n-lugares-">Viaje de N lugares (★★★)<a class="headerlink" href="#viaje-de-n-lugares-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Comando: <code>vacaciones</code></li>
+<li>Parámetros: <code>origen</code>, y <code>n</code>.</li>
+<li>Utilidad: Obtener algún recorrido que comience en <code>origen</code> y que termine en <code>origen</code> también, de largo <code>n</code> (sin contar la última vuelta al <code>origen</code>). No debe pasarse por un aeropuerto más de una vez (salvo el
+<code>origen</code>, cuando volvemos a éste). En caso de no encontrar un recorrido de dicho largo que vuelva
+luego al origen, imprimir <code>"No se encontro recorrido"</code>.</li>
+<li>Ejemplo:</li>
+<li>Complejidad: Este comando debe ejecutar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(A^n)</script>
+</script>.
+Entrada:
+    <div class="highlight"><pre><span></span><code>vacaciones San Diego,6
+vacaciones New York,15
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>SAN -&gt; ABQ -&gt; HOU -&gt; AUS -&gt; LAX -&gt; BNA -&gt; SAN
+JFK -&gt; AUS -&gt; LAX -&gt; ASE -&gt; DEN -&gt; AMA -&gt; DAL -&gt; ABQ -&gt; HOU -&gt; BHM -&gt; MIA -&gt; BDL -&gt; IAD -&gt; ALB -&gt; MCO -&gt; JFK
+</code></pre></div></li>
+</ul>
+<h3 id="itinerario-cultural-">Itinerario cultural (★★)<a class="headerlink" href="#itinerario-cultural-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Comando: <code>itinerario</code></li>
+<li>Parámetros: <code>ruta</code>, la ruta el archivo del itinerario.</li>
+<li>Utilidad: El archivo de <code>ruta</code> tiene el formato:
+    <div class="highlight"><pre><span></span><code>ciudad_1,ciudad_2,ciudad_3, ...,ciudad_N
+ciudad_i,ciudad_j
+</code></pre></div>
+    La primera línea indica las ciudades que se desean visitar. Las siguientes indican que la
+    <code>ciudad_i</code> debe visitarse <strong>sí o sí</strong> antes que la <code>ciudad_j</code>.
+    Se debe:</li>
+<li>Imprimir el orden en el que deben visitarse dichas ciudades.</li>
+<li>Imprimir el camino mínimo en tiempo o escalas (según lo que se haya implementado en ese caso)
+a realizar.</li>
+<li>Complejidad: El cálculo de la obtención del itinerario debe realizarse en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(I + R)</script>
+</script>,
+siendo <script type="math/tex">
+<script type="math/tex">I</script>
+</script> la cantidad de ciudades a visitar, y <script type="math/tex">
+<script type="math/tex">R</script>
+</script> la cantidad de restricciones impuestas. Luego,
+el cálculo de los caminos debe realizarse en <script type="math/tex">
+<script type="math/tex">\mathcal{O}\left(I\times F \log (A)\right)</script>
+</script> o bien <script type="math/tex">
+<script type="math/tex">\mathcal{O}\left(I\times (A + F)\right)</script>
+</script>, dependiendo de si se trata de un caso u otro.</li>
+<li>Ejemplo, trabajando con <a href="itinerario_ejemplo.csv">itinerario_ejemplo.csv</a>,
+Entrada:
+    <div class="highlight"><pre><span></span><code>itinerario itinerario_ejemplo.csv
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>Asheville, Newburgh, Oakland, Wilmington, Jackson, Garden City, Kalispell, Hobbs, Aberdeen, Traverse City, Rhinelander, San Diego, Waco, Dallas-Fort Worth, New York, West Yellowstone
+AVL -&gt; ATL -&gt; DTW -&gt; SWF
+SWF -&gt; FLL -&gt; OAK
+OAK -&gt; ABQ -&gt; MCO -&gt; ILG
+ILG -&gt; MCO -&gt; DEN -&gt; JAC
+JAC -&gt; DFW -&gt; GCK
+GCK -&gt; DFW -&gt; DEN -&gt; FCA
+FCA -&gt; ATL -&gt; IAH -&gt; HOB
+HOB -&gt; IAH -&gt; MSP -&gt; ABR
+ABR -&gt; MSP -&gt; TVC
+TVC -&gt; MSP -&gt; RHI
+RHI -&gt; MSP -&gt; LAX -&gt; CLD
+CLD -&gt; LAX -&gt; DFW -&gt; ACT
+ACT -&gt; DFW
+DFW -&gt; JFK
+JFK -&gt; SLC -&gt; WYS
+</code></pre></div>
+Si bien en este ejemplo no llega a notarse, no tiene por qué ser el mismo aeropuerto el de llegada
+que el de salida (si deben ser aeropuertos de la ciudad en la cual se está parando).</li>
+</ul>
+<h3 id="exportar-a-archivo-kml-">Exportar a archivo KML (★)<a class="headerlink" href="#exportar-a-archivo-kml-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Comando: <code>exportar_kml</code>.</li>
+<li>Parámetros: <code>archivo</code>.</li>
+<li>Utilidad: exporta el archivo KML con la ruta del último comando ejecutado (que incluya algún camino,
+o rutas áereas). Esto aplica para todos los comandos salvo el de estadísticas, u obtención de los
+aeropuertos más centrales. Contamos con un <a href="/algo2/material/apuntes/kml">apunte sobre cómo crear, usar y visualizar archivos KML</a>.</li>
+<li>Complejidad: Este comando debe ejecutar en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(A + F)</script>
+</script>.</li>
+<li>Ejemplo:
+Entrada:
+    <div class="highlight"><pre><span></span><code>vacaciones San Diego,6
+exportar_kml kml-ejemplo.kml
+</code></pre></div>
+Salida:
+    <div class="highlight"><pre><span></span><code>SAN -&gt; ABQ -&gt; HOU -&gt; AUS -&gt; LAX -&gt; BNA -&gt; SAN
+OK
+</code></pre></div>
+<a href="kml-ejemplo.kml">Aquí</a> pueden encontrar el archivo KML exportado.</li>
+</ul>
+<h2 id="entrega">Entrega<a class="headerlink" href="#entrega" title="Permanent link">&para;</a></h2>
+<p>Adicionalmente a los archivos propios del trabajo práctico debe agregarse un archivo <code>entrega.mk</code> que contenga la regla <code>flycombi</code> para generar el ejecutable de dicho programa (sea compilando o los comandos que fueren necesarios). Por ejemplo, teniendo un TP elaborado en Python, podría ser:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">flycombi</span><span class="o">:</span> <span class="n">flycombi</span>.<span class="n">py</span> <span class="n">grafo</span>.<span class="n">py</span> <span class="n">biblioteca</span>.<span class="n">py</span>
+    cp flycombi.py flycombi
+    chmod +x flycombi
+</code></pre></div>
+
+<p><strong>Importante</strong>: En caso de recibir un error <code>FileNotFoundError: [Errno 2] No such file or directory: './flycombi': './flycombi'</code>, tener en cuenta que para el caso de enviar código escrito en Python es necesario además indicar la ruta del intérprete. Esto puede hacerse agregando como primera línea del archivo principal (en el ejemplo, sería <code>flycombi.py</code>) la línea: <code>#!/usr/bin/python3</code>.</p>
+<h2 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h2>
+<p>El código entregado debe ser claro y legible y ajustarse a las especificaciones
+de la consigna. Debe compilar sin advertencias y correr sin errores de memoria.</p>
+<p>La entrega incluye, obligatoriamente, los siguientes archivos de código:</p>
+<ul>
+<li>el código del TDA Grafo programado, y cualquier otro TDA que fuere necesario.</li>
+<li>el código de la solución del TP.</li>
+</ul>
+<p>La entrega se realiza:</p>
+<ol>
+<li>en forma digital a través del <a href="{{site.entregas}}">sistema de entregas</a>,
+con todos los archivos mencionados en un único archivo ZIP.</li>
+<li>en papel durante la clase (si su ayudante lo requiere) el código del Trabajo
+en hoja A4 <strong>abrochadas, sin folio, informe ni carátula</strong>.</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

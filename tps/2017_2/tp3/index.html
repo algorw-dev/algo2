@@ -1,0 +1,1284 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2017_2/tp3/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP3 – Seis Grados de Kevin Bacon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trabajo-práctico-3--seis-grados-de-kevin-bacon" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP3 – Seis Grados de Kevin Bacon
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducción" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seis-grados-de-separación-seis-grados-de-kevin-bacon" class="md-nav__link">
+    ¿Seis grados de separación? ¿Seis grados de Kevin Bacon?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementación" class="md-nav__link">
+    Implementación
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primitivas-del-grafo" class="md-nav__link">
+    Primitivas del grafo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librería-de-funciones" class="md-nav__link">
+    Librería de funciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-del-programa" class="md-nav__link">
+    Comandos del programa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="trabajo-práctico-3--seis-grados-de-kevin-bacon">Trabajo Práctico 3 – Seis Grados de Kevin Bacon<a class="headerlink" href="#trabajo-práctico-3--seis-grados-de-kevin-bacon" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ul>
+<li toc="toc">Contenido</li>
+</ul>
+<p>El Trabajo Práctico número 3 es de elaboración grupal, tiene fecha de entrega para el <strong>viernes 1/12</strong>, y
+está divido en tres partes interconectadas:
+* TDA Grafo
+* Librería de funciones de grafos de actores
+* Programa principal</p>
+<h2 id="introducción">Introducción<a class="headerlink" href="#introducción" title="Permanent link">&para;</a></h2>
+<p>Llega diciembre y la conocida comunidad IMDB está realizando un balance del año. Son devotos de conocer qué películas son las más populares y a qué actores se les podría llamar más famosos.
+Pero no solo quieren saber esto, ya que este año el CEO de la página escuchó sobre la idea de los “Seis grados de Kevin Bacon” y decidió que podía utilizar la enorme base de datos que maneja diariamente la página para corroborar la veracidad de esta idea.
+Para esto, decidió sabiamente confiar en los alumnos de Algoritmos y Programación II de la FIUBA, aprovechando su conocimiento para poder así resolver el misterio.</p>
+<h2 id="seis-grados-de-separación-seis-grados-de-kevin-bacon">¿Seis grados de separación? ¿Seis grados de Kevin Bacon?<a class="headerlink" href="#seis-grados-de-separación-seis-grados-de-kevin-bacon" title="Permanent link">&para;</a></h2>
+<p style="text-align: center;">
+  <img src="{{ 'assets/tps/2017_2/tp3/logo_tp3.png' | relative_url }}" width="300">
+</p>
+
+<p>&ldquo;Seis grados de separación&rdquo; es la idea que asegura que toda persona está a seis &ldquo;pasos&rdquo; o menos de cualquiera otra persona en el mundo, a partir de una cadena de conocidos. Por ejemplo, si Juan conoce a Martín y Martín conoce a Pedro, Juan está, entonces, a dos pasos de Pedro. Para más información de por qué esto se cumple se puede ver <a href="https://youtu.be/TcxZSmzPw8k">este video</a>.</p>
+<p>La teoría de los &ldquo;Seis grados de Kevin Bacon&rdquo; lleva esta idea al cine, afirmando que el prolífico actor Kevin Bacon actuó en tantas peliculas y con tantos actores conocidos que está conectado a cualquier actor del mundo en una cadena de seis películas como máximo.</p>
+<p>Por ejemplo, con la idea de conectar a Naomi Watts con Kevin Bacon:</p>
+<ul>
+<li>Naomi Watts actuó con Sean Penn en <em><strong>21 Gramos.</strong></em></li>
+<li>Sean Penn actuó con <strong>Kevin Bacon</strong> en _<strong>Río Místico.</strong>_¹</li>
+</ul>
+<p>Por lo tanto, <strong>Naomi Watts tiene un Kevin Bacon Number (KBN) de 2</strong>.</p>
+<p>Es importante ver que <strong>el Bacon Number de un actor es siempre el mismo</strong>, sin importar el camino. Esto es tanto porque los actores colaboren juntos en más de una película (de Naomi Watts a Sean Penn se puede llegar por <em><strong>The Assassination of Richard Nixon</strong></em>), como por que se tome un camino distinto (por ejemplo, Naomi Watts trabajo con Jeffrey Donovan en <em><strong>J Edgar</strong></em> quien a su vez trabajo con Kevin Bacon en <em><strong>Sleepers</strong></em>).</p>
+<p>Cuando un actor esta completamente desconectado de KB, es decir, no tiene forma de llegar a él, se dice que tiene un &lsquo;Kevin Bacon Number of infinity&rsquo;.</p>
+<p>¹Tanto <em><strong>Río Místico</strong></em> como <em><strong>21 Gramos</strong></em> son fuertes recomendaciones de muy buenas películas.</p>
+<h2 id="implementación">Implementación<a class="headerlink" href="#implementación" title="Permanent link">&para;</a></h2>
+<p><strong>El trabajo consiste de tres secciones</strong>:</p>
+<ul>
+<li>
+<p>El TDA Grafo, con sus primitivas.</p>
+</li>
+<li>
+<p>Una librería de funciones de grafos, que permita hacer distintas operaciones sobre un grafo de actores/películas, sin importar quienes sean.</p>
+</li>
+<li>
+<p>El programa &lsquo;Seis grados de Kevin Bacon&rsquo; que utilice tanto el TDA como la librería para poder implementar todo lo requerido poniendo el foco en Kevin Bacon.</p>
+</li>
+</ul>
+<p>El programa a realizar debe recibir por parámetro y cargar en memoria el set de datos (<code>$ ./kevinbacon actors.csv</code>) y luego solicitar el ingreso de comandos por entrada estándar, del estilo <code>comando 'parametro'</code>. Notar que esto permite tener un archivo de instrucciones a ser ejecutadas (<code>cat comandos.txt | ./kevinbacon actors.csv</code>).</p>
+<p>Para lograr esto, IMDB nos proporcionó² un sets de datos, <a href="https://drive.google.com/drive/folders/0B2J1xTZnFQnBVnZzcF8xR3Z3SVE?usp=sharing"><code>actors.csv</code></a> (<strong>comma separated values</strong>) con un total de 2.480.000 actores y actrices y 800.000 películas. Este archivo se va a usar para generar un grafo donde los vértices sean actores y las aristas sean las películas en las que hayan colaborado, así conectándolos. Los demás algoritmos y recorridos trabajaran directamente usando las primitivas de este TDA. Cada linea de este archivo tiene el formato de <code>apellido nombre, pelicula1, pelicula2, pelicula3, ...</code> Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>Bacon Kevin,A Few Good Men (1992),A Little Vicious (1991),Animal House (1978),Apollo 13 (1995/I),Balto (1995),Beauty Shop (2005),Beyond All Boundaries (2009),Black Mass (2015),Cavedweller (2004),Cop Car (2015),Crazy Stupid Love (2011),Criminal Law (1988),Death Sentence (2007),Digging to China (1997),Diner (1982),Elephant White (2011),End of the Line (1987),Enormous Changes at the Last Minute (1983),Flatliners (1990),Footloose (1984),Forty Deuce (1982),Friday the 13th (1980),Frost/Nixon (2008),He Said She Said (1991),Hero at Large (1980),Hollow Man (2000),Jayne Mansfields Car (2012),JFK (1991),Lemon Sky (1988),Loverboy (2005),Murder in the First (1995),My Dog Skip (2000),My One and Only (2009),Mystic River (2003),New York Skyride (1994),Only When I Laugh (1981),Patriots Day (2016),Picture Perfect (1997),Pyrates (1991),Queens Logic (1991),Quicksilver (1986),RIPD (2013),Rails &amp; Ties (2007),Saving Angelo (2007),Shes Having a Baby (1988),Sleepers (1996),Starting Over (1979),Stir of Echoes (1999),Super (2010/I),Telling Lies in America (1997),The Air I Breathe (2007),The Air Up There (1994),The Big Green (2014),The Big Picture (1989),The Darkness (2016/I),The Making of Apollo 13 (1995),The River Wild (1994),The Woodsman (2004),These Vagabond Shoes (2009),Tough Day (2014),Trapped (2002/I),Tremors (1990),Where the Truth Lies (2005),White Water Summer (1987),Wild Things (1998),X First Class (2011)
+</code></pre></div>
+
+<p>Siendo que <code>actors.csv</code> es muy pesado, un archivo de prueba más ligero, <code>test.csv</code>, también es proporcionado para probar resultados localmente. Este contiene lineas del archivo original escogidas al azar, más la linea de Kevin Bacon.</p>
+<p>²Las bases de datos de IMDB eran un poco más confusas que las proporcionadas. Si quieren ver cómo se trabajo con el archivo original ir <a href="https://github.com/FdelMazo/IMDBtoCSV/">acá.</a></p>
+<h3 id="primitivas-del-grafo">Primitivas del grafo<a class="headerlink" href="#primitivas-del-grafo" title="Permanent link">&para;</a></h3>
+<p>Se aclara previamente que no es necesario para el alcance de este TP hacer el grafo dirigido o pesado.</p>
+<ol>
+<li>Crear grafo (y de ser necesario destruirlo).</li>
+<li>Agregar y borrar arista. (tener en cuenta que en este trabajo las aristas tienen como nombre a la pelicula conectora)</li>
+<li>Agregar y borrar vértice.</li>
+<li>Obtener adyacentes de un vértice.</li>
+<li>Verificar si dos vértices son adyacentes.</li>
+<li>Obtener aristas.</li>
+<li>Obtener vértices.</li>
+</ol>
+<h3 id="librería-de-funciones">Librería de funciones<a class="headerlink" href="#librería-de-funciones" title="Permanent link">&para;</a></h3>
+<ol>
+<li><em>Camino</em>:</li>
+</ol>
+<p>Dado dos actores, busca el camino <strong>más corto</strong> que recorre el primer actor para llegar al segundo.
+   <div class="highlight"><pre><span></span><code>camino(&#39;Eastwood Clint&#39;, &#39;Bale Christian&#39;)
+&gt;&gt;&gt; [(&#39;Eastwood Clint&#39;, &#39;Stiller Ben&#39;, &#39;Unite for Japan (2011)&#39;) , (&#39;Stiller Ben&#39;, &#39;Bale Christian&#39; , &#39;Empire of The Sun (1987)&#39;)]
+</code></pre></div></p>
+<ol>
+<li><em>Actores a distancia</em>:</li>
+</ol>
+<p>Los actores a <em>n</em> distancia del actor original son aquellos que esten <em>n</em> pasos del actor. Ordenarlos alfabéticamente.
+   <div class="highlight"><pre><span></span><code>actores_a_distancia(&#39;Eastwood Clint&#39;, 2)
+&gt;&gt;&gt; [&#39;Douglas Michael&#39;, &#39;Rudd Paul&#39;, ...]
+</code></pre></div></p>
+<ol>
+<li><em>Popularidad</em> ⁴:</li>
+</ol>
+<p>Calculamos la popularidad de un actor como la sumatoria de la cantidad de personas con la que trabajó alguien que trabajó con él (es decir, los actores a distancia dos), multiplicado por la cantidad de películas en las que participó.
+   <div class="highlight"><pre><span></span><code>popularidad(&#39;Eastwood Clint&#39;)
+&gt;&gt;&gt; 100640852
+</code></pre></div></p>
+<ol>
+<li><em>Similares</em>:</li>
+</ol>
+<p>Encuentra  a los <em>n</em> actores más similares al actor dado.</p>
+<p>La similitud entre dos actores se refiere a dos actores que no hayan
+   trabajado juntos entre sí, pero hayan trabajado con la mayor cantidad
+   de actores en común.</p>
+<p>Para calcular la similitud, podemos utilizar <a href="https://en.wikipedia.org/wiki/Random_walk">random walks</a>,
+   o recorrido aleatorio.
+   Comienza desde un vértice de origen y se mueve aleatoriamente a un
+   vecino; y luego, se mueve a un vecino de este, incluyendo el original.
+   Este proceso continúa hasta que el camino cumpla con un largo <em>m</em>
+   prefijado o proporcional a la cantidad de vértices del grafo.</p>
+<p>Si realizamos muchos de estos random walks, partiendo desde el actor en
+   cuestión y moviéndonos de forma completamente aleatoria, los actores
+   que más veces se visiten entre todos los recorridos, deben ser los más
+   similares al actor de origen.</p>
+<p>Tener en cuenta que el algoritmo debería ser más preciso cuantos más
+   largos y más recorridos se hagan.
+   <div class="highlight"><pre><span></span><code>similares(&#39;Eastwood Clint&#39;, 2)
+&gt;&gt;&gt; [&#39;Snyder Brian&#39;, &#39;Mortensen Viggo&#39;]
+</code></pre></div></p>
+<p>⁴Esta métrica de popularidad es una estimación muy simple pero útil para el alcance de este trabajo práctico.</p>
+<h3 id="comandos-del-programa">Comandos del programa<a class="headerlink" href="#comandos-del-programa" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Camino hasta Kevin Bacon</p>
+<p>Imprime el camino más corto con el cual se llega desde cualquier actor hasta Kevin Bacon. De no haber camino posible se debe imprimir un mensaje acorde (por ejemplo: &ldquo;No hay conexion entre KB y el actor&rdquo;), y de no existir el actor ingresado se debe imprimir un mensaje acorde.
+<div class="highlight"><pre><span></span><code>camino_hasta_KB &#39;Watts Naomi&#39;
+&gt;&gt;&gt; &#39;Watts Naomi&#39; actuó con &#39;Penn Sean&#39; en &#39;Mystic River (2003)&#39;.
+&gt;&gt;&gt; &#39;Penn Sean&#39; actuó con &#39;Bacon Kevin&#39; en &#39;21 Grams (2003)&#39;.
+</code></pre></div></p>
+</li>
+<li>
+<p>Bacon Number</p>
+<p>Imprime el Kevin Bacon Number del actor recibido. Para representar un KBN infinito (no hay conexión entre KB y el actor) el KBN esperado es -1, y de no existir el actor ingresado se debe imprimir un mensaje acorde. Tener en cuenta que el KBN de Kevin Bacon es 0.
+<div class="highlight"><pre><span></span><code>bacon_number &#39;Watts Naomi&#39;
+&gt;&gt;&gt; &#39;Watts Naomi&#39; tiene un Kevin Bacon Number igual a 2.
+</code></pre></div></p>
+</li>
+<li>
+<p>Bacon Number mayor a 6</p>
+<p>Imprime la cantidad de actores (¿existirán?) a una distancia mayor a 6 pasos de Kevin Bacon. De no existir actores a más pasos que 6, se imprime un mensaje acorde. En este numero no influyen la cantidad de actores con un KBN infinito.
+<div class="highlight"><pre><span></span><code>bacon_number_mayor_a_6
+&gt;&gt;&gt; Los actores con un KBN mayor a 6 son:
+&gt;&gt;&gt; Con KBN igual a 6: N actores
+&gt;&gt;&gt; Con KBN igual a 7: N actores
+&gt;&gt;&gt; ...
+</code></pre></div></p>
+</li>
+<li>
+<p>Bacon Number infinito</p>
+<p>Imprime la cantidad de actores (¿existirán?) con un KBN infinito. De no haber, se debe imprimir un mensaje acorde.
+<div class="highlight"><pre><span></span><code>bacon_number_infinito
+&gt;&gt;&gt; Los actores con un Bacon Number infinito son N
+</code></pre></div></p>
+</li>
+<li>
+<p>Bacon Number promedio</p>
+<p>Imprime el Kevin Bacon Number promedio. En este numero no influyen la cantidad de actores con un KBN infinito, pero si lo hace el KBN de Kevin Bacon.
+<div class="highlight"><pre><span></span><code>KBN_promedio
+&gt;&gt;&gt; El Kevin Bacon Number promedio es N
+</code></pre></div></p>
+</li>
+<li>
+<p>Similares a Kevin Bacon</p>
+<p>¿Si una película quisiese contratar a Kevin Bacon pero no tiene el presupuesto para pagarlo? ¡Contrata al que más se le parece!</p>
+<p>Imprime una lista de los n actores más similares a Kevin Bacon, ordenados de mayor similitud a menor.
+<div class="highlight"><pre><span></span><code>similares_a_KB &#39;3&#39;
+&gt;&gt;&gt; Los 3 actores más similares KB son  [&#39;Buscemi Steve&#39;, &#39;Brocksmith Roy&#39;, &#39;Hollander Providence&#39;]
+</code></pre></div></p>
+</li>
+<li>
+<p>Popularidad contra Kevin Bacon</p>
+<p>Todo el mundo sabe que Kevin Bacon es el actor más popular de todos. Usando su popularidad como base, imprime en porcentaje cuán popular es el actor en comparación a KB. De no existir el actor ingresado, se debe imprimir un mensaje acorde y devolver None. Tener en cuenta que Kevin Bacon es un 100% de lo popular que es Kevin Bacon
+<div class="highlight"><pre><span></span><code>popularidad_contra_KB &#39;Pattinson Robert&#39;
+&gt;&gt;&gt; &#39;Pattinson Robert&#39; es un 6.02% de lo popular que es Kevin Bacon
+</code></pre></div></p>
+</li>
+<li>
+<p>Estadísticas ³:</p>
+<ol>
+<li>Cantidad de películas: imprime la cantidad de películas en el dataset.</li>
+<li>Cantidad de actores: imprime la cantidad de actores en el dataset.</li>
+</ol>
+<p>```
+cantidad_peliculas</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>El dataset contiene 786879 películas.
+cantidad_actores
+El dataset contiene 2454209 actores.
+```</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p>³IMDB se copó tanto con Kevin Bacon que dejó el balance anual para el final de todo, ¡casi se olvidan!</p>
+<h1 id="trivia">Trivia<a class="headerlink" href="#trivia" title="Permanent link">&para;</a></h1>
+<p>Como última tarea, y con el proposito de darle un pequeño uso al programa realizado, dejamos está trivia (no obligatoría) para que puedan completar haciendo uso del progama:</p>
+<ul>
+<li>¿Hay algun actor argentino con un KBN infinito?</li>
+<li>¿Cuál es el actor argentino más popular con respecto a KB?</li>
+<li>¿Cuál es el actor argentino más similar a KB?</li>
+<li>¿Hay algun actor &lsquo;mejor&rsquo; que Kevin Bacon para realizar este trabajo? Es decir, ¿hay algun actor más popular? ¿con más conexiones?</li>
+</ul>
+<h1 id="anexo-links-y-más">Anexo: links y más<a class="headerlink" href="#anexo-links-y-más" title="Permanent link">&para;</a></h1>
+<p>Para ver una implementación online de Six Degrees of Bacon, pueden entrar al <a href="https://oracleofbacon.org/">Oracle de Bacon</a>. En su sección &ldquo;How it Works&rdquo; pueden encontrar información útil sobre teoría de grafos.</p>
+<p>También tengan en cuenta que con solo escribir en Google, por ejemplo, <code>bacon number of Clint Eastwood</code> pueden rápidamente comprobar sus resultados.</p>
+<p>Para una buena lectura sobre grafos en Python pueden leer <a href="https://www.python.org/doc/essays/graphs/">este ensayo</a>, y para un mejor manejo de clases pueden leer <a href="http://www.siafoo.net/article/57">acá</a> y <a href="http://www.diveintopython3.net/special-method-names.html">acá</a> acerca de sus &lsquo;métodos magicos&rsquo; (o &lsquo;dunder methods&rsquo;).</p>
+<h1 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h1>
+<p>El trabajo puede ser realizado en cualquier lenguaje de programación previo acuerdo con el corrector, y debe estar separado al menos en tres módulos: grafo, librería de grafos de actores y programa de Kevin Bacon.</p>
+<p><strong>Los resultados presentes en este enunciado no son definitivos, fueron dados solo como ejemplo.</strong></p>
+<p>De ser realizado en Python, para poder ser probado, los nombres de dos de los archivos entregados deben ser:</p>
+<ul>
+<li>
+<p><code>seis_grados.py</code>, que deberá contener las funciones descriptas en la sección &ldquo;<a href="#librería-de-funciones">librería de funciones</a>&rdquo;.
+  Se provee un archivo con los <a href="{{ 'assets/tps/2017_2/tp3/seis_grados.py' | relative_url }}">prototipos de las funciones en Python</a>.</p>
+</li>
+<li>
+<p><code>kevin_bacon.py</code>, que deberá respetar la interfaz de entrada y salida de este enunciado, descriptas en la sección &ldquo;<a href="#comandos-del-programa">comandos del programa</a>&rdquo;.</p>
+</li>
+</ul>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fbarrios@fi.uba.ar'>Federico Barrios</a>, <a href='mailto:fdelmazo@fi.uba.ar'>Federico del Mazo</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

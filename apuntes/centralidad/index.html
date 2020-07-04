@@ -1,0 +1,1342 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/apuntes/centralidad/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Centralidad - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#centralidad-en-un-grafo" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Centralidad
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../external-sorts/" class="md-tabs__link md-tabs__link--active">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Centralidad
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Centralidad" class="md-nav__link md-nav__link--active">
+      Centralidad
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#betweeness-centrality" class="md-nav__link">
+    Betweeness Centrality
+  </a>
+  
+    <nav class="md-nav" aria-label="Betweeness Centrality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementación-sencilla" class="md-nav__link">
+    Implementación Sencilla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#una-mejor-implementación" class="md-nav__link">
+    Una mejor implementación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-el-algoritmo-de-floyd-warshall" class="md-nav__link">
+    Usando el algoritmo de Floyd-Warshall
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centralidad-aproximada" class="md-nav__link">
+    Centralidad Aproximada
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#betweeness-centrality" class="md-nav__link">
+    Betweeness Centrality
+  </a>
+  
+    <nav class="md-nav" aria-label="Betweeness Centrality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementación-sencilla" class="md-nav__link">
+    Implementación Sencilla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#una-mejor-implementación" class="md-nav__link">
+    Una mejor implementación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-el-algoritmo-de-floyd-warshall" class="md-nav__link">
+    Usando el algoritmo de Floyd-Warshall
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centralidad-aproximada" class="md-nav__link">
+    Centralidad Aproximada
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="centralidad-en-un-grafo">Centralidad en un grafo<a class="headerlink" href="#centralidad-en-un-grafo" title="Permanent link">&para;</a></h1>
+<p><a href="https://en.wikipedia.org/wiki/Betweenness_centrality">Centrality</a> (o Centralidad, en español),
+es una medida dentro te Teoría de Grafos que determina cuán importante es un vértice dentro de una red
+en particular. Esto puede ayudar a entender desde cuan importante es una persona dentro de una red social,
+importancia de una avenida dentro de una ciudad, etc&hellip;</p>
+<p>Hay distintos tipos de centralidades:
+1. Centralidad de grado: simplemente, el grado del vértice en cuestión (en caso de grafos dirigidos,
+serían ambas medidas).
+2. Cercanía (<em>closeness</em>): el promedio de las distancias del vértice a todos los demás.
+3. Intermediación (<em>Betweeness</em>): es la frecuencia con la que aparece el vértice en todos los caminos
+mínimos del grafo (en los que no es extremo).
+4. Centralidad del autovector: analiza el vértice en función de los autovalores y autovectores de la
+matriz de adyacencia.</p>
+<p>En el curso, nos centraremos especialmente en la tercera.</p>
+<h2 id="betweeness-centrality">Betweeness Centrality<a class="headerlink" href="#betweeness-centrality" title="Permanent link">&para;</a></h2>
+<p>Para obtener la centralidad de los vértices de un grafo, será necesario saber cuántas veces aparece un
+vértice en cada camino mínimo posible dentro del grafo. Para ésto, será necesario calcular los caminos
+mínimos entre todos los pares de vértices (sin ser uno de los extremos). Esto nos dirá cuan seguido
+se pasa por el vértice en cuestión para llegar a los demás. Para explicar la lógica de ésto: si
+en una red de citaciones de Papers, para llegar de un paper a otro es necesario pasar usualmente
+por uno en particular, entonces es seguro que ese paper debe ser importante.</p>
+<h3 id="implementación-sencilla">Implementación Sencilla<a class="headerlink" href="#implementación-sencilla" title="Permanent link">&para;</a></h3>
+<p>Un algoritmo trivial para tratar de calcular la centralidad podría ser:</p>
+<ol>
+<li>Para cada vértice origen, para cada vértice destino, calculamos el camino mínimo entre estos dos,
+vemos quienes aparecen en el medio del camino. El cálculo del camino mínimo se podrá hacer usando el
+Algoritmo de Dijkstra, BFS (si el grafo es no pesado), según corresponda.</li>
+</ol>
+<p>Este algoritmo es bastante sencillo de implementar:
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">centralidad</span><span class="p">(</span><span class="n">grafo</span><span class="p">):</span>
+    <span class="n">cent</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">grafo</span><span class="p">:</span> <span class="n">cent</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">grafo</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">grafo</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">w</span><span class="p">:</span> <span class="k">continue</span>
+            <span class="c1"># con el algoritmo que corresponda al grafo</span>
+            <span class="n">distancia</span><span class="p">,</span> <span class="n">padre</span> <span class="o">=</span> <span class="n">camino_minimo</span><span class="p">(</span><span class="n">grafo</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+            <span class="c1"># salteamos si no hay camino de v a w</span>
+            <span class="k">if</span> <span class="n">padre</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="ow">is</span> <span class="n">NULL</span><span class="p">:</span> <span class="k">continue</span>
+            <span class="n">actual</span> <span class="o">=</span> <span class="n">padre</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
+            <span class="c1"># le sumamos 1 a la centralidad de todos los vertices que se encuentren en</span>
+            <span class="c1"># el medio del camino</span>
+            <span class="k">while</span> <span class="n">actual</span> <span class="o">!=</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">cent</span><span class="p">[</span><span class="n">actual</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">actual</span> <span class="o">=</span> <span class="n">padre</span><span class="p">[</span><span class="n">actual</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">cent</span>
+</code></pre></div></p>
+<h4>Complejidad</h4>
+<p>El algoritmo es muy sencillo de entender, y de implementar. Ahora bien, ¿cuál es el orden? Para todos los
+vértices origen posibles, para todos los vertices destinos posible, obtenemos el camino mínimo. Si usamos
+Dijkstra, el algoritmo tendrá un orden de <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V^2 E \log V)</script>
+</script>, con BFS es
+<script type="math/tex">
+<script type="math/tex">\mathcal{O}(V^2(V+E))</script>
+</script>. Ésto es claramente un orden muy grande.</p>
+<h3 id="una-mejor-implementación">Una mejor implementación<a class="headerlink" href="#una-mejor-implementación" title="Permanent link">&para;</a></h3>
+<p>Otra opción puede ser aprovechar que tanto el recorrido BFS como el Algoritmo de Dijkstra permite calcular
+<strong>todos</strong> los caminos mínimos desde un determinado origen, con la misma complejidad. Esto nos permitirá
+reducir en un grado el orden del punto anterior. Lo que sucederá es que el algoritmo será levemente más
+complejo que el anterior, dado que será más complejo <em>reconstruir los caminos</em>: el truco estará en que
+no buscamos reconstruir los caminos, sino simplemente saber cuántas veces aparece un vértice en un camino
+mínimo:
+1. Aplicar Dijsktra/BFS, sin un destino fijo (el algoritmo que corresponda para el grafo en cuestión).
+1. Tener un arreglo/diccionario con contadores, para cada vértice, inicializados en 0. Estos contadores
+nos permitirán saber cuántas veces aparece cada vértice, para este origen.
+1. Ordenar los vértices de mayor a menor distancia (sacando de lado los que queden en infinito).
+1. En el orden obtenido en el punto anterior, iterar los vértices: por cada uno, le sumamos a su
+padre (solo a su padre directo) 1, más el contador del vértice actual. Eso hace que le estemos sumando 1
+por su propio camino (cuando calculamos para desde el origen a dicho vértice), y todos los caminos que
+pasan por este vértice en cuestión, que necesariamente también van a tener que pasar por el padre.
+Estamos seguros de siempre pasar primero por un hijo antes del padre, por haber realizado el
+ordenamiento de mayor a menor distancia.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">centralidad</span><span class="p">(</span><span class="n">grafo</span><span class="p">):</span>
+    <span class="n">cent</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">grafo</span><span class="p">:</span> <span class="n">cent</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">grafo</span><span class="p">:</span>
+        <span class="c1"># hacia todos los demas vertices</span>
+        <span class="n">distancia</span><span class="p">,</span> <span class="n">padre</span> <span class="o">=</span> <span class="n">camino_minimo</span><span class="p">(</span><span class="n">grafo</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="n">cent_aux</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">grafo</span><span class="p">:</span> <span class="n">cent_aux</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># Aca filtramos (de ser necesario) los vertices a distancia infinita,</span>
+        <span class="c1"># y ordenamos de mayor a menor</span>
+        <span class="n">vertices_ordenados</span> <span class="o">=</span> <span class="n">ordenar_vertices</span><span class="p">(</span><span class="n">grafo</span><span class="p">,</span> <span class="n">distancias</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">vertices_ordenados</span><span class="p">:</span>
+            <span class="n">cent_aux</span><span class="p">[</span><span class="n">padre</span><span class="p">[</span><span class="n">w</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">cent_aux</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
+        <span class="c1"># le sumamos 1 a la centralidad de todos los vertices que se encuentren en</span>
+        <span class="c1"># el medio del camino</span>
+        <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">grafo</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">w</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span> <span class="k">continue</span>
+            <span class="n">cent</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">+=</span> <span class="n">cent_aux</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">cent</span>
+</code></pre></div>
+
+<h4>Complejidad</h4>
+<p>De los puntos anteriores podemos ver que el orden de nuestra nueva implementación será:</p>
+<p>$$
+\begin{aligned}
+\mathcal{O}(\text{centralidad}) &amp;= V \times \left(\mathcal{O}(\text{camino-minimo}) + \mathcal{O}(V)
++ \mathcal{O}(\text{ordenamiento}) + \mathcal{O}(V) + \mathcal{O}(V)\right) \</p>
+<p>\mathcal{O}(\text{centralidad}) &amp;= V \times \left(\mathcal{O}(\text{camino-minimo}) +
+ \mathcal{O}(\text{ordenamiento})\right)
+\end{aligned}
+$$</p>
+<ul>
+<li>
+<p>Si se trata de un grafo no pesado el camino mínimo nos costará <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V+E)</script>
+</script>. En este caso,
+sabemos cuál es el rango de distancias posibles: irán de 0, a como mucho <script type="math/tex">
+<script type="math/tex">V</script>
+</script>, por lo que podríamos
+utilizar un ordenamiento no comparativo como Counting Sort. De esta forma, el costo del ordenamiento
+será <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V)</script>
+</script>, teniendo un orden final de <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V(V+E))</script>
+</script>.</p>
+</li>
+<li>
+<p>Si se trata de un grafo pesado, obtener los caminos mínimos nos costará <script type="math/tex">
+<script type="math/tex">\mathcal{O(E\log V)}</script>
+</script>. En
+este caso no tenemos forma de acotar las distancias (aún cuando las conociéramos todas, sumadas pueden
+dar mucho mayor a la cantidad de vértices que hay, haciendo que aplicar counting sort sea
+contraproducente). Por lo tanto, deberemos usar un ordenamiento comparativo, costando
+<script type="math/tex">
+<script type="math/tex">\mathcal{O}(V \log V)</script>
+</script>, teniendo un orden final de <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V (V+E) \log V)</script>
+</script>.</p>
+</li>
+</ul>
+<h3 id="usando-el-algoritmo-de-floyd-warshall">Usando el algoritmo de Floyd-Warshall<a class="headerlink" href="#usando-el-algoritmo-de-floyd-warshall" title="Permanent link">&para;</a></h3>
+<p>Opcionalmente, también se puede implementar el algoritmo de
+<a href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Floyd-Warshall</a> que, utilizando
+programación dinámica, permite obtener todos los caminos mínimos de un grafo, en tiempo
+<script type="math/tex">
+<script type="math/tex">\mathcal{O}(V^3)</script>
+</script>.</p>
+<h2 id="centralidad-aproximada">Centralidad Aproximada<a class="headerlink" href="#centralidad-aproximada" title="Permanent link">&para;</a></h2>
+<p>Dado que el orden de las implementaciones anteriores aún sigue siendo muy grande, otra opción puede ser
+calcular la centralidad utilizando <a href="../random_walks/">Random Walks</a>. Realizando muchos caminos largos, de
+forma aleatoria, comenzando desde cualquier vértice, suena razonable pensar que los vértices que más
+veces aparezcan entre todos los recorridos, deberían ser los más importantes. Por supuesto, esto es una
+aproximación. Para explicar la lógica de ésto podemos utilizar el mismo ejemplo al anterior: si en una
+red de papers nos movemos de citación en citación de forma aleatoria, muy probablemente los papers con los
+que más veces nos topemos sean los más importantes. Nuevamente, deberíamos tener en cuenta los pesos para
+movernos de un vértice a otro (si es que los hay).</p>
+<p>Si tenemos <script type="math/tex">
+<script type="math/tex">K</script>
+</script> recorridos a realizar de longitud <script type="math/tex">
+<script type="math/tex">L</script>
+</script>, el costo será <script type="math/tex">
+<script type="math/tex">\mathcal{O}(K \times L)</script>
+</script>. En el
+peor de los casos, veremos varias veces algunas aristas, pero no veremos todas todo el tiempo. Podríamos
+acotar esto por <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V + E)</script>
+</script>.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 4 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../random_walks/" title="Random walks" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Random walks
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../pagerank/" title="PageRank" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                PageRank
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

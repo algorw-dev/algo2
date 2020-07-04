@@ -1,0 +1,1515 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/faq/tda/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Tipos de datos abstractos - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tipos-de-datos-abstractos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Tipos de datos abstractos
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../general/" class="md-tabs__link md-tabs__link--active">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Tipos de datos abstractos
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Tipos de datos abstractos" class="md-nav__link md-nav__link--active">
+      Tipos de datos abstractos
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstracción" class="md-nav__link">
+    Abstracción
+  </a>
+  
+    <nav class="md-nav" aria-label="Abstracción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qué-es-el-tipo-void" class="md-nav__link">
+    ¿Qué es el tipo void*?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qué-es-una-estructura-en-c" class="md-nav__link">
+    ¿Qué es una estructura en C?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qué-significa-el-error-dereferencing-pointer-to-incomplete-type" class="md-nav__link">
+    ¿Qué significa el error dereferencing pointer to incomplete type?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-qué-no-puedo-acceder-a-un-miembro-de-una-estructura-de-un-tad" class="md-nav__link">
+    ¿Por qué no puedo acceder a un miembro de una estructura de un TAD?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redimensionamiento-automático" class="md-nav__link">
+    Redimensionamiento automático
+  </a>
+  
+    <nav class="md-nav" aria-label="Redimensionamiento automático">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuánto-conviene-agrandar-una-estructura-dinámica" class="md-nav__link">
+    ¿Cuánto conviene agrandar una estructura dinámica?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuándo-y-cuánto-conviene-achicar-una-estructura-dinámica" class="md-nav__link">
+    ¿Cuándo y cuánto conviene achicar una estructura dinámica?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteradores" class="md-nav__link">
+    Iteradores
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteradores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qué-es-un-iterador" class="md-nav__link">
+    ¿Qué es un iterador?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cómo-se-usan-los-iteradores-de-una-estructura" class="md-nav__link">
+    ¿Cómo se usan los iteradores de una estructura?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#una-vez-que-se-llega-al-fin-el-iterador-no-sirve-más" class="md-nav__link">
+    Una vez que se llega al fin, ¿El iterador no sirve más?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destrucción-de-datos" class="md-nav__link">
+    Destrucción de datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Destrucción de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#si-tengo-una-estructura-que-guarda-datos-de-distintos-tipos-cómo-hago-para-destruirlos" class="md-nav__link">
+    Si tengo una estructura que guarda datos de distintos tipos, ¿Cómo hago para destruirlos?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-una-lista-guarda-listas-cómo-se-hace-para-destruirla" class="md-nav__link">
+    Si una lista guarda listas, ¿cómo se hace para destruirla?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qué-se-debe-hacer-cuando-el-tipo-de-datos-no-necesita-ser-destruido" class="md-nav__link">
+    ¿Qué se debe hacer cuando el tipo de datos no necesita ser destruido?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-qué-no-reciben-la-función-de-destrucción-las-funciones-que-eliminan-de-a-uno" class="md-nav__link">
+    ¿Por qué no reciben la función de destrucción las funciones que eliminan de a uno?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstracción" class="md-nav__link">
+    Abstracción
+  </a>
+  
+    <nav class="md-nav" aria-label="Abstracción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qué-es-el-tipo-void" class="md-nav__link">
+    ¿Qué es el tipo void*?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qué-es-una-estructura-en-c" class="md-nav__link">
+    ¿Qué es una estructura en C?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qué-significa-el-error-dereferencing-pointer-to-incomplete-type" class="md-nav__link">
+    ¿Qué significa el error dereferencing pointer to incomplete type?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-qué-no-puedo-acceder-a-un-miembro-de-una-estructura-de-un-tad" class="md-nav__link">
+    ¿Por qué no puedo acceder a un miembro de una estructura de un TAD?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redimensionamiento-automático" class="md-nav__link">
+    Redimensionamiento automático
+  </a>
+  
+    <nav class="md-nav" aria-label="Redimensionamiento automático">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuánto-conviene-agrandar-una-estructura-dinámica" class="md-nav__link">
+    ¿Cuánto conviene agrandar una estructura dinámica?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuándo-y-cuánto-conviene-achicar-una-estructura-dinámica" class="md-nav__link">
+    ¿Cuándo y cuánto conviene achicar una estructura dinámica?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteradores" class="md-nav__link">
+    Iteradores
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteradores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qué-es-un-iterador" class="md-nav__link">
+    ¿Qué es un iterador?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cómo-se-usan-los-iteradores-de-una-estructura" class="md-nav__link">
+    ¿Cómo se usan los iteradores de una estructura?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#una-vez-que-se-llega-al-fin-el-iterador-no-sirve-más" class="md-nav__link">
+    Una vez que se llega al fin, ¿El iterador no sirve más?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destrucción-de-datos" class="md-nav__link">
+    Destrucción de datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Destrucción de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#si-tengo-una-estructura-que-guarda-datos-de-distintos-tipos-cómo-hago-para-destruirlos" class="md-nav__link">
+    Si tengo una estructura que guarda datos de distintos tipos, ¿Cómo hago para destruirlos?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-una-lista-guarda-listas-cómo-se-hace-para-destruirla" class="md-nav__link">
+    Si una lista guarda listas, ¿cómo se hace para destruirla?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qué-se-debe-hacer-cuando-el-tipo-de-datos-no-necesita-ser-destruido" class="md-nav__link">
+    ¿Qué se debe hacer cuando el tipo de datos no necesita ser destruido?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-qué-no-reciben-la-función-de-destrucción-las-funciones-que-eliminan-de-a-uno" class="md-nav__link">
+    ¿Por qué no reciben la función de destrucción las funciones que eliminan de a uno?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="tipos-de-datos-abstractos">Tipos de datos abstractos<a class="headerlink" href="#tipos-de-datos-abstractos" title="Permanent link">&para;</a></h1>
+<h2 id="abstracción">Abstracción<a class="headerlink" href="#abstracción" title="Permanent link">&para;</a></h2>
+<h3 id="qué-es-el-tipo-void">¿Qué es el tipo void*?<a class="headerlink" href="#qué-es-el-tipo-void" title="Permanent link">&para;</a></h3>
+<p>El tipo <code>void*</code> es un tipo que representa un puntero a un tipo no especificado. Es usado cuando el tipo apuntado no es de importancia para la función que la recibe.</p>
+<p>Este tipo de punteros puede ser convertido a cualquier otro puntero sin necesidad de un casteo explícito, pero debido a que no se sabe a qué apunta no puede ni desreferenciarse ni ser usado para calcular aritmética de punteros.</p>
+<h3 id="qué-es-una-estructura-en-c">¿Qué es una estructura en C?<a class="headerlink" href="#qué-es-una-estructura-en-c" title="Permanent link">&para;</a></h3>
+<p>Una estructura en C es un tipo de variables que nos permite almacenar distintos elementos dentro de ellas. Sirven para encapsular lo que refiere a una variable que contendrá distintos atributos. Su uso es con la palabra reservada de C <code>struct</code>. Por ejemplo, para una entidad de persona, con edad y nombre, se define la estructura:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">persona</span> <span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">edad</span><span class="p">;</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">nombre</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">dni</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Ahora, ya sabemos que el <code>struct persona</code> contiene una edad del tipo <code>unsigned int</code> y una cadena para el nombre. También contiene un puntero al dni, que es un entero.</p>
+<p>Para acceder a estos miembros de la estructura, se puede acceder tanto al atributo mismo, con el operador punto <code>juan.nombre</code> como a lo que apunta un atributo que sea un puntero, con el operador <code>-&gt;</code>, <code>juan-&gt;dni</code>.</p>
+<h3 id="qué-significa-el-error-dereferencing-pointer-to-incomplete-type">¿Qué significa el error dereferencing pointer to incomplete type?<a class="headerlink" href="#qué-significa-el-error-dereferencing-pointer-to-incomplete-type" title="Permanent link">&para;</a></h3>
+<p>Este error se da cuando se trata de acceder a un miembro de una estructura de la cual no se tiene información.  Si en el archivo .h aparece únicamente:</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">_mitipo</span> <span class="n">mitipo</span><span class="p">;</span>
+</code></pre></div>
+
+<p>No va a ser posible acceder a los miembros internos de esa estructura, ya que es un tipo incompleto.  Sobre las razones de por qué esto está bien en el caso de un TAD, ver la siguiente pregunta.</p>
+<h3 id="por-qué-no-puedo-acceder-a-un-miembro-de-una-estructura-de-un-tad">¿Por qué no puedo acceder a un miembro de una estructura de un TAD?<a class="headerlink" href="#por-qué-no-puedo-acceder-a-un-miembro-de-una-estructura-de-un-tad" title="Permanent link">&para;</a></h3>
+<p>Los miembros de las estructuras (como <code>pila-&gt;cantidad</code>, por ejemplo) son datos internos de la implementación de cada tipo abstracto de datos, a los que no se debe acceder fuera del archivo <code>.c</code> en el que se encuentran las primitivas correspondientes al TAD.</p>
+<p>Este es el principio básico de abstracción, que nos permite operar con una pila, una lista o un árbol sin tener en cuenta cómo están implementados, y que si la implementación cambia, el código que utiliza el TAD sigue funcionando sin necesidad de ser modificado.</p>
+<p>Cuando se realizan pruebas sobre un TAD para verificar su comportamiento, no es necesario acceder a los miembros de la estructura, ya que lo que se desea verificar es que se comporte de la forma esperada y no cuáles son los valores utilizados internamente por la implementación.  Las pruebas deben funcionar aún si la implementación interna cambia (siempre que se respeten las primitivas).</p>
+<h2 id="redimensionamiento-automático">Redimensionamiento automático<a class="headerlink" href="#redimensionamiento-automático" title="Permanent link">&para;</a></h2>
+<p>Estas respuestas son útiles tanto para la pila dinámica, como para la tabla de hash, o cualquier otra estructura que deba agrandarse y achicarse automáticamente.</p>
+<h3 id="cuánto-conviene-agrandar-una-estructura-dinámica">¿Cuánto conviene agrandar una estructura dinámica?<a class="headerlink" href="#cuánto-conviene-agrandar-una-estructura-dinámica" title="Permanent link">&para;</a></h3>
+<p>Hacer un realloc es una operación lenta: <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script> (siendo n la cantidad de bytes que se mantienen en el bloque de memoria).  De modo que es importante planificar cuánto se va a agrandar la estructura, para que el tiempo gastado en el redimensionamiento no influya en el comportamiento general de la estructura.</p>
+<p>Para ello, lo que se hace es que al agrandar, el espacio utilizado se multiplique -generalmente por 2, pero puede ser por otro factor, según las condiciones del problema a resolver-, de modo que la incidencia del realloc se distribuya siempre de forma pareja entre los elementos, lo que no sucede en el caso de que la estructura crezca una cantidad constante. Una demostración formal sobre cómo afecta esta redimensión en el costo total de las operaciones puede encontrarse en la <a href="https://groups.google.com/d/msg/fiuba-7541rw-alu/t86CJcNv2UU/Irb7J899DgAJ">lista de mails</a>.</p>
+<h3 id="cuándo-y-cuánto-conviene-achicar-una-estructura-dinámica">¿Cuándo y cuánto conviene achicar una estructura dinámica?<a class="headerlink" href="#cuándo-y-cuánto-conviene-achicar-una-estructura-dinámica" title="Permanent link">&para;</a></h3>
+<p>Si para agrandar la estructura multiplicamos su tamaño por 2, no es una buena idea reducirla a la mitad ni bien llega a la mitad de espacio utilizado, ya que en el caso de que se quisiera agregar un nuevo elemento, sería necesario agrandarla y si se lo quita, otra vez achicarla, por lo que en definitiva, habría una cantidad de elementos para la que las operaciones de agregar o sacar de la estructura serían particularmente lentas.</p>
+<p>Es por eso que lo que se puede hacer es reducir la estructura a la mitad, pero sólo cuando la cantidad de espacio ocupada llega a 1/4 de la deseada.  De este modo, se libera la memoria fuera de uso, pero sin el riesgo de caer en un caso patológicamente lento.</p>
+<p>Tanto en el caso de agrandar como el de achicar, se pueden tomar criterios distintos para buscar mayor eficiencia en tiempo o en memoria, según el problema a resolver.</p>
+<h2 id="iteradores">Iteradores<a class="headerlink" href="#iteradores" title="Permanent link">&para;</a></h2>
+<h3 id="qué-es-un-iterador">¿Qué es un iterador?<a class="headerlink" href="#qué-es-un-iterador" title="Permanent link">&para;</a></h3>
+<p>Es una construcción que nos permite recorrer los elementos almacenados dentro de una estructura en cierto orden. Por ejemplo, en un arreglo:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">arr</span><span class="p">[</span><span class="n">TAM_ARR</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">TAM_ARR</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Hacer algo con arr[i]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>La variable <code>i</code> hace de iterador del arreglo <code>v</code>.</p>
+<p>En listas enlazadas, árboles, tablas de hash y otras estructuras ese <code>size_t i</code> no es suficiente para recorrer la estructura, por lo que se generaliza esa idea en el concepto de &ldquo;iterador&rdquo;.</p>
+<p>Las operaciones básicas que puede tener un iterador son:
+  - crear
+  - ver_dato
+  - avanzar
+  - ¿esta_al_final?
+  - destruir</p>
+<h3 id="cómo-se-usan-los-iteradores-de-una-estructura">¿Cómo se usan los iteradores de una estructura?<a class="headerlink" href="#cómo-se-usan-los-iteradores-de-una-estructura" title="Permanent link">&para;</a></h3>
+<p>En la materia adoptamos la siguiente convención para todos los iteradores:
+  - La creacion de un iterador en una estructura es siempre una operación válida:
+  - Si la estructura tiene elementos, el iterador apunta al primer elemento.
+  - Si la estructura no tiene elementos, el iterador se crea, pero apuntando al final.
+  - Avanzar un iterador cuando no está al final siempre es una operación válida.
+  - Avanzar un iterador que está al final es una operacion inválida, por lo que devuelve false.
+  - Ver actual es siempre una operación válida. Cuando está al final devuelve siempre <code>NULL</code>.</p>
+<p>Considerando esta convención, la forma canónica de iterar una estructura es la siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="n">estructura_iter_t</span><span class="o">*</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">estructura_iter_crear</span><span class="p">(</span><span class="n">estructura</span><span class="p">);</span>
+
+<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">estructura_iter_al_final</span><span class="p">(</span><span class="n">iter</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">dato</span> <span class="o">=</span> <span class="n">estructura_iter_ver_actual</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+    <span class="cm">/* Usar dato. */</span>
+
+    <span class="n">estructura_iter_avanzar</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">estructura_iter_destruir</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+</code></pre></div>
+
+<p>O usando la sintaxis de ciclos definidos de C:</p>
+<div class="highlight"><pre><span></span><code><span class="n">estructura_iter_t</span><span class="o">*</span> <span class="n">iter</span><span class="p">;</span>
+
+<span class="k">for</span><span class="p">(</span><span class="n">iter</span> <span class="o">=</span> <span class="n">estructura_iter_crear</span><span class="p">(</span><span class="n">estructura</span><span class="p">);</span>
+  <span class="o">!</span><span class="n">estructura_iter_al_final</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+  <span class="n">estructura_iter_avanzar</span><span class="p">(</span><span class="n">iter</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">dato</span> <span class="o">=</span> <span class="n">estructura_iter_ver_actual</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+    <span class="cm">/* Usar dato. */</span>
+<span class="p">}</span>
+
+<span class="n">estructura_iter_destruir</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Se debe tener en cuenta que si bien <code>estructura_iter_t* iter</code> puede ser inicializado en el <code>for</code> (como en el ejemplo) o fuera del mismo (al ser declarada la variable), la declaración debe estar siempre fuera del <code>for</code> para no perder la referencia y poder de esta forma destruirlo cuando se termina de iterar.</p>
+<h3 id="una-vez-que-se-llega-al-fin-el-iterador-no-sirve-más">Una vez que se llega al fin, ¿El iterador no sirve más?<a class="headerlink" href="#una-vez-que-se-llega-al-fin-el-iterador-no-sirve-más" title="Permanent link">&para;</a></h3>
+<p>En efecto, los iteradores son descartables, una vez que se termina de recorrer la estructura, sea porque está vacía o se llegó al final, el iterador termina su vida útil, hay que destruirlo y crear uno nuevo.</p>
+<h2 id="destrucción-de-datos">Destrucción de datos<a class="headerlink" href="#destrucción-de-datos" title="Permanent link">&para;</a></h2>
+<h3 id="si-tengo-una-estructura-que-guarda-datos-de-distintos-tipos-cómo-hago-para-destruirlos">Si tengo una estructura que guarda datos de distintos tipos, ¿Cómo hago para destruirlos?<a class="headerlink" href="#si-tengo-una-estructura-que-guarda-datos-de-distintos-tipos-cómo-hago-para-destruirlos" title="Permanent link">&para;</a></h3>
+<p>Cuando una estructura, por ejemplo una lista, se utiliza en un mismo programa para guardar distintos datos, se los almacena como <code>void*</code> y es necesario castearlos cuando se los quiere acceder.  En particular es interesante el caso de la función de destrucción, que está definida como <code>void destruir_dato(void*)</code>.</p>
+<p>Supongamos que se tiene una lista que contiene <code>mensaje_t*</code> y otra que contiene <code>char*</code>.  Las funciones de destrucción  correspondientes deberán recibir <code>void*</code> en ambos casos, y por dentro hacer los casteos:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">destruir_dato_char</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">dato</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kt">char</span><span class="o">*</span> <span class="n">dato_c</span> <span class="o">=</span> <span class="n">dato</span><span class="p">;</span>
+   <span class="n">free</span><span class="p">(</span><span class="n">dato_c</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">destruir_dato_mensaje</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">dato</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">mensaje_t</span><span class="o">*</span> <span class="n">dato_m</span> <span class="o">=</span> <span class="n">dato</span><span class="p">;</span>
+   <span class="n">mensaje_destruir</span><span class="p">(</span><span class="n">dato_m</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>O sea, para cada tipo de dato, se lo interpreta para liberarlo según corresponda.</p>
+<h3 id="si-una-lista-guarda-listas-cómo-se-hace-para-destruirla">Si una lista guarda listas, ¿cómo se hace para destruirla?<a class="headerlink" href="#si-una-lista-guarda-listas-cómo-se-hace-para-destruirla" title="Permanent link">&para;</a></h3>
+<p>Como para cualquier otro tipo de listas, para destruir una lista de listas, el usuario que está usando la estructura deberá definir una función para la destrucción de las listas contenidas dentro de la otra lista.  Suponiendo que las listas de adentro contienen mensajes, podría ser de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">destruir_dato_lista</span><span class="p">(</span><span class="n">lista_dato_t</span> <span class="n">dato</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lista_t</span><span class="o">*</span> <span class="n">lista</span> <span class="o">=</span> <span class="p">(</span><span class="n">lista_t</span><span class="o">*</span><span class="p">)</span> <span class="n">dato</span><span class="p">;</span>
+    <span class="n">lista_destruir</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">destruir_dato_mensaje</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="qué-se-debe-hacer-cuando-el-tipo-de-datos-no-necesita-ser-destruido">¿Qué se debe hacer cuando el tipo de datos no necesita ser destruido?<a class="headerlink" href="#qué-se-debe-hacer-cuando-el-tipo-de-datos-no-necesita-ser-destruido" title="Permanent link">&para;</a></h3>
+<p>Si dentro del código de la estructura de datos se verifica que la función se haya recibido:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">destruir_dato</span><span class="p">)</span> <span class="n">destruir_dato</span><span class="p">(</span><span class="n">dato</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Se puede llamar a la función de destrucción simplemente pasando <code>NULL</code> como parámetro:</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista_destruir</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="por-qué-no-reciben-la-función-de-destrucción-las-funciones-que-eliminan-de-a-uno">¿Por qué no reciben la función de destrucción las funciones que eliminan de a uno?<a class="headerlink" href="#por-qué-no-reciben-la-función-de-destrucción-las-funciones-que-eliminan-de-a-uno" title="Permanent link">&para;</a></h3>
+<p>En varias estructuras, como listas, colas, pilas o árboles, a la función de destruir se le pasa una función para destruir el dato, mientras que a la función de borrar (desapilar, desencolar, etc) no se le pasa esta función.</p>
+<p>Esto se debe a que las funciones que eliminan elementos de las estructuras no los tienen que destruir, ya que los guardan en la referencia al dato recibida por puntero, y es el usuario el encargado de liberar el dato de ser necesario.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 30 de junio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fdelmazo@fi.uba.ar'>Federico del Mazo</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../valgrind/" title="Errores de Valgrind" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Errores de Valgrind
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../cola/" title="Cola" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Cola
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

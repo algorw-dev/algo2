@@ -1,0 +1,1435 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/guias/hash/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Tablas hash - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#diccionarios-hashing-y-hash" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Tablas hash
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Tablas hash
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Tablas hash" class="md-nav__link md-nav__link--active">
+      Tablas hash
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="diccionarios-hashing-y-hash">Diccionarios, Hashing y Hash<a class="headerlink" href="#diccionarios-hashing-y-hash" title="Permanent link">&para;</a></h1>
+<h2 id="ejercicio-resuelto">Ejercicio resuelto<a class="headerlink" href="#ejercicio-resuelto" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Para un hash cerrado, implementar una primitiva <code>lista_t* hash_claves(const hash_t*)</code> que reciba
+un hash y devuelva una lista con sus claves.</p>
+</li>
+<li>
+<p>Repetir lo mismo para un hash abierto.</p>
+</li>
+<li>
+<p class="lower_alpha">Implementar de nuevo la operación, en este caso como una función.</p>
+</li>
+</ol>
+<h3 id="solución">Solución<a class="headerlink" href="#solución" title="Permanent link">&para;</a></h3>
+<p>Partiendo del punto <em>a)</em>, es importante notar que no podemos utilizar el iterador externo, ya que se trata de una primitiva para
+el hash (y es una mala práctica que, dado que el iterador dependa del hash, ahora hagamos que el hash dependa del iterador).</p>
+<h4>Hash Cerrado</h4>
+<p>Para este punto, sólo es necesario iterar campo por campo, considerando únicamente aquellos que están ocupados.</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista_t</span><span class="o">*</span> <span class="nf">hash_claves</span><span class="p">(</span><span class="k">const</span> <span class="n">hash_t</span><span class="o">*</span> <span class="n">hash</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lista_t</span><span class="o">*</span> <span class="n">claves</span> <span class="o">=</span> <span class="n">lista_crear</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">claves</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">hash</span><span class="o">-&gt;</span><span class="n">tam</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// valor de un enum definido para el hash</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">hash</span><span class="o">-&gt;</span><span class="n">tabla</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">estado</span> <span class="o">==</span> <span class="n">OCUPADO</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">lista_insertar_ultimo</span><span class="p">(</span><span class="n">claves</span><span class="p">,</span> <span class="n">hash</span><span class="o">-&gt;</span><span class="n">tabla</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">clave</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">claves</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Es importante notar que en este ejercicio se está evaluando que sabemos trabajar internamente con el hash cerrado. Los puntos importantes:</p>
+<ul>
+<li>
+<p>Sabemos cuáles son los campos de la estructura.</p>
+</li>
+<li>
+<p>Sabemos que la tabla es de tipo <code>campo_t*</code>, y no <code>campo_t**</code>, puesto que es completamente innecesario un segundo grado de indirección (como se analiza en la respectiva clase práctica).</p>
+</li>
+<li>
+<p>Entendemos que el estado correcto a considerar es el de <code>OCUPADO</code>, que es un enumerativo. Cuanto mucho, una constante. Definitivamente no un <code>"ocupado"</code>.</p>
+</li>
+</ul>
+<h4>Hash Abierto</h4>
+<p>Para este caso, consideramos todas las listas, las cuales podemos ir iterando utilizando el iterador externo o interno. Aquí mostramos una implementación utilizando el iterador interno, no porque sea mejor implementación, sino para que tengan un ejemplo de uso.</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista_t</span><span class="o">*</span> <span class="nf">hash_claves</span><span class="p">(</span><span class="k">const</span> <span class="n">hash_t</span><span class="o">*</span> <span class="n">hash</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">lista_t</span><span class="o">*</span> <span class="n">claves</span> <span class="o">=</span> <span class="n">lista_crear</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">claves</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">hash</span><span class="o">-&gt;</span><span class="n">tam</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">lista_iterar</span><span class="p">(</span><span class="n">hash</span><span class="o">-&gt;</span><span class="n">tabla</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">insertar_clave</span><span class="p">,</span> <span class="n">claves</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">claves</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">insertar_clave</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">dato</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">extra</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lista_t</span><span class="o">*</span> <span class="n">claves</span> <span class="o">=</span> <span class="n">extra</span><span class="p">;</span>
+    <span class="n">par_clave_valor_t</span><span class="o">*</span> <span class="n">par</span> <span class="o">=</span> <span class="n">dato</span><span class="p">;</span>
+    <span class="n">lista_insertar_ultimo</span><span class="p">(</span><span class="n">claves</span><span class="p">,</span> <span class="n">par</span><span class="o">-&gt;</span><span class="n">clave</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><em>Aclaración</em>: Hay quienes deciden implementar el Hash Abierto de tal forma que
+no tenga listas vacías (esto es, si una posición aún
+no ha sido utilizada, entonces se guarda <code>NULL</code> y se crea la lista cuando sea necesaria). Esto es totalmente válido, y en todo
+caso con aclararlo en algún lado es suficiente (pero debe hacerse la validación contra <code>NULL</code> en ese caso).</p>
+<h4>Función</h4>
+<p>En este caso, no sólo sí está permitido utilizar el iterador externo del hash,
+sino que <strong>no nos queda otra opción</strong>, dado que no es posible acceder a los
+campos internos de la estructura. Además, en particular no se nos dice cuál es la implementación, cosa que no es necesario conocer.</p>
+<p>Entonces, simplemente iteramos utilizando el iterador externo y guardamos en una lista.</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista_t</span><span class="o">*</span> <span class="nf">hash_claves</span><span class="p">(</span><span class="k">const</span> <span class="n">hash_t</span><span class="o">*</span> <span class="n">hash</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">lista_t</span><span class="o">*</span> <span class="n">claves</span> <span class="o">=</span> <span class="n">lista_crear</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">claves</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">hash_iter_t</span><span class="o">*</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">hash_iter_crear</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">iter</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">lista_destruir</span><span class="p">(</span><span class="n">claves</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">hash_iter_al_final</span><span class="p">(</span><span class="n">iter</span><span class="p">))</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">clave</span> <span class="o">=</span> <span class="n">hash_iter_ver_actual</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+        <span class="n">lista_insertar_ultimo</span><span class="p">(</span><span class="n">claves</span><span class="p">,</span> <span class="n">clave</span><span class="p">);</span>
+        <span class="n">hash_iter_avanzar</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">hash_iter_destruir</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">claves</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="ejercicios-propuestos">Ejercicios propuestos<a class="headerlink" href="#ejercicios-propuestos" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>(★) Suponer que se tiene un hash cerrado que se redimensiona cuando el factor de carga llega a 0.75, y que
+    no se tienen en cuenta los elementos borrados a la hora de calcular el factor de carga.</p>
+<p>{:.lower_alpha}
+1. Describir, en términos generales, el peor escenario posible para esta implementación.</p>
+<ol>
+<li>Dado un hash de estas características, con capacidad inicial 100, calcular el número máximo de casillas que podría llegar a visitar <code>hash_obtener()</code> si la cantidad actual de elementos en el hash es 1, y no se realizó ningúna redimensión, pero sí se insertaron y borraron elementos. (En otras palabras, poner una cota superior al caso peor de este hash.)</li>
+</ol>
+</li>
+<li>
+<p>(★) ¿Para qué casos la función <code>hash_obtener()</code> tiene una complejidad peor que <script type="math/tex">
+<script type="math/tex">\mathcal{O}(1)</script>
+</script>? Explicar tanto para el hash abierto, como el cerrado.</p>
+</li>
+<li>
+<p>(★) Justificar si la siguiente función de hashing es correcta o no:
+    <div class="highlight"><pre><span></span><code><span class="kt">size_t</span> <span class="nf">calcular_hash</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">clave</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">largo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// rand() devuelve un numero entero positivo aleatorio</span>
+    <span class="k">return</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">largo</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>(★★) a. Mostrar el resultado de las siguientes operaciones tanto para un hash cerrado como para un hash abierto,
+    ambos de capacidad 9 e inicialmente vacíos (los números son también el resultado de la función de hashing): insertar 17, insertar 22,
+    insertar 35, borrar 17, insertar 52, insertar 54.</p>
+<p>b. Tras estas inserciones ¿qué pasos hay que seguir para verificar si el 70 pertenece al hash?</p>
+<p>c. Posteriormente se realizan más inserciones. ¿Cuándo redimensionaría cada hash?
+¿Qué pasos hay que seguir para hacerlo?</p>
+</li>
+<li>
+<p>(★★) Implementar una función de orden <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script> que dado un arreglo de <em>n</em> números enteros devuelva <code>true</code>
+    o <code>false</code> según si existe algún elemento que aparezca más de la mitad de las veces. Justificar el orden de
+    la solución. Ejemplos:</p>
+<div class="codehilite"><pre><span></span><code>[1, 2, 1, 2, 3] -&gt; false
+[1, 1, 2, 3] -&gt; false
+[1, 2, 3, 1, 1, 1] -&gt; true
+[1] -&gt; true
+</code></pre></div>
+
+
+</li>
+<li>
+<p>(★★) Asumiendo que se tiene disponible una implementación completa del TDA Hash, se desea implementar una función
+    que decida si dos Hash dados representan o no el mismo Diccionario. Considere para la solución que
+    es de interés la mejor eficiencia temporal posible. Indique, para su solución, eficiencia en tiempo y espacio.
+    Nota: Dos tablas de hash representan el mismo diccionario si tienen la misma cantidad de elementos; todas las claves
+    del primero están en el segundo; todas las del segundo, en el primero; y los datos asociados a cada una de esas claves son iguales (se pueden comparar los
+    valores con &ldquo;==&rdquo;).</p>
+</li>
+<li>
+<p>(★★) Implementar el TDA MultiConjunto. Este es un Conjunto que permite más de una aparición de un elemento,
+    por lo que eliminando una aparición, el elemento puede seguir perteneciendo. Dicho TDA debe tener como
+    primitivas:</p>
+<ul>
+<li><code>multiconj_t* multiconj_crear()</code>: crea un multiconjunto. A fines del parcialito, no es necesario
+implementar la primitiva de destruir.</li>
+<li><code>bool multiconj_guardar(multiconj_t* multiconj, char* elem)</code>: guarda un elemento
+en el multiconjunto. Devuelve <code>true</code> si se pudo guardar el elemento correctamente, <code>false</code> en caso
+contrario.</li>
+<li><code>bool multiconj_pertenece(multiconj_t* multiconj, char* elem)</code>: devuelve <code>true</code> si el elemento aparece
+al menos una vez en el conjunto.</li>
+<li><code>bool multiconj_borrar(multiconj_t* multiconj, char* elem)</code>: elimina <em>una aparición</em> del elemento
+dentro del conjunto. Devuelve <code>true</code> si se eliminó una aparición del elemento.</li>
+</ul>
+<p>Dar la estructura del TDA y la implementación de las 4 primitivas marcadas, de forma tal que todas sean
+<script type="math/tex">
+<script type="math/tex">\mathcal{O}(1)</script>
+</script>.</p>
+</li>
+<li>
+<p>(★★★) Se tiene un hash que cuenta con una función de hashing que, recibida una clave,
+    devuelve la posición de su inicial en el abecedario. La capacidad inicial del hash
+    es 26. Para los puntos B, C y D indicar y justificar si las afirmaciones son
+    verdaderas o falsas. Se puede considerar que todas las claves serán palabras
+    (sólo se usan letras para las claves).</p>
+<p>a. Mostrar cómo quedan un hash abierto y un hash cerrado (sólo el resultado final)
+tras guardar las siguientes claves: Ambulancia (0), Gato (6), Manzana (12), Ananá (0),
+Girasol (6), Zapato (25), Zapallo (25), Manzana (12), Bolso (1).
+<em>Aclaración</em>: No es necesario hacer una tabla de 26 posiciones, lo importante es que
+quede claro en cuál posición está cada elemento.</p>
+<p>b. En un hash <strong>abierto</strong> con dicha función de hashing, se decide redimensionar cuando la
+cantidad alcanza la capacidad (factor de carga = 1). El rendimiento de
+<code>hash_obtener()</code> es mejor en este caso respecto a si se redimensionara al alcanzar
+un factor de carga 2.</p>
+<p>c. En un hash <strong>cerrado</strong> con dicha función de hashing, si se insertan <code>n + 1</code> claves diferentes
+(considerar que se haya redimensionado acordemente), <code>n</code> con la misma letra
+inicial, y 1 con otra distinta, en el primer caso <code>obtener()</code> es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script> y en el
+segundo siempre <script type="math/tex">
+<script type="math/tex">\mathcal{O}(1)</script>
+</script>.</p>
+<p>d. En un hash <strong>abierto</strong> con dicha función de hashing, si se insertan <code>n + 1</code> claves diferentes
+(considerar que se haya redimensionado acordemente), <code>n</code> con la misma letra
+inicial, y 1 con otra distinta, en el primer caso <code>obtener()</code> es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script> y en el
+segundo siempre <script type="math/tex">
+<script type="math/tex">\mathcal{O}(1)</script>
+</script>.</p>
+</li>
+<li>
+<p>(★★★) El Ing. Musumeci quiere implementar un hash abierto, pero en el que las listas de cada posición
+    se encuentren ordenadas por clave (usando <code>strcmp</code>). Explicar cómo mejora o empeora respecto
+    a la versión que vemos en clase para el caso de inserciones, borrados, búsquedas con éxito
+    (el elemento se encuentra en el hash) y sin éxito (no se encuentra).</p>
+</li>
+<li>
+<p>(★★★) Hacer un seguimiento e indicar cómo queda un hash que aplica hashing perfecto (con Hash &amp; Displace)
+    con las siguientes claves (los valores de las funciones de hashing se encuentran a continuación de las claves).</p>
+<div class="highlight"><pre><span></span><code>&quot;casa&quot;: 1; 3; 2
+&quot;perro&quot;: 3; 3; 3
+&quot;cobayo&quot;: 6; 2; 6
+&quot;conejo&quot;: 3; 2; 1
+&quot;hamster&quot;: 2; 0; 1
+&quot;gato&quot;: 3; 0; 5
+&quot;hurón&quot;: 2; 3; 5
+&quot;pejelagarto&quot;: 6; 0; 7
+</code></pre></div>
+
+</li>
+<li>
+<p>(★★) Del ejercicio anterior, explicar qué sucedería si los resultados de aplicar las funciones de hashing sobre
+    <em>&ldquo;pejelagarto&rdquo;</em> fueran (6, 0, 3), y cómo debería resolverse.</p>
+</li>
+<li>
+<p>(★★★) a. Realizar las siguientes operaciones sobre un hash con Hopscotch hashing, de largo 9 y <script type="math/tex">
+<script type="math/tex">K = 2</script>
+</script>
+    (los números son también el resultado de la función de hashing):
+    Guardar 1, Guardar 0, Guardar 9, Borrar 1, Buscar 9, Guardar 5, Guardar 7, Guardar 17, Borrar 7, Guardar 16, Guardar 82
+    Guardar 81, Guardar 2.</p>
+<p>b. Indicar qué sucede si guardamos el valor 89, y cómo se debe resolver.</p>
+</li>
+<li>
+<p>(★★★) a. Realizar el seguimiento de guardar las siguientes claves dentro de un hash con Cuckoo Hashing, con 2
+    funciones de hashing (los valores de aplicar las funciones de hashing se indican a continuación de las claves),
+    y tamaño 10:</p>
+<div class="highlight"><pre><span></span><code>gato: 2; 3
+perro: 6; 9
+ornitorrinco: 2, 5
+oso: 8; 3
+delfín: 8; 4
+canario: 6; 3
+</code></pre></div>
+
+<p>b. Explicar qué sucede al buscar la clave <em>&ldquo;perro&rdquo;</em>.</p>
+<p>c. Explicar cómo hacer para eliminar la clave <em>&ldquo;perro&rdquo;</em> del hash, y cómo se debe modificar el hash para que
+siga funcionando correctamente.</p>
+</li>
+<li>
+<p>(★★★) Supongamos que queremos crear una estructura <em>Diccionario inmutable</em>. Dicho TDA es un Diccionario que
+    no será modificado. No tendrá altas, ni bajas. Los elementos se los pasan al crearlo (por ejemplo,
+    a través de otra implementación de diccionario, o con un par de arreglos con las claves y valores).
+    Explicar cómo harías para implementar esto de forma eficiente, considerando que su mayor utilidad
+    es realizar búsquedas lo más rápido posible.</p>
+</li>
+<li>
+<p>(★★★★) Dar una implementación en C de cómo podría ser la primitiva <code>hash_guardar</code> para el caso de un hash
+    cerrado con Cuckoo Hashing con dos funciones de hashing (suponer que se llaman <code>h1</code> y <code>h2</code>). Si la clave
+    ya se encontraba en el hash simplemente devolver <code>false</code> (no es necesario hacer un reemplazo del dato).
+    La estructura del Hash es:
+    <div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">hash</span> <span class="p">{</span>                   <span class="k">typedef</span> <span class="k">struct</span> <span class="n">campo_hash</span> <span class="p">{</span>
+    <span class="n">campo_hash_t</span><span class="o">*</span> <span class="n">tabla</span><span class="p">;</span>                   <span class="kt">char</span><span class="o">*</span> <span class="n">clave</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">cantidad</span><span class="p">;</span>                        <span class="kt">void</span><span class="o">*</span> <span class="n">dato</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">tam_tabla</span><span class="p">;</span>                       <span class="kt">int</span> <span class="n">num_fhash</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">hash_t</span><span class="p">;</span>                               <span class="p">}</span> <span class="n">campo_hash_t</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>(★★★★★) Se quiere implementar un TDA Diccionario con las siguientes primitivas:
+    <code>obtener(x)</code> devuelve el valor de <code>x</code> en el diccionario; <code>insertar(x, y)</code> inserta en el diccionario
+    la clave <code>x</code> con el valor <code>y</code> (entero); <code>borrar(x)</code> borra la entrada de <code>x</code>; <code>add(x, n)</code> le
+    suma <code>n</code> al contenido de <code>x</code>; <code>add_all(m)</code> le suma <code>m</code> a <strong>todos</strong> los valores.</p>
+<p>Proponer una implementación donde <strong>todas</strong> las operaciones sean <script type="math/tex">
+<script type="math/tex">\mathcal{O}(1)</script>
+</script>. Justificar el
+orden de las operaciones.</p>
+</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../tdas_conceptos/" title="Pila, cola, lista" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Pila, cola, lista
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../arboles/" title="Árboles" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Árboles
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

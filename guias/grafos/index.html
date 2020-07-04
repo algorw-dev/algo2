@@ -1,0 +1,1431 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/guias/grafos/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Implementaciones y recorridos - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#grafos-usos-implementaciones-y-recorridos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Implementaciones y recorridos
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8" checked>
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Implementaciones y recorridos
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Implementaciones y recorridos" class="md-nav__link md-nav__link--active">
+      Implementaciones y recorridos
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-resuelto" class="md-nav__link">
+    Ejercicio resuelto
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio resuelto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solución" class="md-nav__link">
+    Solución
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-propuestos" class="md-nav__link">
+    Ejercicios propuestos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="grafos-usos-implementaciones-y-recorridos">Grafos: Usos, implementaciones y recorridos<a class="headerlink" href="#grafos-usos-implementaciones-y-recorridos" title="Permanent link">&para;</a></h1>
+<h2 id="ejercicio-resuelto">Ejercicio resuelto<a class="headerlink" href="#ejercicio-resuelto" title="Permanent link">&para;</a></h2>
+<p>Implementar un algoritmo que, dado un grafo no dirigido, nos devuelva un ciclo dentro del mismo, si es que los tiene. Indicar el orden del algoritmo.</p>
+<h3 id="solución">Solución<a class="headerlink" href="#solución" title="Permanent link">&para;</a></h3>
+<p>Antes que nada, debemos entender que el ejercicio en sí es el mismo, se trate de un grafo dirigido o uno no dirigido. La única diferencia se encuentra en que un ciclo por definción necesita contar con al menos dos aristas. Esta definición en sí no nos importaría mucho en el caso de un grafo dirigido, pero si en el de uno no dirigido. Si no lo tuviéramos en cuenta, todo grafo no dirigido, con al menos una arista, va a tener un ciclo, lo cual no es cierto.</p>
+<p>Para resolver este problema, podemos pensar en simplemente recorrer el grafo no dirigido, sea con un recorrido <em>BFS</em> o <em>DFS</em>. Una vez que nos topemos con un vértice ya visitado, ahí tenemos un posible ciclo. Esto es, si estoy viendo los adyacentes a un vértice dado, y dicho vértice está visitado, uno se apresuraría a decir que ahí se cierra un ciclo. Esto es cierto, salvo un caso: que dicho vértice visitado sea el antecesor a nuestro vértice en el recorrido (BFS o DFS). Recordar que se trata de un grafo no dirigido, por ende si <em>v</em> tiene de adyacente a <em>w</em>, entonces también vale la recíproca, y no por ello se crea un ciclo. El problema se da con la arista de la que vengo. Básicamente, deberíamos obviar al vértice del que vengo en el recorrido, que justamente es el padre. Si nosotros ya tenemos que <code>padre[W] = V</code>, entonces simplemente tenemos que saltearnos a V cuando veamos a los adyacentes ya visitados.</p>
+<p>Lo resolvemos con ambos recorridos. Por <em>BFS</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">obtener_ciclo_bfs</span><span class="p">(</span><span class="n">grafo</span><span class="p">):</span>
+  <span class="n">visitados</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">grafo</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visitados</span><span class="p">:</span>
+      <span class="n">ciclo</span> <span class="o">=</span> <span class="n">bfs_ciclo</span><span class="p">(</span><span class="n">grafo</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">visitados</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">ciclo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ciclo</span>
+  <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">bfs_ciclo</span><span class="p">(</span><span class="n">grafo</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">visitados</span><span class="p">):</span>
+  <span class="n">q</span> <span class="o">=</span> <span class="n">Cola</span><span class="p">()</span>
+  <span class="n">q</span><span class="o">.</span><span class="n">encolar</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="n">visitados</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+  <span class="n">padre</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Para poder reconstruir el ciclo</span>
+  <span class="n">padre</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+  <span class="k">while</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">esta_vacia</span><span class="p">():</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">desencolar</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">grafo</span><span class="o">.</span><span class="n">adyacentes</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">visitados</span><span class="p">:</span>
+        <span class="c1"># Si w fue visitado y es padre de v, entonces es la arista</span>
+        <span class="c1"># de donde vengo (no es ciclo).</span>
+        <span class="c1"># Si no es su padre, esta arista (v, w) cierra un ciclo que</span>
+        <span class="c1"># empieza en w.</span>
+        <span class="k">if</span> <span class="n">w</span> <span class="o">!=</span> <span class="n">padre</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+          <span class="k">return</span> <span class="n">reconstruir_ciclo</span><span class="p">(</span><span class="n">padre</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">q</span><span class="o">.</span><span class="n">encolar</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+        <span class="n">visitados</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">padre</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+
+  <span class="c1"># Si llegamos hasta acá es porque no encontramos ningún ciclo.</span>
+  <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+
+<p>La solución por <em>DFS</em> sería:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">obtener_ciclo_dfs</span><span class="p">(</span><span class="n">grafo</span><span class="p">):</span>
+  <span class="n">visitados</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="n">padre</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">grafo</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visitados</span><span class="p">:</span>
+      <span class="n">ciclo</span> <span class="o">=</span> <span class="n">dfs_ciclo</span><span class="p">(</span><span class="n">grafo</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">visitados</span><span class="p">,</span> <span class="n">padre</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">ciclo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ciclo</span>
+  <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">dfs_ciclo</span><span class="p">(</span><span class="n">grafo</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">visitados</span><span class="p">,</span> <span class="n">padre</span><span class="p">):</span>
+  <span class="n">visitados</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+  <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">grafo</span><span class="o">.</span><span class="n">adyacentes</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">visitados</span><span class="p">:</span>
+      <span class="c1"># Si w fue visitado y es padre de v, entonces es la arista de donde</span>
+      <span class="c1"># vengo (no es ciclo).</span>
+      <span class="c1"># Si no es su padre, esta arista (v, w) cierra un ciclo que empieza</span>
+      <span class="c1"># en w.</span>
+      <span class="k">if</span> <span class="n">w</span> <span class="o">!=</span> <span class="n">padre</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">reconstruir_ciclo</span><span class="p">(</span><span class="n">padre</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">padre</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+      <span class="n">ciclo</span> <span class="o">=</span> <span class="n">dfs_ciclo</span><span class="p">(</span><span class="n">grafo</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">visitados</span><span class="p">,</span> <span class="n">padre</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">ciclo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ciclo</span>
+
+  <span class="c1"># Si llegamos hasta acá es porque no encontramos ningún ciclo.</span>
+  <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+
+<p>Ambas técnicas usan la función para reconstruir el ciclo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">reconstruir_ciclo</span><span class="p">(</span><span class="n">padre</span><span class="p">,</span> <span class="n">inicio</span><span class="p">,</span> <span class="n">fin</span><span class="p">):</span>
+  <span class="n">v</span> <span class="o">=</span> <span class="n">fin</span>
+  <span class="n">camino</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">while</span> <span class="n">v</span> <span class="o">!=</span> <span class="n">inicio</span><span class="p">:</span>
+    <span class="n">camino</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">padre</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+  <span class="n">camino</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inicio</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">camino</span><span class="o">.</span><span class="n">invertir</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Ahora bien, para ver el orden, podemos ver que en el caso feliz, vamos a encontrar un ciclo muy rapido. Pero claramente eso no nos cambia mucho. Pensemos el caso de, a lo sumo, encontrar el ciclo muy tarde en el recorrido (también veremos el caso de no haber ciclo). En ese caso, en cualquiera de los dos recorridos vamos a pasar por cada vértice una vez, y solo una vez (a fin de cuentas, no volvemos a estar sobre un vértice ya visitado). Por cada vértice vemos <em>sus</em> aristas. Recordar que es muy importante no caer en la tentación de decir que entonces el algoritmo es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V \times E)</script>
+</script>, porque si bien es cierto, es una muy mala cota. Por cada vértice pasamos por <em>sus</em> arisas, que distan de ser las totales del grafo. Si por cada vértice vemos sus aristas (y no las de todo el grafo), en total estamos viendo todas las aristas del grafo, dos veces (una por cada extremo). Entonces, el orden será <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V + 2 E) = \mathcal{O}(V + E)</script>
+</script>. Todo esto, considerando que la implementación es con listas de adyacencias (implementadas con diccionarios, o bien
+siendo los vértices valores numéricos para indexar en un arreglo). Si fuera otra la implementación, obtener los adyacentes a un vértice dado nos costará más (<script type="math/tex">
+<script type="math/tex">\mathcal{O}(V)</script>
+</script>, en el caso de una matriz de adyacencia, u
+<script type="math/tex">
+<script type="math/tex">\mathcal{O}(E)</script>
+</script> en el caso de una matriz de incidencia).</p>
+<p>Haciendo un poco más de análisis: ¿es acaso el caso de no tener ciclos nuestro peor caso? Supongamos que el grafo es
+conexo, por simplifcación. Si el grafo no tiene ciclos, y es conexo, necesariamente se trata de un árbol. Para este caso,
+<script type="math/tex">
+<script type="math/tex">|E| = |V| - 1</script>
+</script>, por ende nuestro orden a fin de cuentas terminaría siendo <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V)</script>
+</script>. ¿Esto implica que entonces nuestro algoritmo es en realidad <script type="math/tex">
+<script type="math/tex">\mathcal{O}(V)</script>
+</script>? No, significa que ese, que a priori podíamos pensar que era nuestro peor caso, en realidad no lo es. Nuestro peor caso implica que haya un ciclo, pero tener la mala suerte de tardar en encontrarlo. Ya sea porque el vértice en el que se empieza el recorrido está lejos del ciclo, o por el orden aleatorio de las cosas.</p>
+<p>¿Cuáles serían las diferencias si en vez de trabajar con un grafo no dirigido, lo hiciéramos sobre un grafo dirigido? Notar que la solución no debería ser demasiado distinta a estas propuestas, pero tienen sus pequeñas diferencias que dejamos para resolver en los ejercicios propuestos.</p>
+<h2 id="ejercicios-propuestos">Ejercicios propuestos<a class="headerlink" href="#ejercicios-propuestos" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>(★) a. Dibujar un grafo no dirigido que:</p>
+<ul>
+<li>Tenga 6 vértices</li>
+<li>Tenga un ciclo que incluya 4 de dichos vértices</li>
+<li>Sea conexo</li>
+<li>Haya un vértice de grado 1</li>
+<li>Haya un vértice de grado 4</li>
+</ul>
+<p>b. Escribir la representación de matriz de incidencia y matriz de adyacencia del grafo resultante
+del punto anterior.</p>
+</li>
+<li>
+<p>(★) a. Dibujar un grafo dirigido que:</p>
+<ul>
+<li>Tenga 7 vértices</li>
+<li>Tenga un ciclo que incluya 3 de dichos vértices</li>
+<li>Tenga un ciclo que incluya 2 de dichos vértices</li>
+<li>Haya un vértice de grado de entrada 0</li>
+<li>Haya un vértice de grado de salida 4</li>
+</ul>
+<p>b. Escribir la representación de matriz de incidencia y matriz de adyacencia del grafo resultante
+del punto anterior.</p>
+</li>
+<li>
+<p>(★) Implementar una función que determine el:</p>
+<p>a. El grado de todos los vértices de un grafo no dirigido.</p>
+<p>b. El grado de salida de todos los vértices de un grafo dirigido.</p>
+<p>c. El grado de entrada de todos los vértices de un grafo dirigido.</p>
+</li>
+<li>
+<p>(★) Implementar un algoritmo que determine si un grafo no dirigido es conexo o no. Indicar la complejidad
+    del algoritmo si el grafo está implementado con una matriz de adyacencia.</p>
+</li>
+<li>
+<p>(★★) Implementar un algoritmo que, dado un grafo dirigido, nos devuelva un ciclo dentro del mismo, si es que lo
+    tiene. Indicar el orden del algoritmo.</p>
+</li>
+<li>
+<p>(★★) Un árbol es un grafo no dirigido que cumple con las siguientes propiedades:</p>
+<p>a. <script type="math/tex">
+<script type="math/tex">\|E\| = \|V\| - 1</script>
+</script>
+</p>
+<p>b. Es acíclico</p>
+<p>c. Es conexo</p>
+<p>Por teorema, si un grafo cumple dos de estas tres condiciones, será árbol (y por consiguiente, cumplirá la tercera).
+Haciendo uso de ésto (y únicamente de ésto), se pide implementar una función que reciba un grafo no dirigido y determine
+si se trata de un árbol, o no. Indicar el orden de la función implementada.</p>
+</li>
+<li>
+<p>(★★) Proponer una función para calcular el grafo traspuesto <script type="math/tex">
+<script type="math/tex">G^T</script>
+</script> de un grafo dirigido <em>G</em>. El grafo traspuesto
+    <script type="math/tex">
+<script type="math/tex">G^T</script>
+</script> posee los mismos vértices que G, pero con todas sus aristas invertidas (por cada arista <em>(v, w)</em> en <em>G</em>,
+    existe una arista <em>(w, v)</em> en <script type="math/tex">
+<script type="math/tex">G^T</script>
+</script>). Indicar la complejidad para un grafo implementado con:</p>
+<p>a. lista de adyancencias</p>
+<p>b. matriz de adyacencias</p>
+</li>
+<li>
+<p>(★★★) La teoría de los 6 grados de separación dice que cualquiera en la Tierra puede estar conectado a cualquier
+    otra persona del planeta a través de una cadena de conocidos que no tiene más de cinco intermediarios (conectando a
+    ambas personas con solo seis enlaces). Suponiendo que se tiene un grafo G en el que cada vértice es una persona y
+    cada arista conecta gente que se conoce (el grafo es no dirigido):</p>
+<p>a. Implementar un algoritmo para comprobar si se cumple tal teoría para todo el conjunto de personas representadas en el grafo G. Indicar el orden del algoritmo.</p>
+<p>b. Suponiendo que en el grafo G no habrán altas ni bajas de vértices, pero podrían haberla de aristas (la gente se va conociendo), explicar las ventajas y desventajas que tendría implementar al grafo G con una matriz de adyacencia.</p>
+</li>
+<li>
+<p>(★★★) Matías está en Barcelona y quiere recorrer un museo. Su idea es hacer un
+    recorrido bastante lógico: empezar en una sala (al azar), luego ir a una adyacente
+    a ésta, luego a una adyancente a la segunda (si no fue visitada aún), y así hasta
+    recorrer todas las salas. Cuando no tiene más salas adyacentes para visitar
+    (porque ya fueron todas visitadas), simplemente vuelve por donde vino buscando
+    otras salas adyacentes.
+    Teniendo un grafo no dirigido, que representa el mapa del museo (donde los
+    vértices son salas, y las aristas (v, w) indican que las salas v y w se encuentran
+    conectadas), implementar un algoritmo que nos devuelva una lista con un
+    recorrido posible de la idea de Matías para visitar las salas del museo.
+    Indicar el recorrido utilizado y el orden del algoritmo. Justificar.</p>
+</li>
+<li>
+<p>(★★) Escribir una función <code>bool es_bipartito(grafo)</code> que dado un grafo no
+    dirigido devuelva true o false de acuerdo a si es bipartito o no. Indicar y
+    justificar el orden del algoritmo. ¿Qué tipo de recorrido utiliza?</p>
+</li>
+<li>
+<p>(★★★) Implementar un algoritmo que reciba un grafo dirigido, un vértice V y un número N, y devuelva una lista
+    con todos los vértices que se encuentren a exactamente N aristas de distancia del vértice V. Indicar el tipo
+    de recorrido utilizado y el orden del algoritmo. Justificar.</p>
+</li>
+<li>
+<p>(★★) Implementar una función que permita determinar si un grafo <em>puede ser</em> no dirigido. Determinar el orden
+    del algoritmo implementado.</p>
+</li>
+<li>
+<p>(★★) a. Dada la siguiente matriz de adyacencias, escribir la representación del grafo
+    como una lista de adyacencias:</p>
+<div class="codehilite"><pre><span></span><code>|   | A | B | C | D | E | F |
+|---|---|---|---|---|---|---|
+| A | 0 | 7 | 5 | 0 | 3 | 8 |
+| B | 7 | 0 | 0 | 0 | 1 | 3 |
+| C | 5 | 0 | 0 | 5 | 3 | 2 |
+| D | 0 | 0 | 5 | 0 | 2 | 0 |
+| E | 3 | 1 | 3 | 2 | 0 | 0 |
+| F | 8 | 3 | 2 | 0 | 0 | 0 |
+</code></pre></div>
+
+
+<p>b. ¿Qué complejidad tiene hacer esta traducción?</p>
+<p>c. ¿Qué ventajas y desventajas encuentra en cada representación? Explicar
+teniendo en cuenta cuestiones de espacio y tiempo según las operaciones que
+admite un grafo y considerar que las listas de adyacencias es un diccionario de
+listas.</p>
+</li>
+<li>
+<p>(★★) Explicar las ventajas y desventajas de un grafo implementado con listas de adyacencia (lista de listas)
+    por sobre una implementación de matriz de adyacencia, sabiendo que su densidad es <script type="math/tex">
+<script type="math/tex">\frac{|E|}{max\ |E|} > 0.75</script>
+</script>
+    o superior.</p>
+</li>
+<li>
+<p>(★★★) Un autor decidió escribir un libro con varias tramas que se puede
+    leer de forma no lineal. Es decir, por ejemplo, después del capítulo 1
+    puede leer el 2 o el 73; pero la historia no tiene sentido si
+    se abordan estos últimos antes que el 1.</p>
+<p>Siendo un aficionado de la computación, el autor ahora necesita un
+orden para publicar su obra, y decidió modelar este problema como un
+grafo dirigido, en dónde los capítulos son los vértices y sus
+dependencias las aristas. Así existen, por ejemplo, las aristas
+<code>(v1, v2)</code> y <code>(v1, v73)</code>.</p>
+<p>Escribir un algoritmo que devuelva un orden en el que se puede leer
+la historia sin obviar ningún capítulo. Indicar la complejidad del
+algoritmo.</p>
+</li>
+<li>
+<p>(★★) Implementar una función que reciba un grafo no dirigido y no pesado implementado con
+    listas de adyacencia (diccionario de diccionarios) y devuelva una matriz que sea equivalente a la
+    representación de matriz de adyacencia del mismo grafo. Indicar y justificar el orden del algoritmo
+    implementado.</p>
+</li>
+<li>
+<p>(★★) Implementar una función que reciba un grafo no dirigido, y que compruebe la siguiente afirmación:
+    <em>&ldquo;La cantidad de vértices de grado IMPAR es PAR&rdquo;</em>. Indicar y justificar el orden del algoritmo si
+    el grafo está implementado como matriz de adyacencia.</p>
+</li>
+<li>
+<p>(★★★★) Dado un número inicial <code>X</code> se pueden realizar dos tipos de operaciones sobre el número:</p>
+<ul>
+<li>Multiplicar por 2</li>
+<li>Restarle 1.</li>
+</ul>
+<p>Implementar un algoritmo que encuentra la menor cantidad de operaciones a realizar para convertir el número <code>X</code>
+en el número <code>Y</code>, con tan solo las operaciones mencionadas arriba (podemos aplicarlas la cantidad de veces
+que querramos).</p>
+</li>
+<li>
+<p>(★★★★★) Se tiene un arreglo de palabras de un lenguaje alienigena. Dicho arreglo se encuentra ordenado
+    para dicho idioma (no conocemos el orden de su abecedario). Implementar un algoritmo que reciba dicho
+    arreglo y determine un orden posible para las letras del abecedario en dicho idioma. Por ejemplo:
+    <div class="highlight"><pre><span></span><code>{&quot;caa&quot;, &quot;acbd&quot;, &quot;acba&quot;, &quot;bac&quot;, &quot;bad&quot;} --&gt; [&#39;c&#39;, &#39;d&#39;, &#39;a&#39;, &#39;b&#39;]
+</code></pre></div></p>
+</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fbarrios@fi.uba.ar'>Federico Barrios</a>, <a href='mailto:manzano.lautaro@gmail.com'>ManzanoLautaro</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../heap/" title="Colas de prioridad y heaps" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Colas de prioridad y heaps
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../grafos_2/" title="Aplicaciones y algoritmos" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Aplicaciones y algoritmos
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

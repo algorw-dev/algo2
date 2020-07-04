@@ -1,0 +1,1372 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2018_1/tp1/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP1 – Manejo de archivos, cadenas y TDAs básicos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trabajo-práctico-1" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP1 – Manejo de archivos, cadenas y TDAs básicos
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-de-cadenas" class="md-nav__link">
+    Manejo de cadenas
+  </a>
+  
+    <nav class="md-nav" aria-label="Manejo de cadenas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    split()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free_strv" class="md-nav__link">
+    free_strv()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicaciones" class="md-nav__link">
+    Aplicaciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    Tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diff" class="md-nav__link">
+    Diff
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-validation" class="md-nav__link">
+    Syntax Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aprobación" class="md-nav__link">
+    Criterios de aprobación
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <p>{% assign TP = site.data.trabajos[page.trabajo] %}</p>
+<h1 id="trabajo-práctico-1">Trabajo Práctico 1<a class="headerlink" href="#trabajo-práctico-1" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ul>
+<li toc="toc">Contenido</li>
+</ul>
+<p>El Trabajo Práctico número 1 tiene fecha de entrega para el <strong>lunes 14/05</strong>, y
+está divido en tres partes:
+* implementación de funciones auxiliares para cadenas (<a href="#manejo-de-cadenas"><code>strutil</code></a>)
+* implementación de aplicaciones similares a comandos Unix: <a href="#tail"><code>tail</code></a> y <a href="#diff"><code>diff</code></a>.
+* implementación de un programa <a href="#syntax-validation"><code>syntax_val</code></a>.</p>
+<h2 id="manejo-de-cadenas">Manejo de cadenas<a class="headerlink" href="#manejo-de-cadenas" title="Permanent link">&para;</a></h2>
+<p>Se pide implementar las funciones del archivo <a href="{{TP.zip_link}}">{{TP.zip}}</a> que se describen a continuación. Se permite utilizar cualquier funcion de <a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/string.h.html">string.h</a>, aunque se desaconseja el uso de strtok. Para la implementación de estas funciones no se puede hacer uso de TDAs.</p>
+<h3 id="split">split()<a class="headerlink" href="#split" title="Permanent link">&para;</a></h3>
+<p>La función <code>split()</code> divide una cadena en subcadenas en cada ocurrencia de un
+caracter de separación determinado. Por ejemplo, separando por comas:</p>
+<div class="highlight"><pre><span></span><code><span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,def,ghi&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">,</span> <span class="s">&quot;ghi&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>En C, devolveremos el resultado como un arreglo dinámico de cadenas dinámicas
+terminado en <code>NULL</code>. Esto es:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Ejemplo de arreglo dinámico de cadenas</span>
+<span class="kt">char</span> <span class="o">**</span><span class="n">strv</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">&quot;def&quot;</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">&quot;ghi&quot;</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Considerar los siguientes casos borde:</p>
+<div class="highlight"><pre><span></span><code><span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,,def&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,def,&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;,abc,def&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span>      <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span>
+
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span> <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<h3 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
+<p>La función <code>join()</code> es la inversa de <code>split()</code>. Concatena un arreglo de cadenas terminado en NULL mediante un caracter de separación:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Ejemplo de uso de join</span>
+<span class="kt">char</span> <span class="o">**</span><span class="n">strv</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,def,ghi&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">resultado</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">strv</span><span class="p">,</span> <span class="sc">&#39;;&#39;</span><span class="p">);</span>  <span class="c1">// &quot;abc;def;ghi&quot;</span>
+
+<span class="kt">char</span> <span class="o">**</span><span class="n">palabras</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">,</span> <span class="sc">&#39; &#39;</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">otro_resultado</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">palabras</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">);</span>  <span class="c1">// &quot;Hola,mundo&quot;</span>
+</code></pre></div>
+
+<p>Casos borde:
+<div class="highlight"><pre><span></span><code><span class="n">join</span><span class="p">([</span><span class="s">&quot;&quot;</span><span class="p">],</span> <span class="s">&quot;,&quot;</span><span class="p">)</span>      <span class="err">→</span>  <span class="s">&quot;&quot;</span>
+<span class="n">join</span><span class="p">([</span><span class="s">&quot;abc&quot;</span><span class="p">],</span> <span class="s">&quot;,&quot;</span><span class="p">)</span>   <span class="err">→</span>  <span class="s">&quot;abc&quot;</span>
+<span class="n">join</span><span class="p">([</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">],</span> <span class="s">&quot;,&quot;</span><span class="p">)</span>  <span class="err">→</span>  <span class="s">&quot;,&quot;</span>
+<span class="n">join</span><span class="p">([</span><span class="nb">NULL</span><span class="p">],</span> <span class="s">&quot;,&quot;</span><span class="p">)</span>    <span class="err">→</span>  <span class="s">&quot;&quot;</span>
+</code></pre></div></p>
+<p>Complejidad algorítmica: se espera que la función tenga complejidad <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script> (Siendo <script type="math/tex">
+<script type="math/tex">n</script>
+</script> la longitud de la cadena resultante).</p>
+<p>Las pruebas del corrector automático proveen una indicación. Este sería un test con comportamiento lineal:</p>
+<div class="codehilite"><pre><span></span><code>[ RUN      ] test_join.test_cuadratico_10000
+[       OK ] test_join.test_cuadratico_10000 (7 ms)
+[ RUN      ] test_join.test_cuadratico_20000
+[       OK ] test_join.test_cuadratico_20000 (14 ms)
+[ RUN      ] test_join.test_cuadratico_30000
+[       OK ] test_join.test_cuadratico_30000 (17 ms)
+[ RUN      ] test_join.test_cuadratico_40000
+[       OK ] test_join.test_cuadratico_40000 (27 ms)
+[ RUN      ] test_join.test_cuadratico_50000
+[       OK ] test_join.test_cuadratico_50000 (33 ms)
+[ RUN      ] test_join.test_cuadratico_60000
+[       OK ] test_join.test_cuadratico_60000 (40 ms)
+</code></pre></div>
+
+
+<p>Y este con comportamiento cuadrático:</p>
+<div class="codehilite"><pre><span></span><code>[ RUN      ] test_join.test_cuadratico_10000
+[       OK ] test_join.test_cuadratico_10000 (48 ms)
+[ RUN      ] test_join.test_cuadratico_20000
+[       OK ] test_join.test_cuadratico_20000 (618 ms)
+[ RUN      ] test_join.test_cuadratico_30000
+[       OK ] test_join.test_cuadratico_30000 (1354 ms)
+[ RUN      ] test_join.test_cuadratico_40000
+[       OK ] test_join.test_cuadratico_40000 (2425 ms)
+[ RUN      ] test_join.test_cuadratico_50000
+[       OK ] test_join.test_cuadratico_50000 (4019 ms)
+[ RUN      ] test_join.test_cuadratico_60000
+[       OK ] test_join.test_cuadratico_60000 (5722 ms)
+</code></pre></div>
+
+
+<h3 id="free_strv">free_strv()<a class="headerlink" href="#free_strv" title="Permanent link">&para;</a></h3>
+<p><code>free_strv()</code> libera la memoria asociada con un arreglo dinámico de cadenas dinámicas:</p>
+<h2 id="aplicaciones">Aplicaciones<a class="headerlink" href="#aplicaciones" title="Permanent link">&para;</a></h2>
+<h3 id="tail">Tail<a class="headerlink" href="#tail" title="Permanent link">&para;</a></h3>
+<p>Se pide implementar una versión simplificada de la utilidad <a href="http://man7.org/linux/man-pages/man1/tail.1.html">tail</a> de Unix.
+<code>tail</code> imprime las últimas <code>N</code> lineas de un archivo, o de entrada estándar.</p>
+<p>En nuestro caso, el programa no acepta nombre de archivo y siempre trabaja con entrada estándar. Nuestra implementación acepta un número entero <code>N</code> como único argumento. Por ejemplo, usando el archivo <code>nombres.txt</code>:
+<div class="highlight"><pre><span></span><code>$ cat nombres.txt
+Alicia
+Bruno
+Carolina
+Daniel
+$ cat nombres.txt | ./tail 2
+Carolina
+Daniel
+$ cat nombres.txt | ./tail 1
+Daniel
+$ cat nombres.txt | ./tail 4
+Alicia
+Bruno
+Carolina
+Daniel
+$ cat nombres.txt | ./tail 100
+Alicia
+Bruno
+Carolina
+Daniel
+</code></pre></div></p>
+<h4>Observaciones</h4>
+<ul>
+<li>
+<p>No se permite almacenar todo el archivo en memoria. Se puede almacenar, como máximo, <code>n + 1</code> líneas. Tampoco se permite el uso de archivos temporales.</p>
+</li>
+<li>
+<p>Se debe validar tanto que la cantidad de parámetros sea la correcta, como que el parámetro sea efectivamente un número. En caso de no contar con la cantidad de parámetros correctos se debe imprimir por salida de error &ldquo;Cantidad de parametros erronea&rdquo;, y finalizar la ejecución. En caso que el parámetro no sea un número, se debe imprimir por salida de error &ldquo;Tipo de parametro incorrecto&rdquo;.</p>
+</li>
+<li>
+<p>Cabe notar que, al tratarse de entrada estándar, en ningún caso puede ser leída dos veces para averiguar el número de líneas primero.</p>
+</li>
+</ul>
+<h3 id="diff">Diff<a class="headerlink" href="#diff" title="Permanent link">&para;</a></h3>
+<p>Se pide implementar una versión muy simplificada de la utilidad <a href="http://man7.org/linux/man-pages/man1/diff.1.html">diff</a> de Unix.
+<code>diff</code> recibe dos archivos por comando, y muestra las líneas diferentes entre uno y otro archivo.</p>
+<div class="highlight"><pre><span></span><code>$ cat nombres1.txt
+Alicia
+Bruno
+Carolina
+Daniel
+$ cat nombres2.txt
+Alicia
+Bruno
+Roberto
+Daniel
+$ cat nombres3.txt
+Alicia
+Carolina
+Alberto
+$ ./diff nombres1.txt nombres1.txt
+$ ./diff nombres1.txt nombres2.txt
+Diferencia en linea 3
+&lt; Carolina
+---
+&gt; Roberto
+$ ./diff nombres2.txt nombres1.txt
+Diferencia en linea 3
+&lt; Roberto
+---
+&gt; Carolina
+$ ./diff nombres1.txt nombres3.txt
+Diferencia en linea 2
+&lt; Bruno
+---
+&gt; Carolina
+Diferencia en linea 3
+&lt; Carolina
+---
+&gt; Alberto
+Diferencia en linea 4
+&lt; Daniel
+---
+&gt;
+</code></pre></div>
+
+<h4>Observaciones</h4>
+<ul>
+<li>Las lineas se comienzan a contar desde 1</li>
+<li>No se pueden almacenar los archivos en memoria. Se debe trabajar en memoria con una línea por archivo.</li>
+<li>Todas las diferencias deben escribirse en salida estándar (<code>stdout</code>).</li>
+<li>Se debe validar que se reciban dos parametros exactamente. En caso de recibirse más, o bien menos, debe indicarse por salida de error: <code>"Cantidad de parametros erronea"</code>.</li>
+<li>Se debe validar que ambos archivos existan. En caso que alguno no exista (o bien no se tengan permisos de lectura), imprimir por salida de error (<code>stderr</code>): <code>"Archivo erroneo"</code>.</li>
+<li>En caso que los archivos no tengan la misma cantidad de líneas (como en el último ejemplo), se debe imprimir las diferencias, como si se estuviera comparando contra una cadena vacía.</li>
+</ul>
+<h2 id="syntax-validation">Syntax Validation<a class="headerlink" href="#syntax-validation" title="Permanent link">&para;</a></h2>
+<p>Se pide implementar un programa que permita realizar validaciones a scripts que contengan secuencias de paréntesis, llaves o corchetes. El programa debe leer las líneas de entrada estándar, donde cada una de dichas líneas sean secuencias a validar, e indicar si las secuencias se encuentran correctamente balanceadas. Adicionalmente, en caso de encontrarse encerradas dentro de comillas simples las cadenas, no deben considerarse para determinar si la secuencia se encuentra balanceada.</p>
+<div class="highlight"><pre><span></span><code>$ cat scripts1.txt
+[]
+[()]
+[(){}]
+[[[[[]]]]]
+[[(({}))]]
+[hola mundo]
+$ cat scripts1.txt | ./syntax_val
+OK
+OK
+OK
+OK
+OK
+OK
+$ cat script2.txt
+[]()
+[(])
+()(
+[(}]
+$ cat scripts2.txt | ./syntax_val
+OK
+ERROR
+ERROR
+ERROR
+$ cat script3.txt
+[&#39;hola&#39;]
+(&#39;mundo&#39;)
+[&#39;]&#39;]
+[]&#39;hola&#39;
+[&#39;]
+[]&#39;
+$ cat scripts3.txt | ./syntax_val
+OK
+OK
+OK
+OK
+ERROR
+ERROR
+</code></pre></div>
+
+<h4>Observaciones</h4>
+<ul>
+<li>Todas las salidas deben hacerse por salida estándar (<code>stdout</code>).</li>
+</ul>
+<h2 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h2>
+<p>El código entregado debe ser claro y legible y ajustarse a las especificaciones
+de la consigna. Debe compilar sin advertencias y correr sin errores de memoria.</p>
+<p>La entrega incluye, obligatoriamente, los siguientes archivos de código:</p>
+<ul>
+<li><code>strutil.c</code> con las implementaciones de las funciones <code>split</code>, <code>join</code> y <code>free_strv</code>.</li>
+<li>el código de la solución de <code>tail</code>, <code>diff</code> y <code>syntax_val</code>.</li>
+<li>el código de los TDAs programados en la cursada que se requieran, con las
+modificaciones que sean necesarias.</li>
+<li>un archivo <code>deps.mk</code> con las dependencias del proyecto en formato make. Este
+deberá contener sólamente una línea por programa que indique qué <em>objetos</em> necesita para
+compilar el ejecutable de cada uno de los archivos, por ejemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nf">tail</span><span class="o">:</span> <span class="n">tail</span>.<span class="n">c</span>
+<span class="nf">syntax_val</span><span class="o">:</span> <span class="n">syntax_val</span>.<span class="n">c</span>
+<span class="nf">diff</span><span class="o">:</span> <span class="n">diff</span>.<span class="n">c</span> <span class="n">tda</span>.<span class="n">o</span>
+</code></pre></div>
+
+<p>El corrector automático va a interpretar ese archivos de dependencias y va a
+compilar todos los <code>.o</code> especificados a partir de los <code>.h</code> y <code>.c</code> que deberán
+enviar, con los siguientes flags de <code>GCC</code>:</p>
+<div class="highlight"><pre><span></span><code>-g -std=c99 -Wall -Wtype-limits -pedantic -Wconversion -Wno-sign-conversion
+</code></pre></div>
+
+<p>La entrega se realiza:</p>
+<ol>
+<li>en forma digital a través del <a href="{{site.entregas}}">sistema de entregas</a>:
+todos los archivos mencionados en un único archivo ZIP.</li>
+<li>en papel durante la clase (si su ayudante lo requiere) el código del Trabajo
+en hoja A4 <strong>abrochadas, sin folio, informe ni carátula</strong>. No es necesario
+reimprimir el código de los TDA.</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fdelmazo@fi.uba.ar'>Federico del Mazo</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

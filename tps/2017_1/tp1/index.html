@@ -1,0 +1,1302 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2017_1/tp1/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-1-complejidad-computacional-manejo-de-archivos-y-cadenas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP 1
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="tp-1-complejidad-computacional-manejo-de-archivos-y-cadenas">TP 1: complejidad computacional, manejo de archivos y cadenas<a class="headerlink" href="#tp-1-complejidad-computacional-manejo-de-archivos-y-cadenas" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<p>Este trabajo práctico es <em>individual</em> y consiste de cuatro partes separadas, a ser entregadas el lunes 8 de mayo.</p>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ol>
+<li toc="toc">TOC</li>
+</ol>
+<h1 id="complejidad-computacional">Complejidad computacional<a class="headerlink" href="#complejidad-computacional" title="Permanent link">&para;</a></h1>
+<p>Se desea implementar una función en C de firma <code>double* obtener_promedio_movil(int* arreglo, size_t n, size_t k)</code>, que calcule el promedio movil del arreglo, en ventana de tamaño <code>k</code> (supóngase que <code>k &lt;= n</code>). El promedio móvil de un arreglo es el promedio del mismo, tomando solamente en cuenta los elementos que se encuentran en una posición dada +- k, calculándolo para todas las posiciones posibles. Lo que debe devolver la función es un arreglo (dinámico) cuyos valores sean el promedio móvil tomado desde cada posición.</p>
+<p>Por ejemplo, supongamos el arreglo <code>{ 1, 3, 12, 6, 17, 9 }</code>, <code>n = 6</code>, <code>k = 1</code>.</p>
+<div class="codehilite"><pre><span></span><code>pm[0] = (1 + 3) / 2 = 2   (En este caso no hay más elementos hacia la izquierda)
+pm[1] = (1 + 3 + 12) / 3 = 5.3333
+pm[2] = (3 + 12 + 6) / 3 = 7
+pm[3] = (12 + 6 + 17) / 3 = 11.6666
+pm[4] = (6 + 17 + 9) / 3 = 10.6666
+pm[5] = (17 + 9) / 2 = 13   (En este caso, no hay más elementos hacia derecha)
+</code></pre></div>
+
+
+<p>Una solución trivial es realizar este cálculo tal cual está: por cada elemento en el arreglo original, calcular el promedio móvil. Esto implica recorrer el arreglo entero, y por cada elemento, recorrer <em>2K</em> elementos, por lo que el orden de dicha solución es <em>O(nk)</em>. Se pide:</p>
+<ol>
+<li>Implementar dicha solución.</li>
+<li>Implementar una solución de orden lineal que <em>no dependa</em> del valor de <em>k</em>.</li>
+<li>Implementar pruebas donde se pruebe ambas implementaciones para distintos valores de <em>n</em> y <em>k</em>.</li>
+<li>Escribir un breve informe (máximo cuatro párrafos) en dónde expliquen qué orden tiene la versión optimizada, incluyendo mediciones de las ejecuciones.</li>
+</ol>
+<h1 id="aplicaciones">Aplicaciones<a class="headerlink" href="#aplicaciones" title="Permanent link">&para;</a></h1>
+<h2 id="filesplit">filesplit<a class="headerlink" href="#filesplit" title="Permanent link">&para;</a></h2>
+<p>Se pide implementar una utilidad llamada <code>filesplit</code>, que dado el nombre de un archivo y un tamaño <code>n</code> en bytes, divide el archivo orginal en varios archivos de hasta <code>n</code> bytes. Por ejemplo:</p>
+<div class="codehilite"><pre><span></span><code>$ cat lorem.txt
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</code></pre></div>
+
+
+<p>Al invocar el programa, deberá generar los siguientes archivos de salida:</p>
+<div class="codehilite"><pre><span></span><code>$ ./filesplit lorem.txt 24
+
+$ ls
+lorem.txt  lorem.txt_001 lorem.txt_002 lorem.txt_003
+
+$ cat lorem.txt_0001
+Lorem ipsum dolor sit am
+
+$ cat lorem.txt_0002
+et, consectetur adipisic
+
+$ cat lorem.txt_0003
+ing elit.
+</code></pre></div>
+
+
+<p>Con las siguientes consideraciones:</p>
+<ul>
+<li>Se deberá validar que la cantidad de parámetros en la invocación sea exactamente dos.</li>
+<li>Los archivos generados serán llamados como el original, con el sufijo <code>_xxxx</code> (se podrá considerar que no habrá más de 9999 archivos de salida).</li>
+<li>No se podrá considerar que entra todo el archivo a dividir en memoria.</li>
+</ul>
+<h2 id="fixcol">fixcol<a class="headerlink" href="#fixcol" title="Permanent link">&para;</a></h2>
+<p>Se pide implementar una utilidad llamada <code>fixcol</code>, que dado el nombre de un archivo y un tamaño <code>n</code> en bytes, divida todas las líneas del archivo en columnas de hasta <code>n</code> columnas y las imprima por salida estándar. Por ejemplo:</p>
+<div class="codehilite"><pre><span></span><code>$ cat lorem.txt
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</code></pre></div>
+
+
+<p>El programa deberá producir la siguiente salida al ser invocado:</p>
+<div class="codehilite"><pre><span></span><code>$ ./fixcol lorem.txt 75
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod te
+mpor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ali
+quip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolor
+e eu fugiat nulla pariatur.
+</code></pre></div>
+
+
+<p>Con las siguientes consideraciones:</p>
+<ul>
+<li>Se deberá validar que la cantidad de parámetros en la invocación sea exactamente dos.</li>
+<li>No se podrá considerar que entra todo el archivo a dividir en memoria.</li>
+</ul>
+<h1 id="manejo-de-cadenas">Manejo de cadenas<a class="headerlink" href="#manejo-de-cadenas" title="Permanent link">&para;</a></h1>
+<p>Se pide implementar las funciones del archivo <a href="strutil.h">strutil.h</a> que se describen a continuación. Para la implementación de estas funciones no se puede hacer uso de TDAs:</p>
+<h2 id="split">split()<a class="headerlink" href="#split" title="Permanent link">&para;</a></h2>
+<p>La función split() divide una cadena en subcadenas en cada ocurrencia de un caracter de separación determinado. Por ejemplo, separando por comas:</p>
+<div class="codehilite"><pre><span></span><code>split(&quot;abc,def,ghi&quot;, &#39;,&#39;)  →  [&quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;]
+</code></pre></div>
+
+
+<p>En C, devolveremos el resultado como un arreglo dinámico de cadenas dinámicas terminado en <code>NULL</code>. Esto es:</p>
+<div class="codehilite"><pre><span></span><code>// Ejemplo de arreglo dinámico de cadenas
+char **strv = malloc(sizeof(char*) * 4);
+strv[0] = strdup(&quot;abc&quot;);
+strv[1] = strdup(&quot;def&quot;);
+strv[2] = strdup(&quot;ghi&quot;);
+strv[3] = NULL;
+</code></pre></div>
+
+
+<p>El prototipo y la documentación de `split()`` queda en:</p>
+<div class="codehilite"><pre><span></span><code>/*
+ * Devuelve en un arreglo dinámico terminado en NULL con todos los subsegmentos
+ * de &#39;str&#39; separados por el carácter &#39;sep&#39;. Tanto el arreglo devuelto como las
+ * cadenas que contiene son allocadas dinámicamente.
+ *
+ * Quien llama a la función toma responsabilidad de la memoria dinámica del
+ * arreglo devuelto. La función devuelve NULL si falló alguna llamada a
+ * malloc(), o si &#39;sep&#39; es &#39;\0&#39;.
+ */
+char** split(const char* str, char sep);
+</code></pre></div>
+
+
+<p>Considerar los siguientes casos borde:</p>
+<div class="codehilite"><pre><span></span><code>split(&quot;abc,,def&quot;, &#39;,&#39;)  →  [&quot;abc&quot;, &quot;&quot;, &quot;def&quot;]
+split(&quot;abc,def,&quot;, &#39;,&#39;)  →  [&quot;abc&quot;, &quot;def&quot;, &quot;&quot;]
+split(&quot;,abc,def&quot;, &#39;,&#39;)  →  [&quot;&quot;, &quot;abc&quot;, &quot;def&quot;]
+
+split(&quot;&quot;, &#39;,&#39;)  →  [&quot;&quot;]
+split(&quot;,&quot;, &#39;,&#39;) →  [&quot;&quot;, &quot;&quot;]
+</code></pre></div>
+
+
+<h2 id="join">join()<a class="headerlink" href="#join" title="Permanent link">&para;</a></h2>
+<p>La función <code>join()</code> es la inversa de <code>split()</code>. Concatena un arreglo de cadenas terminado en NULL mediante un caracter de separación:</p>
+<div class="codehilite"><pre><span></span><code>// Ejemplo de uso de join
+char **strv = split(&quot;abc,def,ghi&quot;, &#39;,&#39;);
+char *resultado = join(strv, &#39;;&#39;);  // &quot;abc;def;ghi&quot;
+
+char **palabras = split(&quot;Hola mundo&quot;, &#39; &#39;);
+char *otro_resultado = join(palabras, &#39;,&#39;);  // &quot;Hola,mundo&quot;
+</code></pre></div>
+
+
+<p>El prototipo y documentación es:</p>
+<div class="codehilite"><pre><span></span><code>/*
+ * Devuelve una cadena, allocada dinámicamente, resultado de unir todas las
+ * cadenas del arreglo terminado en NULL &#39;strv&#39;.
+ *
+ * Quien llama a la función toma responsabilidad de la memoria dinámica de la
+ * cadena devuelta. La función devuelve NULL si no se pudo allocar memoria o
+ * o si &#39;sep&#39; es &#39;\0&#39;.
+ */
+char* join(char** strv, char sep);
+</code></pre></div>
+
+
+<p>Casos borde:</p>
+<div class="codehilite"><pre><span></span><code>join([], &quot;,&quot;)        →  &quot;&quot;
+join([&quot;&quot;], &quot;,&quot;)      →  &quot;&quot;
+join([&quot;abc&quot;], &quot;,&quot;)   →  &quot;abc&quot;
+join([&quot;&quot;, &quot;&quot;], &quot;,&quot;)  →  &quot;,&quot;
+</code></pre></div>
+
+
+<p>Complejidad algorítmica: se espera que la función tenga complejidad O(n) (Siendo n la longitud de la cadena resultante).</p>
+<p>Las pruebas del corrector automático proveen una indicación. Este sería un test con comportamiento lineal:</p>
+<div class="codehilite"><pre><span></span><code>[ RUN      ] test_join.test_cuadratico_10000
+[       OK ] test_join.test_cuadratico_10000 (7 ms)
+[ RUN      ] test_join.test_cuadratico_20000
+[       OK ] test_join.test_cuadratico_20000 (14 ms)
+[ RUN      ] test_join.test_cuadratico_30000
+[       OK ] test_join.test_cuadratico_30000 (17 ms)
+[ RUN      ] test_join.test_cuadratico_40000
+[       OK ] test_join.test_cuadratico_40000 (27 ms)
+[ RUN      ] test_join.test_cuadratico_50000
+[       OK ] test_join.test_cuadratico_50000 (33 ms)
+[ RUN      ] test_join.test_cuadratico_60000
+[       OK ] test_join.test_cuadratico_60000 (40 ms)
+</code></pre></div>
+
+
+<p>Y este con comportamiento cuadrático:</p>
+<div class="codehilite"><pre><span></span><code>[ RUN      ] test_join.test_cuadratico_10000
+[       OK ] test_join.test_cuadratico_10000 (48 ms)
+[ RUN      ] test_join.test_cuadratico_20000
+[       OK ] test_join.test_cuadratico_20000 (618 ms)
+[ RUN      ] test_join.test_cuadratico_30000
+[       OK ] test_join.test_cuadratico_30000 (1354 ms)
+[ RUN      ] test_join.test_cuadratico_40000
+[       OK ] test_join.test_cuadratico_40000 (2425 ms)
+[ RUN      ] test_join.test_cuadratico_50000
+[       OK ] test_join.test_cuadratico_50000 (4019 ms)
+[ RUN      ] test_join.test_cuadratico_60000
+[       OK ] test_join.test_cuadratico_60000 (5722 ms)
+</code></pre></div>
+
+
+<h2 id="free_strv">free_strv()<a class="headerlink" href="#free_strv" title="Permanent link">&para;</a></h2>
+<p><code>free_strv()</code> libera la memoria asociada con un arreglo dinámico de cadenas dinámicas:</p>
+<div class="codehilite"><pre><span></span><code>/*
+ * Libera un arreglo dinámico de cadenas, y todas las cadenas que contiene.
+ */
+void free_strv(char *strv[]);
+</code></pre></div>
+
+
+<h1 id="consideraciones">Consideraciones<a class="headerlink" href="#consideraciones" title="Permanent link">&para;</a></h1>
+<h2 id="lectura-de-archivos">Lectura de archivos<a class="headerlink" href="#lectura-de-archivos" title="Permanent link">&para;</a></h2>
+<p>Para la lectura de flujos se recomienda usar la función <a href="http://man7.org/linux/man-pages/man3/getline.3.html">getline()</a>.</p>
+<div class="codehilite"><pre><span></span><code>ssize_t getline(char** buffer, size_t* capacidad, FILE* archivo);
+</code></pre></div>
+
+
+<p>La principal ventaja de esta función es que automáticamente reserva la memoria dinámica necesaria para almacenar la línea. No se necesita invocar manualmente malloc() a mano, ni preocuparse por los tamaños de los buffers.</p>
+<p>Sí se necesita, no obstante, liberar memoria al terminar: getline() llama a malloc() pero transfiere la responsabilidad de la memoria al usuario.</p>
+<p>La reserva de memoria dinámica se consigue llamando a la función punteros a un buffer igual a NULL y a una capacidad 0:</p>
+<div class="codehilite"><pre><span></span><code>char* linea = NULL;
+size_t capacidad = 0;
+ssize_t longitud = getline(&amp;linea, &amp;capacidad, archivo);
+// Se debe liberar la memoria al terminar de usarla.
+free(linea);
+</code></pre></div>
+
+
+<p>La función getline() se encuentra definida en la cabecera <code>stdio.h</code>. Como es una función de POSIX.1-2008, hay que declarar un identificador para indicar que la queremos usar:</p>
+<div class="codehilite"><pre><span></span><code>// Al principio de tail.c y tac.c (antes de otros include):
+#define _POSIX_C_SOURCE 200809L
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+</code></pre></div>
+
+
+<h2 id="depsmk">deps.mk<a class="headerlink" href="#depsmk" title="Permanent link">&para;</a></h2>
+<p>Se debe incluir un archivo deps.mk para indicar al corrector automático cómo compilar la entrega.
+En particular, se debe indicar qué TDA emplea cada programa.</p>
+<p>Por ejemplo, si fixcol usara una lista enlazada y filesplit usase un vector dinámico, el archivo <code>deps.mk</code> consistiría de las siguientes dos líneas:</p>
+<div class="codehilite"><pre><span></span><code># deps.mk: cada línea indica de qué OBJETOS se compone el programa.
+fixcol: fixcol.o lista.o
+filesplit: filesplit.o vd.o
+</code></pre></div>
+
+
+<p>En el caso de haber creado una biblioteca de funcionalidad común, <code>lib.c</code>, se debería indicar también <code>lib.o</code> como dependencia:</p>
+<div class="codehilite"><pre><span></span><code>fixcol: fixcol.o lista.o lib.o
+filesplit: filesplit.o vd.o lib.o
+</code></pre></div>
+
+
+<p>Para la compilación, pueden invocar a gcc a mano como hasta ahora o, de manera opcional, emplear el siguiente Makefile:</p>
+<div class="codehilite"><pre><span></span><code># Flags de gcc. Se usan automáticamente para compilar *.c → *.o
+CFLAGS := -g -std=c99 -Wall -Wformat=2
+CFLAGS += -Wshadow -Wpointer-arith -Wunreachable-code
+CFLAGS += -Wconversion -Wno-sign-conversion -Wbad-function-cast
+
+# Se pueden comentar durante el desarrollo.
+CFLAGS += -Werror
+
+# Si se ejecuta `make` a secas, se compilarán prom_movil.o, fixcol, filesplit y strutil.o .
+#
+# También se puede invocar `make fixcol`, `make filesplit` o `make strutil.o` para
+# compilar una parte del TP solamente.
+
+all: fixcol filesplit strutil.o prom_movil.o
+
+include deps.mk
+</code></pre></div>
+
+
+<h1 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h1>
+<p>El código entregado debe ser claro y legible y ajustarse a las especificaciones de la consigna. Debe compilar sin advertencias y correr sin errores de memoria.
+La entrega incluye, obligatoriamente, un pequeño informe en formato PDF para la sección de complejidad, y los siguientes archivos de código:</p>
+<ul>
+<li><code>fixcol.c</code></li>
+<li><code>filesplit.c</code></li>
+<li><code>prom_movil.c</code> con la imlementación de <code>obtener_promedio_movil</code>.</li>
+<li><code>strutil.c</code> con las imlementaciones de las funciones <code>split</code>, <code>join</code> y <code>free_strv</code>.</li>
+<li>un archivo <code>deps.mk</code> con las dependencias del proyecto en formato make</li>
+</ul>
+<p>La entrega se realiza:</p>
+<ol>
+<li>por mail a la casilla de TPs (<code>tps.7541rw@gmail.com</code>): todos los archivos mencionados en un único archivo ZIP, más el informe como un adjunto PDF sin comprimir. En el asunto deben indicar: <code>TP1 - &lt;Padrón&gt; - &lt;Apellido&gt;</code>.</li>
+<li>en papel durante la clase (si su ayudante lo requiere), tanto el informe como el código. No es necesario reimprimir el código de los TDA.</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fbarrios@fi.uba.ar'>Federico Barrios</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

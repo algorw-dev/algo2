@@ -1,0 +1,1472 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/apuntes/external-sorts/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Ordenamientos externos - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#algoritmos-de-ordenamientos-externos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Ordenamientos externos
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Ordenamientos externos
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Ordenamientos externos" class="md-nav__link md-nav__link--active">
+      Ordenamientos externos
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#juntar-k-archivos-ordenados" class="md-nav__link">
+    Juntar 
+k
+ archivos ordenados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generar-particiones-ordenadas" class="md-nav__link">
+    Generar particiones ordenadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Generar particiones ordenadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcion-1-ordenamientos-internos" class="md-nav__link">
+    Opcion 1: Ordenamientos internos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-2-replacement-selection-sort" class="md-nav__link">
+    Opcion 2: Replacement-Selection sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opción-3-natural-selection-sort" class="md-nav__link">
+    Opción 3: Natural-Selection sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#costo-de-generar-las-particiones" class="md-nav__link">
+    Costo de generar las particiones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#costo-total" class="md-nav__link">
+    Costo Total
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recomendaciones" class="md-nav__link">
+    Recomendaciones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preguntas-adicionales" class="md-nav__link">
+    Preguntas adicionales
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#juntar-k-archivos-ordenados" class="md-nav__link">
+    Juntar 
+k
+ archivos ordenados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generar-particiones-ordenadas" class="md-nav__link">
+    Generar particiones ordenadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Generar particiones ordenadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcion-1-ordenamientos-internos" class="md-nav__link">
+    Opcion 1: Ordenamientos internos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-2-replacement-selection-sort" class="md-nav__link">
+    Opcion 2: Replacement-Selection sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opción-3-natural-selection-sort" class="md-nav__link">
+    Opción 3: Natural-Selection sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#costo-de-generar-las-particiones" class="md-nav__link">
+    Costo de generar las particiones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#costo-total" class="md-nav__link">
+    Costo Total
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recomendaciones" class="md-nav__link">
+    Recomendaciones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preguntas-adicionales" class="md-nav__link">
+    Preguntas adicionales
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="algoritmos-de-ordenamientos-externos">Algoritmos de ordenamientos externos<a class="headerlink" href="#algoritmos-de-ordenamientos-externos" title="Permanent link">&para;</a></h1>
+<p>Llamamos ordenamiento externo cuando debemos ordenar archivos que son (mucho) más grandes de lo que nuestra memoria puede llegar a abarcar. Esto es así porque, en caso contrario, podríamos simplemente cargar el archivo en memoria y ordenarlo usando cualquier algoritmo de ordenamiento convencional.</p>
+<p>Supongamos entonces que contamos con un caso así. Estamos queriendo ordenar un archivo completamente desordenado, bajo algún criterio que no es importante. El algoritmo que podríamos utilizar podría hacer algo como:
+1. Generar <script type="math/tex">
+<script type="math/tex">k</script>
+</script> particiones ordenadas. Una partición de un archivo es un sub-archivo, donde todos juntos tienen todas las líneas ó registros del archivo original, sin repeticiones. Cada archivo tendrá <script type="math/tex">
+<script type="math/tex">n_i</script>
+</script> registros (con <script type="math/tex">
+<script type="math/tex">i</script>
+</script> entre <script type="math/tex">
+<script type="math/tex">0</script>
+</script> y <script type="math/tex">
+<script type="math/tex">k-1</script>
+</script>), donde la suma de todos los <script type="math/tex">
+<script type="math/tex">n_i</script>
+</script> será <script type="math/tex">
+<script type="math/tex">n</script>
+</script>, la cantidad total de registros del archivo original.
+2. Juntar las <script type="math/tex">
+<script type="math/tex">k</script>
+</script> particiones ordenadas en un nuevo archivo ordenado. Esto sería una generalización del <em>intercalar ordenado</em> de mergesort.</p>
+<p>En resumen, la idea es: separamos el archivo original en <script type="math/tex">
+<script type="math/tex">k</script>
+</script> particiones. Cada una de esas particiones nos aseguraremos que queden ordenadas, y luego uniremos las particiones en un archivo final ordenado, aprovechando que las particiones quedaron ordenadas.</p>
+<p>Veremos cómo podemos implementar cada una de esas partes. Empezaremos por la segunda, que es la más sencilla.</p>
+<h2 id="juntar-k-archivos-ordenados">Juntar <script type="math/tex">
+<script type="math/tex">k</script>
+</script> archivos ordenados<a class="headerlink" href="#juntar-k-archivos-ordenados" title="Permanent link">&para;</a></h2>
+<p>Esto en sí ya no necesariamente aplica para archivos, podría tranquilamente ser para arreglos (solo que en el caso de archivos, iremos leyendo del archivo en vez de un arreglo). La idea va a ser reutilizar el heap. Así como tenemos la opción de utilizar un heap para obtener los <em>k</em> registros más grandes de un arreglo de <script type="math/tex">
+<script type="math/tex">n</script>
+</script> registros en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n \log k)</script>
+</script>, también podemos hacer el merge de <script type="math/tex">
+<script type="math/tex">k</script>
+</script> archivos (o arreglos) <strong>ordenados</strong> que tienen en total <script type="math/tex">
+<script type="math/tex">n</script>
+</script> registros, en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n \log k)</script>
+</script>.</p>
+<p>Así como es el caso del algoritmo de <em>top-k</em>, que el orden sea logarítmico sobre <script type="math/tex">
+<script type="math/tex">k</script>
+</script> implica que en nuestro heap no tendremos nunca más de <script type="math/tex">
+<script type="math/tex">k</script>
+</script> registros. Pero recordemos que <script type="math/tex">
+<script type="math/tex">k</script>
+</script> es la cantidad de archivos que tenemos. La idea es aprovechar el ordenamiento que tienen los archivos desde el inicio.</p>
+<p>El primer registro en cada archivo es el menor de todos los registros dentro de cada uno de ellos. Digamos, en el primer archivo el primer registro es el más chico entre todos los registros del primer archivo (o a lo sumo, igual).</p>
+<p>Eso quiere decir, que el menor entre todos los <script type="math/tex">
+<script type="math/tex">k</script>
+</script> primeros va a ser el menor de todos los <script type="math/tex">
+<script type="math/tex">n</script>
+</script> registros. Por lo tanto, va a ser el primer registro, sí o sí, del archivo (o arreglo) final. Ahora tenemos que ver cuál va a ser el segundo. Pero, ¿no es posible que el segundo registro sea también proveniente del archivo del que vino el más chico que sacamos antes? Por ejemplo, si tenemos los archivos [0, 1, 2] y [2, 3, 4], los dos registros más chicos vienen del primer archivo. Entonces, tenemos que conseguir siempre comparar <script type="math/tex">
+<script type="math/tex">k</script>
+</script> registros, uno de cada archivo. Pero cuando sacamos uno, entonces quedarnos con <em>su sucesor</em>. Ya sabiendo que vamos a comparar <script type="math/tex">
+<script type="math/tex">k</script>
+</script> cosas, podemos usar el heap de manera similar:</p>
+<ol>
+<li>Creamos un heap de minimos (o de máximos con función de comparación alternada).</li>
+<li>Guardamos el primer registro de cada archivo. <em>Importante</em>: vamos a necesitar poder reconstruir de dónde vino ese registro, por lo que no se puede encolar así nada más. Será necesario crear una estructura ad-hoc solamente para este fin, y guardar: el registro en si y el número de archivo del que vino. La función de comparación solo debe tener en cuenta lo primero.</li>
+<li>Sacamos un registro del heap, que sabemos será el menor de todos, por lo que será el primer registro de nuestro archivo final (por lo que directamente deberíamos escribirlo).</li>
+<li>Agarramos el siguiente registro del archivo del cual provino ese registro anterior (simplemente lo leemos), y lo guardamos en el heap. Si el archivo ya fue leido completamente, salteamos esto porque ya terminamos de procesarlo. A partir de ese momento, el heap tendrá un registro menos.</li>
+<li>Si el heap aún tiene registros, volvemos al paso 3. Sino, entonces el algoritmo termina y ya tenemos nuestro archivo ordenado.</li>
+</ol>
+<p>Dado que se hacen <script type="math/tex">
+<script type="math/tex">n</script>
+</script> encolar y desencolar en un heap que siempre tiene a lo sumo <script type="math/tex">
+<script type="math/tex">k</script>
+</script> registros, cada operación es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(\log k)</script>
+</script>, al ser <script type="math/tex">
+<script type="math/tex">n</script>
+</script> las veces que se hace: <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n \log k)</script>
+</script>.</p>
+<p><strong>Aclaración</strong>: Es importante eliminar los archivos temporales una vez terminada la operación de merge.</p>
+<h2 id="generar-particiones-ordenadas">Generar particiones ordenadas<a class="headerlink" href="#generar-particiones-ordenadas" title="Permanent link">&para;</a></h2>
+<p>Veremos 3 implementaciones para esto. Una particularidad: el valor de <script type="math/tex">
+<script type="math/tex">n</script>
+</script> no puede cambiar (depende del archivo original), pero si podemos ver de manejar el valor de <script type="math/tex">
+<script type="math/tex">k</script>
+</script>. Cuanto menor cantidad de particiones ordenadas generemos, menor costo tendremos a la hora de hacer el merge ordenado explicado arriba.</p>
+<p>Para los 3 algoritmos propuestos vamos a suponer que tenemos una cota <script type="math/tex">
+<script type="math/tex">C</script>
+</script> de elemenos máximos que podemos tener en memoria. Nunca podemos tener más de <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros en memoria. El valor de <script type="math/tex">
+<script type="math/tex">C</script>
+</script> óptimo será cuestión de experimentación, o de poner un valor razonable.</p>
+<h3 id="opcion-1-ordenamientos-internos">Opcion 1: Ordenamientos internos<a class="headerlink" href="#opcion-1-ordenamientos-internos" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Cargar <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros en memoria (por ejemplo, en un arreglo), y ordenarlos con algún algoritmo eficiente.</li>
+<li>Escribir el arreglo ordenado en un archivo (partición).</li>
+<li>Repetir lo anterior hasta terminar el archivo original.</li>
+</ol>
+<p>Este algoritmo permite crear particiones de tamaño <script type="math/tex">
+<script type="math/tex">C</script>
+</script>, por lo que tendremos <script type="math/tex">
+<script type="math/tex">\frac{n}{C}</script>
+</script> particiones.</p>
+<h3 id="opcion-2-replacement-selection-sort">Opcion 2: Replacement-Selection sort<a class="headerlink" href="#opcion-2-replacement-selection-sort" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Crear un heap de mínimos, y una lista (podría ser otra estructura similar).</li>
+<li>Poner <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros del archivo en el heap. Así, el heap quedará <em>lleno</em>.</li>
+<li>Escribir en el archivo el primer registro del heap (el menor dentro del heap). Con eso, tendremos lugar para guardar un registro más en el heap.</li>
+<li>Leemos un nuevo registro del archivo original.</li>
+<li>Si el registro que acabamos de leer es mayor o igual al que acabábamos de sacar, simplemente lo encolamos sin más.</li>
+<li>Si en cambio, el registro fuera menor que el que sacamos antes, lo guardamos en la lista (lo veremos más adelante). De esta manera, nuestro heap tendrá un registro menos.</li>
+<li>Si aún quedan registros en el heap, volvemos al paso 3. Si no quedan más registros, cerramos la partición actual, y creamos otra. Pasamos todos los registros de la lista al heap (que debería tener <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros). Podemos hacer esto creando el heap desde un arreglo para que sea en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n)</script>
+</script>. Volvemos al paso 2.</li>
+</ol>
+<p>Si en cualquier momento el archivo ya no tiene más registros, simplemente obviamos la acción de guardar un nuevo registro en el heap.</p>
+<p>Este algoritmo permite tener particiones de, en promedio, <script type="math/tex">
+<script type="math/tex">2C</script>
+</script> registros, teniendo en total <script type="math/tex">
+<script type="math/tex">\frac{n}{2C}</script>
+</script> particiones.</p>
+<p><a href="https://www.youtube.com/watch?v=m0v-trXc2yI">Aquí</a> un video donde se hace un seguimiento del algoritmo.</p>
+<h3 id="opción-3-natural-selection-sort">Opción 3: Natural-Selection sort<a class="headerlink" href="#opción-3-natural-selection-sort" title="Permanent link">&para;</a></h3>
+<p>Similar al anterior, pero en vez de guardar los archivos en una lista, los guardamos en disco, y nos aseguramos de guardar hasta <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros en ese archivo temporal (y volvemos a leer del archivo, hasta que nos topemos con uno mayor o igual, o tengamos <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros en el archivo temporal). Al escribirlos en disco, permitimos que el heap siga pudiendo guardar registros. Cuando llegamos a <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros en el archivo, simplemente escribimos todo el heap en la partición que estábamos armando, y cargamos los registros del archivo temporal.</p>
+<p>Antes, al toparnos con que teníamos <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros en la lista, no teníamos nada para guardar, pero ahora vamos a tener <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros (los que quedaron en el heap, que siempre va a tener <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros, salvo en el caso final que tendrá uno menos). Entonces, en vez de generar particiones de <script type="math/tex">
+<script type="math/tex">2C</script>
+</script>, las genera de tamaño <script type="math/tex">
+<script type="math/tex">3C</script>
+</script>, teniendo entonces <script type="math/tex">
+<script type="math/tex">\frac{n}{3C}</script>
+</script> particiones. La contra en este caso es tener que cargar los registros del archivo temporal provenientes de disco.</p>
+<h3 id="costo-de-generar-las-particiones">Costo de generar las particiones<a class="headerlink" href="#costo-de-generar-las-particiones" title="Permanent link">&para;</a></h3>
+<p>En cualquiera de los casos, notar que siempre estaremos trabajando con un heap con <script type="math/tex">
+<script type="math/tex">C</script>
+</script> registros, y de alguna forma u otra guardaremos todos los registros en el heap, por lo tanto, el orden de realizar estas operaciones es <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n \log c)</script>
+</script>.</p>
+<h2 id="costo-total">Costo Total<a class="headerlink" href="#costo-total" title="Permanent link">&para;</a></h2>
+<p>Teniendo que <script type="math/tex">
+<script type="math/tex">k</script>
+</script> valdrá <script type="math/tex">
+<script type="math/tex">\mathcal{O}(\frac{n}{C})</script>
+</script> (con alguna constante dividiendo: 1, 2 o 3), tendrémos que nuestro algoritmo finalmente será:</p>
+<p>$$
+\begin{aligned}
+\text{SortExterno}(n) &amp;= \mathcal{O}(\text{particiones ordenadas}) +
+\mathcal{O}(\text{merge}) \</p>
+<p>\text{SortExterno}(n) &amp;= \mathcal{O}(n \log C) + \mathcal{O}(n \log \frac{n}{C}) \</p>
+<p>\text{SortExterno}(n) &amp;= \mathcal{O}(n \log C) + \mathcal{O}(n \log n) -
+\mathcal{O}(n \log C) = \mathcal{O}(n \log n)
+\end{aligned}
+$$</p>
+<p>Con eso comprobamos que, lógicamente, nuestro algoritmo ordena en <script type="math/tex">
+<script type="math/tex">\mathcal{O}(n \log n)</script>
+</script>. Ahora bien: ¿por qué deberíamos darle importancia si generamos más o menos particiones, si a cuestiones del orden no nos importa? Primero, porque a grandes rasgos es una buena optimización, que se escapa del análisis del orden del algoritmo planteado por la notación <em>Big Oh</em>. Pero más importante: estamos hablando de operaciones de lectura y escritura sobre disco. Dichas operaciones toman más tiempo que muchas otras operaciones (si bien ese tiempo sigue siendo constante, es muy grande). Por esto, es que planteamos como posibles mejoras tanto Replacement Selection como Natural Selection.</p>
+<h2 id="recomendaciones">Recomendaciones<a class="headerlink" href="#recomendaciones" title="Permanent link">&para;</a></h2>
+<p>En caso de estar trabajando con líneas de texto (i.e. registros de longitud variable), una opción es buscar el máximo tamaño que puede llegar a ocupar una de estas líneas (llamémoslo M). Si tenemos a nuestra disposición <em>X</em> KB de memoria, simplemente tendremos lugar para <em>X / M</em> líneas. Entonces diremos que nuestro <script type="math/tex">
+<script type="math/tex">C</script>
+</script> vale <em>X / M</em>. Esta es una buena forma de trabajar al principio, para simplificar. Una vez que se tenga el código funcionando, se puede mejorar (mucho) calculando en todo momento cuántos bytes estamos leyendo e incluso cuántos fuimos escribiendo. Esto último permite reducir mucho la cantidad de particiones.</p>
+<p>A la hora de trabajar con accesos a disco, es importante tener en cuenta que aún trabajando con un disco de estado solido (SSD), leer de disco seguido puede ser una operación (muy) costosa, y lo mismo al escribir.
+Pueden utilizar tanto <code>getline</code> como cualquier otra función ya vista, pero recomendamos:
+* Para lecturas: no usar <code>getline</code>, sino algo que les permita leer directamente una mayor cantidad de bytes de un solo acceso a disco¸usando fread. Tendrán que tener en cuenta que tendrán que separar ustedes por los <code>\n</code> (sencillo utilizando el <code>split</code> ya implementado, y mucho más veloz por utilizar accesos a memoria volátil). ¡Cuidado! Recuerden que la <em>última linea</em> podría haber quedado incompleta al leer del archivo.
+* Para escrituras, hacer algún tipo de buffer. Pueden por ejemplo guardar en una lista o cola <script type="math/tex">
+<script type="math/tex">n</script>
+</script> líneas (fijado por ustedes), luego unirlas (utilizando <code>join</code>), y finalmente escribirlas a disco.</p>
+<p>En caso que se trate de un archivo binario, cuyos registros son de tamaño fijo, esta operación se hace mucho más sencilla, puesto que fread y fwrite ya pueden funcionar perfectamente con arreglos de estructuras.</p>
+<h2 id="preguntas-adicionales">Preguntas adicionales<a class="headerlink" href="#preguntas-adicionales" title="Permanent link">&para;</a></h2>
+<ul>
+<li>¿Qué sucedería si el archivo es tan, pero tan grande, que la cantidad de particiones que generamos (<script type="math/tex">
+<script type="math/tex">k</script>
+</script>) es mayor a la cantidad de registros que podemos mantener en memoria (<script type="math/tex">
+<script type="math/tex">C</script>
+</script>)? ¿Cómo podemos hacer el merge de las <script type="math/tex">
+<script type="math/tex">k</script>
+</script> particiones?
+Esto podría resolverse haciendo más de una pasada del merge: En vez de mergear las <script type="math/tex">
+<script type="math/tex">k</script>
+</script> particiones, juntamos <script type="math/tex">
+<script type="math/tex">\sqrt{k}</script>
+</script>. Juntamos las primeras <script type="math/tex">
+<script type="math/tex">\sqrt{k}</script>
+</script> particiones, luego las segundas <script type="math/tex">
+<script type="math/tex">\sqrt{k}</script>
+</script>, etc&hellip; Finalmente tendremos <script type="math/tex">
+<script type="math/tex">\sqrt{k}</script>
+</script> particiones resultantes, ordenadas, y las podemos unir.</li>
+<li>Pero&hellip; ¿Y si la cantidad de particiones es tal que incluso haciendo lo anterior, no entran en memoria <script type="math/tex">
+<script type="math/tex">\sqrt{k}</script>
+</script> registros (porque serían mayor a <script type="math/tex">
+<script type="math/tex">C</script>
+</script>)?
+Vayamos a los números: En general se suele trabajar con computadoras de 8 o 16GB de memoria RAM. Supongamos que por diversas cuestiones, contamos con 512MB de memoria RAM a disposición de nuestro programa. No suena, hoy en día, un número tan grande (aunque puede serlo si el sistema debe realizar muchas tareas). Con lo que vimos anteriormente, podemos generar particiones de hasta tamaño (promedio) <script type="math/tex">
+<script type="math/tex">3C</script>
+</script>. Eso quiere decir que tendremos <script type="math/tex">
+<script type="math/tex">\frac{n}{3C}</script>
+</script> particiones. Que no entren <script type="math/tex">
+<script type="math/tex">k</script>
+</script> registros en memoria implicaría que <script type="math/tex">
+<script type="math/tex">\frac{n}{3C}</script>
+</script> registros deberían ser mayor a <script type="math/tex">
+<script type="math/tex">C</script>
+</script>. Esto quiere decir que:</li>
+</ul>
+<script type="math/tex; mode=display">
+\frac{n}{3C} > C
+</script>
+<script type="math/tex; mode=display">
+n > 3C^2
+</script>
+<p>Si nuestra memoria para el programa es de 512MB, donde supongamos que cada registro nos ocupe en promedio 128 Bytes (no solemos querer ordenar simples números). Eso querría decir que tenemos alrededor de <script type="math/tex">
+<script type="math/tex">C = 4.194.304</script>
+</script> registros. Eso implicaría que nuestro <script type="math/tex">
+<script type="math/tex">n</script>
+</script> debería ser mayor a <script type="math/tex">
+<script type="math/tex">5.28 \times 10^{13}</script>
+</script> que, mantiendo que cada registro ocupe 128 bytes, implicaría que nuestro archivo original es de 6 Peta Bytes (ni siquiera Tera). Esas capacidades ni siquiera existen para fines remotamente cercanos a los de nuestra materia. Cuando llegamos a tales números, nos olvidaremos completamente de intentar implementar algoritmos de este estilo. Porque, a fin de cuentas&hellip; ¿Quién va a validar que esa gigantezca masa de datos está ordenada? El manejo de inmensos (o cuasi infinitos) volúmenes de datos es analizado en la materia <em>Organización de Datos</em>.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 4 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fdelmazo@fi.uba.ar'>Federico del Mazo</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../../tda/heap/" title="Heap" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Heap
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../random_walks/" title="Random walks" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Random walks
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

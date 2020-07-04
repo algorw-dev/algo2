@@ -1,0 +1,1331 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2016_2/tp3/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP 3: grafos en el mundo Marvel - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+          crossorigin="anonymous" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+            crossorigin="anonymous" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js"
+            crossorigin="anonymous" integrity="sha256-b8diVEOgPDxUp0CuYCi7+lb5xIGcgrtIdrvE8d/oztQ="></script>
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-3-grafos-en-el-mundo-marvel" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP 3: grafos en el mundo Marvel
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenidos" class="md-nav__link">
+    Contenidos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    Objetivo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algoritmos" class="md-nav__link">
+    Algoritmos
+  </a>
+  
+    <nav class="md-nav" aria-label="Algoritmos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#random-walks" class="md-nav__link">
+    Random Walks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-problema-de-las-comunidades-y-label-propagation" class="md-nav__link">
+    El problema de las Comunidades y Label Propagation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigna" class="md-nav__link">
+    Consigna
+  </a>
+  
+    <nav class="md-nav" aria-label="Consigna">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-a-implementar" class="md-nav__link">
+    Comandos a Implementar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-y-datos-de-interés" class="md-nav__link">
+    Referencias y datos de interés
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="tp-3-grafos-en-el-mundo-marvel">TP 3: grafos en el mundo Marvel<a class="headerlink" href="#tp-3-grafos-en-el-mundo-marvel" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<p><img src="{{ 'assets/tps/2016_2/tp3/wachen_studios_box.jpeg' | relative_url }}" width="500" height="300" /></p>
+<h2 id="contenidos">Contenidos<a class="headerlink" href="#contenidos" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ol>
+<li toc="toc">TOC</li>
+</ol>
+<h2 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h2>
+<p>El objetivo de este Trabajo Práctico es usar el TDA grafo para modelar una red social y sus algoritmos para obtener información de ella.
+En este caso trabajaremos con la red social conformada por los personajes de Marvel Comics.</p>
+<h2 id="algoritmos">Algoritmos<a class="headerlink" href="#algoritmos" title="Permanent link">&para;</a></h2>
+<p>Antes de pasar a la consigna vamos a explicar dos algoritmos que se van a utilizar.</p>
+<h3 id="random-walks">Random Walks<a class="headerlink" href="#random-walks" title="Permanent link">&para;</a></h3>
+<p>Un <a href="https://en.wikipedia.org/wiki/Random_walk">Random Walk</a> es, como su nombre indica, un camino aleatorio sobre un grafo. Comienza desde un vértice (que puede ser uno específico o uno aleatorio) y se mueve aleatoriamente a un vecino; y luego, se mueve a un vecino (incluyendo el original) desde el nuevo vértice. Este proceso continúa hasta que el recorrido tenga un largo <em>n</em> prefijado.
+La probabilidad para movernos de un vértice a un vecino puede ser equiprobable (la misma para todos) o proporcional al peso que tenga cada arista (si el grafo fuera pesado), u otra alternativa dependiendo de la aplicación.
+Finalmente, un aplicación que utiliza este algoritmo puede realizar varios recorridos. Por lo tanto, para realizar un random walk es necesario determinar:</p>
+<ul>
+<li>el largo del recorrido</li>
+<li>la probabilidad para movernos desde un vértice a sus vecinos</li>
+<li>la cantidad de recorridos a realizar</li>
+</ul>
+<p>Todas estas caracterizaciones dependen de la aplicación del algoritmo.</p>
+<h3 id="el-problema-de-las-comunidades-y-label-propagation">El problema de las Comunidades y Label Propagation<a class="headerlink" href="#el-problema-de-las-comunidades-y-label-propagation" title="Permanent link">&para;</a></h3>
+<p>Un problema común dentro de grafos que representan redes sociales es querer obtener las comunidades que la conforman. Una comunidad dentro de una red social es un conjunto de vértices que se encuentran altamente conectados entre sí, y poco conectados con los vértices de afuera.
+Este es un problema que está abarcado por el área de Aprendizaje No Supervisado (Clustering) dentro del Aprendizaje Automático.</p>
+<p>Como estos temas no están incluidos dentro de los contenidos de la materia, usaremos un algoritmo sencillo que suele encontrar muy buenos resultados: <a href="http://arxiv.org/pdf/0709.2938v1.pdf">Label Propagation</a>. Dicho algoritmo es utilizado, por ejemplo, en Facebook para realizar inferencias.</p>
+<p>En label propagation lo que hacemos es:</p>
+<p>1) Para cada vértice <script type="math/tex">
+<script type="math/tex">V_i</script>
+</script>:</p>
+<script type="math/tex; mode=display">Label[V_i] = i</script>
+<p>2) Determinar un orden aleatorio para los vértices.</p>
+<p>3) Por cada vértice, en el orden determinado en el punto anterior, definir:</p>
+<script type="math/tex; mode=display">Label[V_i] = max\_freq(Label[V_j], ..., Label[V_k])</script>
+<p>Donde <script type="math/tex">
+<script type="math/tex">V_j, ..., V_k</script>
+</script> son los vértices adyacentes a <script type="math/tex">
+<script type="math/tex">V_i</script>
+</script>. Se tiene en cuenta la última actualización realizada, inclusive si ya fueron procesados en esta iteración (<em>actualización ascincrónica</em>).
+<script type="math/tex">
+<script type="math/tex">max\_freq</script>
+</script> es una función que devuelve la Label que aparece más frecuentemente entre todos los adyacentes a <script type="math/tex">
+<script type="math/tex">V_i</script>
+</script>.</p>
+<p>4) Si no se llegó a la condición de corte, volver a 2. La condición de corte puede ser una vez que se llegó a una cantidad determinada de comunidades, se cree que se llegó a la convergencia (la mayoría de los vecinos de cada vértice tiene la misma Label que dicho vértice), o simplemente por una cantidad de iteraciones prefijada.</p>
+<p>Como opción alternativa, brindamos otro algoritmo que utiliza Random Walks para obtener las posibles comunidades: <a href="https://drive.google.com/file/d/0B8rBD4QSqWnSLTdWTXdFaUtUNjQ/view">Entropy Walker</a>.</p>
+<h2 id="consigna">Consigna<a class="headerlink" href="#consigna" title="Permanent link">&para;</a></h2>
+<p>El trabajo práctico consiste de 2 partes:</p>
+<ol>
+<li>
+<p>La implementación del TDA grafo genérico. Se brinda una <a href="https://sites.google.com/site/fiuba7541rw/tps/grafo.zip?attredirects=0&amp;d=1">interfaz</a> que puede servir de guía, tanto en Python como en C. No es necesario que implementen todas las primitivas allí descritas, ni tampoco están restringidos a agregar otras que consideren adecuadas, o incluso darles otros nombres. Debe tomarse únicamente como guía, especialmente si no saben cómo comenzar.</p>
+</li>
+<li>
+<p>Realizar un programa para realizar operaciones sobre nuestra red social.</p>
+</li>
+</ol>
+<p>La implementación del TDA grafo, y el posterior programa del trabajo práctico pueden realizarse en lenguaje de programación a elección, con previa aprobación del corrector asignado.</p>
+<p>El programa a realizar debe recibir por parámetro la ruta del archivo con los datos de la red social:</p>
+<div class="codehilite"><pre><span></span><code>$ ./tp3 marvel.pjk
+</code></pre></div>
+
+
+<p>El archivo <a href="https://drive.google.com/file/d/0B837rronynczaUJXWHp4WDJ6bHM/view">marvel.pkj</a> que les proporcionamos está en formato <em>Pajek</em>. Este formato tiene la ventaja que es posible leer el grafo sin necesidad de un diccionario.</p>
+<p>Como ejemplo del formato (ver la <a href="https://gephi.org/users/supported-graph-formats/pajek-net-format/">documentación</a> para una descripción más extensa):</p>
+<ul>
+<li>
+<p>los vértices comienzan tras la línea marcada con <code>*Vertices V</code>, y las aristas tras <code>*Arcs</code></p>
+</li>
+<li>
+<p>la línea <code>*Vertices N</code> indica la cantidad de vértices <script type="math/tex">
+<script type="math/tex">V</script>
+</script> para poder pre-reservar la memoria necesaria</p>
+</li>
+<li>
+<p>la línea <code>*Vertices</code> va seguida del nombre de cada vértice entre comillas dobles (técnicamente los nombres son opcionales en la especificación del formato; nosotros los incluimos)</p>
+</li>
+<li>
+<p>cada arista incluye vértice origen, vértice destino, y peso.</p>
+</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code>*Vertices 4
+1 &quot;P. Uno&quot;
+2 &quot;S. Personaje&quot;
+3 &quot;P. T. Tercero&quot;
+4 &quot;Personaje Último&quot;
+*Arcs
+1 2 3
+1 3 1
+...
+3 4 17
+...
+</code></pre></div>
+
+<p>En este ejemplo hay solamente 4 personajes, y las aristas se leen tal que: “<em>P. Uno</em> y <em>S. Personaje</em> participan juntos en 3 comics juntos”. Por supuesto, la relación es recíproca, por lo que no se agrega la otra línea correspondiente (<code>2 1 3</code>).</p>
+<p>El programa debe cargar la red social de dicho archivo en memoria, y luego esperar a que se ingresen comandos por entrada estándar. Los comandos se ejecutarán de la siguiente forma:</p>
+<div class="codehilite"><pre><span></span><code>&gt; Comando parametro1, parametro2, ..., parametroN
+</code></pre></div>
+
+
+<h3 id="comandos-a-implementar">Comandos a Implementar<a class="headerlink" href="#comandos-a-implementar" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><em>Similares</em>: dado un personaje, encontrar los personajes más similares a este.</p>
+<div class="codehilite"><pre><span></span><code>Parámetros:
+    Personaje: el personaje en cuestión, al que se le buscan los similares.
+    Cantidad: la cantidad de personajes semejantes que se desean busca.
+
+Salida: De mayor a menor similaridad, los personajes ‘Cantidad’ personajes más similares al personaje indicado.
+Ejemplo:
+    &gt; similares IRON MAN, 3
+    Salida de ejemplo:
+    &gt; CAPTAIN AMERICA, SPIDER-MAN, SCARLET WITCH
+</code></pre></div>
+
+
+</li>
+<li>
+<p><em>Recomendar</em>: Dado un personaje con el cual se quiere realizar un nuevo comic, recomendar otro (u otros) personaje con el cual no haya participado aún en un comic, y sea lo más similar a él posible.</p>
+<div class="codehilite"><pre><span></span><code>Parámetros:
+    Personaje: el personaje en cuestión, al que se le busca recomendar un nuevo compañero.
+Salida: Personaje a recomendar. Los ‘Cantidad’ personajes más similares al personaje, ordenados de mayor a menor similaridad.
+Ejemplo:
+    &gt; recomendar SPIDER-MAN, 5
+    Salida de ejemplo:
+    &gt; JUBILEE, RICTOR, APOCALYPSE, DOMINO III, SKIDS
+</code></pre></div>
+
+
+<p>Para implementar estos dos comandos, podemos utilizar <strong>Random Walks</strong>.
+¿Cómo esto nos puede ayudar a determinar si un personaje es similar a otro? Si realizamos muchos de estos recorridos aleatorios, partiendo desde el personaje en cuestión, moviéndonos de forma completamente aleatoria, el/los personajes que más veces aparezcan entre todos los recorridos, deben ser los más similares al personaje de origen. Este es un algoritmo bastante usado, por ejemplo en Twitter, para recomendar seguidores (sería similar a nuestro recomendar). Tener en cuenta que cuantos más largos y más recorridos se hagan, debería ser más preciso el algoritmo (en ambos casos, y siempre que se utilicen Random Walks).</p>
+</li>
+<li>
+<p><em>Camino</em>: Queremos que un comunicado llegue lo más rápido posible de un personaje A a un Personaje B. Sabemos que los personajes se reúnen usualmente con sus ex-compañeros, por lo que la mejor estrategia, para que el mensaje llegue rápido, es definir como “ruta de comunicación” a aquellos que con los cuales haya participado más veces en distintos comics.</p>
+<div class="codehilite"><pre><span></span><code>Parámetros:
+    Personaje1: personaje de partida.
+    Personaje2: personaje de llegada.
+Salida: Camino más corto en tiempo para llegar desde el Personaje1 al Personaje2.
+Ejemplo:
+    &gt; camino STAN LEE, CAPTAIN AMERICA
+    Salida:
+    &gt; STAN LEE -&gt; HUMAN TORCH -&gt; CAPTAIN AMERICA
+</code></pre></div>
+
+
+</li>
+<li>
+<p><em>Centralidad</em> (o <em>Betweeness</em>): permite obtener los personajes más centrales de la red. Los personajes más centrales suelen ser a su vez los más importantes (o lo que se dice en redes sociales, influyente).</p>
+<div class="codehilite"><pre><span></span><code>Parámetros:
+    Cantidad: la cantidad de personajes que se desean mostrar.
+Salida: Los ‘Cantidad’ Personajes más centrales de la red, mostrado de mayor a menor.
+Ejemplo:
+    &gt; centralidad 10
+</code></pre></div>
+
+
+<p>Para implementar este comando recomendamos analizar estas dos formas:</p>
+<ul>
+<li>
+<p><em>Centralidad exacta</em>: La definición correcta es que los vértices centrales son aquellos que aparecen más veces entre todos los caminos mínimos existentes en el grafo (sin contar los extremos de cada camino mínimo, por supuesto). Por ende, una forma de calcularlo es obtener todos los caminos mínimos (desde todos los vértices, hacia todos los vértices), luego determinar la cantidad de veces que aparece cada vértice en cada camino mínimo (sin ser extremo del mismo), y mostrar los K mayores.</p>
+</li>
+<li>
+<p><em>Centralidad con Random Walks</em>: Realizando muchos caminos largos, de forma aleatoria, comenzando desde cualquier vértice, suena razonable pensar que los personajes que más veces aparezcan entre todos los recorridos, deberían ser los más centrales. Por supuesto, esto es una aproximación.</p>
+</li>
+</ul>
+<p>Cualquier opción elegida debe ser analizada con sus pros y contras en el informe a entregar (tener en cuenta el orden de cada algoritmo, y cuál es posible que sea más exacto).
+Si se deseara, puede implementarse dicho comando con sus dos alternativas (por supuesto, esto tendría un impacto positivo en la nota ;-) ).</p>
+</li>
+<li>
+<p><em>Distancias</em>: dado un personaje, obtener la cantidad de personajes que se encuentran a cada una de las distancias posibles, considerando las distancias como la cantidad de saltos (no tenemos en cuenta los eventuales pesos de las aristas del grafo).</p>
+<div class="codehilite"><pre><span></span><code>Parámetro:
+    Personaje: personaje al cuál se le desean obtener las distancias.
+Salida:
+    Distancia 1: cantidad de personajes adyacentes al personaje en cuestión.
+    Distancia 2: cantidad de personajes a distancia 2 del personaje en cuestión.
+    ...
+Ejemplo:
+    &gt; distancias BLACK PANTHER
+    Salida de ejemplo:
+    &gt; Distancia 1: 711
+    &gt; Distancia 2: 5498
+    &gt; Distancia 3: 183
+</code></pre></div>
+
+
+</li>
+<li>
+<p><em>Estadísticas</em>: Muchas veces es de interés obtener ciertas estadísticas sobre las uniones del grafo. Nos interesa que nos muestre el total de vértices, el total de aristas, el promedio del grado de cada vértice, el desvío estándar del grado de cada vértice y la densidad del grafo (la proporción entre la cantidad de aristas, y la cantidad de aristas máximas que puede llegar tener el grafo, con esa cantidad de vértices).</p>
+<div class="codehilite"><pre><span></span><code>Parámetros:
+    Ninguno
+Salida:
+    “Cantidad de vértices: ...
+    Cantidad de aristas: ...
+    Promedio del grado de cada vértice: ...
+    Desvío estándar del grado de cada vértice: ...
+    Densidad del grafo: ...“
+Ejemplo:
+    &gt; estadisticas
+</code></pre></div>
+
+
+</li>
+<li>
+<p><em>Comunidades</em>: Nos permite mostrar las comunidades que se encuentren en la red. Recomendamos utilizar el algoritmo de Label Propagation descrito en la introducción de este trabajo práctico.</p>
+<div class="codehilite"><pre><span></span><code>Parámetros:
+    Ninguno
+Salida: Por cada comunidad, la cantidad de integrantes, y un listado con los integrantes.
+Filtrar las comunidades con muy pocos vértices (menos de 4), o con muchos vértices (más de 1000).
+</code></pre></div>
+
+
+</li>
+</ol>
+<p>La entrega se realiza:</p>
+<ol>
+<li>por mail a la casilla de TPs (<code>tps.7541rw@gmail.com</code>): todos los archivos correspondientes (programa y TDA grafo) en un único archivo ZIP, más el informe como un adjunto PDF sin comprimir. En el asunto deben indicar: <code>TP3 - &lt;Padrón 1&gt; - &lt;Apellido 1&gt; - &lt;Padrón 2&gt; - &lt;Apellido 2&gt;</code>.</li>
+<li>en papel durante la clase (si su ayudante lo requiere), tanto el informe como el código.</li>
+</ol>
+<p>El informe deberá consistir de las siguientes partes:</p>
+<ul>
+<li>carátula con los datos personales del grupo y el ayudante asignado.</li>
+<li>análisis y diseño de la solución, en particular: algoritmos y estructuras de datos utilizados; orden de ejecución de cada programa o función.</li>
+</ul>
+<p>Nuevamente, pueden revisar el <a href="https://drive.google.com/open?id=11ufmyqYKWt18Ty3Wg0fxtjqU7slRU-MT">informe de ejemplo</a> para la confección del mismo.</p>
+<p>Adicionalmente los alentamos a sacar conclusiones sobre la estructura de la red social de Marvel. Además de estudiar el orden de los algoritmos, nos interesa ver qué conclusiones se puedan sacar conclusiones a partir de ellos.</p>
+<p><strong>La fecha de entrega del Trabajo Práctico es el 2 de Diciembre de 2016.</strong></p>
+<h2 id="referencias-y-datos-de-interés">Referencias y datos de interés<a class="headerlink" href="#referencias-y-datos-de-interés" title="Permanent link">&para;</a></h2>
+<p>Una propiedad interesante que cumplen todas las redes sociales es que cumplen la <a href="https://en.wikipedia.org/wiki/Power_law">Ley de Potencias</a> (en el caso de grafos, sobre el grado de los vértices). Es importante, antes de empezar a implementar algoritmos de redes sociales sobre un determinado grafo, revisar que dicho grafo cumple con la Ley de Potencias, para estar seguros que representa a una red social (por ejemplo, un grafo aleatorio tendría una distribución normal de los grados posibles). En el caso de nuestro set de datos, podemos ver que realmente se cumple dicha ley:</p>
+<p><img alt="Power Law Marvel" src="{{ 'assets/tps/2016_2/tp3/degree-distribution.png' | relative_url }}" /></p>
+<ol>
+<li><a href="http://courses.cs.washington.edu/courses/cse331/16wi/hws/hw6/hw6.html">Trabajo base utilizado</a> y <a href="http://bioinfo.uib.es/~joemiro/marvel.html">Fuente original del que obtuvimos los datos</a> (con transformación de los datos)</li>
+<li><a href="http://marvelousdb.com/">Página con base de datos de personajes del Universo Marvel</a></li>
+<li><a href="http://marvelentertainment.tumblr.com/post/30536120271/marvel-universe-data">Breve análisis sobre la composición de comunidades en el Universo Marvel</a>
+ (considerar que nuestros resultados pueden diferir, ya que Marvel tiene los datos de primera mano, y los nuestros datan de 2002).</li>
+<li><a href="https://vimeo.com/88234257">Video de la conferencia de Nueva York sobre Visualizaciones y análisis de datos, 2014</a></li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fbarrios@fi.uba.ar'>Federico Barrios</a>, <a href='mailto:fdelmazo@fi.uba.ar'>Federico del Mazo</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

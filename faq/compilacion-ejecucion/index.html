@@ -1,0 +1,1412 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/faq/compilacion-ejecucion/">
+      
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Lenguaje C: compilación y ejecución - Algoritmos y Programación II</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lenguaje-c-compilación-y-ejecución" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lenguaje C: compilación y ejecución
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tps/" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../general/" class="md-tabs__link md-tabs__link--active">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tps/tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lenguaje C: compilación y ejecución
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Lenguaje C: compilación y ejecución" class="md-nav__link md-nav__link--active">
+      Lenguaje C: compilación y ejecución
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qué-signfica-que-un-lenguaje-sea-como-c-compilado" class="md-nav__link">
+    ¿Qué signfica que un lenguaje sea, como C, compilado?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cómo-hago-para-compilar-varios-archivos" class="md-nav__link">
+    ¿Cómo hago para compilar varios archivos?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cómo-hago-para-tener-una-función-que-usa-otra-pero-está-más-adelante-en-el-código" class="md-nav__link">
+    ¿Cómo hago para tener una función que usa otra, pero está más adelante en el código?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-son-los-archivos-h" class="md-nav__link">
+    ¿Qué son los archivos .h?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-un-archivo-objeto" class="md-nav__link">
+    ¿Qué es un archivo objeto?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-qué-mis-printf-no-se-imprimen" class="md-nav__link">
+    ¿Por qué mis printf no se imprimen?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cómo-hago-para-que-gcc-escupa-los-mensajes-de-error-en-inglés" class="md-nav__link">
+    ¿Cómo hago para que gcc escupa los mensajes de error en inglés?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-significa-el-error-assignment-discards-qualifiers-from-pointer-target-type" class="md-nav__link">
+    ¿Qué significa el error "assignment discards qualifiers from pointer target type"?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-de-redefinición-de-funciones-yo-tipos-al-compilar-varios-archivos" class="md-nav__link">
+    Problemas de redefinición de funciones y/o tipos al compilar varios archivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-significa-assignment-makes-pointer-from-integer-without-a-cast" class="md-nav__link">
+    ¿Qué significa assignment makes pointer from integer without a cast?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-un-archivo-makefile" class="md-nav__link">
+    ¿Qué es un archivo Makefile?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cómo-se-le-pasan-parámetros-por-línea-de-comandos-a-un-programa" class="md-nav__link">
+    ¿Cómo se le pasan parámetros por línea de comandos a un programa?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-significa-implicit-declaration-of-function-una_funcion_interna" class="md-nav__link">
+    ¿Qué significa implicit declaration of function 'una_funcion_interna'?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qué-signfica-que-un-lenguaje-sea-como-c-compilado" class="md-nav__link">
+    ¿Qué signfica que un lenguaje sea, como C, compilado?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cómo-hago-para-compilar-varios-archivos" class="md-nav__link">
+    ¿Cómo hago para compilar varios archivos?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cómo-hago-para-tener-una-función-que-usa-otra-pero-está-más-adelante-en-el-código" class="md-nav__link">
+    ¿Cómo hago para tener una función que usa otra, pero está más adelante en el código?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-son-los-archivos-h" class="md-nav__link">
+    ¿Qué son los archivos .h?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-un-archivo-objeto" class="md-nav__link">
+    ¿Qué es un archivo objeto?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-qué-mis-printf-no-se-imprimen" class="md-nav__link">
+    ¿Por qué mis printf no se imprimen?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cómo-hago-para-que-gcc-escupa-los-mensajes-de-error-en-inglés" class="md-nav__link">
+    ¿Cómo hago para que gcc escupa los mensajes de error en inglés?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-significa-el-error-assignment-discards-qualifiers-from-pointer-target-type" class="md-nav__link">
+    ¿Qué significa el error "assignment discards qualifiers from pointer target type"?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-de-redefinición-de-funciones-yo-tipos-al-compilar-varios-archivos" class="md-nav__link">
+    Problemas de redefinición de funciones y/o tipos al compilar varios archivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-significa-assignment-makes-pointer-from-integer-without-a-cast" class="md-nav__link">
+    ¿Qué significa assignment makes pointer from integer without a cast?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-es-un-archivo-makefile" class="md-nav__link">
+    ¿Qué es un archivo Makefile?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cómo-se-le-pasan-parámetros-por-línea-de-comandos-a-un-programa" class="md-nav__link">
+    ¿Cómo se le pasan parámetros por línea de comandos a un programa?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qué-significa-implicit-declaration-of-function-una_funcion_interna" class="md-nav__link">
+    ¿Qué significa implicit declaration of function 'una_funcion_interna'?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="lenguaje-c-compilación-y-ejecución">Lenguaje C: compilación y ejecución<a class="headerlink" href="#lenguaje-c-compilación-y-ejecución" title="Permanent link">&para;</a></h1>
+<h2 id="qué-signfica-que-un-lenguaje-sea-como-c-compilado">¿Qué signfica que un lenguaje sea, como C, compilado?<a class="headerlink" href="#qué-signfica-que-un-lenguaje-sea-como-c-compilado" title="Permanent link">&para;</a></h2>
+<p>Significa que para ejecutar nuestro programa se lo debe primero traducir a código binario que la CPU de la computadora pueda entender. Una vez traducido, el resultado (las instrucciones binarias) se pueden enviar a la CPU para su ejecución.</p>
+<p>A ese paso de traducción le llamamos compilación .</p>
+<p>Es por esto que las instrucciones del TP0 consisten en dos pasos. Primero, la compilación:</p>
+<p><code>gcc -std=c99 -Wall -pedantic -Werror -o pruebas *.c</code></p>
+<p>(El compilador que empleamos se llama GCC.)</p>
+<p>Esto produce en nuestro directorio de trabajo un archivo nuevo llamado pruebas (pero podríamos llamarle cualquier otro nombre que quisiéramos).</p>
+<p>A continuación, le podemos decir al sistema operativo que corra ese código binario que se encuentra en el archivo nuevo:</p>
+<p><code>./pruebas</code></p>
+<p>Solo en este segundo paso veríamos si nuestro código compilado hace lo que se espera.</p>
+<p>En el primer paso, el compilador solamente detecta errores de sintaxis, o errores simples ( advertencias ) que el compilador piensa que pueden conducir a errores de comportamiento.</p>
+<h2 id="cómo-hago-para-compilar-varios-archivos">¿Cómo hago para compilar varios archivos?<a class="headerlink" href="#cómo-hago-para-compilar-varios-archivos" title="Permanent link">&para;</a></h2>
+<p>Para compilar solo un archivo (por ejemplo, <code>pruebas.c</code>) se utiliza:</p>
+<p><code>gcc -std=c99 -Wall -pedantic -Werror -o pruebas pruebas.c</code></p>
+<p>Acá, <code>pruebas.c</code> debe contener la función main, que es la que ejecutará.</p>
+<p>Por otro lado, para compilar varios archivos en un solo programa se utiliza:</p>
+<p><code>gcc -std=c99 -Wall -pedantic -Werror -o pruebas pruebas1.c pruebas2.c</code></p>
+<p>Para no especificar cada archivo del proyecto, puedo simplemente llamar a todo archivo <code>.c</code> del directorio, con el <em>wildcard</em> (comodín) <code>*.c</code></p>
+<p><code>gcc -std=c99 -Wall -pedantic -Werror -o pruebas *.c</code></p>
+<h2 id="cómo-hago-para-tener-una-función-que-usa-otra-pero-está-más-adelante-en-el-código">¿Cómo hago para tener una función que usa otra, pero está más adelante en el código?<a class="headerlink" href="#cómo-hago-para-tener-una-función-que-usa-otra-pero-está-más-adelante-en-el-código" title="Permanent link">&para;</a></h2>
+<p>Se puede incluir el prototipo de la función para &lsquo;avisarle&rsquo; al compilador que se va a encontrar con la definición de la función más adelante:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>De esta forma, el compilador puede hacer el chequeo de tipos sin conocer el cuerpo de la función.</p>
+<p>Esto es lo que se llama una <strong>declaración</strong> de una función de C.</p>
+<h2 id="qué-son-los-archivos-h">¿Qué son los archivos .h?<a class="headerlink" href="#qué-son-los-archivos-h" title="Permanent link">&para;</a></h2>
+<p>Un archivo <em>header</em> es un archivo que contiene declaraciones de funciones que utilizaremos en el programa.</p>
+<p>Es con estas cabeceras que relacionamos dos archivos <code>.c</code>. Ya que un archivo siempre debe conocer el prototipo de una función que utiliza, un archivo debe <em>incluir</em> la cabecera de otro para poder hacer uso de sus funciones.</p>
+<p>Por ejemplo, teniendo un archivo principal que imprime hola y un archivo que imprime mundo, desde nuestro archivo principal <code>hola.c</code> debemos incluir la función de nuestro segundo archivo. Esto se hace con el comando al preprocesador de C, <code>#include "mundo.h"</code> en las primeras lineas del programa. Al compilar, tendremos que compilar al mismo programa tanto el archivo hola como el archivo mundo. No deben incluirse los archivos <code>.h</code> en la compilación.</p>
+<p>También el mismo archivo <code>mundo.c</code> debe incluir a su propia cabecera, para poder ahorrarse el pensar en el orden que tiene que definir las funciones que va a utilizar. Ya que al incluir la cabecera el compilador sabrá todas las declaraciones de sus funciones, luego todas pueden ser escritas en el orden que sea, sin restricciones de declarar una función antes de utilizarla.</p>
+<p>Hacemos una distinción del comando de inclusión:</p>
+<ul>
+<li>
+<p><code>#include &lt;archivo.h&gt;</code>: Incluye cabeceras del lenguaje C, para poder hacer uso de funciones como <code>printf</code>, <code>puts</code> y otras.</p>
+</li>
+<li>
+<p><code>#include "archivo.h"</code>: Incluye cabeceras en nuestro mismo directorio.</p>
+</li>
+</ul>
+<p>Estos archivos también funcionan como documentación del programa. ¿Qué puede usar el usuario de mi programa? ¿Qué tiene a su disposición? ¿Qué hace cada función?</p>
+<p>Es decir, este archivo es la interfaz que se proporciona junto al programa. Por ejemplo, al hacer un juego tendremos varias funciones. Muchas de estas serán públicas (por ejemplo, <code>jugar</code>, con su respectiva documentación), ya que son las que le daremos al usuario, pero también algunas son privadas (por ejemplo, <code>calcular_puntaje</code>). Son las funciones públicas las que se declaran en el archivo header.</p>
+<h2 id="qué-es-un-archivo-objeto">¿Qué es un archivo objeto?<a class="headerlink" href="#qué-es-un-archivo-objeto" title="Permanent link">&para;</a></h2>
+<p>Un archivo objeto es el paso intermedio entre los archivos <code>.c</code> y <code>.h</code> y el programa mismo. Sirven para <em>encapsular</em> comportamiento del programa, y no tener que estar todo el tiempo compilando todos los archivos <code>.c</code> de nuestro programa.</p>
+<p>Por ejemplo, si tenemos un directorio con <code>puntaje.c</code>, <code>usuarios.c</code> y <code>juego.c</code> y la implementación de puntajes no depende de la de usuarios (y viceversa), vamos a querer generar 2 objetos distintos <code>puntaje.o</code> y <code>usuarios.o</code>, mientras que el archivo de juego nos servira para <em>enlacar</em> (link) los dos objetos y generar finalmente el juego deseado.</p>
+<p>Al hacer esto, suponiendo que queremos arreglar un error en el archivo de puntajes, no tendremos que recompilar el objeto de usuarios, ya que ese funciona correctamente.</p>
+<p>Para compilar un archivo (o varios) <code>.c</code> a un objeto, se hace con la directiva <code>-c</code> de gcc. Sin esta directiva, se compila directamente los archivos <code>.c</code> al ejecutable, como venimos trabajando.</p>
+<p>Continuando con el ejemplo:
+<div class="highlight"><pre><span></span><code>gcc -std=c99 -Wall -pedantic -Werror -c -o puntaje.o puntaje.c
+gcc -std=c99 -Wall -pedantic -Werror -c -o usuarios.o usuarios.c
+gcc -std=c99 -Wall -pedantic -Werror -o juego juego.c usuarios.o puntaje.o
+./juego
+</code></pre></div></p>
+<p>La primera y segunda linea se refieren a compilar los dos archivos .c a sus respectivos objetos. Luego, haciendo uso del archivo principal del juego (el que contiene main), en la tercera linea los enlacamos. Por último, lo ejecutamos normalmente.</p>
+<h2 id="por-qué-mis-printf-no-se-imprimen">¿Por qué mis <code>printf</code> no se imprimen?<a class="headerlink" href="#por-qué-mis-printf-no-se-imprimen" title="Permanent link">&para;</a></h2>
+<p>La convención en Unix es que la entrada estándar y la salida estándar tengan un búfer asociado. Esto significa que al utilizar <code>printf</code> de la manera normal, no se imprime inmediatamente a la consola: sólo sucede cuando suficientes mensajes están esperando ser impresos. Por esto, si el programa se termina por algún error entre que llamamos a <code>printf</code> y que el búfer se vacía, nuestro mensaje no se muestra.
+La solución es utilizar un canal específico para los errores, que no tiene un búfer asociado: <code>stderr</code>. Se puede utilizar como cualquier archivo llamando a <code>fprintf</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="p">...);</span>
+</code></pre></div>
+
+<h2 id="cómo-hago-para-que-gcc-escupa-los-mensajes-de-error-en-inglés">¿Cómo hago para que gcc escupa los mensajes de error en inglés?<a class="headerlink" href="#cómo-hago-para-que-gcc-escupa-los-mensajes-de-error-en-inglés" title="Permanent link">&para;</a></h2>
+<p>Cuando gcc (o cualquier otro programa) imprime un mensaje de error en castellano e intentamos buscarlo en internet porque no lo entendemos, es probable que encontremos poca información. Lamentablemente hay muchísima más información en inglés que en castellano.</p>
+<p>Por lo tanto, es una buena idea obligar a un programa a imprimir los mensajes en el idioma original antes de buscar en internet:</p>
+<div class="codehilite"><pre><span></span><code>$ LANG=C programa
+</code></pre></div>
+
+
+<p>Por ejemplo:</p>
+<div class="codehilite"><pre><span></span><code>$ gcc noexiste.c
+gcc: error: noexiste.c: No existe el fichero ó directorio
+gcc: error fatal: no hay ficheros de entrada
+$ LANG=C gcc noexiste.c
+gcc: error: noexiste.c: No such file or directory
+gcc: fatal error: no input files
+</code></pre></div>
+
+
+<h2 id="qué-significa-el-error-assignment-discards-qualifiers-from-pointer-target-type">¿Qué significa el error &ldquo;assignment discards qualifiers from pointer target type&rdquo;?<a class="headerlink" href="#qué-significa-el-error-assignment-discards-qualifiers-from-pointer-target-type" title="Permanent link">&para;</a></h2>
+<p>Significa que con la asignación se está descartando un calificador de un puntero. Particularmente se suele dar cuando el dato recibido es un const y se lo asigna a una variable (o miembro de una estructura) que no es const, por lo que se le estaría dando luz verde para que se cambie, ya que a través de un puntero se puede cambiar el dato.</p>
+<h2 id="problemas-de-redefinición-de-funciones-yo-tipos-al-compilar-varios-archivos">Problemas de redefinición de funciones y/o tipos al compilar varios archivos<a class="headerlink" href="#problemas-de-redefinición-de-funciones-yo-tipos-al-compilar-varios-archivos" title="Permanent link">&para;</a></h2>
+<p>Si al compilar varios archivos que se incluyen entre ellos se obtiene el error <code>multiple definition of nombre de la función</code> o bien <code>redefinition of typedef tipo_de_datos</code>, aún cuando las funciones y los tipos se están definiendo una única vez, es muy probable que se deba a que no se están protegiendo los encabezados de forma correcta.  Para ello, es necesario utilizar el siguiente formato en todos los archivos .h del programa:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#ifndef NOMBRE_DEL_ARCHIVO_H</span>
+<span class="cp">#define NOMBRE_DEL_ARCHIVO_H</span>
+
+<span class="c1">// Contenido del .h</span>
+
+<span class="cp">#endif</span>
+</code></pre></div>
+
+<p>Donde <code>NOMBRE_DEL_ARCHIVO_H</code> se debe reemplazar por el nombre del archivo.h correspondiente.</p>
+<h2 id="qué-significa-assignment-makes-pointer-from-integer-without-a-cast">¿Qué significa assignment makes pointer from integer without a cast?<a class="headerlink" href="#qué-significa-assignment-makes-pointer-from-integer-without-a-cast" title="Permanent link">&para;</a></h2>
+<p>La siguiente operación es incorrecta:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">*</span> <span class="n">valor</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Ya que está asignando un valor entero a algo que es un puntero, y claramente es una dirección de memoria inválida.</p>
+<p>Si lo que se quiere es tener un puntero a un entero, y que el valor del entero sea 4, existen estas dos alternativas:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">x</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Esto funciona, pero hay que tener mucho cuidado, ya que la variable i se encuentra en el stack, por lo que la dirección de i sólo tiene sentido mientras la función actual no se termine.  Al terminar la función actual pasa a ser una dirección de memoria inválida.  Por otro lado:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">*</span> <span class="n">x</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="o">*</span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</code></pre></div>
+
+<p>En este caso, la dirección de memoria de <code>x</code> es válida aún cuando termine la función actual.  Pero hay que tener cuidado de liberar ese espacio de memoria cuando ya no sea necesario.</p>
+<h2 id="qué-es-un-archivo-makefile">¿Qué es un archivo Makefile?<a class="headerlink" href="#qué-es-un-archivo-makefile" title="Permanent link">&para;</a></h2>
+<p>Un archivo Makefile es un archivo creado para automatizar el proceso de compilación, ejecución y mantenimiento del código fuente. Al ejecutar el programa <code>make</code> se buscan estos archivos para ejecutar sus instrucciones y compilar el código fuente cuando sea necesario.</p>
+<p>Para más información se puede consultar este <a href="https://drive.google.com/open?id=1iMUDd8tPJ-uZrZWRlw7uTmfcM1CEAJva">apunte de la cátedra</a> y el <a href="https://drive.google.com/open?id=15QDg5EmjCXVE_jrthNm-78TkG9fvG9K8">Makefile de ejemplo</a>.</p>
+<h2 id="cómo-se-le-pasan-parámetros-por-línea-de-comandos-a-un-programa">¿Cómo se le pasan parámetros por línea de comandos a un programa?<a class="headerlink" href="#cómo-se-le-pasan-parámetros-por-línea-de-comandos-a-un-programa" title="Permanent link">&para;</a></h2>
+<p>Al ejecutar un programa se pueden pasar parámetros por línea de comandos:</p>
+<div class="codehilite"><pre><span></span><code>$ ./tp productos.csv registros.csv
+</code></pre></div>
+
+
+<p>El programa los puede recibir como cadenas cuando se declara la función main con la siguiente firma:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+</code></pre></div>
+
+<p>En dónde el primer argumento es la cantidad de parámetros, y el segundo es un arreglo con cada uno de ellos. En todos los casos <code>argc</code> siempre es mayor que 1 porque <code>argv[0]</code> contiene el nombre con el que se invocó al programa.</p>
+<p>Pueden leer más sobre parámetros de la línea de comandandos en el <a href="https://drive.google.com/open?id=18tXTY-zwSTGlbeFHhyxQ9MAG1XJlZwyu">apunte del curso</a>.</p>
+<h2 id="qué-significa-implicit-declaration-of-function-una_funcion_interna">¿Qué significa implicit declaration of function &lsquo;una_funcion_interna&rsquo;?<a class="headerlink" href="#qué-significa-implicit-declaration-of-function-una_funcion_interna" title="Permanent link">&para;</a></h2>
+<p>Las funciones que están definidas en un archivo <code>.c</code> pero que no están declaradas en el correspondiente archivo <code>.h</code> no pueden ser llamadas fuera de ese archivo <code>.c</code>.</p>
+<p>Sólo se puede llamar a funciones que están declaradas en el <code>.h</code>, una función interna del archivo <code>.c</code> no debe ser llamada desde fuera de este archivo.</p>
+<p>No se puede probar esas funciones directamente mediante las pruebas, sino que es necesario probarlas indirectamente, mediante llamadas a las funciones que sí están declaradas en el <code>.h</code>.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 30 de junio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fdelmazo@fi.uba.ar'>Federico del Mazo</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../primeros-pasos/" title="Primeros pasos con Linux y C" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Primeros pasos con Linux y C
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../lenguaje-c/" title="Lenguaje C" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Lenguaje C
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1285 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2018_1/tp3/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP3 – Grafos y agencias de viaje</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trabajo-práctico-3" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP3 – Grafos y agencias de viaje
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducción" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#análisis-de-la-situación" class="md-nav__link">
+    Análisis de la situación
+  </a>
+  
+    <nav class="md-nav" aria-label="Análisis de la situación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problema-del-viajante" class="md-nav__link">
+    Problema del viajante
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementación" class="md-nav__link">
+    Implementación
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funciones-de-la-biblioteca" class="md-nav__link">
+    Funciones de la biblioteca
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos" class="md-nav__link">
+    Comandos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivos-kml" class="md-nav__link">
+    Archivos KML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aprobación" class="md-nav__link">
+    Criterios de aprobación
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="trabajo-práctico-3">Trabajo Práctico 3<a class="headerlink" href="#trabajo-práctico-3" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<p>El Trabajo Práctico número 3 es de elaboración grupal, y tiene fecha de entrega
+para el <strong>viernes 29 de junio</strong>.</p>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ul>
+<li toc="toc">Contenido</li>
+</ul>
+<h2 id="introducción">Introducción<a class="headerlink" href="#introducción" title="Permanent link">&para;</a></h2>
+<p>En medio del revuelo producido por la inminente <strong>Copa Mundial de Tejo de Playa</strong> que está por comenzar
+en Rusia, una reconocida agencia de viajes tiene dos preocupaciones:</p>
+<ol>
+<li>¿Cómo deberá ser la vestimenta oficial de los participantes?</li>
+<li>¿Cómo aprovechar el mundial para ofrecer distintos paquetes de viajes?</li>
+</ol>
+<p>Dado que la primer cuestión escapa un poco de su control, decidieron atacar la segunda. Para esto,
+realizaron encuestas por distintas redes sociales para saber cuáles serían los tipos de viajes que
+más les gustaría a la gente.</p>
+<p>Conoceremos a distintos personajes que nos ayudarán a entender qué nos puede llegar a ayudar:</p>
+<ul>
+<li>Sergio: es un fanático del tejo. Ya ha declarado que &ldquo;ama más a Moshi (la estrella del equipo) que
+a su madre&rdquo;. Quiere seguir a la selección de su país por todas las sedes a las que vaya. No le interesa
+conocer nada más, salvo lo que sea estrictamente necesario para hacer un camino más corto, porque no
+quiere perder ni un segundo de poder estar cerca del equipo.</li>
+<li>Claudia: cree que <em>el Pifia</em> Ibrahim es un poco mufa, y va al mundial sólo por ser amigo de Moshi.
+Pero cuando empiece a tirarse la bocha, lo único que importa es que todos tiren para el mismo lado
+(que bueno&hellip; es el único lado al que se pueden tirar las bochas de tejo). A ella además le interesa
+conocer todas las sedes del mundial. Sabe que todas las ciudades están conectadas con todas las demás,
+y quiere poder conocer todas y volver a la inicial (de dónde puede volver en avión) en la menor cantidad
+de tiempo posible (tiene vacaciones limitadas, así que quiere reducir a lo mínimo el tiempo perdido en
+viajes).</li>
+<li>Gloria: La hermana de Claudia. Puede darse el lujo de perder un poco más de tiempo en viajes, y prefiere
+que el tiempo en averiguar un buen camino para conocer todas las sedes demore lo menos posible.</li>
+<li>Roberto: dado que no confía en que la selección tenga buenos resultados en el mundial desde que tuvo que
+jugarse la clasificación con el seleccionado de Eslovaquia (que ni siquiera tiene playas), cree que lo mejor
+es aprovechar el viaje para conocer el lugar.  Si bien su principal objetivo es ver partidos de la selección,
+también tiene una particular afición por la historia, y más si se trata de la de Rusia. Por eso, quiere
+aprovechar y visitar varias ciudades, pero no quiere hacerlo en cualquier orden. Quiere conocer ciertas
+ciudades antes que otras, porque eso le ayudará a entender mejor los tours y visitas a museos, según un
+artículo que vio en Trip Advisor.</li>
+<li>Lorena: no le gusta mucho andar por lugares desconocidos, por lo que prefiere conocer la menor cantidad
+de rutas posibles que la conecten a todas las sedes, pero que al mismo tiempo impliquen el menor costo
+posible. No le molesta recorrer varias veces la misma ruta, si fuera necesario.</li>
+</ul>
+<h2 id="análisis-de-la-situación">Análisis de la situación<a class="headerlink" href="#análisis-de-la-situación" title="Permanent link">&para;</a></h2>
+<p>La agencia ha tomado nota de lo que los distintos personajes requieren, por lo que han decidio implementar
+un programa que, partiendo de un archivo inicial que contenga la información de todas las sedes del mundial, y
+la distancia a la que se encuentra una de otra, podamos resolver todas sus inquietudes.</p>
+<p>El programa debe permitir:</p>
+<ol>
+<li>Obtener el camino mínimo desde y hacia distintas sedes del mundial (Sergio dijo que compraría pasajes para
+toda la familia, inclusive para su mamá). También, exportar algún tipo de archivo que permita visualizar
+el recorrido a hacer.</li>
+<li>Obtener un recorrido que minimice el costo de todos los viajes entre todas las sedes, pasando una vez, y solo
+una vez por cada sede, como pide Claudia. Además, permitir que este proceso pueda demorar poco tiempo,
+para Gloria. En ambos casos, también exportar el archivo que permite visualizar el recorrido a hacer.</li>
+<li>Obtener un itinerario de viaje para optimizar la experiencia del mismo (como quiere Roberto), donde no nos
+importe la distancia entre sedes.</li>
+<li>Obtener un Árbol de Tendido Mínimo para tener la ruta deseada para Lorena.</li>
+</ol>
+<h3 id="problema-del-viajante">Problema del viajante<a class="headerlink" href="#problema-del-viajante" title="Permanent link">&para;</a></h3>
+<p>El segundo punto hace alusión a un problema muy conocido en computación, denominado <em>El problema del viajante</em>,
+o TSP por sus siglas en inglés. Este pide que, teniendo un Grafo no dirigido, pesado y completo,
+y un vértice inicial obtener un recorrido sobre este que:
+1. Minimice la suma de los pesos de las aristas por los que se transita.
+1. Pase por todos los vértices, una vez y solo una vez.
+1. Finalice volviendo al punto de origen.</p>
+<p>Dicho problema es <em>muy difícil</em> de resolver, en el sentido del orden temporal. Es un problema en el que, para
+obtener la solución exacta, no distaremos demasiado de haber probado todas las soluciones posibles hasta encontrar
+una que cumpla las tres restricciones, siendo que las dos últimas permiten recortar el árbol de posibilidades,
+pero la tercera nos implica necesariamente ver más de una opción posible.</p>
+<p>Dado esto, es necesario implementar:
+1. Una solución exacta, que si bien demore tiempo, permita obtener la mejor solución de todas.
+1. Una solución aproximada, que permita resolver el problema de la mejor forma posible, pero rápidamente.</p>
+<p>La primera deberá implementarse con un algoritmo de Backtracking, mientras la segunda deberá ser con un
+algoritmo Greedy. Si bien la solución por backtracking teóricamente demanda mucho tiempo, al ser poca
+cantidad de vértices (no son tantas las sedes del mundial de tejo), no debería ser demasiado.</p>
+<h2 id="implementación">Implementación<a class="headerlink" href="#implementación" title="Permanent link">&para;</a></h2>
+<p>El trabajo puede realizarse en lenguaje a elección, siendo aceptados Python y C, y cualquier otro a ser discutido
+con el corrector asignado.</p>
+<p>El trabajo consiste de tres partes:
+* El TDA Grafo, con sus primitivas.
+* Una biblioteca de funciones de grafos, que permitan hacer distintas operaciones sobre un grafo de ciudades de
+algún país, sin importar cuál sea el país ni cuáles las ciudades.
+* El programa &lsquo;Traeme la copa Moshi&rsquo; que utilice tanto el TDA como la biblioteca para poder implementar todo
+lo requerido, poniendo foco en Rusia.</p>
+<p>El programa a realizar debe recibir por parámetro y cargar en memoria el set de datos (<code>$ ./traemelaco
+ciudades.csv mapa.kml</code>) y luego solicitar el ingreso de comandos por entrada estándar, del estilo
+<code>comando 'parametro'</code>.
+Notar que esto permite tener un archivo de instrucciones a ser ejecutadas
+(<code>cat comandos.txt | ./traemelaco ciudades.csv mapa.kml</code>).</p>
+<p>El archivo contará con el siguiente formato:
+<div class="highlight"><pre><span></span><code># Cantidad de ciudades (n)
+Ciudad1,lat1,long1
+Ciudad1,lat1,long1
+...
+Ciudad_n,lat_n,long_n
+# Cantidad de aristas
+Ciudad_i,Ciudad_j,tiempo
+...
+</code></pre></div></p>
+<p>En dicho archivo, la cantidad de aristas va a ser igual a la cantidad máxima posible en un grafo no dirigido,
+puesto que consideramos que todos los vértices se conectan con todos los demás.
+Es necesario tener en cuenta que los tiempos encontrados corresponden a distintos medios de transporte. Debido
+a que la agencia de viajes decidió hacer este negocio casi en el comienzo del certamen, no todos los medios
+de transporte estaban habilitados a la hora de buscar los datos, por lo que se obtuvo lo mejor a nuestra
+disposición. <a href="https://drive.google.com/file/d/1427w60dvNAg3UdVz5CsgRvafCjA34EkE/view?usp=sharing">Se puede encontrar aquí un archivo completo con las sedes</a> (cualquier semejanza con las sedes de otro evento
+deportivo apunto de comenzar, es pura coincidencia).</p>
+<h3 id="funciones-de-la-biblioteca">Funciones de la biblioteca<a class="headerlink" href="#funciones-de-la-biblioteca" title="Permanent link">&para;</a></h3>
+<p>La biblioteca a implementar debe tener la siguientes funciones implementadas:</p>
+<ul>
+<li><code>camino_minimo(grafo, desde, hasta)</code>, que nos devuelva una lista con el camino mínimo entre
+ese par de sedes.
+Ejemplo: <code>camino_minimo(rusia, 'Moscu', 'Saransk') -&gt; ['Moscu', 'Samara', 'Saransk']</code></li>
+<li><code>viajante(grafo, origen)</code>, que nos devuelva una lista con el recorrido a hacer para resolver
+de forma óptima el problema del viajante. La lista debe tener el mismo formato que
+<code>camino_minimo</code>.</li>
+<li><code>viajante_aproximado(grafo, origen)</code>, idem anterior, pero de forma aproximada, siendo este
+mucho más rápido.</li>
+<li><code>orden_topologico(grafo)</code>, que nos devuelva una lista con un orden topológico del grafo.
+En caso de no existir, devolver <code>None</code>, <code>NULL</code>, o el equivalente en el lenguaje elegido.
+Notar que para esta función, el grafo recibido debe ser dirigido.</li>
+<li><code>arbol_tendido_minimo(grafo)</code>, recibe un grafo (que se puede asumir conexo) y devuelve un nuevo grafo,
+que representa un árbol de tendido mínimo del original.</li>
+</ul>
+<h3 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h3>
+<p>Los comandos a implementar serán:
+* <code>ir desde, hasta</code>: nos devolverá el camino mínimo entre la ciudad <code>desde</code> y la ciudad <code>hasta</code>.</p>
+<div class="codehilite"><pre><span></span><code>Por ejemplo:
+```
+ir Moscu, Saransk
+```
+Nos debería imprimir:
+```
+Moscu -&gt; Samara -&gt; Saransk
+Costo total: 8
+```
+</code></pre></div>
+
+
+<ul>
+<li>
+<p><code>viaje optimo/aproximado, origen</code>: nos devuelve un listado con el orden de las ciudades a
+visitar para ver todas las ciudades una vez y volver al origen. La solución debe ser óptima o aproximada
+según el valor del segundo parámetro.</p>
+<p>Por ejemplo:
+<div class="highlight"><pre><span></span><code>viaje optimo, Sochi
+</code></pre></div>
+Nos puede imprimir:
+<div class="highlight"><pre><span></span><code>Sochi -&gt; Volgogrado -&gt; Kazan -&gt; Nizhni Novgorod -&gt; Ekaterinburgo -&gt; Kaliningrado -&gt; San Petesburgo -&gt; Saransk -&gt; Samara -&gt; Moscu -&gt; Rostov del Don -&gt; Sochi
+Costo total: 43
+</code></pre></div></p>
+</li>
+<li>
+<p><code>itinerario recomendaciones.csv</code>: el archivo <code>recomendaciones.csv</code> es un archivo con formato:
+        <div class="highlight"><pre><span></span><code>ciudad_1,ciudad_2
+...
+</code></pre></div>
+    Donde indica que la <code>ciudad_1</code> debe visitarse antes que la <code>ciudad_2</code>.
+    Notar que todas las ciudades a tener en cuenta son
+    las del mapa original, pero podría tranquilamente suceder que alguna ciudad no aparezca en el archivo
+    <code>recomendaciones.csv</code>, e igualmente es necesario visitarla.
+    Luego de cargar el archivo, se deberá devolver un itinerario válido para visitar las ciudades,
+    cumpliendo con las recomendaciones. El formato en el cual se deben mostrar es igual al de
+    <code>ir</code> y <code>viajero</code>. Dejamos <a href="https://drive.google.com/file/d/1fLeb0g6DGlNzh3XwWD7jPYPVbIpcQ1la/view?usp=sharing">un ejemplo de un posible archivo de recomendaciones</a>.</p>
+</li>
+<li><code>reducir_caminos destino.csv</code>: nos crea un archivo csv con un formáto idéntico al archivo de ciudades
+inicial, pero únicamente con los caminos estrictamente necesarios. Al finalizar, debe imprimir por salida
+estándar la suma de los pesos de las aristas del árbol, en formato <code>"Peso total: ..."</code>. Para el archivo de ejemplo,
+el peso del árbol de tendido mínimo debe ser 30.</li>
+</ul>
+<p>Salvo para el comando <code>reducir_caminos</code>, será necesario además exportar un archivo KML a la ruta indicada por
+parámetro al invocarse el programa. <a href="https://drive.google.com/file/d/1u6jkaLcMSHarPgKDwmzDqkfVNcUpvYN2/view?usp=sharing">Se incluye un ejemplo para el camino mínimo entre Moscu y Sochi</a>.</p>
+<h3 id="archivos-kml">Archivos KML<a class="headerlink" href="#archivos-kml" title="Permanent link">&para;</a></h3>
+<p>Contamos con un <a href="/algo2/material/apuntes/kml">apunte sobre cómo crear, usar y visualizar archivos KML</a>.</p>
+<h2 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h2>
+<p>El código entregado debe ser claro y legible y ajustarse a las especificaciones
+de la consigna. Debe compilar sin advertencias y correr sin errores de memoria.</p>
+<p>La entrega incluye, obligatoriamente, los siguientes archivos de código:</p>
+<ul>
+<li>el código del TDA Grafo programado, y cualquier otro TDA que fuere necesario.</li>
+<li>el código de la solución del TP.</li>
+</ul>
+<p>La entrega se realiza:</p>
+<ol>
+<li>en forma digital a través del <a href="{{site.entregas}}">sistema de entregas</a>,
+con todos los archivos mencionados en un único archivo ZIP.</li>
+<li>en papel durante la clase (si su ayudante lo requiere) el código del Trabajo
+en hoja A4 <strong>abrochadas, sin folio, informe ni carátula</strong>.</li>
+</ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a>, <a href='mailto:vazquez.nicolas.daniel@gmail.com'>ndvazquez</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

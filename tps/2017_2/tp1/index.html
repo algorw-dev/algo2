@@ -1,0 +1,1488 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Página de la materia Algoritmos y Programación II, curso Buchwald (ex Wachenchauzer). Facultad de Ingeniería, Universidad de Buenos Aires.
+">
+      
+      
+        <link rel="canonical" href="https://algoritmos-rw.github.io/algo2/tps/2017_2/tp1/">
+      
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>TP1 – Wachencoin</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+  
+
+  <!-- Nota: littlefoot.js ya está minified -->
+  <script defer onload="littlefoot.default()"
+          src="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.js"
+          crossorigin="anonymous" integrity="sha256-xZBAOWujDTAfCSoeGK9bPL8PZ2HPGkNNkR4At/5RaoM="></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/littlefoot@3.2.5/dist/littlefoot.css"
+        crossorigin="anonymous" integrity="sha256-qASGNX+71+rKlvbf9uhdYSOUr2S2zmLOCXmsV/Rc+4M=">
+
+  
+
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rosario:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Rosario",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trabajo-práctico-1" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-header-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Algoritmos y Programación II
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              TP1 – Wachencoin
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Inicio
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          TPs
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../apuntes/external-sorts/" class="md-tabs__link">
+          Apuntes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guias/" class="md-tabs__link">
+          Ejercicios
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../faq/general/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://algoritmos-rw.github.io/algo2" title="Algoritmos y Programación II" class="md-nav__button md-logo" aria-label="Algoritmos y Programación II">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Algoritmos y Programación II
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../bibliografia/" title="Bibliografía" class="md-nav__link">
+      Bibliografía
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../regimen/" title="Régimen de cursada" class="md-nav__link">
+      Régimen de cursada
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      TPs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TPs" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        TPs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Cronograma" class="md-nav__link">
+      Cronograma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tp0/" title="TP0" class="md-nav__link">
+      TP0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/vector/" title="Vector" class="md-nav__link">
+      Vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/pila/" title="Pila" class="md-nav__link">
+      Pila
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/lista/" title="Lista" class="md-nav__link">
+      Lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/abb/" title="ABB" class="md-nav__link">
+      ABB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tda/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Apuntes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Apuntes" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Apuntes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/external-sorts/" title="Ordenamientos externos" class="md-nav__link">
+      Ordenamientos externos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/random_walks/" title="Random walks" class="md-nav__link">
+      Random walks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/centralidad/" title="Centralidad" class="md-nav__link">
+      Centralidad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/pagerank/" title="PageRank" class="md-nav__link">
+      PageRank
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/label_propagation/" title="Label propagation" class="md-nav__link">
+      Label propagation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/cfc/" title="Componentes fuertemente conexas" class="md-nav__link">
+      Componentes fuertemente conexas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../apuntes/kml/" title="Archivos KML" class="md-nav__link">
+      Archivos KML
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Ejercicios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Ejercicios" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Ejercicios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/" title="Introducción" class="md-nav__link">
+      Introducción
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/dyc/" title="División y conquista" class="md-nav__link">
+      División y conquista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/ordenamientos/" title="Ordenamientos" class="md-nav__link">
+      Ordenamientos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/tdas_conceptos/" title="Pila, cola, lista" class="md-nav__link">
+      Pila, cola, lista
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/hash/" title="Tablas hash" class="md-nav__link">
+      Tablas hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/arboles/" title="Árboles" class="md-nav__link">
+      Árboles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/heap/" title="Colas de prioridad y heaps" class="md-nav__link">
+      Colas de prioridad y heaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8">
+    
+    <label class="md-nav__link" for="nav-6-8">
+      Grafos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Grafos" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Grafos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos/" title="Implementaciones y recorridos" class="md-nav__link">
+      Implementaciones y recorridos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/grafos_2/" title="Aplicaciones y algoritmos" class="md-nav__link">
+      Aplicaciones y algoritmos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-9" type="checkbox" id="nav-6-9">
+    
+    <label class="md-nav__link" for="nav-6-9">
+      Temas avanzados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Temas avanzados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/greedy/" title="Algoritmos greedy" class="md-nav__link">
+      Algoritmos greedy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guias/pd/" title="Programación dinámica" class="md-nav__link">
+      Programación dinámica
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/general/" title="Preguntas generales" class="md-nav__link">
+      Preguntas generales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/entorno/" title="Entorno de desarollo" class="md-nav__link">
+      Entorno de desarollo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/primeros-pasos/" title="Primeros pasos con Linux y C" class="md-nav__link">
+      Primeros pasos con Linux y C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/compilacion-ejecucion/" title="Lenguaje C: compilación y ejecución" class="md-nav__link">
+      Lenguaje C: compilación y ejecución
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lenguaje-c/" title="Lenguaje C" class="md-nav__link">
+      Lenguaje C
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/valgrind/" title="Errores de Valgrind" class="md-nav__link">
+      Errores de Valgrind
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/tda/" title="Tipos de datos abstractos" class="md-nav__link">
+      Tipos de datos abstractos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/cola/" title="Cola" class="md-nav__link">
+      Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/lista-enlazada/" title="Lista enlazada" class="md-nav__link">
+      Lista enlazada
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/abb/" title="Árbol binario de búsqueda" class="md-nav__link">
+      Árbol binario de búsqueda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contenido" class="md-nav__link">
+    Contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strutil" class="md-nav__link">
+    strutil
+  </a>
+  
+    <nav class="md-nav" aria-label="strutil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    split()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free_strv" class="md-nav__link">
+    free_strv()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interludio-bitcoin" class="md-nav__link">
+    Interludio: Bitcoin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wachencoin" class="md-nav__link">
+    Wachencoin
+  </a>
+  
+    <nav class="md-nav" aria-label="Wachencoin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaz" class="md-nav__link">
+    Interfaz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#código-de-pago" class="md-nav__link">
+    Código de pago
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-de-errores-y-precondiciones" class="md-nav__link">
+    Manejo de errores y precondiciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diseño" class="md-nav__link">
+    Diseño
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-más-información-y-links" class="md-nav__link">
+    Anexo: más información y links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-aprobación" class="md-nav__link">
+    Criterios de aprobación
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="trabajo-práctico-1">Trabajo Práctico 1<a class="headerlink" href="#trabajo-práctico-1" title="Permanent link">&para;</a></h1>
+<p>{:.no_toc}</p>
+<h2 id="contenido">Contenido<a class="headerlink" href="#contenido" title="Permanent link">&para;</a></h2>
+<p>{:.no_toc}</p>
+<ul>
+<li toc="toc">Contenido</li>
+</ul>
+<p>El Trabajo Práctico número 1 tiene fecha de entrega para el <strong>viernes 13/10</strong>, y
+está divido en dos partes, si bien están relacionadas:
+* implementación de funciones auxiliares para cadenas (<code>strutil</code>)
+* implementación de un sistema similar a Bitcoin (<em>Wachencoin</em>)</p>
+<h2 id="strutil">strutil<a class="headerlink" href="#strutil" title="Permanent link">&para;</a></h2>
+<p>Se pide implementar las funciones del archivo
+<a href="{{ 'assets/tps/2017_2/tp1/strutil.h' | relative_url }}">strutil.h</a> que
+se describen a continuación. Para la implementación de estas funciones no se
+puede hacer uso de TDAs:</p>
+<h3 id="split">split()<a class="headerlink" href="#split" title="Permanent link">&para;</a></h3>
+<p>La función <code>split()</code> divide una cadena en subcadenas en cada ocurrencia de un
+caracter de separación determinado. Por ejemplo, separando por comas:</p>
+<div class="highlight"><pre><span></span><code><span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,def,ghi&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">,</span> <span class="s">&quot;ghi&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>En C, devolveremos el resultado como un arreglo dinámico de cadenas dinámicas
+terminado en <code>NULL</code>. Esto es:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Ejemplo de arreglo dinámico de cadenas</span>
+<span class="kt">char</span> <span class="o">**</span><span class="n">strv</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">&quot;def&quot;</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">&quot;ghi&quot;</span><span class="p">);</span>
+<span class="n">strv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</code></pre></div>
+
+<p>El prototipo y la documentación de <code>split()</code> queda en:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> * Devuelve en un arreglo dinámico terminado en NULL con todos los subsegmentos</span>
+<span class="cm"> * de &#39;str&#39; separados por el carácter &#39;sep&#39;. Tanto el arreglo devuelto como las</span>
+<span class="cm"> * cadenas que contiene son allocadas dinámicamente.</span>
+<span class="cm"> *</span>
+<span class="cm"> * Quien llama a la función toma responsabilidad de la memoria dinámica del</span>
+<span class="cm"> * arreglo devuelto. La función devuelve NULL si falló alguna llamada a</span>
+<span class="cm"> * malloc(), o si &#39;sep&#39; es &#39;\0&#39;.</span>
+<span class="cm"> */</span>
+<span class="kt">char</span><span class="o">**</span> <span class="nf">split</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">,</span> <span class="kt">char</span> <span class="n">sep</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Considerar los siguientes casos borde:</p>
+<div class="highlight"><pre><span></span><code><span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,,def&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;abc,def,&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;,abc,def&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">]</span>
+
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span>  <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">]</span>
+<span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">)</span> <span class="err">→</span>  <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<h3 id="free_strv">free_strv()<a class="headerlink" href="#free_strv" title="Permanent link">&para;</a></h3>
+<p><code>free_strv()</code> libera la memoria asociada con un arreglo dinámico de cadenas dinámicas:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> * Libera un arreglo dinámico de cadenas, y todas las cadenas que contiene.</span>
+<span class="cm"> */</span>
+<span class="kt">void</span> <span class="nf">free_strv</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">strv</span><span class="p">[]);</span>
+</code></pre></div>
+
+<h2 id="interludio-bitcoin">Interludio: Bitcoin<a class="headerlink" href="#interludio-bitcoin" title="Permanent link">&para;</a></h2>
+<p><strong>Bitcoin</strong> es un sistema de pagos digital descentralizado que no requiere un
+respaldo externo (en billetes, por ejemplo) del dinero que utiliza.</p>
+<p>En Bitcoin y sus derivados, los pagos son en realidad programas (<em>scripts</em>)
+que se escriben en un <em>lenguaje de pila</em>.
+Un lenguaje de pila opera básicamente de dos formas: apilando y desapilando
+datos del stack, para poder usar funciones sobre ellos. Un ejemplo puede ser
+la <a href="http://www-stone.ch.cam.ac.uk/documentation/rrf/rpn.html">notación polaca inversa</a>
+que se utilizaba en las antiguas calculadoras digitales.</p>
+<p><strong>¡A no desesperar!</strong> Aunque Bitcoin tiene muchas decisiones de diseño
+para garantizar transferencias seguras y válidas entre los miembros de
+la red, en este TP sólo nos interesan las estructuras de datos que
+pueden ser útiles en un sistema de este estilo.</p>
+<h2 id="wachencoin">Wachencoin<a class="headerlink" href="#wachencoin" title="Permanent link">&para;</a></h2>
+<p style="text-align: center;">
+    <img src="{{ 'assets/tps/2017_2/tp1/logo.png' | relative_url }}">
+</p>
+
+<p>Implementaremos un programa que permita realizar pagos entre los usuarios
+de la red y mantenga el estado de los saldos de sus billeteras. Cada
+usuario será identificado unívocamente por un identificador numérico y tendrá
+asociada una coordenada que hará las funciones de contraseña.</p>
+<p><em>Curiosidad</em>: la unidad más pequeña del sistema Bitcoin se llama <em>satoshi</em>, por
+su creador. Parece justo, entonces, llamar a la unidad de Wachencoin un
+<em>rosita</em>.</p>
+<p>La ejecución de la aplicación recibe como parámetro el nombre de un archivo
+<a href="https://en.wikipedia.org/wiki/Comma-separated_values">csv</a>
+con el estado inicial de las cuentas (número, saldo, coordenadas), que tiene el
+siguiente formato:</p>
+<div class="highlight"><pre><span></span><code>0,13.37,14f6c9dae22
+1,58.92,916f4c31aaa
+2,9301.92,e9a7f54270d
+(...)
+</code></pre></div>
+
+<p>Los números de cuenta son consecutivos empezando desde 0.</p>
+<h3 id="interfaz">Interfaz<a class="headerlink" href="#interfaz" title="Permanent link">&para;</a></h3>
+<p>Es necesario implementar una <strong>interfaz</strong> del programa, que leerá por entrada
+estándar los siguientes comandos:</p>
+<ul>
+<li><code>agregar_pago &lt;id_pago&gt; &lt;monto&gt; -código de pago-</code>, que agregará a la cola de
+procesamiento la transacción. El monto es siempre positivo. El formato del
+código de pago se detalla debajo.</li>
+<li><code>pagos_pendientes</code>: imprime por <code>stdout</code> la cantidad y el monto total de los
+pagos pendientes, separados por una coma.</li>
+<li><code>procesar &lt;numero&gt;</code>: procesa hasta un número no negativo de pagos pendientes.</li>
+<li><code>guardar_cuentas &lt;archivo&gt;</code>: guarda en un archivo el estado <em>actual</em> de las
+cuentas. Si no existe lo debe crear, y si existe lo sobreescribe.</li>
+<li><code>finalizar</code>: finaliza el programa (si quedan pagos sin procesar, no se
+procesan).</li>
+</ul>
+<p><em>Nota</em>: recomendamos usar el siguiente formato para la impresión de números
+decimales en C: <code>%.3f</code>, que imprime el número redondeado a tres decimales.</p>
+<h3 id="código-de-pago">Código de pago<a class="headerlink" href="#código-de-pago" title="Permanent link">&para;</a></h3>
+<p>Como Bitcoin, en Wachencoin los códigos de pago (también llamados <em>scripts</em>) se
+escriben utilizando un lenguaje de pila¹ como el siguiente:</p>
+<div class="highlight"><pre><span></span><code>&lt;id_usuario_1&gt;
+&lt;coordenadas_usuario_1&gt;
+validar_usuario
+&lt;id_usuario_1&gt;
+&lt;monto&gt;
+validar_pago
+&lt;monto&gt;
+&lt;id_usuario_2&gt;
+&lt;id_usuario_1&gt;
+pagar
+</code></pre></div>
+
+<p>Las distintas instrucciones del código de pago se ingresan en <strong>una línea</strong>
+separadas por <code>;</code>, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>0;14f6c9dae22;validar_usuario;0;5.00;validar_pago;5.00;3;0;pagar
+</code></pre></div>
+
+<p>Que corresponde a un pago del usuario 0 de coordenadas 14f6c9dae22
+de 5 rositas para el usuario 3.</p>
+<p>Para clarificar, marcamos las siguientes operaciones:</p>
+<ul>
+<li><code>validar_usuario</code>: desapila dos elementos y revisa que las coordenadas
+sean apropiadas para el usuario.</li>
+<li><code>validar_pago</code>: desapila dos elementos y revisa que el usuario tenga
+fondos suficientes para hacer la operación.</li>
+<li><code>pagar</code>: desapila tres elementos y hace el movimiento de fondos.</li>
+<li>por defecto: empuja un dato al stack.</li>
+</ul>
+<p><strong>Atención</strong>: Si bien la de arriba es una transacción bien escrita, no es
+la <em>única</em> posible. También habrá transacciones que hacen pagos a múltiples
+personas; o de varias personas a una sola.</p>
+<p><strong>Restricciones sobre la complejidad</strong>: todas las operaciones del lenguaje de
+pila deben ser <em>O(1)</em>. La operación de agregar un pago debe ser <em>O(1)</em>, la de
+pagos pendientes <em>O(P)</em> siendo P la cantidad de transacciones sin procesar,
+y la de guardar cuentas debe ser <em>O(C)</em> (con C la cantidad de cuentas).</p>
+<h3 id="manejo-de-errores-y-precondiciones">Manejo de errores y precondiciones<a class="headerlink" href="#manejo-de-errores-y-precondiciones" title="Permanent link">&para;</a></h3>
+<p>Para este Trabajo Práctico se podrá considerar:</p>
+<ul>
+<li>Que el monto total de un comando <code>agregar_pago</code> es correcto. Es decir: que
+correctamente simboliza la suma de las transacciones que se van a realizar en el
+código.</li>
+<li>Que todos los montos son flotantes positivos.</li>
+</ul>
+<p>La implementación deberá manejar correctamente los siguientes casos de error:</p>
+<ul>
+<li>Error 1: cuando un código de pila tiene un error. Por ejemplo:<ul>
+<li>Id de usuario inexistente.</li>
+<li>Las coordenadas de un usuario son inválidas.</li>
+<li>El usuario no tiene saldo suficiente.</li>
+</ul>
+</li>
+<li>Error 2: cuando un comando es inválido. Por ejemplo:<ul>
+<li>Se encuentra una cadena de texto cuando se espera un número entero.</li>
+<li>Hay parámetros de más.</li>
+<li>Faltan parámetros.</li>
+<li>El comando no existe.</li>
+</ul>
+</li>
+</ul>
+<p>En caso de error 1, el programa deberá imprimir por <code>stderr</code>: <code>Error en pago &lt;id&gt;</code>
+con el id de pago inválido. Queda a elección de ustedes decidir si el resto de
+los pagos del código se procesaran o no.</p>
+<p>En caso de error 2, el programa deberá imprimir por <code>stderr</code>: <code>Error en comando &lt;nombre&gt;</code>
+con el nombre del comando que falló. Un error de tipo 2 hará que termine la
+ejecución del programa.</p>
+<p>En caso de que un comando no tenga errores de tipo 2 deberá imprimir <code>OK</code> por
+<code>stdout</code>. Esta cadena deberá ser lo último impreso por la aplicación en caso de
+error.</p>
+<h3 id="diseño">Diseño<a class="headerlink" href="#diseño" title="Permanent link">&para;</a></h3>
+<p>Se recomienda usar las siguientes estructuras para almacenar los usuarios y los
+pagos:</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">usuario</span> <span class="p">{</span>
+    <span class="kt">size_t</span> <span class="n">id</span><span class="p">;</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">coordenadas</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">saldo</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">usuario_t</span><span class="p">;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">pago</span> <span class="p">{</span>
+    <span class="kt">size_t</span> <span class="n">id</span><span class="p">;</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">codigo</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">monto</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">pago_t</span><span class="p">;</span>
+</code></pre></div>
+
+<h3 id="ejemplos">Ejemplos<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h3>
+<p>Los siguientes ejemplos son tomados a partir de un archivo de cuentas inicial
+como el siguiente:</p>
+<div class="highlight"><pre><span></span><code>0,23.37,14f6c9dae22
+1,5.12,916f4c31aaa
+2,5.14,c353bcb74b3
+</code></pre></div>
+
+<h4>Con una transacción con un pago</h4>
+<p>El siguiente es un ejemplo de una ejecución bien formada:</p>
+<div class="highlight"><pre><span></span><code>agregar_pago 1 5.00 1;916f4c31aaa;validar_usuario;1;5.00;validar_pago;5.00;0;1;pagar
+procesar 1
+guardar_cuentas cuentas_out.csv
+finalizar
+</code></pre></div>
+
+<p>El programa:</p>
+<ol>
+<li>Agrega un pago pendiente del usuario 1 al usuario 0 por el monto de 5
+rositas.</li>
+<li>Procesa el pago.</li>
+<li>Guarda el estado de las cuentas en el archivo <code>cuentas_out.csv</code>.</li>
+<li>Finaliza la ejecución.</li>
+</ol>
+<p>Al finalizar esta ejecución se espera que por salida estándar se imprima:</p>
+<div class="highlight"><pre><span></span><code>OK
+OK
+OK
+OK
+</code></pre></div>
+
+<h4>Con una transacción con dos pagos</h4>
+<p>El siguiente ejemplo realiza dos transacciones en un mismo código de pago:</p>
+<div class="highlight"><pre><span></span><code>agregar_pago 1 10.02 0;14f6c9dae22;validar_usuario;1;916f4c31aaa;validar_usuario;0;5.22;validar_pago;1;4.80;validar_pago;5.22;2;0;pagar;4.80;2;1;pagar
+procesar 1
+guardar_cuentas cuentas_out.csv
+finalizar
+</code></pre></div>
+
+<p>El programa:</p>
+<ol>
+<li>Agrega un pago pendiente del usuario 0 al usuario 2 por el monto de 5,22
+rositas; y un pago pendiente de 4,80 rositas del usuario 1 al usuario 2.</li>
+<li>Procesa el pago (que ejecutará las dos transacciones).</li>
+<li>Guarda el estado de las cuentas en el archivo <code>cuentas_out.csv</code>.</li>
+<li>Finaliza la ejecución.</li>
+</ol>
+<p>La salida esperada en este caso es:</p>
+<div class="highlight"><pre><span></span><code>OK
+OK
+OK
+OK
+</code></pre></div>
+
+<h4>Con un código de pago inválido</h4>
+<p>El siguiente ejemplo es inválido por tener mal las coordenadas del usuario 1:</p>
+<div class="highlight"><pre><span></span><code>agregar_pago 1 10.00 1;fd36fbf2562;validar_usuario;1;10.00;validar_pago;10.00;0;1;pagar
+procesar 1
+finalizar
+</code></pre></div>
+
+<p>Deberá producir la siguiente salida (teniendo en cuenta lo mostrado por <code>stdout</code>
+y por <code>stderr</code>):</p>
+<div class="highlight"><pre><span></span><code>OK
+Error en pago 1
+OK
+OK
+</code></pre></div>
+
+<h4>Con un comando inválido</h4>
+<p>El siguiente ejemplo es inválido por faltarle un parámetro al comando
+<code>procesar</code>:</p>
+<div class="highlight"><pre><span></span><code>agregar_pago 1 5.00 1;916f4c31aaa;validar_usuario;1;5.00;validar_pago;5.00;0;1;pagar
+procesar
+guardar_cuentas cuentas_out.csv
+finalizar
+</code></pre></div>
+
+<p>Deberá producir la siguiente salida (teniendo en cuenta lo mostrado por <code>stdout</code>
+y por <code>stderr</code>)::</p>
+<div class="highlight"><pre><span></span><code>OK
+Error en comando procesar
+</code></pre></div>
+
+<p>Y deberá terminar la ejecución sin ejecutar los últimos dos comandos.</p>
+<h4>Con un comando inexistente</h4>
+<p>La siguiente serie de comandos incluye uno que es inexistente:</p>
+<div class="highlight"><pre><span></span><code>agregar_pago 1 5.00 1;916f4c31aaa;validar_usuario;1;5.00;validar_pago;5.00;0;1;pagar
+imprimir_deudas 4
+procesar 2
+finalizar
+</code></pre></div>
+
+<p>Deberá producir la siguiente salida (teniendo en cuenta lo impreso por <code>stdout</code>
+y <code>stderr</code>):</p>
+<div class="highlight"><pre><span></span><code>OK
+Error en comando imprimir_deudas
+</code></pre></div>
+
+<p>Y deberá terminar la ejecución sin ejecutar los últimos dos comandos.</p>
+<h4>Con impresión de pagos pendientes</h4>
+<p>La siguiente serie de comandos:</p>
+<div class="highlight"><pre><span></span><code>agregar_pago 1 10.02 0;14f6c9dae22;validar_usuario;1;916f4c31aaa;validar_usuario;0;5.22;validar_pago;1;4.80;validar_pago;5.22;2;0;pagar;4.80;2;1;pagar
+pagos_pendientes
+finalizar
+</code></pre></div>
+
+<p>Deberá producir la siguiente salida:</p>
+<div class="highlight"><pre><span></span><code>OK
+1,10.02
+OK
+OK
+</code></pre></div>
+
+<h2 id="anexo-más-información-y-links">Anexo: más información y links<a class="headerlink" href="#anexo-más-información-y-links" title="Permanent link">&para;</a></h2>
+<p>Esta implementación de <em>Wachencoin</em> es bastante sencilla pero introduce
+algunos conceptos fundamentales de criptomonedas. A continuación se enumeran
+recursos que permiten entender otros conceptos involucrados no incluídos en
+el TP y para nada necesarios para su resolución:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Double-spending">Double spending problem</a></li>
+<li><a href="https://es.wikipedia.org/wiki/SHA-2">Funciones de hash SHA</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Merkle_tree">Arbol de Merkle</a></li>
+<li><a href="https://www.youtube.com/watch?v=GSIDS_lvRv4">Criptografía de clave pública</a></li>
+<li><a href="http://pub.gajendra.net/2012/09/an_explanation_of_the_rsa_cryptosystem">Criptografía con RSA</a></li>
+<li><a href="http://hackingdistributed.com/2014/06/19/bitcoin-and-voting-power/">Majority Rule</a></li>
+<li><a href="https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash">Ejemplos de programas en Bitcoin Scripting Language</a></li>
+</ul>
+<h2 id="criterios-de-aprobación">Criterios de aprobación<a class="headerlink" href="#criterios-de-aprobación" title="Permanent link">&para;</a></h2>
+<p>El código entregado debe ser claro y legible y ajustarse a las especificaciones
+de la consigna. Debe compilar sin advertencias y correr sin errores de memoria.</p>
+<p>La entrega incluye, obligatoriamente, los siguientes archivos de código:</p>
+<ul>
+<li><code>strutil.c</code> con las implementaciones de las funciones <code>split</code> y <code>free_strv</code>.</li>
+<li>el código de la solución de wachencoin.</li>
+<li>el código de los TDAs programados en la cursada que se requieran, con las
+modificaciones que sean necesarias.</li>
+<li>un archivo <code>deps.mk</code> con las dependencias del proyecto en formato make. Este
+deberá contener sólamente una línea que indique qué <em>objetos</em> necesita para
+compilar el ejecutable wachencoin, por ejemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nf">wachencoin</span><span class="o">:</span> <span class="n">tp</span>1.<span class="n">c</span> <span class="n">vector</span>.<span class="n">o</span> <span class="n">pila</span>.<span class="n">o</span> <span class="n">lista</span>.<span class="n">o</span> <span class="n">strutil</span>.<span class="n">o</span>
+</code></pre></div>
+
+<p>El corrector automático va a interpretar ese archivos de dependencias y va a
+compilar todos los <code>.o</code> especificados a partir de los <code>.h</code> y <code>.c</code> que deberán
+enviar, con los siguientes flags de GCC:</p>
+<div class="highlight"><pre><span></span><code>-g -std=c99 -Wall -Wtype-limits -pedantic -Wconversion -Wno-sign-conversion
+</code></pre></div>
+
+<p>La entrega se realiza:</p>
+<ol>
+<li>en forma digital a través del <a href="http://entregas.algoritmos7541-rw.tk">sistema de entregas</a>:
+todos los archivos mencionados en un único archivo ZIP.</li>
+<li>en papel durante la clase (si su ayudante lo requiere) el código del Trabajo
+en hoja A4 <strong>abrochadas, sin folio, informe ni carátula</strong>. No es necesario
+reimprimir el código de los TDA.</li>
+</ol>
+<hr />
+<p>¹ el atento lector se habrá dado cuenta de que no es necesario utilizar un
+lenguaje de pila para realizar los pagos. Sin embargo, el propósito del TP
+es <em>implementar</em> ese lenguaje de pila, y utilizarlo para realizar pagos
+&ndash; no al revés.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Última actualización: 3 de julio de 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+  <!-- We don't use Disqus, and Disqus block is adjacent to source block. -->
+  <div class="md-source-date">
+    <small>
+      Autores: <span class='git-page-authors git-authors'><a href='mailto:dato@fi.uba.ar'>Adeodato Simó</a>, <a href='mailto:fbarrios@fi.uba.ar'>Federico Barrios</a>, <a href='mailto:fdelmazo@fi.uba.ar'>Federico del Mazo</a>, <a href='mailto:mbuchwald@fi.uba.ar'>Martín Buchwald</a>, <a href='mailto:joa.dev@live.com'>Roj</a>, <a href='mailto:jian01.cs@hotmail.com'>jian01</a></span>
+    </small>
+  </div>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
